@@ -1,0 +1,1357 @@
+<title>خريطة ميد٢ 131 ريض</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;700&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Layout: one answer-booklet column with a sticky section rail. Arabic commentary runs RTL; proofs are set LTR like an exam answer sheet, in a textbook serif. */
+:root{
+  --paper:#f3f6f5; --sheet:#ffffff; --ink:#162120; --muted:#55635f; --line:#d3dcd9;
+  --accent:#0c6a62; --accent-soft:#dbeeea;
+  --pen:#b3261e; --pen-soft:#fbe7e4;
+  --mark:#7a5200; --mark-soft:#fff0c8;
+  --ok:#1b7a39; --ok-soft:#e0f2e5;
+  --f-display:"Reem Kufi","IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
+  --f-body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,"Noto Sans Arabic",sans-serif;
+  --f-math:"STIX Two Text","Cambria Math",Cambria,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0e1413; --sheet:#151d1c; --ink:#e2eae7; --muted:#9caea9; --line:#293533;
+    --accent:#5cc5b9; --accent-soft:#11302c;
+    --pen:#ff8b7e; --pen-soft:#3a1714;
+    --mark:#ffd27a; --mark-soft:#35290b;
+    --ok:#72d493; --ok-soft:#10301c;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0e1413; --sheet:#151d1c; --ink:#e2eae7; --muted:#9caea9; --line:#293533;
+  --accent:#5cc5b9; --accent-soft:#11302c;
+  --pen:#ff8b7e; --pen-soft:#3a1714;
+  --mark:#ffd27a; --mark-soft:#35290b;
+  --ok:#72d493; --ok-soft:#10301c;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.9;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.page{max-width:47rem;margin-inline:auto;padding-block:28px 80px}
+h1,h2,h3{font-family:var(--f-display);line-height:1.35;text-wrap:balance;margin:0;font-weight:700}
+h1{font-size:clamp(2.1rem,7vw,3rem)}
+h2{font-size:clamp(1.5rem,4.4vw,1.9rem);margin-bottom:.7rem}
+h3{font-size:1.25rem;margin-block:1.8rem .55rem}
+h4{font-family:var(--f-body);font-size:1.04rem;font-weight:600;margin-block:1.2rem .35rem;line-height:1.6}
+p{margin:0 0 .85rem}
+ul,ol{margin:0 0 1rem;padding-inline-start:1.3rem}
+li{margin-bottom:.35rem}
+a{color:var(--accent);text-underline-offset:3px}
+strong{font-weight:600}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+section{padding-block:2.4rem 1rem;border-top:1px solid var(--line);scroll-margin-top:60px}
+.sub{scroll-margin-top:60px}
+.eyebrow{font-size:.84rem;color:var(--muted);letter-spacing:.02em;margin-bottom:.5rem}
+.lede{font-size:1.1rem;max-width:62ch;margin-top:.9rem}
+.facts{list-style:none;padding:0;margin:1.1rem 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.facts li{border:1px solid var(--line);background:var(--sheet);border-radius:999px;padding:3px 13px;font-size:.92rem;margin:0}
+.facts b{font-family:var(--f-math);font-weight:600;font-size:1.06rem}
+.rail{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--paper);display:flex;gap:6px;overflow-x:auto;
+  padding-block:10px;margin-top:22px;border-bottom:1px solid var(--line);scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail a{flex:none;font-size:.86rem;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--sheet);border-radius:999px;padding:2px 12px;white-space:nowrap}
+.rail a:hover{border-color:var(--accent);color:var(--accent)}
+.m{font-family:var(--f-math);direction:ltr;unicode-bidi:isolate;white-space:nowrap;font-size:1.06em}
+.en{direction:ltr;unicode-bidi:isolate;font-family:var(--f-math);font-style:italic}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+/* proofs: the answer sheet */
+.proof{direction:ltr;text-align:left;font-family:var(--f-math);font-size:1.04rem;line-height:1.75;background:var(--sheet);
+  border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:.6rem 0 1.1rem;overflow-x:auto}
+.proof p{margin:0 0 .55em}
+.proof p:last-child{margin-bottom:0}
+.proof .eq{display:block;text-align:center;white-space:nowrap;margin:.4em 0}
+.proof .lbl{font-style:italic;font-weight:600}
+.proof .end::after{content:" ∎"}
+.frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;line-height:1.25;margin-inline:.12em;font-size:.94em}
+.frac>span:first-child{border-bottom:1px solid currentColor;padding-inline:.25em}
+.frac>span:last-child{padding-inline:.25em}
+/* callouts by role */
+.note{border-radius:8px;padding:12px 14px;margin:.8rem 0 1.1rem}
+.note p:last-child,.note ul:last-child{margin-bottom:0}
+.tag{display:inline-block;font-size:.76rem;font-weight:700;border-radius:4px;padding:0 8px;margin-inline-end:8px;line-height:1.7;vertical-align:1px}
+.trick{background:var(--accent-soft)} .trick .tag{background:var(--accent);color:var(--sheet)}
+.trap{background:var(--pen-soft)} .trap .tag{background:var(--pen);color:var(--sheet)}
+.key{background:var(--mark-soft)} .key .tag{background:var(--mark);color:var(--sheet)}
+/* tables */
+.tbl{overflow-x:auto;margin:.6rem 0 1.2rem;border:1px solid var(--line);border-radius:8px;background:var(--sheet)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;line-height:1.6;font-variant-numeric:tabular-nums}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+th{background:var(--accent-soft);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.c,th.c{text-align:center}
+td.ltr{direction:ltr;text-align:left;font-family:var(--f-math);white-space:nowrap}
+.matrix th,.matrix td{text-align:center;white-space:nowrap;padding:7px 8px}
+.matrix th:first-child,.matrix td:first-child{text-align:start;position:sticky;inset-inline-start:0;z-index:1}
+.matrix td:first-child{background:var(--sheet)}
+.matrix th:first-child{background:var(--accent-soft)}
+.matrix .star{background:var(--mark-soft)}
+.matrix td.y{color:var(--accent);font-weight:700}
+.matrix td.n{color:var(--line)}
+/* chips */
+.chip{display:inline-block;font-size:.78rem;font-weight:600;border-radius:999px;padding:0 10px;line-height:1.75;white-space:nowrap}
+.p-vh{background:var(--accent);color:var(--sheet)}
+.p-h{background:var(--accent-soft);color:var(--accent)}
+.p-m{background:var(--mark-soft);color:var(--mark)}
+.p-l{border:1px solid var(--line);color:var(--muted)}
+.v-t{background:var(--ok-soft);color:var(--ok)}
+.v-f{background:var(--pen-soft);color:var(--pen)}
+/* numbered rounds */
+.round{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin-top:1.6rem}
+.round>.num{font-family:var(--f-math);font-size:2.4rem;line-height:1;color:var(--accent);font-weight:600;padding-top:.2rem}
+.round>div{min-width:0}
+.round h3{margin-top:0}
+/* solutions */
+details.sol{margin:.3rem 0 .4rem}
+details.sol>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--accent);font-family:var(--f-body);direction:rtl;padding-block:2px}
+details.sol>summary::-webkit-details-marker{display:none}
+details.sol>summary::before{content:"+";font-family:var(--f-math);display:inline-grid;place-items:center;width:1.35em;height:1.35em;border:1px solid currentColor;border-radius:4px;font-size:.9em;line-height:1}
+details.sol[open]>summary::before{content:"−"}
+/* mock exam paper */
+.paper{direction:ltr;text-align:left;background:var(--sheet);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:.8rem 0 1.2rem;font-family:var(--f-math)}
+.paper-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;font-size:.95rem;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:6px}
+.paper-head b{font-weight:600}
+.q{padding-block:12px;border-bottom:1px dashed var(--line)}
+.q:last-child{border-bottom:0}
+.q .stmt{font-size:1.06rem;line-height:1.75}
+.q .stmt .no{font-weight:600;margin-right:.35em}
+.q .mk{color:var(--muted);white-space:nowrap}
+.q .proof{font-size:1rem;background:var(--paper)}
+.q .ar{direction:rtl;text-align:right;font-family:var(--f-body);font-size:.95rem;color:var(--muted);margin:.3rem 0 0}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin:.4rem 0}
+.btn{font:inherit;font-size:.9rem;border:1px solid var(--line);background:var(--sheet);color:var(--ink);border-radius:6px;padding:3px 14px;cursor:pointer}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+/* trainer */
+.tf{list-style:none;padding:0;margin:.8rem 0 0}
+.tf li{background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.tf li.right{border-color:var(--ok)}
+.tf li.wrong{border-color:var(--pen)}
+.tf .s{direction:ltr;text-align:left;font-family:var(--f-math);font-size:1.05rem;line-height:1.7;margin-bottom:8px}
+.tf .s .k{color:var(--muted);font-size:.85em;margin-right:.4em}
+.tf .btns{display:flex;gap:8px;flex-wrap:wrap}
+.tf .fb{margin-top:8px;font-size:.95rem;line-height:1.8}
+.tf .fb[hidden]{display:none}
+.score{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:10px 14px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 52px);z-index:4}
+.score b{font-family:var(--f-math);font-size:1.15rem}
+/* plan */
+.day{background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:12px 14px 8px;margin-bottom:12px}
+.day h4{margin-top:0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.day h4 .muted{font-weight:400;font-size:.9rem}
+.chk{display:flex;gap:10px;align-items:flex-start;padding-block:3px;line-height:1.75}
+.chk input{margin-top:.45em;width:1.05em;height:1.05em;accent-color:var(--accent);flex:none}
+.chk span{min-width:0}
+.prog{display:flex;align-items:center;gap:12px;margin:.6rem 0 1rem}
+.bar{flex:1;height:8px;background:var(--line);border-radius:999px;overflow:hidden}
+.bar>span{display:block;height:100%;width:0;background:var(--accent);transition:width .25s}
+@media (prefers-reduced-motion: reduce){.bar>span{transition:none}}
+.tiers{display:grid;gap:12px;grid-template-columns:1fr}
+.tier{background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.tier h4{margin-top:0}
+.tier ol{margin-bottom:0}
+.cols{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.cols>div{min-width:0}
+footer{border-top:1px solid var(--line);margin-top:2rem;padding-top:1rem;color:var(--muted);font-size:.9rem}
+tr.star td{background:var(--mark-soft)}
+sup,sub{font-size:.72em;line-height:0}
+sup sup{font-size:.85em}
+</style>
+
+<div class="page" dir="rtl" lang="ar">
+
+<header>
+  <p class="eyebrow">131 ريض · أسس الرياضيات · الاختبار الثاني · الفصل الأول 1448</p>
+  <h1>خريطة الميد الثاني</h1>
+  <p class="lede">حلّلت كل الاختبارات اللي في المجلد، وهي 11 اختباراً فريداً: 5 ميد ثاني و6 نهائي. وقارنتها بسلايدات الفصول 5 و6 و9 وبالخطة الدراسية. هنا تلقى وش يجي، وكيف يجي، وكيف تكتب الحل اللي ياخذ الدرجة كاملة، وخطة مذاكرة بالأيام.</p>
+  <ul class="facts">
+    <li><b>90</b> دقيقة</li>
+    <li><b>25</b> درجة (كل الميد الثاني السابقة من 25)</li>
+    <li>بدون آلة حاسبة</li>
+    <li>النطاق: الفصل 1 إلى <span class="m">9.1</span> (العلاقات)</li>
+  </ul>
+</header>
+
+<nav class="rail" aria-label="أقسام الدليل">
+  <a href="#zubda">الزبدة</a>
+  <a href="#sources">المصادر</a>
+  <a href="#rounds">الجولات الأربع</a>
+  <a href="#predict">التوقعات</a>
+  <a href="#method">طريقة الحل</a>
+  <a href="#ch5">فصل 5</a>
+  <a href="#ch6">فصل 6</a>
+  <a href="#ch9">العلاقات 9.1</a>
+  <a href="#bridges">جسور 1–4</a>
+  <a href="#trainer">صح أو خطأ؟</a>
+  <a href="#mockA">نموذج أ</a>
+  <a href="#mockB">نموذج ب</a>
+  <a href="#bank">تمارين</a>
+  <a href="#plan">الخطة</a>
+  <a href="#examday">يوم الاختبار</a>
+</nav>
+
+<section id="zubda">
+  <h2>الزبدة قبل التفاصيل</h2>
+  <ol>
+    <li><strong>أقرب نموذج لاختبارك هو ميد٢ نوفمبر 2025</strong> (14/5/1447). نفس كتاب Chartrand ونفس السلايدات اللي عندك. فيه سؤال واحد: <span class="en">Prove or disprove</span> بثماني فقرات، وثلاث منها منقولة حرفياً من سلايدات ف5 وف6.</li>
+    <li><strong>حدسك صحيح.</strong> الثقل للجديد: ف5 وف6 و9.1. أتوقع لها بين 18 و22 درجة من 25. الفصول 1–4 تدخل غالباً داخل البراهين الجديدة (جبر الزوجي والفردي، القسمة، المجموعات) أو كفقرة قصيرة.</li>
+    <li><strong>أخطر فخ أنك تبرهن جملة خاطئة.</strong> الدكتور ياخذ نتيجة صحيحة من الكتاب ويغيّر فيها شي واحد. جرّب <span class="m">n = 1, 2, 3</span> قبل أي برهان.</li>
+    <li><strong>الضرب الديكارتي جاء في كل اختبارات الميد الثاني الخمسة.</strong> والعلاقة في 9.1 تعريفها أصلاً مجموعة جزئية من <span class="m">A × B</span>، فتوقّع سؤال يربط بينهم.</li>
+    <li><strong>الدرجة على القالب.</strong> الحلول النموذجية تمشي على صياغة السلايد جملة بجملة. القوالب الجاهزة هنا اكتبها زي ما هي.</li>
+  </ol>
+</section>
+
+<section id="sources">
+  <h2>المصادر اللي حلّلتها</h2>
+  <p>في المجلد ملفان مكرران بالحرف: نسختا 1446 الأول (3834 و5567) للميد وللنهائي. فعندك 11 اختباراً فريداً، مو 13.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>الاختبار</th><th>التاريخ</th><th>اللغة والمنهج</th><th>وش غطّى</th><th>أهميته لك</th></tr></thead>
+      <tbody>
+        <tr><td>ميد٢ 1445 الأول</td><td>24/4/1445</td><td>عربي، منهج قديم</td><td>ترتيب جزئي، تكافؤ، <span class="m">A×(B∪C)</span>، تطبيقات</td><td><span class="chip p-m">متوسطة</span></td></tr>
+        <tr><td>ميد٢ 1445 الثاني</td><td>22/10/1445</td><td>عربي، منهج قديم</td><td>تعاريف، أمثلة، <span class="m">A×B=∅</span>، <span class="m">R=R<sup>−1</sup></span></td><td><span class="chip p-m">متوسطة</span></td></tr>
+        <tr><td>ميد٢ 1446 الأول</td><td>27/4/1446</td><td>عربي، منهج قديم</td><td>تعريف <span class="m">R ⊆ A×B</span>، أكمل الفراغ، أمثلة مضادة</td><td><span class="chip p-m">متوسطة</span></td></tr>
+        <tr><td>ميد٢ 1446 الثاني</td><td>18/10/1446</td><td>عربي، منهج قديم</td><td>تكافؤ، تطابق mod n، <span class="m">A×(B∪C)</span></td><td><span class="chip p-m">متوسطة</span></td></tr>
+        <tr class="star"><td><strong>ميد٢ 1447 الأول</strong></td><td>14/5/1447<br><span class="muted small">5 نوفمبر 2025</span></td><td><strong>إنجليزي، Chartrand</strong></td><td>ف3، ف4، ف5، ف6 بصيغة Prove or disprove</td><td><span class="chip p-vh">عالية جداً</span></td></tr>
+        <tr><td>نهائي 1443</td><td>بدون تاريخ</td><td>عربي، بدون حل</td><td>نفي، تناقض، وجود، تكافؤ <span class="m">x<sup>2</sup>=y<sup>2</sup></span></td><td><span class="chip p-m">متوسطة</span></td></tr>
+        <tr><td>نهائي 1445 الأول</td><td>26/5/1445</td><td>عربي</td><td>رموز، أعداد عناصر، تجزئة، تكافؤ، زمر</td><td><span class="chip p-l">منخفضة</span></td></tr>
+        <tr><td>نهائي 1445 الثاني</td><td>11/11/1445</td><td>عربي</td><td>تجزئة، تكافؤ من تجزئة، زمر</td><td><span class="chip p-l">منخفضة</span></td></tr>
+        <tr><td>نهائي 1446 الأول</td><td>7/6/1446</td><td>عربي</td><td>تجزئة، تناظرية، زمر وحلقات</td><td><span class="chip p-l">منخفضة</span></td></tr>
+        <tr><td>نهائي 1446 الثاني</td><td>20/11/1446</td><td>عربي</td><td>استقراء، <span class="m">∛7</span> غير نسبي، أصناف التكافؤ</td><td><span class="chip p-m">متوسطة</span></td></tr>
+        <tr><td><strong>نهائي 1447 الأول</strong></td><td>1/7/1447<br><span class="muted small">21 ديسمبر 2025</span></td><td><strong>إنجليزي، Chartrand</strong></td><td>زوجي وفردي، تقييم برهان، تكافؤ و<span class="m">[1]</span>، مثال علاقة، نهايات</td><td><span class="chip p-h">عالية</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small muted">«منهج قديم» يعني أن ميد٢ وقتها كان عن العلاقات والتطبيقات والعدّ، وما كان فيه استقراء ولا تناقض. لذلك قيمتها عندك في جزء العلاقات والضرب الديكارتي والتجزئة فقط.</p>
+</section>
+
+<section id="rounds">
+  <h2>الجولات الأربع بين السطور</h2>
+  <p>كل جولة تبني على اللي قبلها: من «وش مكتوب في الورقة» إلى «وش يعني هذا لاختبارك أنت بالذات».</p>
+
+  <div class="round">
+    <div class="num">1</div>
+    <div>
+      <h3>السطح: وش في الورقة؟</h3>
+      <p>نبدأ بأهم ورقة: ميد٢ نوفمبر 2025، لأنه الوحيد اللي على نفس الكتاب ونفس صيغة الأسئلة. هذا تفكيكه فقرة فقرة:</p>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>#</th><th>العبارة</th><th>الحكم</th><th>الفصل</th><th>التقنية</th><th class="c">الدرجة</th><th>مصدرها</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td class="ltr">x, y same parity ⟺ x + y even</td><td><span class="chip v-t">صح</span></td><td>3–4</td><td>اتجاهان + حالات</td><td class="c">4</td><td>نظرية من الكتاب</td></tr>
+            <tr><td>2</td><td class="ltr">5 ∤ (n<sup>2</sup>+4) ⇒ 5 ∤ (n−1) and 5 ∤ (n+1)</td><td><span class="chip v-t">صح</span></td><td>4.1</td><td>عكس نقيض + دي مورجان + حالتان</td><td class="c">4</td><td>بأسلوب الكتاب</td></tr>
+            <tr><td>3</td><td class="ltr">A × (B ∪ C) = (A × B) ∪ (A × C)</td><td><span class="chip v-t">صح</span></td><td>4.6</td><td>احتواء مزدوج</td><td class="c">4</td><td>نظرية من الكتاب</td></tr>
+            <tr><td>4</td><td class="ltr">There is no smallest positive real number</td><td><span class="chip v-t">صح</span></td><td>5.2</td><td>تناقض</td><td class="c">3</td><td><strong>Ex 5 سلايد ف5 حرفياً</strong></td></tr>
+            <tr><td>5</td><td class="ltr">n odd ⇒ 3 | (n<sup>2</sup> − 1)</td><td><span class="chip v-f">خطأ</span></td><td>5.1</td><td>مثال مضاد <span class="m">n = 3</span></td><td class="c">2</td><td>نتيجة صحيحة بعد «تحريف»</td></tr>
+            <tr><td>6</td><td class="ltr">If 3 is even, then 3<sup>2</sup> = 9</td><td><span class="chip v-t">صح</span></td><td>3.1</td><td>برهان فارغ</td><td class="c">1</td><td>—</td></tr>
+            <tr><td>7</td><td class="ltr">a<sub>1</sub>=1, a<sub>2</sub>=3, a<sub>n</sub>=2a<sub>n−1</sub>−a<sub>n−2</sub> ⇒ a<sub>n</sub>=2n−1</td><td><span class="chip v-t">صح</span></td><td>6.3</td><td>استقراء قوي</td><td class="c">4</td><td><strong>Ex 6 سلايد ف6 حرفياً</strong></td></tr>
+            <tr><td>8</td><td>برهان مبدأ الاستقراء من الترتيب الحسن</td><td><span class="chip v-t">صح</span></td><td>6.1</td><td>تناقض + أصغر عنصر</td><td class="c">3</td><td><strong>نظرية في سلايد ف6 حرفياً</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li><strong>صيغة واحدة:</strong> كل فقرة فيها قرار قبل البرهان (صح أو خطأ). ما فيه تعاريف ولا «أكمل الفراغ» مثل الاختبارات العربية القديمة.</li>
+        <li><strong>الدرجات من 1 إلى 4.</strong> الأربع درجات راحت لبراهين فيها جزءان: اتجاهان، أو حالتان، أو احتواءان، أو حالتا أساس.</li>
+        <li><strong>التوزيع وقتها:</strong> 12 درجة للفصلين الجديدين (5 و6)، و13 للفصلين 3 و4.</li>
+        <li><strong>الحلول النموذجية منسوخة من السلايد تقريباً</strong>، حتى ترتيب الجمل. في الفقرة 7 مثلاً نفس عبارة السلايد: <span class="en">Since a<sub>2</sub> = 3, it follows that a<sub>k+1</sub> = 2k + 1 when k = 1.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="round">
+    <div class="num">2</div>
+    <div>
+      <h3>التكرار: وش يرجع كل مرة؟</h3>
+      <p>الجدول يوضح وين ظهر كل موضوع في الـ11 اختباراً. الرمز م = ميد ثاني، ن = نهائي، والرقم = السنة الهجرية ثم الفصل. العمود المظلل هو الأقرب لاختبارك.</p>
+      <div class="tbl">
+        <table class="matrix">
+          <thead>
+            <tr><th>الموضوع</th><th>م45-1</th><th>م45-2</th><th>م46-1</th><th>م46-2</th><th class="star">م47-1</th><th>ن43</th><th>ن45-1</th><th>ن45-2</th><th>ن46-1</th><th>ن46-2</th><th>ن47-1</th><th>المجموع</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>الضرب الديكارتي</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y star">✓</td><td class="n">·</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="n">·</td><td class="n">·</td><td><b>8</b> (الميد 5/5)</td></tr>
+            <tr><td>التجزئة</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="n star">·</td><td class="n">·</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td><b>9</b></td></tr>
+            <tr><td>تعريف العلاقة أو <span class="m">R<sup>−1</sup></span></td><td class="n">·</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="n star">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td><b>3</b></td></tr>
+            <tr><td>خواص العلاقات والتكافؤ</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="n star">·</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td><b>10</b></td></tr>
+            <tr><td>الاستقراء</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="y star">✓✓</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="y">✓</td><td class="n">·</td><td><b>2</b></td></tr>
+            <tr><td>التناقض</td><td class="n">·</td><td class="y">✓</td><td class="n">·</td><td class="n">·</td><td class="y star">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="n">·</td><td class="y">✓</td><td class="n">·</td><td><b>6</b></td></tr>
+            <tr><td>المثال المضاد</td><td class="n">·</td><td class="n">·</td><td class="y">✓✓</td><td class="n">·</td><td class="y star">✓</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td><b>2</b></td></tr>
+            <tr><td>الوجود</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n star">·</td><td class="y">✓</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td><b>1</b></td></tr>
+            <tr><td>زوجي وفردي وقسمة</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="y star">✓✓</td><td class="y">✓</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="y">✓</td><td><b>3</b></td></tr>
+            <tr><td>فارغ وتافه وتقييم برهان</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="y star">✓</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="y">✓</td><td><b>2</b></td></tr>
+            <tr><td>نفي العبارات</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n">·</td><td class="n star">·</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td><b>6</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li><strong>مفضّلات القسم اللي ما تغيّرت حتى لما تغيّر المنهج:</strong> الضرب الديكارتي (كل الميد الثاني الخمسة)، والتجزئة (9 من 11)، والعلاقات بأي شكل (10 من 11).</li>
+        <li><strong>لا تنخدع بقلة الاستقراء والتناقض في الجدول.</strong> المنهج القديم ما كان يحطها في الميد الثاني أصلاً. في المنهج الحالي (م47-1) أخذت الاستقراء والتناقض والمثال المضاد 12 درجة من 25.</li>
+        <li><strong>صيغة الأسئلة تغيّرت مع الكتاب الجديد:</strong> العربي كان تعاريف وأمثلة وأكمل الفراغ وبراهين. الحالي: ميد كله Prove or disprove، ونهائي فيه Show و Give an example و Evaluate the proof.</li>
+        <li><strong>السلايد هو بنك الأسئلة.</strong> ثلاث فقرات من ثمان في م47-1 منقولة بالنص، والباقي بصياغة الكتاب.</li>
+        <li><strong>R = R<sup>−1</sup> ⇒ تناظرية</strong> جاءت مرتين في الميد القديم، والعلاقة العكسية من درسك 9.1.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="round">
+    <div class="num">3</div>
+    <div>
+      <h3>عقل المصحح: وش يختبر فعلاً؟</h3>
+      <p><strong>كل فقرة تختبر تقنية برهان، مو موضوع.</strong> ورقة 1447 كانت قائمة تقنيات: اتجاهان، عكس نقيض مع حالات، احتواء مزدوج، تناقض، مثال مضاد، فارغ، استقراء قوي، برهان نظرية. توقّع نفس الفكرة مع تقنيات الفصول الجديدة اللي ما انسألت للحين: الوجود، نفي الوجود، الاستقراء العادي والعام، أصغر مثال مضاد.</p>
+
+      <h4>نمط «التحريف»: كيف تنصنع العبارة الخاطئة</h4>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>نوع التحريف</th><th>الأصل الصحيح</th><th>بعد التحريف (خاطئ)</th></tr></thead>
+          <tbody>
+            <tr><td>تغيير الرقم</td><td class="ltr">n odd ⇒ 8 | (n<sup>2</sup> − 1)</td><td class="ltr">n odd ⇒ 3 | (n<sup>2</sup> − 1)  <span class="muted">(1447)</span></td></tr>
+            <tr><td>حذف شرط البداية</td><td class="ltr">2<sup>n</sup> &gt; n<sup>2</sup> for n ≥ 5</td><td class="ltr">2<sup>n</sup> &gt; n<sup>2</sup> for every n ∈ ℕ</td></tr>
+            <tr><td>تغيير المجموعة</td><td class="ltr">∃ m, n ∈ ℤ : 2m + 7n = 1</td><td class="ltr">∃ m, n ∈ ℕ : 2m + 7n = 1  <span class="muted">(نهائي 1443)</span></td></tr>
+            <tr><td>⊆ تصير =</td><td class="ltr">dom(R ∩ S) ⊆ dom R ∩ dom S</td><td class="ltr">dom(R ∩ S) = dom R ∩ dom S</td></tr>
+            <tr><td>∩ تصير ∪</td><td class="ltr">(A×B) ∩ (C×D) = (A∩C) × (B∩D)</td><td class="ltr">(A×B) ∪ (C×D) = (A∪C) × (B∪D)</td></tr>
+            <tr><td>عكس الاتجاه</td><td class="ltr">4 | n ⇒ 4 | n<sup>2</sup></td><td class="ltr">4 | n<sup>2</sup> ⇒ 4 | n  <span class="muted">(n = 2)</span></td></tr>
+            <tr><td>∃ تصير ∀</td><td class="ltr">∃ x ∈ ℝ : x<sup>2</sup> = x</td><td class="ltr">∀ x ∈ ℝ : x<sup>2</sup> = x</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted">ملاحظة: نهائي 1443 طلب «أثبت أنه يوجد عددان طبيعيان m و n بحيث 2m + 7n = 1»، وهي خاطئة كما كُتبت، لأن أصغر قيمة لها 9. لو جاءت بصيغة Prove or disprove فالجواب نفي.</p>
+
+      <h4>الدرجة تحدد الطول</h4>
+      <div class="tbl">
+        <table>
+          <thead><tr><th class="c">الدرجة</th><th>اللي يبيه المصحح</th><th>الوقت</th></tr></thead>
+          <tbody>
+            <tr><td class="c">1</td><td>سطر حكم + سبب واحد (فارغ أو تافه)</td><td>دقيقة إلى دقيقتين</td></tr>
+            <tr><td class="c">2</td><td>مثال مضاد محسوب، أو برهان من ثلاثة أسطر</td><td>4–6 دقائق</td></tr>
+            <tr><td class="c">3</td><td>برهان كامل بقالب واحد (تناقض، استقراء عادي، نظرية)</td><td>8–10 دقائق</td></tr>
+            <tr><td class="c">4</td><td>برهان بجزأين: اتجاهان، حالتان، أساسان، احتواءان</td><td>12–14 دقيقة</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>كلمات يدوّر عليها المصحح</h4>
+      <p>من الحلول النموذجية: <span class="en">Assume, to the contrary</span> · <span class="en">This is a contradiction</span> · <span class="en">Since a + b ∈ ℤ</span> · <span class="en">Base case / Assume P(k)</span> · <span class="en">By the Principle of Mathematical Induction</span> · <span class="en">By the Strong Principle</span> · <span class="en">Without loss of generality</span> · <span class="en">say the former</span>. نسيان جملة الختام أو حالة الأساس يكلّف درجة.</p>
+    </div>
+  </div>
+
+  <div class="round">
+    <div class="num">4</div>
+    <div>
+      <h3>أنت بالذات: وش يعني هذا لاختبارك؟</h3>
+      <p><strong>المعطيات:</strong> ميد١ عندك كان الفصول 1–4. ميد٢ من 1 إلى 9.1. يعني الجديد عليك: ف5 (5 دروس) وف6 (3 دروس) و9.1 (درس واحد).</p>
+      <p><strong>قراءة تجربة 1447:</strong> ميدهم (5 نوفمبر) وقف عند 6.3، ونص درجاته كانت من ف3–4. ما نعرف نطاق ميد١ عندهم، لكن غياب ف1–2 تماماً من ورقتهم يرجّح أن ميد١ عندهم كان أصغر من حقك (ف1–2 أو 1–3)، فكان ف3–4 «جديداً» عليهم. هذا يدعم حدسك: الميد الثاني يركّز على اللي بعد الميد الأول.</p>
+      <p><strong>ليش 9.1 بياخذ فقرة أو فقرتين بس:</strong> درس واحد، تعريفي، وبراهينه قصيرة. توقّع 3–4 درجات.</p>
+      <p><strong>القديم يدخل مدموجاً:</strong> أي تناقض أو استقراء يحتاج جبر الزوجي والقسمة (ف3–4). أي مثال مضاد يحتاج نفي ∀ (ف2). والعلاقة تحتاج <span class="m">A × B</span> (ف1.6 و4.6). فمذاكرة الجديد تراجع لك القديم تلقائياً.</p>
+
+      <h4>التوزيع المتوقع للدرجات (من 25)</h4>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>الجزء</th><th class="c">درجات متوقعة</th><th>الشكل المرجّح</th></tr></thead>
+          <tbody>
+            <tr><td>ف6 الاستقراء</td><td class="c">8–10</td><td>استقراء عادي (مجموع أو قسمة أو متباينة) + استقراء قوي + فقرة نظرية</td></tr>
+            <tr><td>ف5 الوجود والتناقض</td><td class="c">6–8</td><td>تناقض + مثال مضاد لعبارة محرّفة + وجود أو نفي وجود</td></tr>
+            <tr><td><span class="m">9.1</span> العلاقات</td><td class="c">3–4</td><td>حساب dom و range و <span class="m">R<sup>−1</sup></span>، أو برهان قصير، أو عدّ العلاقات</td></tr>
+            <tr><td>ف1–4 مباشرة</td><td class="c">3–7</td><td>فارغ أو تافه، الضرب الديكارتي، زوجي وفردي</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note key"><span class="tag">فقرات الدمج</span>اختبار تراكمي يحب فقرة تجمع فصول. أقوى المرشحين: «عدد العلاقات من A إلى B يساوي <span class="m">2<sup>|A|·|B|</sup></span>» (ف1 مجموعة القوة + نظرية <span class="m">|P(A)| = 2<sup>n</sup></span> من ف6 + تعريف 9.1)، و«إذا <span class="m">A × B = ∅</span> فالعلاقة الوحيدة من A إلى B هي ∅».</div>
+    </div>
+  </div>
+</section>
+
+<section id="predict">
+  <h2>التوقعات مرتبة</h2>
+  <p>تقديري مبني على الأنماط فوق، مو تسريب. الترتيب حسب احتمال الظهور:</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>الفقرة المتوقعة</th><th>الفصل</th><th>الاحتمال</th><th>وين تذاكرها</th></tr></thead>
+      <tbody>
+        <tr><td>برهان استقراء عادي: مجموع، أو قسمة على عدد، أو متباينة</td><td>6.1–6.2</td><td><span class="chip p-vh">شبه مؤكد</span></td><td><a href="#ch6">ف6</a></td></tr>
+        <tr><td>عبارة محرّفة تحتاج مثالاً مضاداً</td><td>5.1</td><td><span class="chip p-vh">شبه مؤكد</span></td><td><a href="#ch5">ف5</a></td></tr>
+        <tr><td>برهان بالتناقض من أمثلة السلايد (Ex 6، Ex 7، <span class="m">√2</span>)</td><td>5.2</td><td><span class="chip p-vh">شبه مؤكد</span></td><td><a href="#ch5">ف5</a></td></tr>
+        <tr><td>فقرة من 9.1: dom و range و <span class="m">R<sup>−1</sup></span> أو برهان عليها</td><td>9.1</td><td><span class="chip p-vh">شبه مؤكد</span></td><td><a href="#ch9">9.1</a></td></tr>
+        <tr><td>استقراء قوي: متتابعة تكرارية (Ex 7) أو <span class="m">n = 3a + 5b</span> (Ex 8)</td><td>6.3</td><td><span class="chip p-h">عالٍ</span></td><td><a href="#ch6">ف6</a></td></tr>
+        <tr><td>نفي عبارة وجود (Ex 13–15)</td><td>5.5</td><td><span class="chip p-h">عالٍ</span></td><td><a href="#ch5">ف5</a></td></tr>
+        <tr><td>فقرة نظرية: برهان مبدأ الاستقراء، أو وحدانية أصغر عنصر، أو <span class="m">|P(A)| = 2<sup>n</sup></span></td><td>6.1–6.2</td><td><span class="chip p-h">عالٍ</span></td><td><a href="#ch6">ف6</a></td></tr>
+        <tr><td>فقرة ضرب ديكارتي أو ربطه بالعلاقات</td><td>1.6، 4.6</td><td><span class="chip p-h">عالٍ</span></td><td><a href="#bridges">الجسور</a></td></tr>
+        <tr><td>فقرة درجة واحدة: فارغ أو تافه</td><td>3.1</td><td><span class="chip p-h">عالٍ</span></td><td><a href="#bridges">الجسور</a></td></tr>
+        <tr><td>برهان وجود: مثال صريح، أو IVT، أو وحدانية</td><td>5.4</td><td><span class="chip p-m">متوسط</span></td><td><a href="#ch5">ف5</a></td></tr>
+        <tr><td>أصغر مثال مضاد (Ex 9، Ex 10)</td><td>6.3</td><td><span class="chip p-m">متوسط</span></td><td><a href="#ch6">ف6</a></td></tr>
+        <tr><td>زوجي وفردي أو قسمة بصيغة ⟺ أو عكس نقيض</td><td>3–4</td><td><span class="chip p-m">متوسط</span></td><td><a href="#bridges">الجسور</a></td></tr>
+        <tr><td>التجزئة: هل P تجزئة؟</td><td>1.5</td><td><span class="chip p-m">متوسط</span></td><td><a href="#bridges">الجسور</a></td></tr>
+        <tr><td>خواص العلاقات (انعكاسية، تناظرية، متعدية)</td><td>9.2</td><td><span class="chip p-l">منخفض إلا إذا انشرحت</span></td><td><a href="#ch9">9.1</a></td></tr>
+        <tr><td>تقييم برهان، أو نهايات ε–δ</td><td>3.5، 14.3</td><td><span class="chip p-l">منخفض</span></td><td><a href="#bridges">الجسور</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="method">
+  <h2>طريقة الحل: Prove or disprove في 30 ثانية</h2>
+  <ol>
+    <li><strong>صنّف العبارة:</strong> ∀ أو ∃ أو <span class="m">P ⇒ Q</span> أو ⟺ أو تساوي مجموعات أو سؤال حسابي.</li>
+    <li><strong>اختبر قيماً صغيرة:</strong> <span class="m">n = 1, 2, 3, 4</span>، وصفر وسالب لو المجموعة ℤ، والمجموعة الخالية في أسئلة المجموعات.</li>
+    <li><strong>اسأل نفسك:</strong> هل تذكّرني بمثال من السلايد؟ وش اللي تغيّر فيها؟ (ارجع لجدول التحريف.)</li>
+    <li><strong>قرّر:</strong> لقيت مثالاً مضاداً؟ اكتب False وحسابه ووقّف. ما لقيت؟ اختر التقنية من الجدول تحت.</li>
+    <li><strong>اكتب سطر الحكم أول شي:</strong> <span class="en">True. Proof: …</span> أو <span class="en">False. Counterexample: …</span></li>
+  </ol>
+
+  <h3>الكلمة في السؤال تحدد التقنية</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>لما تشوف…</th><th>التقنية</th><th>أول سطر تكتبه</th></tr></thead>
+      <tbody>
+        <tr><td>لا يوجد، غير نسبي، لا يقسم، no smallest</td><td>تناقض</td><td class="ltr">Assume, to the contrary, that …</td></tr>
+        <tr><td>لكل <span class="m">n ≥ m</span> مع مجموع أو قسمة أو متباينة</td><td>استقراء</td><td class="ltr">We proceed by induction. Since …, P(m) is true.</td></tr>
+        <tr><td>متتابعة تكرارية بحدّين، أو <span class="m">n = 3a + 5b</span></td><td>استقراء قوي</td><td class="ltr">Assume P(i) holds for all i with 1 ≤ i ≤ k.</td></tr>
+        <tr><td>There exists …</td><td>وجود</td><td class="ltr">Take x = … . Then …</td></tr>
+        <tr><td>عبارة ∃ وتبي تنفيها</td><td>برهان ∀ على النفي</td><td class="ltr">Let n ∈ ℤ. We show that … for every n.</td></tr>
+        <tr><td><span class="m">P ⇒ Q</span> والنتيجة سالبة (∤، فردي، ≠)</td><td>عكس نقيض</td><td class="ltr">Assume ∼Q. We show ∼P.</td></tr>
+        <tr><td>if and only if</td><td>اتجاهان</td><td class="ltr">First, assume … . Conversely, …</td></tr>
+        <tr><td>تساوي مجموعتين</td><td>احتواء مزدوج أو سلسلة ⟺</td><td class="ltr">We show X ⊆ Y and Y ⊆ X.</td></tr>
+        <tr><td>unique</td><td>افترض اثنين مختلفين</td><td class="ltr">Assume a and b are distinct solutions, say a &lt; b.</td></tr>
+        <tr><td>If [شي خاطئ أصلاً] then …</td><td>فارغ</td><td class="ltr">Since P is false, the implication is true.</td></tr>
+        <tr><td>dom، range، <span class="m">R<sup>−1</sup></span></td><td>التعريف مباشرة</td><td class="ltr">dom(R) = {a ∈ A : (a, b) ∈ R for some b ∈ B} = …</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="ch5">
+  <h2>فصل 5: الوجود والبرهان بالتناقض</h2>
+  <p>الفصل كله يدور حول سؤال واحد: كيف أثبت أو أنفي عبارة فيها ∀ أو ∃؟ هذا الجدول هو أهم تريك في الفصل:</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>تبي</th><th>العبارة</th><th>يكفيك</th><th>الدرس</th></tr></thead>
+      <tbody>
+        <tr><td>تنفي</td><td class="ltr">∀x ∈ S, R(x)</td><td>مثال مضاد واحد</td><td>5.1</td></tr>
+        <tr><td>تثبت</td><td class="ltr">∃x ∈ S, R(x)</td><td>مثال واحد صريح، أو حجة وجود</td><td>5.4</td></tr>
+        <tr><td>تنفي</td><td class="ltr">∃x ∈ S, R(x)</td><td><strong>برهان أن <span class="m">∀x ∈ S, ∼R(x)</span>.</strong> المثال هنا ما يكفي.</td><td>5.5</td></tr>
+        <tr><td>تثبت</td><td class="ltr">∀x ∈ S, R(x)</td><td>مباشر، أو عكس نقيض، أو تناقض</td><td>5.2–5.3</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub" id="c51">5.1 المثال المضاد</h3>
+  <p>لنفي <span class="m">∀x ∈ S, R(x)</span> يكفي عنصر واحد من S تكون عنده <span class="m">R(x)</span> خاطئة. اكتب الحساب كامل.</p>
+  <div class="note trap"><span class="tag">فخ</span>في عبارة <span class="m">P(x) ⇒ Q(x)</span>، المثال المضاد لازم يحقق الفرض P ويكسر النتيجة Q. لو اخترت قيمة الفرض فيها خاطئ، فالعبارة صحيحة عندها وما نفيت شي.</div>
+  <div class="note trick"><span class="tag">قائمة المشتبه بهم</span>جرّب بالترتيب: 0، 1، −1، 2، 3، ½، <span class="m">√2</span>، قيم متساوية <span class="m">a = b</span>، قيمة تخلي المقام صفراً، المجموعة الخالية، مجموعة بعنصر واحد. في أسئلة القسمة على 3 جرّب مضاعفات 3، وعلى 4 جرّب الأعداد الزوجية.</div>
+  <p>الحل النموذجي لفقرة 1447 (درجتان):</p>
+  <div class="proof" lang="en">
+    <p><span class="lbl">False.</span> Let n = 3. Then n is an odd positive integer, but n<sup>2</sup> − 1 = 8 and 3 ∤ 8. Hence n = 3 is a counterexample.</p>
+  </div>
+  <p>ومن السلايد: «إذا <span class="m">4 | (n<sup>2</sup> − 1)</span> فإن <span class="m">4 | (n − 1)</span>»، والمثال <span class="m">n = 3</span>: الفرض <span class="m">4 | 8</span> صحيح، والنتيجة <span class="m">4 | 2</span> خاطئة. و«<span class="m">a<sup>b<sup>c</sup></sup> = (a<sup>b</sup>)<sup>c</sup></span>» تنهدم عند <span class="m">a = b = 2, c = 3</span>: <span class="m">256 ≠ 64</span>.</p>
+
+  <h3 class="sub" id="c52">5.2 البرهان بالتناقض</h3>
+  <p><strong>متى تستخدمه؟</strong> لما تكون النتيجة «سالبة»: لا يوجد، غير نسبي، لا يقسم، لا نهائي، وحيد. وبدايته نفي صحيح للعبارة:</p>
+  <div class="proof" lang="en">
+    <p class="eq">∼(∀x ∈ S, P(x) ⇒ Q(x)) ≡ ∃x ∈ S, P(x) ∧ ∼Q(x)</p>
+    <p><span class="lbl">Template.</span> Assume, to the contrary, that there exists x ∈ S such that P(x) is true and Q(x) is false. … This is a contradiction. Therefore, for every x ∈ S, P(x) ⇒ Q(x).</p>
+  </div>
+  <div class="note trick"><span class="tag">تناقضات جاهزة</span>أغلب براهين الفصل تنتهي بواحد من هذي: <span class="m">4 | 2</span>، <span class="m">7 | 100</span>، عدد زوجي وفردي في نفس الوقت، كسر في أبسط صورة وبسطه ومقامه زوجيان، أو عدد أصغر من «الأصغر». إذا عرفت وين تبي توصل، الطريق يقصر.</div>
+
+  <h4>من السلايد Ex 5 (جاء في 1447 حرفياً، 3 درجات)</h4>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Result.</span> There is no smallest positive real number.</p>
+    <p class="end"><span class="lbl">Proof.</span> Assume, to the contrary, that there is a smallest positive real number, say r. Since 0 &lt; r/2 &lt; r, it follows that r/2 is a positive real number that is smaller than r. This, however, is a contradiction.</p>
+  </div>
+  <p class="small muted">نفس الفكرة: «لا يوجد أصغر عدد نسبي موجب» (r/2 نسبي)، و«لا يوجد أكبر عدد صحيح» (n + 1 أكبر).</p>
+
+  <h4>Ex 6: مجموع ثلاثة أعداد زوجية</h4>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Result.</span> No odd integer can be expressed as the sum of three even integers.</p>
+    <p class="end"><span class="lbl">Proof.</span> Assume, to the contrary, that there exists an odd integer n which can be expressed as the sum of three even integers x, y and z. Then x = 2a, y = 2b and z = 2c with a, b, c ∈ ℤ. Therefore, n = x + y + z = 2a + 2b + 2c = 2(a + b + c). Since a + b + c is an integer, n is even. This is a contradiction.</p>
+  </div>
+
+  <h4>Ex 7: المرشح الأقوى من الفصل</h4>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Result.</span> If a is an even integer and b is an odd integer, then 4 ∤ (a<sup>2</sup> + 2b<sup>2</sup>).</p>
+    <p><span class="lbl">Proof.</span> Assume, to the contrary, that there exist an even integer a and an odd integer b such that 4 | (a<sup>2</sup> + 2b<sup>2</sup>). Thus a = 2x, b = 2y + 1 and a<sup>2</sup> + 2b<sup>2</sup> = 4z for some integers x, y and z. Hence</p>
+    <p class="eq">a<sup>2</sup> + 2b<sup>2</sup> = (2x)<sup>2</sup> + 2(2y + 1)<sup>2</sup> = 4x<sup>2</sup> + 8y<sup>2</sup> + 8y + 2 = 4z.</p>
+    <p class="end">So 2 = 4z − 4x<sup>2</sup> − 8y<sup>2</sup> − 8y = 4(z − x<sup>2</sup> − 2y<sup>2</sup> − 2y). Since z − x<sup>2</sup> − 2y<sup>2</sup> − 2y is an integer, 4 | 2, which is impossible.</p>
+  </div>
+
+  <h4>نظرية <span class="m">√2</span> غير نسبي</h4>
+  <div class="proof" lang="en">
+    <p class="end"><span class="lbl">Proof.</span> Assume, to the contrary, that √2 is rational. Then √2 = a/b, where a, b ∈ ℤ and b ≠ 0, and we may assume that a/b is in lowest terms. Then 2 = a<sup>2</sup>/b<sup>2</sup>, so a<sup>2</sup> = 2b<sup>2</sup>. Since b<sup>2</sup> is an integer, a<sup>2</sup> is even, and so a is even. So a = 2c for some c ∈ ℤ. Thus (2c)<sup>2</sup> = 2b<sup>2</sup>, so 4c<sup>2</sup> = 2b<sup>2</sup> and b<sup>2</sup> = 2c<sup>2</sup>. Because c<sup>2</sup> is an integer, b<sup>2</sup> is even, and so b is even. Since a and b are both even, each has 2 as a divisor, which contradicts that a/b is in lowest terms.</p>
+  </div>
+  <div class="note trick"><span class="tag">تعميم</span>نفس الهيكل يمشي على <span class="m">√3</span> و<span class="m">√5</span> و<span class="m">∛2</span> و<span class="m">∛7</span> (جاءت في نهائي 1446). اللي يتغيّر بس هي «المساعدة»: بدل «a<sup>2</sup> زوجي ⇒ a زوجي» تقول «<span class="m">3 | a<sup>2</sup> ⇒ 3 | a</span>». وبرهانها بعكس النقيض: لو <span class="m">3 ∤ a</span> فإن <span class="m">a = 3q + 1</span> أو <span class="m">3q + 2</span>، و<span class="m">a<sup>2</sup></span> يطلع باقيه 1 في الحالتين.</div>
+
+  <h4>نماذج إضافية قصيرة</h4>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Result.</span> If r is rational and x is irrational, then r + x is irrational.</p>
+    <p class="end"><span class="lbl">Proof.</span> Assume, to the contrary, that r + x is rational. Then r = a/b and r + x = c/d for some integers a, b, c, d with b ≠ 0 and d ≠ 0. So x = c/d − a/b = (bc − ad)/(bd). Since bc − ad and bd are integers and bd ≠ 0, x is rational, a contradiction.</p>
+  </div>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Result.</span> There do not exist integers m and n such that 14m + 21n = 100.</p>
+    <p class="end"><span class="lbl">Proof.</span> Assume, to the contrary, that there exist integers m and n such that 14m + 21n = 100. Then 100 = 7(2m + 3n). Since 2m + 3n is an integer, 7 | 100, which is a contradiction.</p>
+  </div>
+  <div class="note trap"><span class="tag">فخ</span>«مجموع عددين غير نسبيين غير نسبي» خاطئة: <span class="m">√2 + (−√2) = 0</span>. و«حاصل ضربهما غير نسبي» خاطئة: <span class="m">√2 · √2 = 2</span>. أما «نسبي + غير نسبي» فصحيحة.</div>
+
+  <h3 class="sub" id="c53">5.3 التقنيات الثلاث على مثال واحد</h3>
+  <p>لعبارة <span class="m">P ⇒ Q</span>: المباشر يفترض P ويوصل لـ Q. عكس النقيض يفترض ∼Q ويوصل لـ ∼P. التناقض يفترض P و∼Q مع بعض ويوصل لتناقض. لو كانت ∼Q تعطيك صيغة جبرية حلوة (مثل «n فردي» = <span class="m">2a + 1</span>) فعكس النقيض أسهل غالباً.</p>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Result.</span> Let n ∈ ℤ. If 3n + 2 is even, then n is even.</p>
+    <p><span class="lbl">Direct.</span> Assume 3n + 2 is even. Then 3n + 2 = 2k for some k ∈ ℤ, so n = 2k − 2n − 2 = 2(k − n − 1). Since k − n − 1 ∈ ℤ, n is even.</p>
+    <p><span class="lbl">Contrapositive.</span> Assume n is odd, so n = 2a + 1 with a ∈ ℤ. Then 3n + 2 = 6a + 5 = 2(3a + 2) + 1. Since 3a + 2 ∈ ℤ, 3n + 2 is odd.</p>
+    <p><span class="lbl">Contradiction.</span> Assume 3n + 2 is even and n is odd, n = 2a + 1. Then 3n + 2 = 2(3a + 2) + 1 is odd. So 3n + 2 is both even and odd, a contradiction.</p>
+  </div>
+
+  <h3 class="sub" id="c54">5.4 برهان الوجود</h3>
+  <ul>
+    <li><strong>بنّاء:</strong> أعطِ الشي وتحقق منه. «يوجد عدد صحيح مكعبه يساوي مربعه»: <span class="m">1<sup>3</sup> = 1<sup>2</sup> = 1</span>. «يوجد a, b حقيقيان بحيث <span class="m">(a + b)<sup>2</sup> = a<sup>2</sup> + b<sup>2</sup></span>»: <span class="m">a = 1, b = 0</span>. «يوجد m, n صحيحان بحيث <span class="m">2m + 7n = 1</span>»: <span class="m">m = 4, n = −1</span>.</li>
+    <li><strong>غير بنّاء بالحالات:</strong> يوجد غير نسبيين a و b بحيث <span class="m">a<sup>b</sup></span> نسبي. إذا <span class="m">√2<sup>√2</sup></span> نسبي خذ <span class="m">a = b = √2</span>. وإلا خذ <span class="m">a = √2<sup>√2</sup>, b = √2</span>، فيصير <span class="m">a<sup>b</sup> = √2<sup>2</sup> = 2</span>.</li>
+    <li><strong>غير بنّاء بنظرية القيمة المتوسطة (IVT):</strong> القالب تحت.</li>
+  </ul>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Result.</span> The equation x<sup>5</sup> + 2x − 5 = 0 has a real solution between x = 1 and x = 2.</p>
+    <p class="end"><span class="lbl">Proof.</span> Let f(x) = x<sup>5</sup> + 2x − 5. Since f is a polynomial, it is continuous on [1, 2]. Now f(1) = −2 and f(2) = 31. Since 0 is between f(1) and f(2), by the Intermediate Value Theorem there is c ∈ (1, 2) such that f(c) = c<sup>5</sup> + 2c − 5 = 0.</p>
+  </div>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Uniqueness.</span> Assume, to the contrary, that the equation has two distinct solutions a and b between 1 and 2, say a &lt; b. Since 1 &lt; a &lt; b &lt; 2, we get a<sup>5</sup> + 2a − 5 &lt; b<sup>5</sup> + 2b − 5.</p>
+    <p class="end">But a<sup>5</sup> + 2a − 5 = 0 = b<sup>5</sup> + 2b − 5, so 0 &lt; 0, a contradiction.</p>
+  </div>
+  <div class="note trap"><span class="tag">فخ</span>انتبه للمجموعة. «يوجد m, n في ℤ بحيث <span class="m">2m + 7n = 1</span>» صحيحة (<span class="m">8 − 7 = 1</span>). لكن في ℕ خاطئة لأن <span class="m">2m + 7n ≥ 9</span>.</div>
+
+  <h3 class="sub" id="c55">5.5 نفي عبارة وجود</h3>
+  <p><span class="m">∼(∃x ∈ S, R(x)) ≡ ∀x ∈ S, ∼R(x)</span>. يعني لنفي «يوجد» لازم تبرهن «لكل». هنا المثال الواحد ما يجيب ولا درجة.</p>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Disprove.</span> There exists an odd integer n such that n<sup>2</sup> + 2n + 3 is odd.</p>
+    <p class="end"><span class="lbl">Solution.</span> We show that if n is an odd integer, then n<sup>2</sup> + 2n + 3 is even. Let n = 2k + 1 with k ∈ ℤ. Then n<sup>2</sup> + 2n + 3 = (2k + 1)<sup>2</sup> + 2(2k + 1) + 3 = 4k<sup>2</sup> + 8k + 6 = 2(2k<sup>2</sup> + 4k + 3). Since 2k<sup>2</sup> + 4k + 3 is an integer, n<sup>2</sup> + 2n + 3 is even.</p>
+  </div>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Disprove.</span> There is a real number x such that x<sup>6</sup> + 2x<sup>4</sup> + x<sup>2</sup> + 2 = 0.</p>
+    <p class="end"><span class="lbl">Solution.</span> Let x ∈ ℝ. Since x<sup>6</sup>, x<sup>4</sup> and x<sup>2</sup> are even powers, they are all ≥ 0. Therefore x<sup>6</sup> + 2x<sup>4</sup> + x<sup>2</sup> + 2 ≥ 2 &gt; 0, so the equation has no real solution.</p>
+  </div>
+  <div class="note trick"><span class="tag">تريك الزوجية</span>Ex 15 في السلايد («يوجد n بحيث <span class="m">n<sup>3</sup> − n + 1</span> زوجي») حلّه بالحالتين. أسرع منه: <span class="m">n<sup>3</sup> − n = (n − 1)n(n + 1)</span> حاصل ضرب أعداد متتالية فيه عدد زوجي، فهو زوجي دائماً، و<span class="m">n<sup>3</sup> − n + 1</span> فردي دائماً. ونفس الشي <span class="m">n<sup>2</sup> + n = n(n + 1)</span> زوجي دائماً. اذكر سبب الزوجية في سطر (أحد العددين المتتاليين زوجي).</div>
+</section>
+
+<section id="ch6">
+  <h2>فصل 6: الاستقراء الرياضي</h2>
+  <p>أكبر فصل جديد عليك، وتوقّع له 8 إلى 10 درجات. فيه ثلاثة قوالب، وكل قالب له نوع أسئلة.</p>
+
+  <h3 class="sub" id="c60">التعاريف الأساسية: الترتيب الحسن</h3>
+  <ul>
+    <li><strong>Least element:</strong> العدد m في A هو أصغر عنصر إذا <span class="m">x ≥ m</span> لكل <span class="m">x ∈ A</span>.</li>
+    <li><strong>Well-ordered:</strong> مجموعة غير خالية من الأعداد الحقيقية، كل مجموعة جزئية غير خالية منها لها أصغر عنصر.</li>
+    <li><strong>Well-Ordering Principle:</strong> ℕ مرتبة ترتيباً حسناً. هذه مسلّمة (axiom)، ما تنبرهن.</li>
+  </ul>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>العبارة</th><th>الحكم</th><th>السبب</th></tr></thead>
+      <tbody>
+        <tr><td class="ltr">ℕ has a least element</td><td><span class="chip v-t">صح</span></td><td>العدد 1</td></tr>
+        <tr><td class="ltr">[0, 1] has a least element</td><td><span class="chip v-t">صح</span></td><td>العدد 0</td></tr>
+        <tr><td class="ltr">(0, 1) has a least element</td><td><span class="chip v-f">خطأ</span></td><td>لأي x فيها، x/2 أصغر</td></tr>
+        <tr><td class="ltr">{1/n : n ∈ ℕ} has a least element</td><td><span class="chip v-f">خطأ</span></td><td>فيها أكبر عنصر (1) بس</td></tr>
+        <tr><td class="ltr">[0, 1] is well-ordered</td><td><span class="chip v-f">خطأ</span></td><td>(0, 1) جزئية منها بدون أصغر عنصر</td></tr>
+        <tr><td class="ltr">ℤ is well-ordered</td><td><span class="chip v-f">خطأ</span></td><td>ℤ نفسها ما لها أصغر عنصر</td></tr>
+        <tr><td class="ltr">Every nonempty finite set of reals is well-ordered</td><td><span class="chip v-t">صح</span></td><td>مثل {2, 3, 6, 10}</td></tr>
+        <tr><td class="ltr">{i ∈ ℤ : i ≥ m} is well-ordered</td><td><span class="chip v-t">صح</span></td><td>نظرية، وهي أساس الاستقراء العام</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Theorem.</span> If a set A of real numbers has a least element, then A has a unique least element.</p>
+    <p class="end"><span class="lbl">Proof.</span> Let m<sub>1</sub> and m<sub>2</sub> be least elements of A. Since m<sub>1</sub> is a least element and m<sub>2</sub> ∈ A, we have m<sub>2</sub> ≥ m<sub>1</sub>. Since m<sub>2</sub> is a least element and m<sub>1</sub> ∈ A, we have m<sub>1</sub> ≥ m<sub>2</sub>. Therefore m<sub>1</sub> = m<sub>2</sub>.</p>
+  </div>
+
+  <h3 class="sub" id="c61">6.1 مبدأ الاستقراء</h3>
+  <div class="note key"><span class="tag">احفظه بالحرف</span>برهان مبدأ الاستقراء جاء في 1447 بثلاث درجات. ممكن يرجع هو، أو يجي برهان قريب منه بنفس الفكرة.</div>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Theorem (PMI).</span> For each positive integer n, let P(n) be a statement. If (1) P(1) is true and (2) the implication P(k) ⇒ P(k + 1) is true for every positive integer k, then P(n) is true for every positive integer n.</p>
+    <p class="end"><span class="lbl">Proof.</span> Assume, to the contrary, that the theorem is false. Then conditions (1) and (2) are satisfied but there exist some positive integers n for which P(n) is a false statement. Let S = {n ∈ ℕ : P(n) is false}. Since S is a nonempty subset of ℕ, it follows by the Well-Ordering Principle that S contains a least element s. Since P(1) is true, 1 ∉ S. Thus s ≥ 2 and s − 1 ∈ ℕ. Therefore s − 1 ∉ S, and so P(s − 1) is a true statement. By condition (2), P(s) is also true, and so s ∉ S. This, however, contradicts our assumption that s ∈ S.</p>
+  </div>
+  <div class="note trick"><span class="tag">سلسلة للحفظ</span>S مجموعة الأعداد اللي تفشل ← غير خالية، فلها أصغر عنصر s (الترتيب الحسن) ← <span class="m">s ≠ 1</span> لأن P(1) صحيحة ← <span class="m">s − 1</span> مو في S لأنه أصغر من s ← <span class="m">P(s − 1)</span> صحيحة ← الشرط (2) يعطي P(s) صحيحة ← تناقض مع <span class="m">s ∈ S</span>.</div>
+
+  <h4>القالب اللي ياخذ الدرجة كاملة</h4>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Proof.</span> We proceed by induction. <em>[Base]</em> Since …, P(1) is true.</p>
+    <p><em>[Hypothesis]</em> Assume that P(k) is true for an arbitrary positive integer k, that is, assume … .</p>
+    <p><em>[Goal]</em> We show that P(k + 1) is true, that is, … .</p>
+    <p><em>[Step]</em> Observe that … = … (use the hypothesis here) … = … , as desired.</p>
+    <p><em>[Conclusion]</em> By the Principle of Mathematical Induction, P(n) is true for every positive integer n.</p>
+  </div>
+
+  <h4>نموذج: مجموع الأعداد الفردية (جاء في نهائي 1446)</h4>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Result.</span> For every positive integer n, 1 + 3 + 5 + ⋯ + (2n − 1) = n<sup>2</sup>.</p>
+    <p><span class="lbl">Proof.</span> We proceed by induction. Since 1 = 1<sup>2</sup>, the statement is true for n = 1. Assume that 1 + 3 + 5 + ⋯ + (2k − 1) = k<sup>2</sup> for some positive integer k. We show that 1 + 3 + 5 + ⋯ + (2k + 1) = (k + 1)<sup>2</sup>. Observe that</p>
+    <p class="eq">1 + 3 + ⋯ + (2k − 1) + (2k + 1) = k<sup>2</sup> + (2k + 1) = (k + 1)<sup>2</sup>.</p>
+    <p class="end">By the Principle of Mathematical Induction, 1 + 3 + 5 + ⋯ + (2n − 1) = n<sup>2</sup> for every positive integer n.</p>
+  </div>
+
+  <div class="note trick"><span class="tag">تريكات الجبر</span>
+    <ul>
+      <li>اكتب <span class="m">P(k + 1)</span> كاملة قبل ما تبدأ: بدّل n بـ <span class="m">k + 1</span> في الطرفين. الحد الأخير في المجموع يصير <span class="m">2(k + 1) − 1 = 2k + 1</span>.</li>
+      <li>افصل الحد الأخير: <span class="m">(1 + ⋯ + k) + (k + 1)</span>، وعوّض الفرض في القوس.</li>
+      <li>خذ <span class="m">(k + 1)</span> عاملاً مشتركاً بدل ما تفك كل شي: <span class="m">k(k + 1)/2 + (k + 1) = (k + 1)(k + 2)/2</span>.</li>
+      <li>في الكسور: وحّد المقامات، ثم حلّل البسط وتوقّع العامل اللي بيختصر. في Ex 2 البسط <span class="m">k<sup>2</sup> + 3k + 2 = (k + 1)(k + 2)</span>.</li>
+      <li>تأكد من الصيغة بسرعة عند <span class="m">n = 1, 2</span> قبل ما تبدأ. لو فشلت فالعبارة خاطئة وجوابها مثال مضاد.</li>
+    </ul>
+  </div>
+  <p>مجاميع لازم تعرفها: <span class="m">1 + 2 + ⋯ + n = n(n + 1)/2</span>، <span class="m">1 + 3 + ⋯ + (2n − 1) = n<sup>2</sup></span>، <span class="m">1<sup>2</sup> + 2<sup>2</sup> + ⋯ + n<sup>2</sup> = n(n + 1)(2n + 1)/6</span>، <span class="m">1 + 2 + 2<sup>2</sup> + ⋯ + 2<sup>n</sup> = 2<sup>n+1</sup> − 1</span>، <span class="m">1/(1·2) + ⋯ + 1/(n(n + 1)) = n/(n + 1)</span>، ومن السلايد <span class="m">1/(2·3) + ⋯ + 1/((n + 1)(n + 2)) = n/(2n + 4)</span>.</p>
+
+  <h3 class="sub" id="c62">6.2 الاستقراء العام (بداية من m)</h3>
+  <p>نفس القالب، بس الأساس <span class="m">P(m)</span> والفرض «لكل <span class="m">k ≥ m</span>». نوعين من الأسئلة:</p>
+  <h4>المتباينات: Ex 4 من السلايد</h4>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Result.</span> For every integer n ≥ 5, 2<sup>n</sup> &gt; n<sup>2</sup>.</p>
+    <p><span class="lbl">Proof.</span> We proceed by induction. Since 2<sup>5</sup> = 32 &gt; 25 = 5<sup>2</sup>, the inequality holds for n = 5. Assume that 2<sup>k</sup> &gt; k<sup>2</sup>, where k ≥ 5. We show that 2<sup>k+1</sup> &gt; (k + 1)<sup>2</sup>. Observe that</p>
+    <p class="eq">2<sup>k+1</sup> = 2 · 2<sup>k</sup> &gt; 2k<sup>2</sup> = k<sup>2</sup> + k<sup>2</sup> ≥ k<sup>2</sup> + 5k = k<sup>2</sup> + 2k + 3k ≥ k<sup>2</sup> + 2k + 15 &gt; k<sup>2</sup> + 2k + 1 = (k + 1)<sup>2</sup>.</p>
+    <p class="end">By the Principle of Mathematical Induction, 2<sup>n</sup> &gt; n<sup>2</sup> for every integer n ≥ 5.</p>
+  </div>
+  <div class="note trick"><span class="tag">تريك المتباينات</span>ابدأ من الطرف الأيسر لـ <span class="m">P(k + 1)</span>، طلّع منه الجزء اللي يشبه الفرض (<span class="m">2<sup>k+1</sup> = 2 · 2<sup>k</sup></span>)، طبّق الفرض، وبعدها استعمل <span class="m">k ≥ m</span> عشان «تكبّر» لين توصل للطرف الأيمن. كل علامة &gt; أو ≥ لازم يكون لها سبب.</div>
+
+  <h4>القسمة: Ex 5 وتريك «اعزل وعوّض»</h4>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Result.</span> For every nonnegative integer n, 9 | (4<sup>3n</sup> − 1).</p>
+    <p><span class="lbl">Proof.</span> We proceed by induction. When n = 0, 4<sup>3n</sup> − 1 = 0 and 9 | 0. Assume that 9 | (4<sup>3k</sup> − 1) for a nonnegative integer k. Then 4<sup>3k</sup> − 1 = 9x for some integer x, so 4<sup>3k</sup> = 9x + 1. Now</p>
+    <p class="eq">4<sup>3(k+1)</sup> − 1 = 4<sup>3</sup> · 4<sup>3k</sup> − 1 = 64(9x + 1) − 1 = 9 · 64x + 63 = 9(64x + 7).</p>
+    <p class="end">Since 64x + 7 is an integer, 9 | (4<sup>3k+3</sup> − 1). By the Principle of Mathematical Induction, 9 | (4<sup>3n</sup> − 1) for every nonnegative integer n.</p>
+  </div>
+  <div class="note trick"><span class="tag">اعزل وعوّض</span>من الفرض اعزل القوة: <span class="m">a<sup>k</sup> = dx + 1</span>. في الخطوة اكتب <span class="m">a<sup>k+1</sup> = a · a<sup>k</sup></span> وعوّض. الباقي يطلع مضاعفاً لـ d تلقائياً لأن <span class="m">a − 1</span> يقبل القسمة على d. يشتغل مع <span class="m">7 | (2<sup>3n</sup> − 1)</span> و<span class="m">3 | (2<sup>2n</sup> − 1)</span> و<span class="m">5 | (6<sup>n</sup> − 1)</span> وغيرها.</div>
+  <p><strong>نظرية من السلايد:</strong> إذا <span class="m">|A| = n</span> فإن <span class="m">|P(A)| = 2<sup>n</sup></span>. برهانها بالاستقراء: المجموعات الجزئية من C بـ <span class="m">k + 1</span> عنصر إما ما تحتوي <span class="m">c<sub>k+1</sub></span> (عددها 2<sup>k</sup> بالفرض) أو تحتويه وتكون <span class="m">D ∪ {c<sub>k+1</sub>}</span> (وعددها 2<sup>k</sup> أيضاً)، والمجموع <span class="m">2<sup>k+1</sup></span>. الحل كامل في <a href="#mockB">نموذج ب</a>. هذي النظرية هي اللي تعطيك عدد العلاقات في 9.1.</p>
+
+  <h3 class="sub" id="c63">6.3 الاستقراء القوي</h3>
+  <p>الفرق الوحيد: تفترض صحة <span class="m">P(i)</span> لكل <span class="m">1 ≤ i ≤ k</span>، مو لـ k بس. تحتاجه لما <span class="m">P(k + 1)</span> تعتمد على أكثر من الحالة اللي قبلها مباشرة.</p>
+  <h4>المتتابعة التكرارية: الحل النموذجي لفقرة 1447 (4 درجات)</h4>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Result.</span> A sequence {a<sub>n</sub>} is defined by a<sub>1</sub> = 1, a<sub>2</sub> = 3 and a<sub>n</sub> = 2a<sub>n−1</sub> − a<sub>n−2</sub> for n ≥ 3. Then a<sub>n</sub> = 2n − 1 for all n ∈ ℕ.</p>
+    <p class="end"><span class="lbl">Proof.</span> We proceed by induction. Since a<sub>1</sub> = 2 · 1 − 1 = 1, the formula holds for n = 1. Assume for an arbitrary positive integer k that a<sub>i</sub> = 2i − 1 for all integers i with 1 ≤ i ≤ k. We show that a<sub>k+1</sub> = 2(k + 1) − 1 = 2k + 1. If k = 1, then a<sub>k+1</sub> = a<sub>2</sub> = 3 = 2 · 1 + 1, so the formula holds when k = 1. Hence we may assume that k ≥ 2. Since k + 1 ≥ 3, it follows that a<sub>k+1</sub> = 2a<sub>k</sub> − a<sub>k−1</sub> = 2(2k − 1) − (2k − 3) = 2k + 1, which is the desired result. By the Strong Principle of Mathematical Induction, a<sub>n</sub> = 2n − 1 for all n ∈ ℕ.</p>
+  </div>
+  <div class="note trap"><span class="tag">فخ</span>حالة <span class="m">k = 1</span> لازم تنفصل. عندها <span class="m">a<sub>k+1</sub> = a<sub>2</sub></span> قيمة ابتدائية، والعلاقة التكرارية ما تنطبق لأنها تبدأ من <span class="m">n = 3</span>، و<span class="m">a<sub>k−1</sub> = a<sub>0</sub></span> مو موجود. هذي الجملة عليها درجة.</div>
+  <p>Ex 6 انسأل خلاص، فالمرشح الأقرب هو أخوه Ex 7: <span class="m">a<sub>1</sub> = 1, a<sub>2</sub> = 4, a<sub>n</sub> = 2a<sub>n−1</sub> − a<sub>n−2</sub> + 2 ⇒ a<sub>n</sub> = n<sup>2</sup></span>. حلّه كامل في <a href="#mockA">نموذج أ</a>.</p>
+
+  <h4>Ex 8: كل عدد ≥ 8 يُكتب 3a + 5b</h4>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Result.</span> For each integer n ≥ 8, there are nonnegative integers a and b such that n = 3a + 5b.</p>
+    <p class="end"><span class="lbl">Proof.</span> We proceed by induction. Since 8 = 3 · 1 + 5 · 1, the statement is true for n = 8. Assume for each integer i with 8 ≤ i ≤ k, where k ≥ 8, that there are nonnegative integers s and t with i = 3s + 5t. We show that k + 1 = 3x + 5y for some nonnegative integers x and y. Since 9 = 3 · 3 + 5 · 0 and 10 = 3 · 0 + 5 · 2, this is true if k + 1 = 9 or k + 1 = 10. Hence we may assume that k + 1 ≥ 11. Thus 8 ≤ (k + 1) − 3 &lt; k. By the induction hypothesis, there are nonnegative integers a and b such that (k + 1) − 3 = 3a + 5b, and so k + 1 = 3(a + 1) + 5b. Letting x = a + 1 and y = b gives the result. By the Strong Principle of Mathematical Induction, the statement holds for every integer n ≥ 8.</p>
+  </div>
+  <div class="note trick"><span class="tag">عدد حالات الأساس = مقدار القفزة</span>تنقص 3 في كل خطوة؟ تحتاج 3 أساسات (8، 9، 10). لو السؤال <span class="m">n = 4a + 5b</span> لكل <span class="m">n ≥ 12</span> فأنت تنقص 4 وتحتاج 4 أساسات: <span class="m">12 = 4·3</span>، <span class="m">13 = 4·2 + 5</span>، <span class="m">14 = 4 + 5·2</span>، <span class="m">15 = 5·3</span>.</div>
+
+  <h4>أصغر مثال مضاد (Minimum counterexample)</h4>
+  <p>تناقض مع الترتيب الحسن: افترض العبارة خاطئة، خذ أصغر عدد m تفشل عنده، تحقق من الحالات الصغيرة عشان تثبت أن m كبير بما يكفي، اكتب <span class="m">m = k + 1</span> (أو <span class="m">k + 2</span>) مع <span class="m">k &lt; m</span> فتكون <span class="m">P(k)</span> صحيحة، وبعدها بيّن أن <span class="m">P(m)</span> صحيحة، وهذا تناقض.</p>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Result.</span> For every nonnegative integer n, 3 | (2<sup>2n</sup> − 1).</p>
+    <p class="end"><span class="lbl">Proof.</span> Assume, to the contrary, that there are nonnegative integers n for which 3 ∤ (2<sup>2n</sup> − 1). Then there is a smallest such integer; denote it by m. Thus 3 ∤ (2<sup>2m</sup> − 1), and 3 | (2<sup>2n</sup> − 1) for all integers n with 0 ≤ n &lt; m. Since 3 | (2<sup>0</sup> − 1) = 0, we have m ≥ 1, so m = k + 1 with 0 ≤ k &lt; m. Thus 3 | (2<sup>2k</sup> − 1), so 2<sup>2k</sup> − 1 = 3x for some integer x, and 2<sup>2k</sup> = 3x + 1. Then 2<sup>2m</sup> − 1 = 2<sup>2k+2</sup> − 1 = 4 · 2<sup>2k</sup> − 1 = 4(3x + 1) − 1 = 3(4x + 1). Since 4x + 1 is an integer, 3 | (2<sup>2m</sup> − 1), a contradiction.</p>
+  </div>
+</section>
+
+<section id="ch9">
+  <h2>9.1 العلاقات</h2>
+  <p>درس واحد قصير، لكن فيه درجات سهلة لو حفظت التعاريف الأربعة بالإنجليزي وقواعد «القلب».</p>
+
+  <h3 class="sub" id="c91">التعاريف كما تُكتب في الاختبار</h3>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Relation.</span> A relation R from a set A to a set B is a subset of A × B. If (a, b) ∈ R, we write a R b and say that a is related to b.</p>
+    <p><span class="lbl">Domain.</span> dom(R) = {a ∈ A : (a, b) ∈ R for some b ∈ B}.</p>
+    <p><span class="lbl">Range.</span> range(R) = {b ∈ B : (a, b) ∈ R for some a ∈ A}.</p>
+    <p><span class="lbl">Inverse.</span> R<sup>−1</sup> = {(b, a) : (a, b) ∈ R}, a relation from B to A.</p>
+    <p><span class="lbl">Relation on A.</span> A relation from A to A, that is, a subset of A × A.</p>
+  </div>
+
+  <h3>قواعد سريعة</h3>
+  <ul>
+    <li><strong>dom</strong> = كل الإحداثيات الأولى في R. <strong>range</strong> = كل الإحداثيات الثانية. عنصر من A ما يظهر أول في أي زوج؟ مو في dom.</li>
+    <li><strong><span class="m">R<sup>−1</sup></span></strong> = اقلب كل زوج. ولو R معرّفة بقاعدة، بدّل x و y في القاعدة: معكوس «<span class="m">x &lt; y</span>» هو «<span class="m">x &gt; y</span>»، ومعكوس «x يقسم y» هو «x مضاعف لـ y».</li>
+    <li><span class="m">dom(R<sup>−1</sup>) = range(R)</span>، <span class="m">range(R<sup>−1</sup>) = dom(R)</span>، <span class="m">(R<sup>−1</sup>)<sup>−1</sup> = R</span>.</li>
+    <li><strong>العدّ:</strong> العلاقة مجموعة جزئية من <span class="m">A × B</span>، فعدد العلاقات من A إلى B يساوي <span class="m">2<sup>|A|·|B|</sup></span>، وعلى A بـ n عنصر يساوي <span class="m">2<sup>n<sup>2</sup></sup></span>. مثال السلايد: <span class="m">A = {1, 2}</span> ⇒ <span class="m">|A × A| = 4</span> ⇒ <span class="m">2<sup>4</sup> = 16</span> علاقة.</li>
+    <li>∅ و <span class="m">A × B</span> علاقتان من A إلى B دائماً.</li>
+    <li>لو شرط العلاقة متماثل في x و y (مثل <span class="m">x<sup>2</sup> + y<sup>2</sup> = 1</span> أو «<span class="m">x + y</span> زوجي») فإن <span class="m">R<sup>−1</sup> = R</span>.</li>
+  </ul>
+
+  <h3>أمثلة محلولة</h3>
+  <h4>مثال السلايد</h4>
+  <p><span class="m">A = {x, y, z}</span>، <span class="m">B = {1, 2}</span>، <span class="m">R = {(x, 2), (y, 1), (y, 2)}</span>.</p>
+  <div class="proof" lang="en">
+    <p>dom(R) = {x, y} (z is not a first coordinate of any pair), range(R) = {1, 2},</p>
+    <p>R<sup>−1</sup> = {(2, x), (1, y), (2, y)}, a relation from B to A.</p>
+  </div>
+  <h4>علاقة بقاعدة</h4>
+  <p><span class="m">A = {1, 2, 3, 4}</span>، <span class="m">R = {(x, y) ∈ A × A : x | y and x ≠ y}</span>.</p>
+  <div class="proof" lang="en">
+    <p>R = {(1, 2), (1, 3), (1, 4), (2, 4)}, dom(R) = {1, 2}, range(R) = {2, 3, 4},</p>
+    <p>R<sup>−1</sup> = {(2, 1), (3, 1), (4, 1), (4, 2)}.</p>
+  </div>
+  <div class="note trick"><span class="tag">تريك الجدول</span>لما تكون R على مجموعة صغيرة بقاعدة، ارسم جدول: الصفوف x والأعمدة y، وحط ✓ في الخانة اللي تحقق الشرط. dom = الصفوف اللي فيها ✓، range = الأعمدة اللي فيها ✓، و<span class="m">R<sup>−1</sup></span> = نفس الجدول بعد ما تقلب الصفوف والأعمدة.</div>
+  <h4>علاقة على مجموعة لا نهائية</h4>
+  <p><span class="m">R = {(x, y) ∈ ℝ × ℝ : y = x<sup>2</sup> + 1}</span>: <span class="m">dom(R) = ℝ</span>، و<span class="m">range(R) = [1, ∞)</span> لأن <span class="m">y ∈ range(R) ⟺ ∃x ∈ ℝ, x<sup>2</sup> = y − 1 ⟺ y ≥ 1</span>. و<span class="m">R<sup>−1</sup> = {(x, y) : x = y<sup>2</sup> + 1}</span>.</p>
+
+  <h3>براهين 9.1 المرشحة</h3>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Result.</span> If R is a relation from A to B, then dom(R<sup>−1</sup>) = range(R).</p>
+    <p><span class="lbl">Proof.</span> Note that R<sup>−1</sup> is a relation from B to A. First, let b ∈ dom(R<sup>−1</sup>). Then (b, a) ∈ R<sup>−1</sup> for some a ∈ A. By the definition of R<sup>−1</sup>, (a, b) ∈ R, so b ∈ range(R). Thus dom(R<sup>−1</sup>) ⊆ range(R).</p>
+    <p class="end">Next, let b ∈ range(R). Then (a, b) ∈ R for some a ∈ A, so (b, a) ∈ R<sup>−1</sup> and b ∈ dom(R<sup>−1</sup>). Thus range(R) ⊆ dom(R<sup>−1</sup>). Therefore dom(R<sup>−1</sup>) = range(R).</p>
+  </div>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Result.</span> If R and S are relations from A to B, then (R ∪ S)<sup>−1</sup> = R<sup>−1</sup> ∪ S<sup>−1</sup>.</p>
+    <p class="end"><span class="lbl">Proof.</span> (x, y) ∈ (R ∪ S)<sup>−1</sup> ⟺ (y, x) ∈ R ∪ S ⟺ (y, x) ∈ R or (y, x) ∈ S ⟺ (x, y) ∈ R<sup>−1</sup> or (x, y) ∈ S<sup>−1</sup> ⟺ (x, y) ∈ R<sup>−1</sup> ∪ S<sup>−1</sup>.</p>
+  </div>
+  <p class="small muted">بنفس الطريقة: <span class="m">(R ∩ S)<sup>−1</sup> = R<sup>−1</sup> ∩ S<sup>−1</sup></span>، و<span class="m">R ⊆ S ⇒ R<sup>−1</sup> ⊆ S<sup>−1</sup></span>، و<span class="m">(A × B)<sup>−1</sup> = B × A</span>.</p>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Disprove.</span> For relations R and S from A to B, dom(R ∩ S) = dom(R) ∩ dom(S).</p>
+    <p class="end"><span class="lbl">Counterexample.</span> Let A = B = {1, 2}, R = {(1, 1)} and S = {(1, 2)}. Then R ∩ S = ∅, so dom(R ∩ S) = ∅. But dom(R) ∩ dom(S) = {1} ∩ {1} = {1} ≠ ∅.</p>
+  </div>
+  <p class="small muted">الصحيح: <span class="m">dom(R ∩ S) ⊆ dom(R) ∩ dom(S)</span>. أما مع الاتحاد فالمساواة صحيحة: <span class="m">dom(R ∪ S) = dom(R) ∪ dom(S)</span>.</p>
+
+  <div class="note trap"><span class="tag">فخاخ 9.1</span>
+    <ul>
+      <li>الترتيب في الزوج مهم: <span class="m">{(a, 1)}</span> علاقة من B إلى A، مو من A إلى B، إذا <span class="m">a ∈ A</span> و<span class="m">1 ∈ B</span>.</li>
+      <li>range(R) ممكن تكون أصغر من B. لا تكتب <span class="m">range(R) = B</span> بدون ما تتأكد أن كل عنصر في B ظهر ثانياً.</li>
+      <li><span class="m">R<sup>−1</sup></span> علاقة من B إلى A. فعبارة «<span class="m">R<sup>−1</sup></span> علاقة من A إلى B» خاطئة عموماً: <span class="m">A = {1}, B = {2}, R = {(1, 2)}</span>.</li>
+      <li>إذا <span class="m">A × B = ∅</span> فالعلاقة الوحيدة من A إلى B هي ∅، لأن <span class="m">R ⊆ ∅</span>.</li>
+    </ul>
+  </div>
+
+  <h3 class="sub" id="c92">تأمين: خواص العلاقات 9.2 (لو انشرحت)</h3>
+  <p>درسك 9.1 فقط، لكن سلايد «Properties of Relations» يجي مباشرة بعده، والاختبارات القديمة تحب أمثلته. اقرأ هذا الجزء مرة واحدة كاحتياط.</p>
+  <ul>
+    <li><strong>Reflexive:</strong> <span class="m">(x, x) ∈ R</span> لكل <span class="m">x ∈ A</span>. لنفيها: عنصر واحد x بدون <span class="m">(x, x)</span>.</li>
+    <li><strong>Symmetric:</strong> <span class="m">x R y ⇒ y R x</span>. لنفيها: زوج <span class="m">(w, z) ∈ R</span> بدون <span class="m">(z, w)</span>.</li>
+    <li><strong>Transitive:</strong> <span class="m">x R y ∧ y R z ⇒ x R z</span>. لنفيها: زوجان <span class="m">(u, v), (v, w) ∈ R</span> بدون <span class="m">(u, w)</span>.</li>
+    <li><strong><span class="m">R = R<sup>−1</sup> ⟺ R</span> symmetric.</strong> جاءت مرتين في الميد القديم. البرهان: لو <span class="m">(x, y) ∈ R</span> فإن <span class="m">(y, x) ∈ R<sup>−1</sup> = R</span>.</li>
+  </ul>
+  <div class="note trick"><span class="tag">الصواب الفارغ</span>∅ على مجموعة غير خالية تناظرية ومتعدية (ما فيه أزواج تكسر الشرط) لكن مو انعكاسية. ومثال السلايد <span class="m">R<sub>6</sub> = {(a, b), (a, c)}</span> متعدية لأنه ما فيه زوجان على شكل <span class="m">(u, v), (v, w)</span>.</div>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>المطلوب على <span class="m">A = {1, 2, 3}</span></th><th>مثال</th></tr></thead>
+      <tbody>
+        <tr><td>انعكاسية فقط</td><td class="ltr">{(1,1), (2,2), (3,3), (1,2), (2,3)}</td></tr>
+        <tr><td>تناظرية فقط</td><td class="ltr">{(1,2), (2,1)}</td></tr>
+        <tr><td>متعدية فقط</td><td class="ltr">{(1,2)}</td></tr>
+        <tr><td>انعكاسية وتناظرية، مو متعدية</td><td class="ltr">{(1,1), (2,2), (3,3), (1,2), (2,1), (2,3), (3,2)}</td></tr>
+        <tr><td>انعكاسية ومتعدية، مو تناظرية</td><td class="ltr">{(1,1), (2,2), (3,3), (1,2)}</td></tr>
+        <tr><td>تناظرية ومتعدية، مو انعكاسية (نهائي 1447)</td><td class="ltr">{(1,1)}</td></tr>
+        <tr><td>الثلاث (تكافؤ)</td><td class="ltr">{(1,1), (2,2), (3,3)}</td></tr>
+        <tr><td>ولا وحدة</td><td class="ltr">{(1,2), (2,1), (2,3)}</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note trap"><span class="tag">برهان مغلوط مشهور</span>«التناظرية + المتعدية ⇒ انعكاسية: خذ <span class="m">x R y</span>، بالتناظر <span class="m">y R x</span>، وبالتعدي <span class="m">x R x</span>». الغلط أنه ممكن ما يوجد y مرتبط بـ x أصلاً. المثال المضاد: <span class="m">A = {1, 2}</span>، <span class="m">R = {(1, 1)}</span>.</div>
+</section>
+
+<section id="bridges">
+  <h2>جسور الفصول 1–4</h2>
+  <p>هذي المواضيع القديمة اللي لها أعلى احتمال ترجع، سواء كفقرة مستقلة أو داخل برهان جديد.</p>
+
+  <h3 class="sub" id="b1">الضرب الديكارتي: جاء في كل ميد ثاني</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>العبارة (لكل المجموعات)</th><th>الحكم</th></tr></thead>
+      <tbody>
+        <tr><td class="ltr">A × (B ∪ C) = (A × B) ∪ (A × C)</td><td><span class="chip v-t">صح</span> جاءت 3 مرات</td></tr>
+        <tr><td class="ltr">A × (B ∩ C) = (A × B) ∩ (A × C)</td><td><span class="chip v-t">صح</span></td></tr>
+        <tr><td class="ltr">A × (B − C) = (A × B) − (A × C)</td><td><span class="chip v-t">صح</span></td></tr>
+        <tr><td class="ltr">(A × B) ∩ (C × D) = (A ∩ C) × (B ∩ D)</td><td><span class="chip v-t">صح</span></td></tr>
+        <tr><td class="ltr">(A × B) ∪ (C × D) = (A ∪ C) × (B ∪ D)</td><td><span class="chip v-f">خطأ</span> الصحيح ⊆</td></tr>
+        <tr><td class="ltr">A × B = B × A</td><td><span class="chip v-f">خطأ</span> <span class="m">A = {1}, B = {2}</span></td></tr>
+        <tr><td class="ltr">A × B = ∅ ⟺ A = ∅ or B = ∅</td><td><span class="chip v-t">صح</span></td></tr>
+        <tr><td class="ltr">|A × B| = |A| · |B|</td><td><span class="chip v-t">صح</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>المثال المضاد للسطر الخاطئ: <span class="m">A = B = {1}</span>، <span class="m">C = D = {2}</span>. الطرف الأيسر <span class="m">{(1, 1), (2, 2)}</span> فيه عنصران، والأيمن <span class="m">{1, 2} × {1, 2}</span> فيه أربعة.</p>
+  <h4>أسرع برهان: سلسلة ⟺ (أسلوب الحلول العربية)</h4>
+  <div class="proof" lang="en">
+    <p>(x, y) ∈ A × (B ∪ C) ⟺ x ∈ A and y ∈ B ∪ C</p>
+    <p>⟺ x ∈ A and (y ∈ B or y ∈ C)</p>
+    <p>⟺ (x ∈ A and y ∈ B) or (x ∈ A and y ∈ C)   <em>(and distributes over or)</em></p>
+    <p>⟺ (x, y) ∈ A × B or (x, y) ∈ A × C</p>
+    <p class="end">⟺ (x, y) ∈ (A × B) ∪ (A × C).</p>
+  </div>
+  <p class="small muted">حل 1447 النموذجي استخدم الاحتواء المزدوج: «Let (x, y) ∈ A × (B ∪ C). Then x ∈ A and y ∈ B ∪ C. Thus y ∈ B or y ∈ C, say the former…». الطريقتان تاخذ الدرجة كاملة.</p>
+  <div class="proof" lang="en">
+    <p><span class="lbl">Result.</span> If A × B = ∅, then A = ∅ or B = ∅.</p>
+    <p class="end"><span class="lbl">Proof (contrapositive).</span> Assume A ≠ ∅ and B ≠ ∅. Then there exist a ∈ A and b ∈ B, so (a, b) ∈ A × B. Hence A × B ≠ ∅.</p>
+  </div>
+
+  <h3 class="sub" id="b2">التجزئة: 9 من 11 اختباراً</h3>
+  <p>P تجزئة لـ A إذا تحققت الثلاثة: كل عنصر في P غير خالٍ، وأي عنصرين مختلفين منفصلان، واتحادها كلها يساوي A.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>السؤال من الاختبارات</th><th>الجواب</th><th>السبب</th></tr></thead>
+      <tbody>
+        <tr><td class="ltr">{ℝ<sup>+</sup>, ℝ<sup>−</sup>} of ℝ</td><td><span class="chip v-f">لا</span></td><td>الصفر ناقص</td></tr>
+        <tr><td class="ltr">{ℤ<sup>+</sup>, ℤ<sup>−</sup>} of ℤ</td><td><span class="chip v-f">لا</span></td><td>الصفر ناقص</td></tr>
+        <tr><td class="ltr">{(−∞, 1), (1, ∞)} of ℝ</td><td><span class="chip v-f">لا</span></td><td>العدد 1 ناقص</td></tr>
+        <tr><td class="ltr">{(−∞, 1], [1, ∞)} of ℝ</td><td><span class="chip v-f">لا</span></td><td>العدد 1 مشترك</td></tr>
+        <tr><td class="ltr">{(−∞, −1), [−1, 1], (1, ∞)} of ℝ</td><td><span class="chip v-t">نعم</span></td><td>الشروط الثلاثة</td></tr>
+        <tr><td class="ltr">{{1, 3}, {2}} of {1, 2, 3}</td><td><span class="chip v-t">نعم</span></td><td>الشروط الثلاثة</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small muted">تجزئات جاهزة: <span class="m">{ℤ<sup>−</sup>, {0}, ℤ<sup>+</sup>}</span>، الزوجية والفردية، <span class="m">{ℚ, ℝ − ℚ}</span>، <span class="m">{ℝ}</span> نفسها، والمجموعات الأحادية <span class="m">{{x} : x ∈ A}</span>.</p>
+
+  <h3 class="sub" id="b3">النفي: أساس كل مثال مضاد وكل تناقض</h3>
+  <div class="proof" lang="en">
+    <p>∼(∀x ∈ S, P(x)) ≡ ∃x ∈ S, ∼P(x)        ∼(∃x ∈ S, P(x)) ≡ ∀x ∈ S, ∼P(x)</p>
+    <p>∼(P ⇒ Q) ≡ P ∧ (∼Q)        P ⇒ Q ≡ (∼Q) ⇒ (∼P) ≡ (∼P) ∨ Q</p>
+    <p>∼(P ∧ Q) ≡ (∼P) ∨ (∼Q)        ∼(P ∨ Q) ≡ (∼P) ∧ (∼Q)</p>
+  </div>
+  <div class="note trap"><span class="tag">فخ 1447</span>في فقرة «<span class="m">5 ∤ (n<sup>2</sup> + 4) ⇒ 5 ∤ (n − 1)</span> و <span class="m">5 ∤ (n + 1)</span>»، عكس النقيض يفترض «<span class="m">5 | (n − 1)</span> أو <span class="m">5 | (n + 1)</span>». «و» صارت «أو»، وهذا اللي يفتح حالتين.</div>
+
+  <h3 class="sub" id="b4">زوجي وفردي وقسمة: نظريات تقدر تستشهد فيها</h3>
+  <ul>
+    <li>x و y لهما نفس الزوجية ⟺ <span class="m">x + y</span> زوجي (فقرة 1447 الأولى).</li>
+    <li><span class="m">xy</span> زوجي ⟺ x زوجي أو y زوجي. و<span class="m">x<sup>2</sup></span> زوجي ⟺ x زوجي.</li>
+    <li><span class="m">n(n + 1)</span> زوجي دائماً، و<span class="m">n<sup>3</sup> − n</span> يقبل القسمة على 6.</li>
+    <li>مربع الفردي: <span class="m">(2k + 1)<sup>2</sup> = 4k(k + 1) + 1</span>، فهو من الشكل <span class="m">8m + 1</span>.</li>
+    <li><span class="m">a | b</span> و <span class="m">b | c ⇒ a | c</span>. و<span class="m">a | b</span> و <span class="m">a | c ⇒ a | (bx + cy)</span>.</li>
+    <li>القسمة على 3: كل عدد صحيح <span class="m">3q</span> أو <span class="m">3q + 1</span> أو <span class="m">3q + 2</span>. و<span class="m">a ≡ b (mod n) ⟺ n | (a − b)</span>.</li>
+  </ul>
+  <div class="note trap"><span class="tag">لا تكررها</span>لعددين زوجيين اكتب <span class="m">x = 2a</span> و<span class="m">y = 2b</span>، مو <span class="m">x = y = 2k</span>. هذا بالضبط الغلط اللي انسأل عنه في نهائي 1447 «Evaluate the proof».</div>
+
+  <h3 class="sub" id="b5">الفارغ والتافه: درجة ببلاش</h3>
+  <ul>
+    <li><strong>Vacuous:</strong> إذا الفرض P خاطئ دائماً فالعبارة <span class="m">P ⇒ Q</span> صحيحة. فقرة 1447: «If 3 is even, then 3<sup>2</sup> = 9»: الفرض خاطئ لأن 3 فردي.</li>
+    <li><strong>Trivial:</strong> إذا النتيجة Q صحيحة دائماً فالعبارة صحيحة مهما كان الفرض. مثال: «Let x ∈ ℝ. If x &lt; 0, then x<sup>2</sup> + 1 &gt; 0».</li>
+  </ul>
+  <div class="proof" lang="en"><p><span class="lbl">True.</span> Since 3 is odd, the hypothesis “3 is even” is false. Hence the implication is true (vacuous proof).</p></div>
+
+  <h3 class="sub" id="b6">احتياط منخفض: النهايات وتقييم البراهين</h3>
+  <p class="small">النهايات (14.3) في خطتك تحت الفصل 4، فغالباً اختُبرت في ميد١. قالبان للاحتياط:</p>
+  <div class="proof" lang="en">
+    <p><span class="lbl">lim 1/n = 0.</span> Let ε &gt; 0. Choose N = ⌈1/ε⌉. If n ∈ ℕ and n &gt; N, then n &gt; 1/ε, so |1/n − 0| = 1/n &lt; ε.</p>
+    <p class="end"><span class="lbl">lim<sub>x→2</sub> x<sup>2</sup> = 4.</span> Let ε &gt; 0 and δ = min{1, ε/5}. If 0 &lt; |x − 2| &lt; δ, then |x − 2| &lt; 1, so 1 &lt; x &lt; 3 and |x + 2| &lt; 5. Hence |x<sup>2</sup> − 4| = |x − 2||x + 2| &lt; 5δ ≤ ε.</p>
+  </div>
+  <p class="small">أخطاء البراهين الشائعة اللي يطلب منك تكتشفها: نفس الحرف لعددين مختلفين، إثبات العكس بدل العبارة، الاكتفاء بأمثلة، افتراض المطلوب، القسمة على صفر، ونسيان حالة الأساس في الاستقراء.</p>
+</section>
+
+<section id="trainer">
+  <h2>صح أو خطأ؟ تدريب القرار</h2>
+  <p>أهم مهارة في Prove or disprove هي القرار قبل البرهان. قرّر لكل عبارة، والتصحيح يطلع لك مباشرة مع السبب.</p>
+  <div class="score" aria-live="polite">
+    <span>النتيجة: <b id="tf-score">0</b> من <b id="tf-done">0</b></span>
+    <span class="muted small" id="tf-left"></span>
+    <button class="btn" type="button" id="tf-reset">ابدأ من جديد</button>
+  </div>
+  <ol class="tf" id="tf-list"></ol>
+</section>
+
+<section id="mockA">
+  <h2>نموذج أ: اختبار متوقع</h2>
+  <p>مبني على نفس صيغة 1447 وتوزيع الدرجات المتوقع. حلّه على ورق بتوقيت 90 دقيقة، بعدين افتح الحلول وصحّح نفسك.</p>
+  <div class="tools"><button class="btn" type="button" data-toggle="mockA">افتح كل الحلول</button></div>
+  <div class="paper" lang="en">
+    <div class="paper-head"><span><b>Second exam</b> · 131 Math</span><span>Time: 90 minutes · 25 marks</span><span>Without calculators</span></div>
+    <p><b>Q1: Prove or disprove the following:</b></p>
+
+    <div class="q">
+      <p class="stmt"><span class="no">1-</span>For every positive integer n, <span class="frac"><span>1</span><span>1·2</span></span> + <span class="frac"><span>1</span><span>2·3</span></span> + ⋯ + <span class="frac"><span>1</span><span>n(n + 1)</span></span> = <span class="frac"><span>n</span><span>n + 1</span></span>. <span class="mk">(4 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof">
+          <p><span class="lbl">True.</span> We proceed by induction. Since 1/(1·2) = 1/2 = 1/(1 + 1), the statement is true for n = 1. Assume that</p>
+          <p class="eq"><span class="frac"><span>1</span><span>1·2</span></span> + ⋯ + <span class="frac"><span>1</span><span>k(k + 1)</span></span> = <span class="frac"><span>k</span><span>k + 1</span></span></p>
+          <p>for some positive integer k. We show that 1/(1·2) + ⋯ + 1/((k + 1)(k + 2)) = (k + 1)/(k + 2). Observe that</p>
+          <p class="eq"><span class="frac"><span>1</span><span>1·2</span></span> + ⋯ + <span class="frac"><span>1</span><span>(k + 1)(k + 2)</span></span> = <span class="frac"><span>k</span><span>k + 1</span></span> + <span class="frac"><span>1</span><span>(k + 1)(k + 2)</span></span> = <span class="frac"><span>k(k + 2) + 1</span><span>(k + 1)(k + 2)</span></span> = <span class="frac"><span>(k + 1)<sup>2</sup></span><span>(k + 1)(k + 2)</span></span> = <span class="frac"><span>k + 1</span><span>k + 2</span></span>.</p>
+          <p class="end">By the Principle of Mathematical Induction, the formula holds for every positive integer n.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">2-</span>For every positive integer n, 2<sup>n</sup> &gt; n<sup>2</sup>. <span class="mk">(2 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof"><p class="end"><span class="lbl">False.</span> Let n = 2. Then 2<sup>n</sup> = 4 and n<sup>2</sup> = 4, so 2<sup>n</sup> &gt; n<sup>2</sup> is false. Hence n = 2 is a counterexample. (n = 3 also works: 8 &lt; 9.)</p></div>
+        <p class="ar">التحريف: النتيجة الصحيحة في السلايد مشروطة بـ n ≥ 5. لاحظ أن n = 1 تنجح (2 &gt; 1)، عشان كذا لازم تجرب أكثر من قيمة.</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">3-</span>For every nonnegative integer n, 7 | (2<sup>3n</sup> − 1). <span class="mk">(3 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof">
+          <p><span class="lbl">True.</span> We proceed by induction. When n = 0, 2<sup>3n</sup> − 1 = 0 and 7 | 0. Assume that 7 | (2<sup>3k</sup> − 1) for a nonnegative integer k. Then 2<sup>3k</sup> − 1 = 7x for some integer x, so 2<sup>3k</sup> = 7x + 1. Now</p>
+          <p class="eq">2<sup>3(k+1)</sup> − 1 = 2<sup>3</sup> · 2<sup>3k</sup> − 1 = 8(7x + 1) − 1 = 56x + 7 = 7(8x + 1).</p>
+          <p class="end">Since 8x + 1 is an integer, 7 | (2<sup>3(k+1)</sup> − 1). By the Principle of Mathematical Induction, 7 | (2<sup>3n</sup> − 1) for every nonnegative integer n.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">4-</span>A sequence {a<sub>n</sub>} is defined recursively by a<sub>1</sub> = 1, a<sub>2</sub> = 4 and a<sub>n</sub> = 2a<sub>n−1</sub> − a<sub>n−2</sub> + 2 for n ≥ 3. Then a<sub>n</sub> = n<sup>2</sup> for all n ∈ ℕ. <span class="mk">(4 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof">
+          <p><span class="lbl">True.</span> We proceed by induction. Since a<sub>1</sub> = 1 = 1<sup>2</sup>, the formula holds for n = 1. Assume for an arbitrary positive integer k that a<sub>i</sub> = i<sup>2</sup> for every integer i with 1 ≤ i ≤ k. We show that a<sub>k+1</sub> = (k + 1)<sup>2</sup>. Since a<sub>2</sub> = 4 = 2<sup>2</sup>, it follows that a<sub>k+1</sub> = (k + 1)<sup>2</sup> when k = 1. Thus we may assume that k ≥ 2. Hence k + 1 ≥ 3, and so</p>
+          <p class="eq">a<sub>k+1</sub> = 2a<sub>k</sub> − a<sub>k−1</sub> + 2 = 2k<sup>2</sup> − (k − 1)<sup>2</sup> + 2 = 2k<sup>2</sup> − (k<sup>2</sup> − 2k + 1) + 2 = k<sup>2</sup> + 2k + 1 = (k + 1)<sup>2</sup>.</p>
+          <p class="end">By the Strong Principle of Mathematical Induction, a<sub>n</sub> = n<sup>2</sup> for all n ∈ ℕ.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">5-</span>If a is an even integer and b is an odd integer, then 4 ∤ (a<sup>2</sup> + 2b<sup>2</sup>). <span class="mk">(3 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof"><p class="end"><span class="lbl">True.</span> Assume, to the contrary, that there exist an even integer a and an odd integer b such that 4 | (a<sup>2</sup> + 2b<sup>2</sup>). Then a = 2x, b = 2y + 1 and a<sup>2</sup> + 2b<sup>2</sup> = 4z for some integers x, y, z. Hence (2x)<sup>2</sup> + 2(2y + 1)<sup>2</sup> = 4z, that is, 4x<sup>2</sup> + 8y<sup>2</sup> + 8y + 2 = 4z. So 2 = 4(z − x<sup>2</sup> − 2y<sup>2</sup> − 2y). Since z − x<sup>2</sup> − 2y<sup>2</sup> − 2y is an integer, 4 | 2, which is impossible.</p></div>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">6-</span>There exists an integer n such that n<sup>2</sup> + n + 1 is even. <span class="mk">(2 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof"><p class="end"><span class="lbl">False.</span> We show that n<sup>2</sup> + n + 1 is odd for every integer n. Let n ∈ ℤ. If n is even, n = 2k, then n<sup>2</sup> + n + 1 = 4k<sup>2</sup> + 2k + 1 = 2(2k<sup>2</sup> + k) + 1. If n is odd, n = 2k + 1, then n<sup>2</sup> + n + 1 = 4k<sup>2</sup> + 6k + 3 = 2(2k<sup>2</sup> + 3k + 1) + 1. In both cases n<sup>2</sup> + n + 1 is odd, so no integer n makes it even.</p></div>
+        <p class="ar">لاحظ: هذي عبارة «يوجد»، ونفيها يحتاج برهان «لكل». لو كتبت مثالاً واحداً (n = 1 يعطي 3 فردي) ما تاخذ شي.</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">7-</span>Let A = {1, 2, 3, 4} and R = {(x, y) ∈ A × A : x | y and x ≠ y}. Write R as a set of ordered pairs, and find dom(R), range(R) and R<sup>−1</sup>. <span class="mk">(2 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof"><p>R = {(1, 2), (1, 3), (1, 4), (2, 4)}, dom(R) = {1, 2}, range(R) = {2, 3, 4},</p><p>R<sup>−1</sup> = {(2, 1), (3, 1), (4, 1), (4, 2)}.</p></div>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">8-</span>For any relations R and S from a set A to a set B, dom(R ∩ S) = dom(R) ∩ dom(S). <span class="mk">(2 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof"><p class="end"><span class="lbl">False.</span> Let A = B = {1, 2}, R = {(1, 1)} and S = {(1, 2)}. Then R ∩ S = ∅, so dom(R ∩ S) = ∅, while dom(R) ∩ dom(S) = {1}.</p></div>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">9-</span>If a set A of real numbers has a least element, then this least element is unique. <span class="mk">(2 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof"><p class="end"><span class="lbl">True.</span> Let m<sub>1</sub> and m<sub>2</sub> be least elements of A. Since m<sub>1</sub> is a least element and m<sub>2</sub> ∈ A, m<sub>2</sub> ≥ m<sub>1</sub>. Since m<sub>2</sub> is a least element and m<sub>1</sub> ∈ A, m<sub>1</sub> ≥ m<sub>2</sub>. Therefore m<sub>1</sub> = m<sub>2</sub>.</p></div>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">10-</span>Let x ∈ ℝ. If x<sup>2</sup> + 1 = 0, then x = 5. <span class="mk">(1 mark)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof"><p class="end"><span class="lbl">True.</span> For every x ∈ ℝ, x<sup>2</sup> ≥ 0, so x<sup>2</sup> + 1 ≥ 1 &gt; 0. Thus the hypothesis x<sup>2</sup> + 1 = 0 is false for every real x, and the implication is true (vacuous proof).</p></div>
+      </details>
+    </div>
+  </div>
+  <p class="small muted">التوزيع: ف6 = 13 درجة (1، 3، 4، 9)، ف5 = 7 (2، 5، 6)، 9.1 = 4 (7، 8)، ف3 = 1 (10). الفقرة 2 مثال مضاد (ف5) على نتيجة من ف6.</p>
+</section>
+
+<section id="mockB">
+  <h2>نموذج ب: تنويع على مرشحين آخرين</h2>
+  <p>يغطي الأمثلة اللي ما دخلت نموذج أ. لو خلصت الاثنين، تكون مريت على كل شي مرشح تقريباً.</p>
+  <div class="tools"><button class="btn" type="button" data-toggle="mockB">افتح كل الحلول</button></div>
+  <div class="paper" lang="en">
+    <div class="paper-head"><span><b>Second exam</b> · 131 Math</span><span>Time: 90 minutes · 25 marks</span><span>Without calculators</span></div>
+    <p><b>Q1: Prove or disprove the following:</b></p>
+
+    <div class="q">
+      <p class="stmt"><span class="no">1-</span>If A is a finite set with |A| = n ≥ 0, then |P(A)| = 2<sup>n</sup>. <span class="mk">(4 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof">
+          <p><span class="lbl">True.</span> We proceed by induction on n ≥ 0. If |A| = 0, then A = ∅, so P(A) = {∅} and |P(A)| = 1 = 2<sup>0</sup>. Assume that |P(B)| = 2<sup>k</sup> for every set B with |B| = k, where k ≥ 0. Let C be a set with |C| = k + 1, say C = {c<sub>1</sub>, c<sub>2</sub>, …, c<sub>k+1</sub>}. We show |P(C)| = 2<sup>k+1</sup>.</p>
+          <p>By the inductive hypothesis, there are 2<sup>k</sup> subsets of {c<sub>1</sub>, …, c<sub>k</sub>}, that is, 2<sup>k</sup> subsets of C not containing c<sub>k+1</sub>. Every subset of C containing c<sub>k+1</sub> can be written as D ∪ {c<sub>k+1</sub>} with D ⊆ {c<sub>1</sub>, …, c<sub>k</sub>}, and again there are 2<sup>k</sup> such sets D.</p>
+          <p class="end">Therefore C has 2<sup>k</sup> + 2<sup>k</sup> = 2<sup>k+1</sup> subsets. By the Principle of Mathematical Induction, |P(A)| = 2<sup>n</sup> whenever |A| = n ≥ 0.</p>
+        </div>
+        <p class="ar">ومنها مباشرة: عدد العلاقات من A إلى B يساوي <span class="m">|P(A × B)| = 2<sup>|A|·|B|</sup></span>.</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">2-</span>The real number √2 is irrational. <span class="mk">(3 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof"><p class="end"><span class="lbl">True.</span> Assume, to the contrary, that √2 = a/b, where a, b ∈ ℤ, b ≠ 0, and a/b is in lowest terms. Then a<sup>2</sup> = 2b<sup>2</sup>, so a<sup>2</sup> is even and hence a is even, say a = 2c with c ∈ ℤ. Then 4c<sup>2</sup> = 2b<sup>2</sup>, so b<sup>2</sup> = 2c<sup>2</sup> is even and hence b is even. Thus 2 divides both a and b, contradicting that a/b is in lowest terms.</p></div>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">3-</span>For each integer n ≥ 8, there are nonnegative integers a and b such that n = 3a + 5b. <span class="mk">(4 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof"><p class="end"><span class="lbl">True.</span> We use strong induction. Since 8 = 3·1 + 5·1, the statement holds for n = 8. Assume for each integer i with 8 ≤ i ≤ k, where k ≥ 8, that i = 3s + 5t for some nonnegative integers s and t. Since 9 = 3·3 + 5·0 and 10 = 3·0 + 5·2, the statement holds if k + 1 = 9 or k + 1 = 10. So assume k + 1 ≥ 11. Then 8 ≤ (k + 1) − 3 &lt; k, so by the hypothesis (k + 1) − 3 = 3a + 5b for some nonnegative integers a and b. Hence k + 1 = 3(a + 1) + 5b. By the Strong Principle of Mathematical Induction, the statement holds for every n ≥ 8.</p></div>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">4-</span>For every integer n ≥ 4, n! &gt; 2<sup>n</sup>. <span class="mk">(3 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof"><p class="end"><span class="lbl">True.</span> We proceed by induction. Since 4! = 24 &gt; 16 = 2<sup>4</sup>, the inequality holds for n = 4. Assume that k! &gt; 2<sup>k</sup> for an integer k ≥ 4. Then (k + 1)! = (k + 1) · k! &gt; (k + 1) · 2<sup>k</sup> &gt; 2 · 2<sup>k</sup> = 2<sup>k+1</sup>, since k + 1 ≥ 5 &gt; 2. By the Principle of Mathematical Induction, n! &gt; 2<sup>n</sup> for every integer n ≥ 4.</p></div>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">5-</span>There exist integers m and n such that 14m + 21n = 100. <span class="mk">(2 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof"><p class="end"><span class="lbl">False.</span> Assume, to the contrary, that 14m + 21n = 100 for some integers m and n. Then 100 = 7(2m + 3n) with 2m + 3n ∈ ℤ, so 7 | 100, which is false. Hence no such integers exist.</p></div>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">6-</span>The equation x<sup>3</sup> + x − 1 = 0 has a unique real solution between x = 0 and x = 1. <span class="mk">(3 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof">
+          <p><span class="lbl">True.</span> <em>Existence.</em> Let f(x) = x<sup>3</sup> + x − 1. Since f is a polynomial, it is continuous on [0, 1]. Now f(0) = −1 &lt; 0 &lt; 1 = f(1), so by the Intermediate Value Theorem there is c ∈ (0, 1) with f(c) = 0.</p>
+          <p class="end"><em>Uniqueness.</em> Assume, to the contrary, that a and b are two distinct solutions in (0, 1), say a &lt; b. Then a<sup>3</sup> &lt; b<sup>3</sup>, so a<sup>3</sup> + a − 1 &lt; b<sup>3</sup> + b − 1, that is, 0 &lt; 0, a contradiction.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">7-</span>If R is a relation from A to B, then dom(R<sup>−1</sup>) = range(R). <span class="mk">(2 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof"><p class="end"><span class="lbl">True.</span> b ∈ dom(R<sup>−1</sup>) ⟺ (b, a) ∈ R<sup>−1</sup> for some a ∈ A ⟺ (a, b) ∈ R for some a ∈ A ⟺ b ∈ range(R). Hence dom(R<sup>−1</sup>) = range(R).</p></div>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">8-</span>Let A = {1, 2, 3}, B = {a, b} and R = {(1, a), (2, a)}. Then range(R) = B. <span class="mk">(1 mark)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof"><p class="end"><span class="lbl">False.</span> range(R) = {a} ≠ B, since b is not the second coordinate of any pair in R.</p></div>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">9-</span>For sets A, B and C, A × (B ∩ C) = (A × B) ∩ (A × C). <span class="mk">(2 marks)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof"><p class="end"><span class="lbl">True.</span> (x, y) ∈ A × (B ∩ C) ⟺ x ∈ A and (y ∈ B and y ∈ C) ⟺ (x ∈ A and y ∈ B) and (x ∈ A and y ∈ C) ⟺ (x, y) ∈ A × B and (x, y) ∈ A × C ⟺ (x, y) ∈ (A × B) ∩ (A × C).</p></div>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stmt"><span class="no">10-</span>Let n ∈ ℤ. If n &gt; 100, then n<sup>2</sup> + n + 1 is odd. <span class="mk">(1 mark)</span></p>
+      <details class="sol"><summary>الحل النموذجي</summary>
+        <div class="proof"><p class="end"><span class="lbl">True.</span> For every integer n, one of n and n + 1 is even, so n<sup>2</sup> + n = n(n + 1) is even and n<sup>2</sup> + n + 1 is odd. Since the conclusion is always true, the implication is true (trivial proof).</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="bank">
+  <h2>تمارين إضافية بإجابات مختصرة</h2>
+  <p>كل تمرين معه الحكم وفكرة الحل. لو الفكرة ما كفت، ارجع للقالب في قسم الفصل.</p>
+
+  <h3>فصل 5</h3>
+  <ol>
+    <li><span class="m">√3</span> عدد غير نسبي.
+      <details class="sol"><summary>الفكرة</summary><p>صح. نفس برهان <span class="m">√2</span> مع المساعدة «<span class="m">3 | a<sup>2</sup> ⇒ 3 | a</span>» (برهانها بعكس النقيض بحالتي الباقي 1 و2).</p></details></li>
+    <li>لكل عدد فردي n، <span class="m">4 | (n<sup>2</sup> + 3)</span>.
+      <details class="sol"><summary>الفكرة</summary><p>صح، رغم أن شكلها يوحي بالتحريف. <span class="m">n = 2k + 1 ⇒ n<sup>2</sup> + 3 = 4(k<sup>2</sup> + k + 1)</span>.</p></details></li>
+    <li>لكل <span class="m">n ∈ ℕ</span>، العدد <span class="m">n<sup>2</sup> + n + 41</span> أولي.
+      <details class="sol"><summary>الفكرة</summary><p>خطأ. <span class="m">n = 40</span> يعطي <span class="m">1681 = 41<sup>2</sup></span>. (وقبلها كل القيم أولية، عشان كذا التجربة السريعة ما تكفي هنا. ابحث عن قيمة تخلي كل الحدود تقبل القسمة على 41.)</p></details></li>
+    <li>حاصل ضرب عددين غير نسبيين غير نسبي.
+      <details class="sol"><summary>الفكرة</summary><p>خطأ. <span class="m">√2 · √2 = 2</span>.</p></details></li>
+    <li>إذا كان <span class="m">n ∈ ℕ</span> فإن <span class="m">n/(n + 1) &gt; n/(n + 2)</span> (نهائي 1443، بالتناقض).
+      <details class="sol"><summary>الفكرة</summary><p>صح. افترض <span class="m">n/(n + 1) ≤ n/(n + 2)</span>. اضرب في <span class="m">(n + 1)(n + 2) &gt; 0</span>: <span class="m">n<sup>2</sup> + 2n ≤ n<sup>2</sup> + n</span>، أي <span class="m">n ≤ 0</span>، تناقض مع <span class="m">n ∈ ℕ</span>.</p></details></li>
+    <li>يوجد عددان طبيعيان m و n بحيث <span class="m">2m + 7n = 1</span>.
+      <details class="sol"><summary>الفكرة</summary><p>خطأ: لكل <span class="m">m, n ≥ 1</span>، <span class="m">2m + 7n ≥ 9 &gt; 1</span>. لكنها صحيحة في ℤ: <span class="m">m = 4, n = −1</span>.</p></details></li>
+  </ol>
+
+  <h3>فصل 6</h3>
+  <ol>
+    <li><span class="m">1 + 2 + 2<sup>2</sup> + ⋯ + 2<sup>n</sup> = 2<sup>n+1</sup> − 1</span> لكل <span class="m">n ≥ 0</span>.
+      <details class="sol"><summary>الفكرة</summary><p>الخطوة: <span class="m">(2<sup>k+1</sup> − 1) + 2<sup>k+1</sup> = 2 · 2<sup>k+1</sup> − 1 = 2<sup>k+2</sup> − 1</span>.</p></details></li>
+    <li><span class="m">1<sup>2</sup> + 2<sup>2</sup> + ⋯ + n<sup>2</sup> = n(n + 1)(2n + 1)/6</span>.
+      <details class="sol"><summary>الفكرة</summary><p>خذ <span class="m">(k + 1)</span> عاملاً مشتركاً: <span class="m">(k + 1)[k(2k + 1) + 6(k + 1)]/6 = (k + 1)(2k<sup>2</sup> + 7k + 6)/6 = (k + 1)(k + 2)(2k + 3)/6</span>.</p></details></li>
+    <li><span class="m">3 | (n<sup>3</sup> + 2n)</span> لكل <span class="m">n ∈ ℕ</span>.
+      <details class="sol"><summary>الفكرة</summary><p><span class="m">(k + 1)<sup>3</sup> + 2(k + 1) = (k<sup>3</sup> + 2k) + 3(k<sup>2</sup> + k + 1)</span>، والقوس الأول يقبل القسمة على 3 بالفرض.</p></details></li>
+    <li><span class="m">a<sub>1</sub> = 1, a<sub>2</sub> = 2, a<sub>n</sub> = a<sub>n−1</sub> + 2a<sub>n−2</sub></span> لكل <span class="m">n ≥ 3</span> ⇒ <span class="m">a<sub>n</sub> = 2<sup>n−1</sup></span>.
+      <details class="sol"><summary>الفكرة</summary><p>استقراء قوي. أساسان: <span class="m">a<sub>1</sub> = 2<sup>0</sup></span>، <span class="m">a<sub>2</sub> = 2<sup>1</sup></span>. لـ <span class="m">k ≥ 2</span>: <span class="m">a<sub>k+1</sub> = 2<sup>k−1</sup> + 2 · 2<sup>k−2</sup> = 2<sup>k</sup></span>.</p></details></li>
+    <li>لكل <span class="m">n ≥ 12</span> يوجد a و b غير سالبين بحيث <span class="m">n = 4a + 5b</span>.
+      <details class="sol"><summary>الفكرة</summary><p>أربع أساسات: 12، 13، 14، 15. لـ <span class="m">k + 1 ≥ 16</span> طبّق الفرض على <span class="m">(k + 1) − 4 ≥ 12</span> وزد 1 على a.</p></details></li>
+    <li><span class="m">2<sup>n</sup> &gt; n</span> لكل عدد صحيح غير سالب n (Ex 3).
+      <details class="sol"><summary>الفكرة</summary><p>أساس <span class="m">2<sup>0</sup> = 1 &gt; 0</span>. حالة <span class="m">k = 0</span> لوحدها، وبعدها لـ <span class="m">k ≥ 1</span>: <span class="m">2<sup>k+1</sup> = 2 · 2<sup>k</sup> &gt; 2k = k + k ≥ k + 1</span>.</p></details></li>
+    <li>كل مجموعة جزئية غير خالية من <span class="m">{i ∈ ℤ : i ≥ −3}</span> لها أصغر عنصر.
+      <details class="sol"><summary>الفكرة</summary><p>صح: النظرية تقول <span class="m">{i ∈ ℤ : i ≥ m}</span> مرتبة ترتيباً حسناً لأي عدد صحيح m.</p></details></li>
+  </ol>
+
+  <h3>العلاقات 9.1</h3>
+  <ol>
+    <li>كم علاقة من <span class="m">A = {1, 2, 3}</span> إلى <span class="m">B = {a, b}</span>؟ وكم علاقة على A؟
+      <details class="sol"><summary>الفكرة</summary><p><span class="m">2<sup>6</sup> = 64</span> و<span class="m">2<sup>9</sup> = 512</span>.</p></details></li>
+    <li><span class="m">(R<sup>−1</sup>)<sup>−1</sup> = R</span>.
+      <details class="sol"><summary>الفكرة</summary><p><span class="m">(x, y) ∈ (R<sup>−1</sup>)<sup>−1</sup> ⟺ (y, x) ∈ R<sup>−1</sup> ⟺ (x, y) ∈ R</span>.</p></details></li>
+    <li><span class="m">R = {(x, y) ∈ ℝ × ℝ : x<sup>2</sup> + y<sup>2</sup> = 1}</span>. أوجد dom و range و <span class="m">R<sup>−1</sup></span>.
+      <details class="sol"><summary>الفكرة</summary><p><span class="m">dom(R) = range(R) = [−1, 1]</span>، و<span class="m">R<sup>−1</sup> = R</span> لأن الشرط متماثل في x و y.</p></details></li>
+    <li>إذا <span class="m">R ⊆ S</span> فإن <span class="m">R<sup>−1</sup> ⊆ S<sup>−1</sup></span>.
+      <details class="sol"><summary>الفكرة</summary><p>صح. <span class="m">(x, y) ∈ R<sup>−1</sup> ⇒ (y, x) ∈ R ⊆ S ⇒ (x, y) ∈ S<sup>−1</sup></span>.</p></details></li>
+    <li>إذا <span class="m">A × B = ∅</span> فإن العلاقة الوحيدة من A إلى B هي ∅.
+      <details class="sol"><summary>الفكرة</summary><p>صح. أي علاقة R تحقق <span class="m">R ⊆ A × B = ∅</span>.</p></details></li>
+  </ol>
+
+  <h3>جسور 1–4</h3>
+  <ol>
+    <li><span class="m">A × (B − C) = (A × B) − (A × C)</span>.
+      <details class="sol"><summary>الفكرة</summary><p>صح بسلسلة ⟺: <span class="m">x ∈ A ∧ y ∈ B ∧ y ∉ C ⟺ (x, y) ∈ A × B ∧ (x, y) ∉ A × C</span>. انتبه أن <span class="m">(x, y) ∉ A × C</span> مع <span class="m">x ∈ A</span> تعني <span class="m">y ∉ C</span>.</p></details></li>
+    <li>اكتب بالرموز وانفِ: لكل عدد حقيقي موجب x يوجد عدد حقيقي y بحيث <span class="m">y<sup>2</sup> = x</span> (نهائي 1443).
+      <details class="sol"><summary>الفكرة</summary><p><span class="m">∀x ∈ ℝ<sup>+</sup>, ∃y ∈ ℝ, y<sup>2</sup> = x</span> وهي صحيحة (<span class="m">y = √x</span>). النفي: <span class="m">∃x ∈ ℝ<sup>+</sup>, ∀y ∈ ℝ, y<sup>2</sup> ≠ x</span> وهو خاطئ.</p></details></li>
+    <li>Let x, y ∈ ℤ. If xy is odd, then x and y are odd.
+      <details class="sol"><summary>الفكرة</summary><p>صح بعكس النقيض: لو x زوجي أو y زوجي (حالتان، WLOG x زوجي) فإن <span class="m">xy = 2a·y = 2(ay)</span> زوجي.</p></details></li>
+  </ol>
+</section>
+
+<section id="plan">
+  <h2>الخطة</h2>
+  <p>رتّبت المواضيع حسب «الدرجة المتوقعة مقابل وقت المذاكرة». ابدأ بالمستوى أ ولا تنتقل للي بعده قبل ما تكتب براهينه من الذاكرة.</p>
+
+  <div class="tiers">
+    <div class="tier">
+      <h4>المستوى أ: لا تدخل بدونها</h4>
+      <ol>
+        <li>قالب الاستقراء مع مجموعين: مجموع الفرديات، ومجموع <span class="m">1/(k(k + 1))</span></li>
+        <li>الاستقراء القوي للمتتابعات (Ex 6 و Ex 7) مع حالة <span class="m">k = 1</span>.</li>
+        <li>برهان مبدأ الاستقراء من الترتيب الحسن.</li>
+        <li>التناقض: Ex 5 و Ex 6 و Ex 7 و <span class="m">√2</span>.</li>
+        <li>المثال المضاد وجدول التحريف.</li>
+        <li>نفي الوجود (Ex 13–15) وتريك الزوجية.</li>
+        <li>9.1: التعاريف بالإنجليزي، dom و range و <span class="m">R<sup>−1</sup></span>، عدّ العلاقات، برهان <span class="m">dom(R<sup>−1</sup>) = range(R)</span>.</li>
+        <li><span class="m">A × (B ∪ C)</span> و<span class="m">A × (B ∩ C)</span> بسلسلة ⟺.</li>
+        <li>الفارغ والتافه.</li>
+      </ol>
+    </div>
+    <div class="tier">
+      <h4>المستوى ب: ترفع الدرجة</h4>
+      <ol>
+        <li>الاستقراء العام: <span class="m">2<sup>n</sup> &gt; n<sup>2</sup></span>، <span class="m">n! &gt; 2<sup>n</sup></span>، <span class="m">9 | (4<sup>3n</sup> − 1)</span>، <span class="m">|P(A)| = 2<sup>n</sup></span>.</li>
+        <li><span class="m">3a + 5b</span> وقاعدة «عدد الأساسات = القفزة».</li>
+        <li>أصغر مثال مضاد (Ex 9، Ex 10) ووحدانية أصغر عنصر.</li>
+        <li>الوجود: بنّاء، و IVT، والوحدانية.</li>
+        <li>نسبي + غير نسبي، و<span class="m">14m + 21n = 100</span>، و<span class="m">√3</span>.</li>
+        <li>التجزئة وفخاخها، وقواعد النفي.</li>
+      </ol>
+    </div>
+    <div class="tier">
+      <h4>المستوى ج: احتياط</h4>
+      <ol>
+        <li>خواص العلاقات 9.2 وجدول الأمثلة.</li>
+        <li>حقائق الترتيب الحسن السريعة.</li>
+        <li>تقييم البراهين.</li>
+        <li>النهايات ε–δ.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h3>خطة خمسة أيام</h3>
+  <p>علّم على اللي تخلصه. تقدّمك ينحفظ في متصفحك أنت.</p>
+  <div class="prog"><div class="bar"><span id="plan-bar"></span></div><span class="small"><b id="plan-pct">0%</b></span><button class="btn" type="button" id="plan-reset">صفّر</button></div>
+
+  <div class="day">
+    <h4>اليوم 1 · ف6 الجزء الأول <span class="muted">حوالي 3 ساعات</span></h4>
+    <label class="chk"><input type="checkbox" id="d1a"><span>تعاريف الترتيب الحسن وجدول الحقائق + وحدانية أصغر عنصر (20 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d1b"><span>احفظ برهان مبدأ الاستقراء واكتبه من الذاكرة مرتين (30 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d1c"><span>اكتب Ex 1 و Ex 2 من السلايد ومجموع الفرديات بدون ما تطالع (60 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d1d"><span>حل <span class="m">1/(k(k + 1))</span> و<span class="m">Σk<sup>2</sup></span> و<span class="m">Σ2<sup>k</sup></span> من التمارين (45 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d1e"><span>راجع تريكات الجبر وحدد وين غلطت (15 د)</span></label>
+  </div>
+  <div class="day">
+    <h4>اليوم 2 · ف6 الجزء الثاني <span class="muted">حوالي 3 ساعات</span></h4>
+    <label class="chk"><input type="checkbox" id="d2a"><span>المتباينات: Ex 3 و Ex 4 و <span class="m">n! &gt; 2<sup>n</sup></span> (45 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d2b"><span>القسمة: Ex 5 و <span class="m">7 | (2<sup>3n</sup> − 1)</span> بتريك اعزل وعوّض (30 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d2c"><span>نظرية <span class="m">|P(A)| = 2<sup>n</sup></span> (20 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d2d"><span>الاستقراء القوي: Ex 6 و Ex 7 و <span class="m">a<sub>n</sub> = 2<sup>n−1</sup></span> (45 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d2e"><span>Ex 8 (3a + 5b) ونسخة 4a + 5b (30 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d2f"><span>أصغر مثال مضاد: Ex 9 أو Ex 10 (20 د)</span></label>
+  </div>
+  <div class="day">
+    <h4>اليوم 3 · ف5 <span class="muted">حوالي 3 ساعات</span></h4>
+    <label class="chk"><input type="checkbox" id="d3a"><span>جدول «النفي يحدد التقنية» + أمثلة المثال المضاد Ex 1–4 (30 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d3b"><span>التناقض من الذاكرة: Ex 5 و Ex 6 و Ex 7 و <span class="m">√2</span> (60 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d3c"><span>نسبي + غير نسبي، و<span class="m">14m + 21n = 100</span>، و<span class="m">√3</span> (30 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d3d"><span>الوجود Ex 8–12 مع IVT والوحدانية (30 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d3e"><span>نفي الوجود Ex 13–15 وتريك الزوجية (30 د)</span></label>
+  </div>
+  <div class="day">
+    <h4>اليوم 4 · 9.1 والجسور <span class="muted">حوالي 2.5 ساعة</span></h4>
+    <label class="chk"><input type="checkbox" id="d4a"><span>تعاريف 9.1 بالإنجليزي + مثال السلايد (20 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d4b"><span>تمارين dom و range و <span class="m">R<sup>−1</sup></span> والعدّ (30 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d4c"><span>برهان <span class="m">dom(R<sup>−1</sup>) = range(R)</span> و<span class="m">(R ∪ S)<sup>−1</sup></span> ومثال <span class="m">dom(R ∩ S)</span> المضاد (25 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d4d"><span>الضرب الديكارتي: جدول الصح والخطأ + <span class="m">A × (B ∪ C)</span> (30 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d4e"><span>التجزئة والنفي والفارغ والتافه (25 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d4f"><span>احتياط: خواص العلاقات 9.2 (20 د)</span></label>
+  </div>
+  <div class="day">
+    <h4>اليوم 5 · محاكاة <span class="muted">حوالي 3 ساعات</span></h4>
+    <label class="chk"><input type="checkbox" id="d5a"><span>نموذج أ على ورق بتوقيت 90 دقيقة (90 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d5b"><span>صحّح نفسك بالحلول واكتب أخطاءك في ورقة (30 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d5c"><span>تدريب «صح أو خطأ؟» كامل (15 د)</span></label>
+    <label class="chk"><input type="checkbox" id="d5d"><span>نموذج ب أو نصفه (45 د)</span></label>
+  </div>
+  <div class="day">
+    <h4>ليلة الاختبار <span class="muted">ساعة واحدة</span></h4>
+    <label class="chk"><input type="checkbox" id="d6a"><span>راجع القوالب فقط: الاستقراء، القوي، التناقض، المثال المضاد، الفارغ</span></label>
+    <label class="chk"><input type="checkbox" id="d6b"><span>اكتب برهان مبدأ الاستقراء وبرهان <span class="m">√2</span> مرة وحدة</span></label>
+    <label class="chk"><input type="checkbox" id="d6c"><span>ورقة أخطائك من يوم المحاكاة</span></label>
+    <label class="chk"><input type="checkbox" id="d6d"><span>نم بدري. البراهين تحتاج راس صاحي أكثر من الحفظ</span></label>
+  </div>
+
+  <div class="cols">
+    <div class="tier">
+      <h4>باقي لك 3 أيام؟</h4>
+      <ol>
+        <li>ف6 كامل (المستوى أ ثم ب).</li>
+        <li>ف5 كامل + 9.1.</li>
+        <li>نموذج أ بالتوقيت + الجسور + صح أو خطأ.</li>
+      </ol>
+    </div>
+    <div class="tier">
+      <h4>باقي يوم واحد؟</h4>
+      <p class="small">المستوى أ فقط (5–6 ساعات): القوالب، Ex 6 و Ex 7 من ف6، برهان المبدأ، Ex 5 و Ex 7 و <span class="m">√2</span> من ف5، جدول التحريف، Ex 13، تعاريف 9.1، <span class="m">A × (B ∪ C)</span>. بعدها نموذج أ بدون توقيت.</p>
+    </div>
+  </div>
+</section>
+
+<section id="examday">
+  <h2>يوم الاختبار</h2>
+  <h3>ترتيب الحل</h3>
+  <ol>
+    <li><strong>أول 5 دقائق:</strong> اقرأ كل الفقرات واكتب جنب كل وحدة: صح أو خطأ أو ما أدري، والتقنية.</li>
+    <li><strong>ابدأ بالسريع:</strong> الفارغ (درجة)، الأمثلة المضادة (درجتان)، حسابات 9.1.</li>
+    <li><strong>بعدها المحفوظ:</strong> الاستقراء وأمثلة السلايد. هذي درجات مضمونة لو كتبت القالب.</li>
+    <li><strong>آخر شي الفقرة اللي ما عرفتها.</strong> اكتب فيها القالب على الأقل: الأساس والفرض والهدف <span class="m">P(k + 1)</span>، أو جملة <span class="en">Assume, to the contrary</span> مع النفي الصحيح. عليها درجات جزئية غالباً.</li>
+  </ol>
+  <p><strong>الوقت:</strong> 25 درجة في 90 دقيقة، يعني حوالي 3.5 دقيقة للدرجة. فقرة الأربع درجات لا تتعدى 14 دقيقة.</p>
+
+  <h3>مراجعة آخر 5 دقائق</h3>
+  <ul>
+    <li>كل فقرة بدأت بسطر الحكم: <span class="en">True</span> أو <span class="en">False</span>.</li>
+    <li>كل استقراء فيه: أساس، فرض، هدف، استخدام الفرض، وجملة <span class="en">By the Principle of Mathematical Induction</span> (أو Strong).</li>
+    <li>كل استقراء قوي لمتتابعة فيه حالة <span class="m">k = 1</span> منفصلة.</li>
+    <li>كل تناقض فيه <span class="en">Assume, to the contrary</span> والنفي صحيح، وينتهي بكلمة <span class="en">contradiction</span>.</li>
+    <li>كل مثال مضاد يحقق الفرض ويكسر النتيجة، والحساب مكتوب.</li>
+    <li>كل «لأن ... عدد صحيح» مكتوبة: <span class="en">Since a + b ∈ ℤ</span>.</li>
+  </ul>
+
+  <h3>أخطاء تكلّف درجات</h3>
+  <ul>
+    <li>إثبات <span class="m">P(k + 1)</span> بدون ما تستخدم الفرض. المصحح يدوّر على السطر اللي استعملت فيه الفرض.</li>
+    <li>نفي «و» بـ «و». نفي <span class="m">5 ∤ a</span> و <span class="m">5 ∤ b</span> هو <span class="m">5 | a</span> أو <span class="m">5 | b</span>.</li>
+    <li>الرد على «يوجد…» الخاطئة بمثال. نفيها برهان «لكل».</li>
+    <li>استخدام نفس الحرف k لعددين مختلفين.</li>
+    <li>كتابة <span class="m">range(R) = B</span> تلقائياً، أو خلط <span class="m">A × B</span> مع <span class="m">B × A</span>.</li>
+    <li>تبدأ تبرهن قبل ما تجرب قيم صغيرة، وتكتشف بعد 10 دقائق أن العبارة خاطئة.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>مبني على ملفات المجلد: 5 اختبارات ميد ثاني و6 نهائية بحلولها، وسلايدات الفصول 5 و6 و9، والخطة الدراسية لـ 131 ريض. التوقعات تقدير من الأنماط، والنطاق الرسمي هو اللي يعلنه الدكتور. بالتوفيق.</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  /* ---------- True / False trainer ---------- */
+  var TF = [
+    {s:'For every positive integer n, 2<sup>n</sup> &gt; n<sup>2</sup>.', k:'Ch5–6', a:false,
+     w:'n = 2: <span class="m">2<sup>2</sup> = 4</span> وليس أكبر من <span class="m">2<sup>2</sup> = 4</span>. النتيجة الصحيحة تحتاج <span class="m">n ≥ 5</span>.'},
+    {s:'For every integer n ≥ 5, 2<sup>n</sup> &gt; n<sup>2</sup>.', k:'6.2', a:true,
+     w:'Ex 4 من السلايد بالاستقراء العام.'},
+    {s:'There exist integers m and n such that 2m + 7n = 1.', k:'5.4', a:true,
+     w:'<span class="m">m = 4, n = −1</span>: <span class="m">8 − 7 = 1</span>.'},
+    {s:'There exist positive integers m and n such that 2m + 7n = 1.', k:'5.5', a:false,
+     w:'لكل <span class="m">m, n ≥ 1</span>: <span class="m">2m + 7n ≥ 9</span>. تغيّرت المجموعة من ℤ إلى ℕ.'},
+    {s:'There exist integers m and n such that 14m + 21n = 100.', k:'5.2', a:false,
+     w:'<span class="m">14m + 21n = 7(2m + 3n)</span> يقبل القسمة على 7، و 100 لا.'},
+    {s:'For every odd integer n, 8 | (n<sup>2</sup> − 1).', k:'3–4', a:true,
+     w:'<span class="m">(2k + 1)<sup>2</sup> − 1 = 4k(k + 1)</span> و <span class="m">k(k + 1)</span> زوجي.'},
+    {s:'For every odd positive integer n, 3 | (n<sup>2</sup> − 1).', k:'5.1', a:false,
+     w:'فقرة 1447: <span class="m">n = 3</span> يعطي 8، و <span class="m">3 ∤ 8</span>.'},
+    {s:'For every odd integer n, 4 | (n<sup>2</sup> + 3).', k:'3–4', a:true,
+     w:'<span class="m">n<sup>2</sup> + 3 = 4(k<sup>2</sup> + k + 1)</span>. شكلها يوحي بالتحريف لكنها صحيحة.'},
+    {s:'The sum of two irrational numbers is irrational.', k:'5.1', a:false,
+     w:'<span class="m">√2 + (−√2) = 0</span>.'},
+    {s:'If r is rational and x is irrational, then r + x is irrational.', k:'5.2', a:true,
+     w:'بالتناقض: لو كان نسبياً لصار <span class="m">x = (r + x) − r</span> نسبياً.'},
+    {s:'The interval [0, 1] is well-ordered.', k:'6.1', a:false,
+     w:'المجموعة الجزئية <span class="m">(0, 1)</span> ما لها أصغر عنصر.'},
+    {s:'There is no smallest positive rational number.', k:'5.2', a:true,
+     w:'لو كان r أصغرها فإن <span class="m">r/2</span> نسبي موجب وأصغر منه.'},
+    {s:'If R is a relation from A to B, then dom(R<sup>−1</sup>) = range(R).', k:'9.1', a:true,
+     w:'القلب يبدّل الإحداثيات، فالأولى في <span class="m">R<sup>−1</sup></span> هي الثانية في R.'},
+    {s:'For relations R and S from A to B, dom(R ∩ S) = dom(R) ∩ dom(S).', k:'9.1', a:false,
+     w:'<span class="m">R = {(1, 1)}</span>، <span class="m">S = {(1, 2)}</span>: اليسار ∅ واليمين {1}.'},
+    {s:'There are exactly 64 relations from A = {1, 2, 3} to B = {a, b}.', k:'9.1', a:true,
+     w:'<span class="m">|A × B| = 6</span>، فالعدد <span class="m">2<sup>6</sup> = 64</span>.'},
+    {s:'For all sets A, B, C, D: (A × B) ∪ (C × D) = (A ∪ C) × (B ∪ D).', k:'4.6', a:false,
+     w:'<span class="m">A = B = {1}</span>، <span class="m">C = D = {2}</span>: عنصران مقابل أربعة.'},
+    {s:'Let x ∈ ℝ. If x<sup>2</sup> &lt; 0, then x = 7.', k:'3.1', a:true,
+     w:'الفرض خاطئ لكل عدد حقيقي، فالعبارة صحيحة (فارغة).'},
+    {s:'There exists an integer n such that n<sup>3</sup> − n + 1 is even.', k:'5.5', a:false,
+     w:'<span class="m">n<sup>3</sup> − n = (n − 1)n(n + 1)</span> زوجي دائماً، فـ <span class="m">n<sup>3</sup> − n + 1</span> فردي دائماً.'}
+  ];
+  var list = document.getElementById('tf-list');
+  var scoreEl = document.getElementById('tf-score');
+  var doneEl = document.getElementById('tf-done');
+  var leftEl = document.getElementById('tf-left');
+  var score = 0, done = 0;
+  function update(){
+    scoreEl.textContent = score; doneEl.textContent = done;
+    leftEl.textContent = done < TF.length ? ('باقي ' + (TF.length - done)) : 'خلصت كل العبارات';
+  }
+  function build(){
+    list.innerHTML = ''; score = 0; done = 0;
+    TF.forEach(function(item, i){
+      var li = document.createElement('li');
+      li.innerHTML =
+        '<div class="s" lang="en"><span class="k">' + (i + 1) + '. [' + item.k + ']</span>' + item.s + '</div>' +
+        '<div class="btns"><button class="btn" type="button" data-v="1">صح</button><button class="btn" type="button" data-v="0">خطأ</button></div>' +
+        '<div class="fb" hidden></div>';
+      li.querySelectorAll('button').forEach(function(b){
+        b.addEventListener('click', function(){
+          if (li.dataset.answered) return;
+          li.dataset.answered = '1';
+          var pick = b.dataset.v === '1';
+          var ok = pick === item.a;
+          done++; if (ok) score++;
+          li.classList.add(ok ? 'right' : 'wrong');
+          var fb = li.querySelector('.fb');
+          fb.innerHTML = '<span class="chip ' + (ok ? 'v-t">إجابتك صحيحة' : 'v-f">إجابتك خاطئة') + '</span> ' +
+            'الحكم: <strong>' + (item.a ? 'صح' : 'خطأ') + '</strong>. ' + item.w;
+          fb.hidden = false;
+          li.querySelectorAll('button').forEach(function(x){ x.disabled = true; });
+          update();
+        });
+      });
+      list.appendChild(li);
+    });
+    update();
+  }
+  document.getElementById('tf-reset').addEventListener('click', build);
+  build();
+
+  /* ---------- open / close all solutions ---------- */
+  document.querySelectorAll('[data-toggle]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var sec = document.getElementById(btn.dataset.toggle);
+      var ds = sec.querySelectorAll('details.sol');
+      var anyClosed = Array.prototype.some.call(ds, function(d){ return !d.open; });
+      ds.forEach(function(d){ d.open = anyClosed; });
+      btn.textContent = anyClosed ? 'أغلق كل الحلول' : 'افتح كل الحلول';
+    });
+  });
+
+  /* ---------- study plan progress (per-viewer, optional storage) ---------- */
+  var KEY = 'm131-mid2-plan';
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('#plan input[type=checkbox]'));
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e) { saved = {}; }
+  function refresh(){
+    var n = boxes.filter(function(b){ return b.checked; }).length;
+    var pct = boxes.length ? Math.round(100 * n / boxes.length) : 0;
+    document.getElementById('plan-bar').style.width = pct + '%';
+    document.getElementById('plan-pct').textContent = pct + '%';
+  }
+  boxes.forEach(function(b){
+    if (saved[b.id]) b.checked = true;
+    b.addEventListener('change', function(){
+      saved[b.id] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e) {}
+      refresh();
+    });
+  });
+  document.getElementById('plan-reset').addEventListener('click', function(){
+    boxes.forEach(function(b){ b.checked = false; });
+    saved = {};
+    try { localStorage.removeItem(KEY); } catch(e) {}
+    refresh();
+  });
+  refresh();
+})();
+</script>
