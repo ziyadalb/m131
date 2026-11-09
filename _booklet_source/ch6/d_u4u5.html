@@ -1,9 +1,18 @@
 
 <!-- ============ UNIT 4 ============ -->
-<section class="page" id="p-u4">
+<section class="page" id="p-u4" style="gap:3mm">
   <div class="hdr"><span class="u">الوحدة 4 · القسمة · 6.1 و6.2</span><span class="pn"></span></div>
   <h2 class="t">القسمة: حركة «اعزل وعوّض»</h2>
   <div class="idea">من الفرض اعزل القوة لوحدها، وعوّضها في <span class="mx">\(P(k+1)\)</span>. الباقي يطلع مضاعف للعدد تلقائياً.</div>
+  <p><b>أول شي:</b> <span class="mx">\(a \mid b\)</span> معناها <span class="mx">\(b = ax\)</span> لعدد صحيح x. أول ما تشوف علامة القسمة حوّلها لمعادلة، لأن المعادلة تقدر تعوّض فيها.</p>
+  <div class="why2">
+    <div class="flow">
+      <div class="f"><span class="num">1</span><span>حوّل الفرض لمعادلة: <span class="mx">\(2^{2k} - 1 = 3x\)</span>.</span></div>
+      <div class="f"><span class="num">2</span><span>اعزل القوة: <span class="mx">\(2^{2k} = 3x + 1\)</span>.</span></div>
+      <div class="f"><span class="num">3</span><span>في <span class="mx">\(P(k+1)\)</span> طلّع القوة القديمة: <span class="mx">\(2^{2k+2} = 4 \cdot 2^{2k}\)</span>، وعوّض.</span></div>
+      <div class="f"><span class="num">4</span><span>طلّع العدد عامل مشترك، واكتب <span class="lt">Since … is an integer</span>.</span></div>
+    </div>
+  </div>
   <div class="stmt"><p class="en"><span class="lb">Result 6.11.</span> For every nonnegative integer \(n\), \(\;3 \mid (2^{2n} - 1)\).</p></div>
   <div class="tpl">
     <div class="r"><div class="l">Base</div><div class="v">When \(n = 0\), \(2^{2n} - 1 = 0\), and \(3 \mid 0\).</div></div>
@@ -49,6 +58,15 @@
   </div>
   <div class="note trick"><span class="k">طريقة ثانية (اجمع واطرح):</span><span class="mx">\(81 \cdot 3^{4k+1} - 25 \cdot 5^{2k-1} = 81\left(3^{4k+1} - 5^{2k-1}\right) + 56 \cdot 5^{2k-1}\)</span>. القوس يقبل القسمة على 7 بالفرض، و <span class="mx">\(56 = 7 \cdot 8\)</span>. الطريقتان صحيحتان، اختر وحدة والتزم فيها.</div>
   <div class="note trap"><span class="k">تفصيلة صغيرة:</span><span class="mx">\(5^{2k-1}\)</span> عدد صحيح لأن <span class="mx">\(k \ge 1\)</span>، فالأس <span class="mx">\(2k - 1 \ge 1\)</span>. لو كان الأس ممكن يصير سالب، ما تقدر تقول إنه عدد صحيح.</div>
+  <div class="why2">
+    <h3>لو جوابك اختلف، شيّك على هذي الثلاث</h3>
+    <ol class="notes">
+      <li>الأسس: <span class="mx">\(4(k+1)+1 = 4k+5\)</span> و <span class="mx">\(2(k+1)-1 = 2k+1\)</span>. الأس يزيد 4 في الأول و2 في الثاني، مو 1.</li>
+      <li>تطليع القوة القديمة: <span class="mx">\(3^{4k+5} = 3^4 \cdot 3^{4k+1} = 81 \cdot 3^{4k+1}\)</span> و <span class="mx">\(5^{2k+1} = 25 \cdot 5^{2k-1}\)</span>.</li>
+      <li>الجملة الأخيرة <span class="lt">Since … is an integer</span>. بدونها ما أثبتّ القسمة.</li>
+    </ol>
+    <p class="small">تأكد بالأرقام عند <span class="mx">\(n = 2\)</span>: <span class="mx">\(3^9 - 5^3 = 19683 - 125 = 19558 = 7 \cdot 2794\)</span>.</p>
+  </div>
   <div class="box">
     <h3>راجع نفسك قبل ما تكمل</h3>
     <ul class="chk">

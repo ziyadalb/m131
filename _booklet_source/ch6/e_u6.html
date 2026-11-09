@@ -6,6 +6,11 @@
   <div class="idea">تستخدمه لما <span class="mx">\(P(k+1)\)</span> تحتاج أكثر من <span class="mx">\(P(k)\)</span>، مثل متتابعة كل حد فيها يعتمد على الحدين اللي قبله.</div>
   <div class="stmt"><p class="en"><span class="lb">The Strong Principle of Mathematical Induction.</span> For each positive integer \(n\), let \(P(n)\) be a statement. If (1) \(P(1)\) is true and (2) for every positive integer \(k\), if \(P(i)\) is true for every integer \(i\) with \(1 \le i \le k\), then \(P(k+1)\) is true, then \(P(n)\) is true for every positive integer \(n\).</p></div>
   <p>الفرق الوحيد عن العادي: تفترض صحة كل الحالات من 1 إلى k، مو حالة k بس. وفي المتتابعات: القيم الأولى المعطاة اسمها <span class="mx">initial values</span>، والقاعدة اسمها <span class="mx">recurrence relation</span>.</p>
+  <table class="t">
+    <tr><th style="width:18%"></th><th>العادي</th><th>القوي</th></tr>
+    <tr><td>تفترض</td><td><span class="mx">\(P(k)\)</span> بس</td><td><span class="mx">\(P(1), P(2), \ldots, P(k)\)</span> كلها</td></tr>
+    <tr><td>تستخدمه لما</td><td><span class="mx">\(P(k+1)\)</span> تحتاج اللي قبلها مباشرة</td><td><span class="mx">\(P(k+1)\)</span> تحتاج حالتين أو أكثر، أو حالة أبعد</td></tr>
+  </table>
   <div class="stmt"><p class="en"><span class="lb">Exam question.</span> A sequence \(\{a_n\}\) is defined recursively by \(a_1 = 1\), \(a_2 = 3\) and \(a_n = 2a_{n-1} - a_{n-2}\) for \(n \ge 3\). Then \(a_n = 2n - 1\) for all \(n \in \mathbb{N}\).</p></div>
   <div class="tpl">
     <div class="r"><div class="l">Base</div><div class="v">Since \(a_1 = 2 \cdot 1 - 1 = 1\), the formula holds for \(n = 1\).</div></div>
@@ -70,6 +75,13 @@
     <div class="r"><div class="l">Step</div><div class="v">Then \(8 \le (k+1) - 3 \lt k\). By the induction hypothesis, there are nonnegative integers \(a\) and \(b\) such that \((k+1) - 3 = 3a + 5b\), and so \(k + 1 = 3(a+1) + 5b\). Letting \(x = a + 1\) and \(y = b\) gives the result.</div></div>
     <div class="r"><div class="l">Conclude</div><div class="v">By the Strong Principle of Mathematical Induction, the statement holds for every integer \(n \ge 8\).</div></div>
   </div>
+  <h3>شف القفزة بعينك</h3>
+  <table class="t" style="direction:ltr">
+    <tr><th>\(n\)</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th></tr>
+    <tr><td>\(3a+5b\)</td><td>\(3+5\)</td><td>\(3\cdot 3\)</td><td>\(5\cdot 2\)</td><td>\(8+3\)</td><td>\(9+3\)</td><td>\(10+3\)</td><td>\(11+3\)</td></tr>
+    <tr><td>من وين؟</td><td colspan="3">تتحقق منها مباشرة</td><td colspan="4">كل عدد = العدد اللي قبله بثلاث خانات + 3</td></tr>
+  </table>
+  <p>الخطوة ترجع 3 خانات. فلو <span class="mx">\(k+1\)</span> كان 9 أو 10، الرجوع يوديك لـ 6 أو 7، وهذي تحت 8 وما يغطيها الفرض. عشان كذا سطر Small k يتحقق من 9 و10 باليد، والخطوة تبدأ من 11.</p>
   <div class="note trick"><span class="k">قاعدة عدد الأساسات:</span>عدد حالات الأساس = مقدار القفزة. هنا نطرح 3، فنحتاج 8 و9 و10. لو جاك «<span class="mx">\(n = 4a + 5b\)</span> لكل <span class="mx">\(n \ge 12\)</span>» تطرح 4 وتحتاج 12 و13 و14 و15. وفي المتتابعات: عدد الأساسات = عدد القيم الابتدائية.</div>
 </section>
 
@@ -90,13 +102,29 @@
       <li>من أي ثلاثة أعداد متتالية <span class="mx">\(k-1, k, k+1\)</span>، واحد بالضبط يقبل القسمة على 3.</li>
     </ol>
   </div>
-  <div class="space" data-label="(a)" style="flex:0 0 13mm; min-height:13mm"></div>
+  <div class="space" data-label="(a) اكتب العلاقة التكرارية مع القيم الابتدائية" style="flex:1 1 27mm"></div>
+  <div class="why2">
+    <h3>خطة برهان (b) قبل ما تكتب</h3>
+    <div class="flow">
+      <div class="f"><span class="num">1</span><span>سمِّ العبارة: <span class="mx">\(P(n)\)</span> هي «<span class="mx">\(F_n\)</span> زوجي إذا وفقط إذا <span class="mx">\(3 \mid n\)</span>».</span></div>
+      <div class="f"><span class="num">2</span><span>الاستقراء قوي، لأن <span class="mx">\(F_{k+1}\)</span> ترجع لحدّين: <span class="mx">\(F_k\)</span> و <span class="mx">\(F_{k-1}\)</span>.</span></div>
+      <div class="f"><span class="num">3</span><span>الخطوة حالتين: <span class="mx">\(3 \mid (k+1)\)</span> أو <span class="mx">\(3 \nmid (k+1)\)</span>. في كل حالة حدّد من الفرض زوجية <span class="mx">\(F_k\)</span> و <span class="mx">\(F_{k-1}\)</span>، واجمع.</span></div>
+    </div>
+  </div>
+  <div class="note trick"><span class="k">«إذا وفقط إذا» بدون تعب:</span>ما تحتاج تبرهن اتجاهين منفصلين. الحالتين في الخطوة تغطيها: حالة يطلع فيها الطرفين صح، وحالة يطلع فيها الطرفين خطأ.</div>
+</section>
+
+<section class="page" id="p-636b">
+  <div class="hdr"><span class="u">الوحدة 6 · الاستقراء القوي</span><span class="pn"></span></div>
+  <h2 class="t">تمرين 6.36 (b): البرهان<span class="tag ex">دورك</span></h2>
+  <div class="stmt"><p class="en"><span class="lb">(b)</span> Prove that \(2 \mid F_n\) if and only if \(3 \mid n\). &nbsp; Let \(P(n)\): \(F_n\) is even if and only if \(3 \mid n\).</p></div>
   <div class="tpl grow">
     <div class="r"><div class="l">Base</div><div class="v b b1"></div></div>
-    <div class="r"><div class="l">Assume</div><div class="v b b1"></div></div>
-    <div class="r"><div class="l">Small k</div><div class="v b b1"></div></div>
-    <div class="r fill"><div class="l">Step</div><div class="v b b3"></div></div>
-    <div class="r"><div class="l">Conclude</div><div class="v b b1"></div></div>
+    <div class="r"><div class="l">Assume</div><div class="v b b2"></div></div>
+    <div class="r"><div class="l">Small k</div><div class="v b b2"></div></div>
+    <div class="r fill"><div class="l">Case 1</div><div class="v b b3">Case 1. \(3 \mid (k+1)\).</div></div>
+    <div class="r fill"><div class="l">Case 2</div><div class="v b b3">Case 2. \(3 \nmid (k+1)\).</div></div>
+    <div class="r"><div class="l">Conclude</div><div class="v b b2"></div></div>
   </div>
   <div class="hints">
     <p><b>تلميح 1:</b> ليكن <span class="mx">\(P(n)\)</span>: «<span class="mx">\(F_n\)</span> زوجي ⟺ <span class="mx">\(3 \mid n\)</span>». نفس قالب سؤال الاختبار: الأساس <span class="mx">\(n = 1\)</span>، وسطر Small k لـ <span class="mx">\(F_2\)</span>، وفي الخطوة <span class="mx">\(F_{k+1} = F_k + F_{k-1}\)</span> لكل <span class="mx">\(k \ge 2\)</span>.</p>
@@ -111,7 +139,7 @@
   <div class="tpl">
     <div class="r"><div class="l">Assume</div><div class="v">Assume for an arbitrary positive integer \(k\) that \(a_i = i^2\) for every integer \(i\) with \(1 \le i \le k\).</div></div>
     <div class="r"><div class="l">Small k</div><div class="v">Since \(a_2 = 4 = 2^2\), the formula holds when \(k = 1\). So we may assume that \(k \ge 2\).</div></div>
-    <div class="r"><div class="l">Step</div><div class="v">Since \(k + 1 \ge 3\), \(\;a_{k+1} = 2a_k - a_{k-1} + 2 = 2k^2 - (k-1)^2 + 2 = 2k^2 - (k^2 - 2k + 1) + 2 = k^2 + 2k + 1 = (k+1)^2\).</div></div>
+    <div class="r"><div class="l">Step</div><div class="v">Since \(k + 1 \ge 3\), \(\;a_{k+1} = 2a_k - a_{k-1} + 2 = 2k^2 - (k-1)^2 + 2\) \(= 2k^2 - (k^2 - 2k + 1) + 2 = k^2 + 2k + 1 = (k+1)^2\).</div></div>
     <div class="r"><div class="l">Conclude</div><div class="v">By the Strong Principle of Mathematical Induction, \(a_n = n^2\) for all \(n \in \mathbb{N}\).</div></div>
   </div>
   <h3>تمرين 6.33</h3>
@@ -124,7 +152,16 @@
     <div class="r"><div class="l">Conclude</div><div class="v">By the Principle of Mathematical Induction, \(a_n = 2^{n-1}\) for every \(n \in \mathbb{N}\).</div></div>
   </div>
   <div class="note trap"><span class="k">فخ محتمل:</span>لو جت «<span class="mx">\(a_n = 2^n\)</span>» في <span class="lt">Prove or disprove</span>، جوابها False: <span class="mx">\(a_1 = 1 \ne 2^1\)</span>.</div>
-</section>
+<h3>عادي أو قوي؟ اسأل: كم حد ترجع له؟</h3>
+  <table class="t">
+    <tr><th>السؤال</th><th>يرجع لـ</th><th>النوع</th><th>الأساسات</th></tr>
+    <tr><td><span class="mx">\(a_n = 2a_{n-1}\)</span></td><td>حد واحد</td><td>عادي</td><td><span class="mx">\(a_1\)</span></td></tr>
+    <tr><td><span class="mx">\(a_n = 2a_{n-1} - a_{n-2}\)</span></td><td>حدّين</td><td>قوي</td><td><span class="mx">\(a_1\)</span>، و <span class="mx">\(a_2\)</span> في Small k</td></tr>
+    <tr><td><span class="mx">\(F_n = F_{n-1} + F_{n-2}\)</span></td><td>حدّين</td><td>قوي</td><td><span class="mx">\(F_1\)</span>، و <span class="mx">\(F_2\)</span> في Small k</td></tr>
+    <tr><td><span class="mx">\(n = 3a + 5b,\ n \ge 8\)</span></td><td>3 خانات ورا</td><td>قوي</td><td>8، و9 و10 في Small k</td></tr>
+  </table>
+  <div class="note trick"><span class="k">ليش 6.33 عادي؟</span><span class="mx">\(a_{k+1} = 2a_k\)</span> تحتاج الحد اللي قبلها بس، فالفرض العادي يكفي وما تحتاج سطر Small k. لو كتبته بالقوي ما يعتبر خطأ، بس العادي أقصر.</div>
+  </section>
 
 <section class="page sol" id="p-s6b">
   <div class="hdr"><span class="u">حلول الوحدة 6</span><span class="pn"></span></div>

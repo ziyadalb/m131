@@ -9,6 +9,24 @@ const parts = ['a_head.html', 'b_u1u2.html', 'c_u3.html', 'd_u4u5.html', 'e_u6.h
 let src = parts.map(p => fs.readFileSync(path.join(dir, p), 'utf8')).join('\n');
 src = src.replace('KATEX_CSS', 'file://' + path.join(dir, 'node_modules/katex/dist/katex.min.css'));
 
+// v2: page kinds + footer progress
+src = src.replace(/<section class="page([^"]*)" id="([^"]+)"([^>]*)>([\s\S]*?)<\/section>/g, (m, cls, id, attrs, body) => {
+  let kind = '';
+  if (cls.includes('sol')) kind = ' k-sol';
+  else if (body.includes('tag past')) kind = ' k-past';
+  else if (body.includes('tag ex')) kind = ' k-ex';
+  const hm = body.match(/<span class="u">([^<]*)<\/span>/);
+  const um = hm && hm[1].match(/(?:الوحدة|الوحدتين)\s*(\d)(?:\s*و(\d))?/);
+  let foot = '';
+  if (um) {
+    const u = +(um[2] || um[1]);
+    let bar = '';
+    for (let i = 1; i <= 7; i++) bar += '<i class="' + (i < u ? 'd' : i === u ? 'c' : '') + '"></i>';
+    foot = '<div class="foot"><span>الوحدة ' + u + ' من 7</span><div class="bar">' + bar + '</div></div>';
+  }
+  return '<section class="page' + cls + kind + '" id="' + id + '"' + attrs + '>' + body + foot + '</section>';
+});
+
 let errors = 0;
 function render(tex, display) {
   try {
@@ -20,8 +38,12 @@ function render(tex, display) {
   }
 }
 // display first, then inline
+src = src.replace(/<span class="mx">(\\\([^<]+?\\\))<\/span>/g, '$1');
 src = src.replace(/\\\[([\s\S]+?)\\\]/g, (_, t) => render(t.trim(), true));
-src = src.replace(/\\\(([\s\S]+?)\\\)/g, (_, t) => '<span class="mx">' + render(t.trim(), false) + '</span>');
+src = src.replace(/\\\(([\s\S]+?)\\\)([,.;:،؛])?/g, (_, t, p) => {
+  const m = '<span class="mx">' + render(t.trim(), false) + '</span>';
+  return p ? '<span style="white-space:nowrap">' + m + p + '</span>' : m;
+});
 const out = path.join(dir, 'out.html');
 fs.writeFileSync(out, src);
 console.log('KaTeX errors:', errors);
@@ -44,7 +66,10 @@ console.log('KaTeX errors:', errors);
       let wide = 0;
       p.querySelectorAll('.tpl .v, .stmt, .t, .paper').forEach(el => { if (el.scrollWidth > el.clientWidth + 2) wide++; });
       const spaces = Array.from(p.querySelectorAll('.space')).map(s => Math.round(s.getBoundingClientRect().height));
-      res.push({ n: i + 1, id: p.id, over, wide, spaces });
+      let bot = 0; const pr = p.getBoundingClientRect();
+      Array.from(p.children).forEach(c => { if (!c.classList.contains('foot')) bot = Math.max(bot, c.getBoundingClientRect().bottom - pr.top); });
+      const free = Math.round((pr.height - bot) / pr.height * 297 - 13);
+      res.push({ n: i + 1, id: p.id, over, wide, spaces, free });
     });
     const fonts = Array.from(document.fonts).filter(f => f.status === 'loaded').map(f => f.family);
     return { res, fonts: Array.from(new Set(fonts)) };
@@ -52,7 +77,7 @@ console.log('KaTeX errors:', errors);
   console.log('fonts:', report.fonts.join(', '));
   report.res.forEach(r => {
     const flag = (r.over > 1 ? ' OVERFLOW ' + r.over + 'px' : '') + (r.wide ? ' WIDE x' + r.wide : '');
-    console.log(String(r.n).padStart(2), r.id.padEnd(10), flag || 'ok', r.spaces.length ? 'spaces(px): ' + r.spaces.join(',') : '');
+    console.log(String(r.n).padStart(2), r.id.padEnd(10), 'free', String(r.free).padStart(3)+'mm', flag || 'ok', r.spaces.length ? 'spaces(px): ' + r.spaces.join(',') : '');
   });
   await page.pdf({ path: pdfPath, format: 'A4', printBackground: true, preferCSSPageSize: true, margin: { top: 0, right: 0, bottom: 0, left: 0 } });
   console.log('PDF:', pdfPath);

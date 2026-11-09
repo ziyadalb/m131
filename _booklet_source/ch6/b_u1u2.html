@@ -35,9 +35,9 @@
     <div class="box">
       <h3>أسئلة الاختبارات السابقة</h3>
       <ul class="chk">
-        <li><span class="cb"></span>برهان مبدأ الاستقراء · ميد 1447 · 3 درجات <span class="pg ref" data-to="p-pmi"></span></li>
-        <li><span class="cb"></span>المتتابعة <span class="mx">\(a_n = 2n-1\)</span> · ميد 1447 · 4 درجات <span class="pg ref" data-to="p-strong"></span></li>
-        <li><span class="cb"></span>مجموع الفرديات · نهائي 1446 · 3 درجات <span class="pg ref" data-to="p-64"></span></li>
+        <li><span class="cb"></span>برهان مبدأ الاستقراء · ميد 1447 <span class="pg ref" data-to="p-pmi"></span></li>
+        <li><span class="cb"></span>المتتابعة <span class="mx">\(a_n = 2n-1\)</span> · ميد 1447 <span class="pg ref" data-to="p-strong"></span></li>
+        <li><span class="cb"></span>مجموع الفرديات · نهائي 1446 <span class="pg ref" data-to="p-64"></span></li>
       </ul>
       <h3 style="margin-top:3mm">تدريب الاختبار</h3>
       <ul class="chk">
@@ -51,6 +51,11 @@
     <h3>خطة اليومين</h3>
     <p><b>اليوم الأول:</b> الوحدات 1 إلى 4، من <span class="ref" data-to="p-u1"></span> إلى <span class="ref" data-to="p-616s"></span>. تقريباً ساعتين ونص.</p>
     <p><b>اليوم الثاني:</b> الوحدات 5 إلى 7، من <span class="ref" data-to="p-u5"></span> للآخر. تقريباً 3 ساعات.</p>
+  </div>
+  <div class="box">
+    <h3>ألوان الصفحات</h3>
+    <p style="font-size:11pt"><span style="color:var(--acc);font-weight:700">■ أخضر:</span> شرح ومثال محلول &nbsp;·&nbsp; <span style="color:#2f5fa8;font-weight:700">■ أزرق:</span> دورك تحل &nbsp;·&nbsp; <span style="color:#b47a00;font-weight:700">■ ذهبي:</span> سؤال اختبار سابق &nbsp;·&nbsp; <span style="color:#8a959c;font-weight:700">■ رمادي:</span> حلول</p>
+    <p style="font-size:11pt">الشريط تحت كل صفحة يوريك وين وصلت من الوحدات السبع.</p>
   </div>
   <p class="small">ليش هالفصل مهم: في ميد السنة اللي فاتت جاب منه 7 درجات من 25، والسؤالين كانوا من الكتاب بالحرف.</p>
 </section>
@@ -81,7 +86,8 @@
     <p class="en"><span class="lb">Proof.</span> Let \(m_1\) and \(m_2\) be least elements of \(A\). Since \(m_1\) is a least element and \(m_2 \in A\), we have \(m_2 \ge m_1\). Since \(m_2\) is a least element and \(m_1 \in A\), we have \(m_1 \ge m_2\). Therefore, \(m_1 = m_2\). \(\blacksquare\)</p>
   </div>
   <div class="note trick"><span class="k">تريك:</span>عشان تثبت أن مجموعة <b>مو</b> مرتبة ترتيباً حسناً، يكفيك مجموعة جزئية وحدة غير خالية ما لها أصغر عنصر.</div>
-</section>
+<div class="note star"><span class="k">ليش نبدأ من هنا؟</span>برهان مبدأ الاستقراء (3 درجات في ميد 1447) كله قايم على هالمسلّمة. تفهمها هنا، وتستخدمها بعد صفحتين.</div>
+  </section>
 
 <section class="page" id="p-61">
   <div class="hdr"><span class="u">الوحدة 1 · الترتيب الحسن</span><span class="pn"></span></div>
@@ -112,6 +118,7 @@
   <div class="idea">إذا كانت أول حالة صحيحة، وكل حالة صحيحة تجرّ اللي بعدها، فكل الحالات صحيحة.</div>
   <div class="dom"><span class="d f">\(P(1)\)</span><span class="ar">→</span><span class="d">\(P(2)\)</span><span class="ar">→</span><span class="d">\(P(3)\)</span><span class="ar">→</span><span class="d">\(P(4)\)</span><span class="ar">→</span><span>\(\cdots\)</span></div>
   <p class="small" style="text-align:center">مثل قطع الدومينو: تثبت أن أول قطعة تطيح (الأساس)، وأن كل قطعة تطيّح اللي بعدها (الخطوة).</p>
+  <p><b>ليش هذا يكفي؟</b> الأساس يعطيك <span class="mx">\(P(1)\)</span>. الخطوة عند <span class="mx">\(k=1\)</span> تعطيك <span class="mx">\(P(2)\)</span>، وعند <span class="mx">\(k=2\)</span> تعطيك <span class="mx">\(P(3)\)</span>، وهكذا. فأي عدد n توصله بعد <span class="mx">\(n-1\)</span> خطوة. أنت تثبت الخطوة مرة وحدة بحرف k، وهي تشتغل لكل الأعداد.</p>
   <div class="stmt">
     <p class="en"><span class="lb">Theorem 6.2 (The Principle of Mathematical Induction).</span> For each positive integer \(n\), let \(P(n)\) be a statement. If</p>
     <p class="en">&nbsp;&nbsp;(1) \(P(1)\) is true and</p>
@@ -135,10 +142,23 @@
   <div class="note trap"><span class="k">فخ:</span>لا تكتب «<span class="lt">Assume P(k) is true for every k</span>». هذا افتراض للمطلوب نفسه. اكتب «<span class="lt">for an arbitrary positive integer k</span>».</div>
 </section>
 
-<section class="page" id="p-pmi">
+<section class="page" id="p-pmi" style="gap:2.7mm">
   <div class="hdr"><span class="u">الوحدة 2 · مبدأ الاستقراء</span><span class="pn"></span></div>
   <h2 class="t">برهان مبدأ الاستقراء<span class="tag past">ميد 1447 · 3 درجات</span></h2>
   <div class="idea">البرهان بالتناقض: نفترض فيه أعداد تفشل، ناخذ أصغرها، ونطلع أنه ما يفشل.</div>
+  <div class="box">
+    <h3>تخيّلها بالأرقام: لو أصغر فاشل كان 5</h3>
+    <div class="nl">
+      <div class="c"><div class="dot">1</div><div class="cap">صحيحة</div></div>
+      <div class="c"><div class="dot">2</div><div class="cap">صحيحة</div></div>
+      <div class="c"><div class="dot">3</div><div class="cap">صحيحة</div></div>
+      <div class="c"><div class="dot">4</div><div class="cap">s − 1<br>صحيحة</div></div>
+      <div class="c s"><div class="dot">5</div><div class="cap">s<br>أصغر فاشل</div></div>
+      <div class="c x"><div class="dot">6</div><div class="cap">؟</div></div>
+      <div class="c x"><div class="dot">7</div><div class="cap">؟</div></div>
+    </div>
+    <p style="font-size:11.2pt">4 قبل أصغر فاشل فهي صحيحة، والشرط (2) ينقل الصحة منها إلى 5: تناقض. البرهان نفسه بحرف s.</p>
+  </div>
   <div class="stmt">
     <p class="en"><span class="lb">Proof.</span></p>
     <p class="en"><span class="num">1</span>Assume, to the contrary, that the theorem is false. Then conditions (1) and (2) are satisfied but there exist some positive integers \(n\) for which \(P(n)\) is a false statement.</p>
@@ -156,7 +176,15 @@
     <li>الشرط (2) ينقل الصحة من <span class="mx">\(s-1\)</span> إلى s. فصار s صحيح وفاشل في نفس الوقت، وهذا تناقض.</li>
   </ol>
   <div class="note star"><span class="k">في الاختبار:</span>اكتب الخمس جمل بنفس الترتيب. كل جملة فيها معلومة يدوّرها المصحح: تعريف S، والترتيب الحسن، و <span class="mx">\(s \ge 2\)</span>، و <span class="mx">\(P(s-1)\)</span> صحيحة، والتناقض.</div>
-</section>
+<div class="why2">
+    <h3>اسأل نفسك وجاوب بصوت (الأجوبة في <span class="ref" data-to="p-s12"></span>)</h3>
+    <ol class="notes">
+      <li>ليش لازم نثبت أن <span class="mx">\(s \ge 2\)</span> قبل ما نتكلم عن <span class="mx">\(s-1\)</span>؟</li>
+      <li>في أي خطوة استخدمنا الشرط (1)؟ وفي أي خطوة الشرط (2)؟</li>
+      <li>ليش ما نقدر نسوي نفس البرهان لو كانت العبارات على الأعداد النسبية الموجبة؟</li>
+    </ol>
+  </div>
+  </section>
 
 <section class="page" id="p-mem">
   <div class="hdr"><span class="u">الوحدة 2 · مبدأ الاستقراء</span><span class="pn"></span></div>
@@ -200,5 +228,14 @@
     <li>\(\notin\)</li>
     <li>our assumption that \(s \in S\)</li>
   </ol>
+  <h3>أجوبة «اسأل نفسك» في برهان المبدأ</h3>
+  <div class="qa">
+    <div class="qq">1. ليش لازم <span class="mx">\(s \ge 2\)</span>؟</div>
+    <div class="aa">عشان يكون <span class="mx">\(s-1\)</span> عدد طبيعي ونقدر نتكلم عن <span class="mx">\(P(s-1)\)</span>. لو كان <span class="mx">\(s = 1\)</span> صار <span class="mx">\(s - 1 = 0\)</span>، وما عندنا عبارة اسمها <span class="mx">\(P(0)\)</span>.</div>
+    <div class="qq">2. وين استخدمنا الشرطين؟</div>
+    <div class="aa">الشرط (1) في الخطوة 3: هو اللي طلّع 1 من S. والشرط (2) في الخطوة 5: هو اللي نقل الصحة من <span class="mx">\(s-1\)</span> إلى s. لو برهانك ما استخدم الشرطين، فيه شي ناقص.</div>
+    <div class="qq">3. ليش ما يمشي على النسبية الموجبة؟</div>
+    <div class="aa">لأن <span class="mx">\(\mathbb{Q}^+\)</span> مو مرتبة ترتيباً حسناً، فمجموعة الفاشلين ممكن ما يكون لها أصغر عنصر، والبرهان يوقف عند الخطوة 2.</div>
+  </div>
   <div class="note trick"><span class="k">قيّم نفسك:</span>إذا كتبت البرهان كامل بدون ما تطالع، علّم عليه في الغلاف. إذا لا، ارجع له بعد ما تخلص الوحدة 3 واكتبه مرة ثانية.</div>
 </section>
