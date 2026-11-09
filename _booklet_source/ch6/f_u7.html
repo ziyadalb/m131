@@ -1,9 +1,40 @@
 
 <!-- ============ UNIT 7 ============ -->
+<section class="page" id="p-pod">
+  <div class="hdr"><span class="u">الوحدة 7 · تدريب الاختبار</span><span class="pn"></span></div>
+  <h2 class="t"><span class="lt">Prove or disprove</span>: كيف تكتب الجواب</h2>
+  <div class="idea">في ميد 1447 كل الفقرات كانت تحت «<span class="lt">Prove or disprove</span>». أول شي تقرر: صح أو خطأ. بعدين تكتب الجواب بالشكل اللي يناسب قرارك.</div>
+  <div class="why2">
+    <h3>القرار في 3 خطوات</h3>
+    <div class="flow">
+      <div class="f"><span class="num">1</span><span>جرّب أول ثلاث قيم من المجموعة اللي في السؤال، مثلاً \(n = 1, 2, 3\).</span></div>
+      <div class="f"><span class="num">2</span><span>لو قيمة وحدة فشلت: الجواب <b>False</b>، واكتب المثال المضاد.</span></div>
+      <div class="f"><span class="num">3</span><span>لو كلها نجحت: غالباً <b>True</b>، فاكتب البرهان كامل.</span></div>
+    </div>
+  </div>
+  <h3>شكل جواب False: الحل الرسمي من ميد 1447</h3>
+  <div class="stmt"><p class="en"><span class="lb">5.</span> For every odd positive integer \(n\), \(3 \mid (n^2 - 1)\). (2 marks)</p></div>
+  <div class="tpl wl">
+    <div class="r"><div class="l" dir="rtl">الحكم</div><div class="v">False.</div></div>
+    <div class="r"><div class="l" dir="rtl">الحل الرسمي</div><div class="v">Since \(3 \nmid 8\), so \(3 \nmid (3^2 - 1)\). It follows that \(n = 3\) is a counterexample.</div></div>
+  </div>
+  <p>لاحظ: عند \(n = 1\) تطلع \(1^2 - 1 = 0\)، و \(3 \mid 0\). يعني العبارة تمشي مع أول قيمة، ولو وقفت عندها بتحكم غلط. عشان كذا جرّب ثلاث قيم.</p>
+  <h3>شكل جواب True</h3>
+  <p>تكتب True، وبعدها البرهان كامل. مثل سؤال المتتابعة في نفس الاختبار <span class="ref" data-to="p-strongex"></span>.</p>
+  <div class="box">
+    <h3>قواعد تحفظها</h3>
+    <ul>
+      <li>مثال مضاد واحد يكفي لـ False. احسبه بالأرقام، واكتب أنه <span class="lt">counterexample</span>.</li>
+      <li>المثال لازم يكون من المجموعة اللي في السؤال. هنا عدد فردي موجب.</li>
+      <li>عدد واحد يفشل يكفي. \(2^n \gt n^2\) تفشل عند 2 و3 و4 بس، ومع كذا العبارة «لكل n» خاطئة.</li>
+    </ul>
+  </div>
+</section>
+
 <section class="page" id="p-traps">
   <div class="hdr"><span class="u">الوحدة 7 · تدريب الاختبار</span><span class="pn"></span></div>
   <h2 class="t">تدريب الفخاخ: صح أو خطأ؟<span class="tag ex">دورك</span></h2>
-  <div class="idea">في <span class="lt">Prove or disprove</span> أول درجة على قرارك. قرّر لكل عبارة واكتب السبب في سطر، قبل ما تكتب أي برهان. الأجوبة في صفحة الحلول.</div>
+  <div class="idea">في <span class="lt">Prove or disprove</span> كل شي يبدأ من قرارك: لو حكمت غلط، البرهان كله يروح. قرّر لكل عبارة واكتب السبب في سطر، قبل ما تكتب أي برهان. الأجوبة في صفحة الحلول.</div>
   <div class="paper">
     <div class="tf"><span>1.</span><span>For every positive integer \(n\), \(2^n \gt n^2\).</span><span class="o">☐ True &nbsp; ☐ False</span><span class="why"></span></div>
     <div class="tf"><span>2.</span><span>For every positive integer \(n\), \(3^n \gt n^2\).</span><span class="o">☐ True &nbsp; ☐ False</span><span class="why"></span></div>
@@ -24,18 +55,18 @@
   <div class="idea">نفس صيغة ميدكم. شغّل مؤقت 35 دقيقة، وحل على ورقة أو على صفحات فاضية في الآيباد. لا تفتح الحلول قبل ما يخلص الوقت.</div>
   <div class="box paper">
     <div class="qrow" style="direction:ltr"><span class="en"><b>Q1: Prove or disprove the following:</b></span><span class="mk">15 marks</span></div>
-    <div class="q">1. For every positive integer \(n\), \(\;1 \cdot 2 + 2 \cdot 3 + \cdots + n(n+1) = \dfrac{n(n+1)(n+2)}{3}\). <span class="mk">(4 marks)</span></div>
+    <div class="q">1. For every positive integer \(n\), \(\;1 \cdot 2 + 2 \cdot 3 + \cdots + n(n+1) = \dfrac{n(n+1)(n+2)}{3}\). <span class="mk">(3 marks)</span></div>
     <div class="q">2. For every positive integer \(n\), \(\;5 \mid (6^n - 1)\). <span class="mk">(3 marks)</span></div>
     <div class="q">3. For every positive integer \(n\), \(\;n! \gt 2^n\). <span class="mk">(2 marks)</span></div>
     <div class="q">4. A sequence \(\{a_n\}\) is defined recursively by \(a_1 = 2\), \(a_2 = 4\) and \(a_n = a_{n-1} + 2a_{n-2}\) for \(n \ge 3\). Then \(a_n = 2^n\) for all \(n \in \mathbb{N}\). <span class="mk">(4 marks)</span></div>
-    <div class="q">5. If a set \(A\) of real numbers has a least element, then \(A\) has a unique least element. <span class="mk">(2 marks)</span></div>
+    <div class="q">5. For each positive integer \(n\), let \(P(n)\) be a statement. If (1) \(P(1)\) is true and (2) the implication \(P(k) \Rightarrow P(k+1)\) is true for every positive integer \(k\), then \(P(n)\) is true for every positive integer \(n\). <span class="mk">(3 marks)</span></div>
   </div>
   <div class="box">
     <h3>بعد ما تخلص</h3>
     <ul class="chk">
       <li><span class="cb"></span>كل فقرة بدأت بسطر الحكم: True أو False.</li>
       <li><span class="cb"></span>كل استقراء فيه الخمسة أسطر، وجملة الختام فيها اسم المبدأ.</li>
-      <li><span class="cb"></span>جربت <span class="mx">\(n = 1, 2\)</span> قبل ما أبدأ أي برهان.</li>
+      <li><span class="cb"></span>جربت \(n = 1, 2, 3\) قبل ما أبدأ أي برهان.</li>
       <li><span class="cb"></span>في المتتابعة كتبت سطر Small k.</li>
     </ul>
   </div>
@@ -63,7 +94,7 @@
   <div class="tpl">
     <div class="r"><div class="l">Base</div><div class="v">Since \(1 \cdot 2 = 2 = \frac{1 \cdot 2 \cdot 3}{3}\), the formula holds for \(n = 1\).</div></div>
     <div class="r"><div class="l">Assume</div><div class="v">Assume that \(1 \cdot 2 + \cdots + k(k+1) = \frac{k(k+1)(k+2)}{3}\) for a positive integer \(k\).</div></div>
-    <div class="r"><div class="l">Step</div><div class="v">\(1 \cdot 2 + \cdots + (k+1)(k+2) = \frac{k(k+1)(k+2)}{3} + (k+1)(k+2) = (k+1)(k+2)\left(\frac{k}{3} + 1\right) = \frac{(k+1)(k+2)(k+3)}{3}.\)</div></div>
+    <div class="r"><div class="l">Step</div><div class="v">\({1 \cdot 2 + \cdots + (k+1)(k+2)} = {\frac{k(k+1)(k+2)}{3} + (k+1)(k+2)} = {(k+1)(k+2)\left(\frac{k}{3} + 1\right)} = \frac{(k+1)(k+2)(k+3)}{3}.\)</div></div>
     <div class="r"><div class="l">Conclude</div><div class="v">By the Principle of Mathematical Induction, the formula holds for every positive integer \(n\).</div></div>
   </div>
   <h3>2. True</h3>
@@ -80,26 +111,26 @@
   <h2 class="t">حلول الاختبار القصير<span class="tag sol">3 إلى 5</span></h2>
   <h3>3. False</h3>
   <div class="tpl"><div class="r"><div class="l">Answer</div><div class="v">Let \(n = 1\). Then \(1! = 1\) and \(2^1 = 2\), so \(n! \gt 2^n\) is false. Hence \(n = 1\) is a counterexample. (The inequality is true only for \(n \ge 4\).)</div></div></div>
-  <p class="small">لاحظ: عبارة False تاخذ درجتها كاملة بمثال واحد محسوب. لا تكتب برهان.</p>
+  <p class="small">لاحظ: جواب False يكفيه مثال واحد محسوب، زي الحل الرسمي في <span class="ref" data-to="p-pod"></span>. لا تكتب برهان.</p>
   <h3>4. True</h3>
   <div class="tpl">
     <div class="r"><div class="l">Base</div><div class="v">Since \(a_1 = 2 = 2^1\), the formula holds for \(n = 1\).</div></div>
     <div class="r"><div class="l">Assume</div><div class="v">Assume for an arbitrary positive integer \(k\) that \(a_i = 2^i\) for every integer \(i\) with \(1 \le i \le k\).</div></div>
     <div class="r"><div class="l">Show</div><div class="v">We show that \(a_{k+1} = 2^{k+1}\).</div></div>
     <div class="r"><div class="l">Small k</div><div class="v">If \(k = 1\), then \(a_{k+1} = a_2 = 4 = 2^2\). So we may assume that \(k \ge 2\).</div></div>
-    <div class="r"><div class="l">Step</div><div class="v">Since \(k + 1 \ge 3\), \(\;a_{k+1} = a_k + 2a_{k-1} = 2^k + 2 \cdot 2^{k-1} = 2^k + 2^k = 2^{k+1}\).</div></div>
+    <div class="r"><div class="l">Step</div><div class="v">Since \(k + 1 \ge 3\), by the inductive hypothesis \(a_{k+1} = a_k + 2a_{k-1} = 2^k + 2 \cdot 2^{k-1} = 2^k + 2^k = 2^{k+1}\).</div></div>
     <div class="r"><div class="l">Conclude</div><div class="v">By the Strong Principle of Mathematical Induction, \(a_n = 2^n\) for all \(n \in \mathbb{N}\).</div></div>
   </div>
   <h3>5. True</h3>
-  <div class="tpl"><div class="r"><div class="l">Proof</div><div class="v">Let \(m_1\) and \(m_2\) be least elements of \(A\). Since \(m_1\) is a least element and \(m_2 \in A\), \(m_2 \ge m_1\). Since \(m_2\) is a least element and \(m_1 \in A\), \(m_1 \ge m_2\). Therefore \(m_1 = m_2\).</div></div></div>
+  <p>هذا مبدأ الاستقراء نفسه (<span class="lt">Theorem 6.2</span>)، وبرهانه بالترتيب الحسن. صحّح برهانك من <span class="ref" data-to="p-pmi"></span> سطر بسطر: تعريف S، والترتيب الحسن، و \(s \ge 2\)، و \(P(s-1)\) صحيحة، والتناقض.</p>
   <h3>صحّح نفسك</h3>
   <table class="t">
     <tr><th>السؤال</th><th>النوع</th><th>الدرجة</th><th>درجتي</th><th>لو نقصت، ارجع لـ</th></tr>
-    <tr><td>1</td><td>مجموع</td><td>4</td><td></td><td>الوحدة 3 <span class="ref" data-to="p-u3"></span></td></tr>
+    <tr><td>1</td><td>مجموع</td><td>3</td><td></td><td>الوحدة 3 <span class="ref" data-to="p-u3"></span></td></tr>
     <tr><td>2</td><td>قسمة</td><td>3</td><td></td><td>الوحدة 4 <span class="ref" data-to="p-u4"></span></td></tr>
-    <tr><td>3</td><td>عبارة خاطئة</td><td>2</td><td></td><td>تدريب الفخاخ <span class="ref" data-to="p-traps"></span></td></tr>
-    <tr><td>4</td><td>متتابعة</td><td>4</td><td></td><td>الوحدة 6 <span class="ref" data-to="p-strong"></span></td></tr>
-    <tr><td>5</td><td>أصغر عنصر</td><td>2</td><td></td><td>الوحدة 1 <span class="ref" data-to="p-u1"></span></td></tr>
+    <tr><td>3</td><td>عبارة خاطئة</td><td>2</td><td></td><td>جواب False <span class="ref" data-to="p-pod"></span></td></tr>
+    <tr><td>4</td><td>متتابعة</td><td>4</td><td></td><td>الوحدة 6 <span class="ref" data-to="p-strongex"></span></td></tr>
+    <tr><td>5</td><td>برهان المبدأ</td><td>3</td><td></td><td>الوحدة 2 <span class="ref" data-to="p-pmi"></span></td></tr>
     <tr><th colspan="2">المجموع</th><th>15</th><th></th><th></th></tr>
   </table>
   <div class="note star"><span class="k">كيف تصحح:</span>12 وفوق: جاهز. أقل: حل تمرين الوحدة اللي نقصت فيها مرة ثانية بدون تلميحات.</div>
@@ -123,6 +154,7 @@
       <p><b>قسمة:</b> اعزل القوة من الفرض <span class="mx">\(a^k = dx + 1\)</span> وعوّض.</p>
       <p><b>متباينة:</b> سلسلة من الطرف الأيسر، وكل &gt; لها سبب، وافصل k الصغيرة.</p>
       <p><b>متتابعة:</b> كل القيم الابتدائية في الأساس + سطر Small k.</p>
+      <p><b>عدد أشياء:</b> الفرض لأي k أشياء بأسماء جديدة، والخطوة ترجّع \(k+1\) إلى k.</p>
     </div>
   </div>
   <div class="box">
@@ -133,11 +165,12 @@
     <div class="box">
       <h3>الفخاخ</h3>
       <ul>
-        <li>جرّب <span class="mx">\(n = 1, 2\)</span> قبل أي برهان.</li>
+        <li>جرّب \(n = 1, 2, 3\) قبل أي برهان.</li>
         <li>اقرأ المجموعة: positive من 1، nonnegative من 0.</li>
         <li><span class="mx">\(4 \cdot 2^{2k} - 1 \ne 4(2^{2k} - 1)\)</span>.</li>
         <li><span class="lt">Assume</span> «<span class="lt">for an arbitrary k</span>» مو «<span class="lt">for every k</span>».</li>
         <li>الخطوة بدون أساس ما تثبت شي.</li>
+        <li>False: مثال واحد محسوب يكفي.</li>
       </ul>
     </div>
     <div class="box">
@@ -146,7 +179,7 @@
         <li><span class="mx">\(\mathbb{N}\)</span>، وأي مجموعة منتهية، وأي جزء من <span class="mx">\(\mathbb{N}\)</span>: نعم.</li>
         <li><span class="mx">\(\{i \in \mathbb{Z} : i \ge m\}\)</span>: نعم.</li>
         <li><span class="mx">\([0, 1]\)</span>، <span class="mx">\((0, 1)\)</span>، <span class="mx">\(\mathbb{Z}\)</span>، <span class="mx">\(\mathbb{Q}^+\)</span>: لا.</li>
-        <li>لنفيها: جزئية وحدة بدون أصغر عنصر.</li>
+        <li>لنفيها: جزئية وحدة بدون أصغر عنصر (حركة \(r/2\) أو \(r - 1\)).</li>
       </ul>
     </div>
   </div>

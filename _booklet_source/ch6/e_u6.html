@@ -2,31 +2,62 @@
 <!-- ============ UNIT 6 ============ -->
 <section class="page" id="p-strong">
   <div class="hdr"><span class="u">الوحدة 6 · الاستقراء القوي · 6.3</span><span class="pn"></span></div>
-  <h2 class="t">الاستقراء القوي<span class="tag past">ميد 1447 · 4 درجات</span></h2>
-  <div class="idea">تستخدمه لما <span class="mx">\(P(k+1)\)</span> تحتاج أكثر من <span class="mx">\(P(k)\)</span>، مثل متتابعة كل حد فيها يعتمد على الحدين اللي قبله.</div>
+  <h2 class="t">الاستقراء القوي</h2>
+  <div class="idea">تستخدمه لما \(P(k+1)\) تحتاج أكثر من \(P(k)\)، مثل متتابعة كل حد فيها يعتمد على الحدين اللي قبله.</div>
   <div class="stmt"><p class="en"><span class="lb">The Strong Principle of Mathematical Induction.</span> For each positive integer \(n\), let \(P(n)\) be a statement. If (1) \(P(1)\) is true and (2) for every positive integer \(k\), if \(P(i)\) is true for every integer \(i\) with \(1 \le i \le k\), then \(P(k+1)\) is true, then \(P(n)\) is true for every positive integer \(n\).</p></div>
-  <p>الفرق الوحيد عن العادي: تفترض صحة كل الحالات من 1 إلى k، مو حالة k بس. وفي المتتابعات: القيم الأولى المعطاة اسمها <span class="mx">initial values</span>، والقاعدة اسمها <span class="mx">recurrence relation</span>.</p>
+  <p>الفرق الوحيد عن العادي: تفترض صحة كل الحالات من 1 إلى k، مو حالة k بس. ولو البداية من m بدل 1، تبدّل 1 بـ m: الأساس \(P(m)\)، والفرض لكل i مع \(m \le i \le k\). هذا اللي بتشوفه في مثال \(3a + 5b\).</p>
   <table class="t">
     <tr><th style="width:18%"></th><th>العادي</th><th>القوي</th></tr>
-    <tr><td>تفترض</td><td><span class="mx">\(P(k)\)</span> بس</td><td><span class="mx">\(P(1), P(2), \ldots, P(k)\)</span> كلها</td></tr>
-    <tr><td>تستخدمه لما</td><td><span class="mx">\(P(k+1)\)</span> تحتاج اللي قبلها مباشرة</td><td><span class="mx">\(P(k+1)\)</span> تحتاج حالتين أو أكثر، أو حالة أبعد</td></tr>
+    <tr><td>تفترض</td><td>\(P(k)\) بس</td><td>\(P(1), P(2), \ldots, P(k)\) كلها</td></tr>
+    <tr><td>تستخدمه لما</td><td>\(P(k+1)\) تحتاج اللي قبلها مباشرة</td><td>\(P(k+1)\) تحتاج حالتين أو أكثر، أو حالة أبعد</td></tr>
   </table>
-  <div class="stmt"><p class="en"><span class="lb">Exam question.</span> A sequence \(\{a_n\}\) is defined recursively by \(a_1 = 1\), \(a_2 = 3\) and \(a_n = 2a_{n-1} - a_{n-2}\) for \(n \ge 3\). Then \(a_n = 2n - 1\) for all \(n \in \mathbb{N}\).</p></div>
+  <div class="box">
+    <h3>المتتابعات: كلمات من السلايدات</h3>
+    <p>المتتابعة تتعرّف بطريقتين: بصيغة صريحة للحد العام، مثل \(a_n = \frac{1}{n}\) أو \(a_n = n^3 + n\)، أو بتعريف تكراري (<span class="lt">recursively</span>) فيه:</p>
+    <ul>
+      <li><span class="lt">initial values</span>: القيم الأولى المعطاة، مثل \(a_1 = 1\) و \(a_2 = 3\).</li>
+      <li><span class="lt">recurrence relation</span>: القاعدة اللي تحسب منها الباقي، مثل \(a_n = 2a_{n-1} - a_{n-2}\) لكل \(n \ge 3\).</li>
+    </ul>
+    <p>من القاعدة: \(a_3 = 2a_2 - a_1 = 5\)، و \(a_4 = 2a_3 - a_2 = 7\)، و \(a_5 = 9\)، و \(a_6 = 11\). فالتخمين \(a_n = 2n - 1\). وهذا بالضبط سؤال ميد 1447 في الصفحة الجاية.</p>
+  </div>
+  <div class="why2">
+    <h3>عادي أو قوي؟ اسأل: الحد الجديد يحتاج كم حد قبله؟</h3>
+    <div class="flow">
+      <div class="f"><span class="num">1</span><span>حد واحد بس، مثل \(a_{k+1} = 2a_k\): الاستقراء العادي يكفي.</span></div>
+      <div class="f"><span class="num">2</span><span>حدّين أو أكثر، مثل \(a_{k+1} = 2a_k - a_{k-1}\): استقراء قوي، لأن الفرض العادي يعطيك \(a_k\) بس وأنت تحتاج \(a_{k-1}\) بعد. ومعه سطر <span class="lt">Small k</span>.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="p-strongex">
+  <div class="hdr"><span class="u">الوحدة 6 · الاستقراء القوي</span><span class="pn"></span></div>
+  <h2 class="t">سؤال ميد 1447: الحل الرسمي<span class="tag past">ميد 1447 · 4 درجات</span></h2>
+  <div class="idea">هذا السؤال هو مثال 6 في السلايدات بالحرف. الحل تحت هو الحل الرسمي للاختبار، مرتب على القالب.</div>
+  <div class="stmt"><p class="en"><span class="lb">7.</span> A sequence \(\{a_n\}\) is defined recursively by \(a_1 = 1\), \(a_2 = 3\) and \(a_n = 2a_{n-1} - a_{n-2}\) for \(n \ge 3\). Then \(a_n = 2n - 1\) for all \(n \in \mathbb{N}\). (4 marks)</p></div>
   <div class="tpl">
-    <div class="r"><div class="l">Base</div><div class="v">Since \(a_1 = 2 \cdot 1 - 1 = 1\), the formula holds for \(n = 1\).</div></div>
+    <div class="r"><div class="l">Base</div><div class="v">Since \(a_1 = 2 \cdot 1 - 1 = 1\) and \(a_2 = 2 \cdot 2 - 1 = 3\), the formula holds for \(n = 1\) and \(n = 2\).</div></div>
     <div class="r"><div class="l">Assume</div><div class="v">Assume for an arbitrary positive integer \(k\) that \(a_i = 2i - 1\) for all integers \(i\) with \(1 \le i \le k\).</div></div>
     <div class="r"><div class="l">Show</div><div class="v">We show that \(a_{k+1} = 2(k+1) - 1 = 2k + 1\).</div></div>
-    <div class="r"><div class="l">Small k</div><div class="v">If \(k = 1\), then \(a_{k+1} = a_2 = 3 = 2 \cdot 1 + 1\). So we may assume that \(k \ge 2\).</div></div>
-    <div class="r"><div class="l">Step</div><div class="v">Since \(k + 1 \ge 3\), \(\;a_{k+1} = 2a_k - a_{k-1} = 2(2k - 1) - (2k - 3) = 2k + 1\).</div></div>
+    <div class="r"><div class="l">Small k</div><div class="v">Since \(a_2 = 3\), it follows that \(a_{k+1} = 2k + 1\) when \(k = 1\). Hence, we may assume that \(k \ge 2\).</div></div>
+    <div class="r"><div class="l">Step</div><div class="v">Since \(k + 1 \ge 3\), it follows that \(a_{k+1} = {2a_k - a_{k-1}} = {2(2k - 1) - (2k - 3)} = {2k + 1}\), which is the desired result.</div></div>
     <div class="r"><div class="l">Conclude</div><div class="v">By the Strong Principle of Mathematical Induction, \(a_n = 2n - 1\) for all \(n \in \mathbb{N}\).</div></div>
   </div>
-  <div class="note trap"><span class="k">سطر Small k عليه درجة:</span>عند <span class="mx">\(k = 1\)</span> الحد <span class="mx">\(a_2\)</span> قيمة ابتدائية، والعلاقة التكرارية تبدأ من <span class="mx">\(n = 3\)</span>، و <span class="mx">\(a_{k-1} = a_0\)</span> مو موجود. فتثبتها من القيمة المعطاة.</div>
+  <div class="why2">
+    <h3>وش يدوّر المصحح في كل سطر</h3>
+    <ol class="notes">
+      <li><b>الفرض:</b> «لكل i من 1 إلى k»، مو k بس. هذا اللي يخليه استقراء قوي.</li>
+      <li><b><span class="lt">Small k</span>:</b> عند \(k = 1\) العلاقة ما تشتغل، لأنها تبدأ من \(n = 3\)، و \(a_{k-1} = a_0\) مو موجود. فتثبت \(a_2\) من القيمة المعطاة.</li>
+      <li><b>الخطوة:</b> «<span class="lt">Since \(k + 1 \ge 3\)</span>» عشان يحق لك تستخدم العلاقة. والفرض يعطيك \(a_k = 2k - 1\) و \(a_{k-1} = 2(k-1) - 1 = 2k - 3\)، لأن k و \(k - 1\) كلهم بين 1 و k.</li>
+      <li><b>الختام:</b> اسم المبدأ فيه <span class="lt">Strong</span>.</li>
+    </ol>
+  </div>
+  <div class="note trick"><span class="k">ملاحظة:</span>الحل الرسمي كتب \(n = 1\) و \(n = 2\) في الأساس، والسلايدات كتبت \(n = 1\) بس وتركت \(a_2\) لسطر <span class="lt">Small k</span>. الطريقتين صحيحتين، المهم ما تنسى \(a_2\).</div>
 </section>
 
 <section class="page" id="p-ex7">
   <div class="hdr"><span class="u">الوحدة 6 · الاستقراء القوي</span><span class="pn"></span></div>
   <h2 class="t">توأم سؤال الاختبار<span class="tag ex">دورك</span></h2>
-  <div class="idea">السؤال اللي انسأل السنة اللي فاتت له توأم في الكتاب. احتمال يجي هو هالسنة، فحلّه بنفسك.</div>
+  <div class="idea">السؤال اللي انسأل السنة اللي فاتت له توأم في السلايدات (مثال 7). احتمال يجي هو هالسنة، فحلّه بنفسك.</div>
   <div class="stmt"><p class="en"><span class="lb">Example 7 (slides).</span> A sequence \(\{a_n\}\) is defined recursively by \(a_1 = 1\), \(a_2 = 4\) and \(a_n = 2a_{n-1} - a_{n-2} + 2\) for \(n \ge 3\). Then \(a_n = n^2\) for all \(n \in \mathbb{N}\).</p></div>
   <div class="tpl grow">
     <div class="r"><div class="l">Base</div><div class="v">Since \(a_1 = 1 = 1^2\), the formula holds for \(n = 1\).</div></div>
@@ -65,7 +96,7 @@
 <section class="page" id="p-ex8">
   <div class="hdr"><span class="u">الوحدة 6 · الاستقراء القوي</span><span class="pn"></span></div>
   <h2 class="t">مثال محلول: كل عدد من 8 وفوق يُكتب 3a + 5b</h2>
-  <div class="idea">هنا <span class="mx">\(P(k+1)\)</span> ترجع 3 خطوات لـ <span class="mx">\(P(k-2)\)</span>، عشان كذا تحتاج 3 حالات أساس: 8 و9 و10.</div>
+  <div class="idea">هنا \(P(k+1)\) ترجع 3 خطوات لـ \(P(k-2)\)، عشان كذا تحتاج 3 حالات أساس: 8 و9 و10. وهو استقراء قوي يبدأ من \(m = 8\).</div>
   <div class="stmt"><p class="en"><span class="lb">Example 8 (slides).</span> For each integer \(n \ge 8\), there are nonnegative integers \(a\) and \(b\) such that \(n = 3a + 5b\).</p></div>
   <div class="tpl">
     <div class="r"><div class="l">Base</div><div class="v">Since \(8 = 3 \cdot 1 + 5 \cdot 1\), the statement is true for \(n = 8\).</div></div>
@@ -139,7 +170,7 @@
   <div class="tpl">
     <div class="r"><div class="l">Assume</div><div class="v">Assume for an arbitrary positive integer \(k\) that \(a_i = i^2\) for every integer \(i\) with \(1 \le i \le k\).</div></div>
     <div class="r"><div class="l">Small k</div><div class="v">Since \(a_2 = 4 = 2^2\), the formula holds when \(k = 1\). So we may assume that \(k \ge 2\).</div></div>
-    <div class="r"><div class="l">Step</div><div class="v">Since \(k + 1 \ge 3\), \(\;a_{k+1} = 2a_k - a_{k-1} + 2 = 2k^2 - (k-1)^2 + 2\) \(= 2k^2 - (k^2 - 2k + 1) + 2 = k^2 + 2k + 1 = (k+1)^2\).</div></div>
+    <div class="r"><div class="l">Step</div><div class="v">Since \(k + 1 \ge 3\), and \(a_k = k^2\) and \(a_{k-1} = (k-1)^2\) by the inductive hypothesis, \[a_{k+1} = 2a_k - a_{k-1} + 2 = 2k^2 - (k^2 - 2k + 1) + 2 = k^2 + 2k + 1 = (k+1)^2.\]</div></div>
     <div class="r"><div class="l">Conclude</div><div class="v">By the Strong Principle of Mathematical Induction, \(a_n = n^2\) for all \(n \in \mathbb{N}\).</div></div>
   </div>
   <h3>تمرين 6.33</h3>

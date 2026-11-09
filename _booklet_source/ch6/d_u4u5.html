@@ -1,6 +1,6 @@
 
 <!-- ============ UNIT 4 ============ -->
-<section class="page" id="p-u4" style="gap:3mm">
+<section class="page" id="p-u4">
   <div class="hdr"><span class="u">الوحدة 4 · القسمة · 6.1 و6.2</span><span class="pn"></span></div>
   <h2 class="t">القسمة: حركة «اعزل وعوّض»</h2>
   <div class="idea">من الفرض اعزل القوة لوحدها، وعوّضها في <span class="mx">\(P(k+1)\)</span>. الباقي يطلع مضاعف للعدد تلقائياً.</div>
@@ -22,9 +22,32 @@
     <div class="r"><div class="l">Conclude</div><div class="v">By the Principle of Mathematical Induction, \(3 \mid (2^{2n} - 1)\) for every nonnegative integer \(n\).</div></div>
   </div>
   <div class="note trap"><span class="k">تحذير الكتاب نفسه:</span><span class="mx">\(4 \cdot 2^{2k} - 1\)</span> مو نفس <span class="mx">\(4(2^{2k} - 1)\)</span>. عشان كذا نعوّض <span class="mx">\(2^{2k} = 3x + 1\)</span>، مو <span class="mx">\(2^{2k} - 1 = 3x\)</span>.</div>
-  <h3>مثال ثاني بنفس الحركة (Result 6.12)</h3>
-  <div class="stmt"><p class="en">For every nonnegative integer \(n\), \(9 \mid (4^{3n} - 1)\). From the hypothesis \(4^{3k} = 9x + 1\), so</p><p class="en">\(4^{3k+3} - 1 = 64 \cdot 4^{3k} - 1 = 64(9x + 1) - 1 = 9 \cdot 64x + 63 = 9(64x + 7).\)</p></div>
-  <div class="note trick"><span class="k">انتبه للبداية:</span>السؤال قال nonnegative، فالأساس <span class="mx">\(n = 0\)</span> مو 1. اقرأ المجموعة دائماً: positive تبدأ من 1، nonnegative تبدأ من 0.</div>
+  <div class="note trick"><span class="k">انتبه للبداية:</span>السؤال قال <span class="lt">nonnegative</span>، فالأساس \(n = 0\) مو 1. اقرأ المجموعة دائماً: <span class="lt">positive</span> تبدأ من 1، و <span class="lt">nonnegative</span> تبدأ من 0. والبداية من عدد غير 1 قاعدتها في الوحدة 5 <span class="ref" data-to="p-u5"></span>.</div>
+</section>
+
+<section class="page" id="p-u4b">
+  <div class="hdr"><span class="u">الوحدة 4 · القسمة</span><span class="pn"></span></div>
+  <h2 class="t">مثال محلول ثاني: نفس الحركة<span class="tag sol">مثال السلايدات 5</span></h2>
+  <div class="idea">نفس الأربع خطوات بالضبط. تابع وين عزلنا القوة، ووين طلّعنا 9 عامل مشترك.</div>
+  <div class="stmt"><p class="en"><span class="lb">Result 6.12.</span> For every nonnegative integer \(n\), \(\;9 \mid (4^{3n} - 1)\).</p></div>
+  <div class="tpl">
+    <div class="r"><div class="l">Base</div><div class="v">When \(n = 0\), \(4^{3n} - 1 = 0\). Since \(9 \mid 0\), the statement is true when \(n = 0\).</div></div>
+    <div class="r"><div class="l">Assume</div><div class="v">Assume that \(9 \mid (4^{3k} - 1)\), where \(k\) is a nonnegative integer. Then \(4^{3k} - 1 = 9x\) for some integer \(x\). Hence, <b>\(4^{3k} = 9x + 1\).</b></div></div>
+    <div class="r"><div class="l">Show</div><div class="v">We show that \(9 \mid (4^{3k+3} - 1)\).</div></div>
+    <div class="r"><div class="l">Step</div><div class="v">\[4^{3k+3} - 1 = 4^3 \cdot 4^{3k} - 1 = 64(9x + 1) - 1 = 64 \cdot 9x + 63 = 9(64x + 7).\] Since \(64x + 7\) is an integer, \(9 \mid (4^{3k+3} - 1)\).</div></div>
+    <div class="r"><div class="l">Conclude</div><div class="v">By the Principle of Mathematical Induction, \(9 \mid (4^{3n} - 1)\) for every nonnegative integer \(n\).</div></div>
+  </div>
+  <div class="note trick"><span class="k">ملاحظة من الكتاب:</span>ما ضربنا \(64 \cdot 9\)، لأننا بنطلّع 9 عامل مشترك في الخطوة اللي بعدها. خل العدد اللي تقسم عليه ظاهر.</div>
+  <div class="why2">
+    <h3>الهيكل اللي يتكرر في كل أسئلة القسمة</h3>
+    <ol class="notes">
+      <li>سطر <span class="lt">Assume</span> ينتهي بمعادلة فيها القوة لوحدها: \(4^{3k} = 9x + 1\).</li>
+      <li>سطر <span class="lt">Step</span> يبدأ بتطليع القوة القديمة: \(4^{3k+3} = 4^3 \cdot 4^{3k}\).</li>
+      <li>بعد التعويض تطلّع العدد عامل مشترك: \(9(64x + 7)\).</li>
+      <li>وتختم بـ «<span class="lt">Since … is an integer</span>».</li>
+    </ol>
+  </div>
+  <div class="note star"><span class="k">جاهز؟</span>تمرين 6.16 في الصفحة الجاية فيه أساسين (3 و5)، بس نفس الأربع خطوات.</div>
 </section>
 
 <section class="page" id="p-616">
@@ -82,20 +105,50 @@
 <!-- ============ UNIT 5 ============ -->
 <section class="page" id="p-u5">
   <div class="hdr"><span class="u">الوحدة 5 · الاستقراء العام والمتباينات · 6.2</span><span class="pn"></span></div>
-  <h2 class="t">لما البداية مو 1، ولما السؤال متباينة</h2>
-  <div class="idea">الاستقراء العام هو نفس القالب، بس الأساس عند m بدل 1، والفرض لـ <span class="mx">\(k \ge m\)</span>.</div>
+  <h2 class="t">لما البداية مو 1: الاستقراء العام</h2>
+  <div class="idea">نفس القالب بالضبط، بس الأساس عند أول عدد في السؤال (نسميه m)، والفرض لـ \(k \ge m\).</div>
   <div class="stmt"><p class="en"><span class="lb">Theorem 6.8.</span> For a fixed integer \(m\), let \(S = \{i \in \mathbb{Z} : i \ge m\}\). For each \(n \in S\), let \(P(n)\) be a statement. If (1) \(P(m)\) is true and (2) \(P(k) \Rightarrow P(k+1)\) is true for every \(k \in S\), then \(P(n)\) is true for every \(n \in S\).</p></div>
+  <h3>وش يتغير في القالب؟ ثلاث أسطر بس</h3>
+  <table class="t">
+    <tr><th style="width:18%">السطر</th><th>البداية من 1</th><th>البداية من m</th></tr>
+    <tr><td><span class="lt">Base</span></td><td>\(P(1)\)</td><td>\(P(m)\)</td></tr>
+    <tr><td><span class="lt">Assume</span></td><td><span class="lt">for a positive integer \(k\)</span></td><td><span class="lt">where \(k \ge m\)</span></td></tr>
+    <tr><td><span class="lt">Conclude</span></td><td><span class="lt">for every positive integer \(n\)</span></td><td><span class="lt">for every integer \(n \ge m\)</span></td></tr>
+  </table>
+  <p class="small">شفته قبل: Result 6.11 في الوحدة 4 كان <span class="lt">nonnegative</span>، يعني \(m = 0\). وقتها تكتب في الفرض <span class="lt">where \(k\) is a nonnegative integer</span>.</p>
   <div class="grid2" style="grid-template-columns: 34mm 1fr; align-items:start">
     <table class="t">
       <tr><th>\(n\)</th><th>\(2^n\)</th><th>\(n^2\)</th></tr>
       <tr><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>2</td><td>1</td></tr><tr><td>2</td><td>4</td><td>4</td></tr><tr><td>3</td><td>8</td><td>9</td></tr><tr><td>4</td><td>16</td><td>16</td></tr><tr><td>5</td><td>32</td><td>25</td></tr><tr><td>6</td><td>64</td><td>36</td></tr>
     </table>
     <div>
-      <p>الجدول يوضح ليش الكتاب قال <span class="mx">\(n \ge 5\)</span>: عند 2 و3 و4 العبارة <span class="mx">\(2^n \gt n^2\)</span> تفشل، ومن 5 وفوق تصير صحيحة.</p>
-      <div class="note trap" style="margin-top:2mm"><span class="k">فخ <span class="lt">Prove or disprove</span>:</span>«<span class="mx">\(2^n \gt n^2\)</span> لكل <span class="mx">\(n \in \mathbb{N}\)</span>» خاطئة. جوابها False مع <span class="mx">\(n = 2\)</span>: <span class="mx">\(4 \gt 4\)</span> خطأ.</div>
+      <p>وقيمة m تجي من السؤال نفسه. الجدول يوضح ليش الكتاب قال \(n \ge 5\) في \(2^n \gt n^2\): عند 2 و3 و4 العبارة تفشل، ومن 5 وفوق تصير صحيحة.</p>
+      <div class="note trap" style="margin-top:2mm"><span class="k">فخ <span class="lt">Prove or disprove</span>:</span>«\(2^n \gt n^2\) لكل \(n \in \mathbb{N}\)» خاطئة. جوابها False مع \(n = 2\): \(4 \gt 4\) خطأ.</div>
     </div>
   </div>
+  <div class="why2">
+    <h3>اسأل نفسك</h3>
+    <div class="qa">
+      <div class="qq">\(2^n \gt n^2\) صحيحة عند \(n = 1\). ليش ما نبدأ الاستقراء من 1؟</div>
+      <div class="aa">لأن الخطوة تنكسر: \(P(1)\) صحيحة لكن \(P(2)\) خاطئة، فما فيه خطوة تنقلك من 1 إلى 2. نبدأ من 5 لأن العبارة صحيحة من 5 وفوق كلها، والخطوة تمشي لكل \(k \ge 5\).</div>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="p-ineq">
+  <div class="hdr"><span class="u">الوحدة 5 · المتباينات</span><span class="pn"></span></div>
+  <h2 class="t">المتباينات: كيف تبني السلسلة<span class="tag sol">مثال السلايدات 4</span></h2>
+  <div class="idea">ابدأ من الطرف الأيسر لـ \(P(k+1)\)، استخدم الفرض مرة وحدة، وبعدها كبّر خطوة خطوة لين توصل للطرف الأيمن.</div>
   <div class="stmt"><p class="en"><span class="lb">Result 6.10.</span> For every integer \(n \ge 5\), \(\;2^n \gt n^2\).</p></div>
+  <div class="why2">
+    <h3>كيف تفكر في المسودة (من شرح الكتاب)</h3>
+    <div class="flow">
+      <div class="f"><span class="num">1</span><span>الهدف: \(2^{k+1} \gt (k+1)^2\).</span></div>
+      <div class="f"><span class="num">2</span><span>ابدأ من اليسار وطبّق الفرض: \(2^{k+1} = 2 \cdot 2^k \gt 2k^2\).</span></div>
+      <div class="f"><span class="num">3</span><span>قارن مع الهدف: يكفيك \(2k^2 \ge k^2 + 2k + 1\)، يعني \(k^2 \ge 2k + 1\).</span></div>
+      <div class="f"><span class="num">4</span><span>هنا تستخدم \(k \ge 5\): \(k^2 \ge 5k = 2k + 3k \ge 2k + 15 \gt 2k + 1\).</span></div>
+    </div>
+  </div>
   <div class="tpl">
     <div class="r"><div class="l">Base</div><div class="v">Since \(2^5 = 32 \gt 25 = 5^2\), the inequality holds for \(n = 5\).</div></div>
     <div class="r"><div class="l">Assume</div><div class="v">Assume that \(2^k \gt k^2\), where \(k \ge 5\).</div></div>
@@ -103,14 +156,50 @@
     <div class="r"><div class="l">Step</div><div class="v">\[\begin{aligned} 2^{k+1} = 2 \cdot 2^k \gt 2k^2 = k^2 + k^2 &\ge k^2 + 5k = k^2 + 2k + 3k \\ &\ge k^2 + 2k + 15 \gt k^2 + 2k + 1 = (k+1)^2. \end{aligned}\]</div></div>
     <div class="r"><div class="l">Conclude</div><div class="v">By the Principle of Mathematical Induction, \(2^n \gt n^2\) for every integer \(n \ge 5\).</div></div>
   </div>
-  <div class="note trick"><span class="k">وصفة السلسلة:</span>(1) ابدأ من الطرف الأيسر لـ <span class="mx">\(P(k+1)\)</span>. (2) طلّع منه شكل الفرض وطبّقه. (3) استخدم <span class="mx">\(k \ge m\)</span> عشان تكبّر لين توصل للطرف الأيمن. كل علامة <span class="mx">\(\gt\)</span> أو <span class="mx">\(\ge\)</span> لازم يكون لها سبب، مثل <span class="mx">\(k^2 \ge 5k\)</span> لأن <span class="mx">\(k \ge 5\)</span>.</div>
+  <div class="note trick"><span class="k">وصفة السلسلة:</span>كل علامة \(\gt\) أو \(\ge\) لازم يكون لها سبب: الفرض، أو \(k \ge m\). مثلاً \(k^2 \ge 5k\) لأن \(k \ge 5\)، و \(3k \ge 15\) لنفس السبب.</div>
+  <div class="box">
+    <h3>3 أخطاء تنقص درجات في المتباينات</h3>
+    <ol class="notes">
+      <li>تبدأ من الهدف \(2^{k+1} \gt (k+1)^2\) وتشتغل على الطرفين. هذا افتراض للمطلوب.</li>
+      <li>تكتب \(\ge\) أو \(\gt\) بدون سبب تقدر تقوله.</li>
+      <li>تستخدم \(k \ge 5\) وأنت ما كتبته في سطر <span class="lt">Assume</span>.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="page" id="p-small">
+  <div class="hdr"><span class="u">الوحدة 5 · المتباينات</span><span class="pn"></span></div>
+  <h2 class="t">مثال محلول: لما k الصغيرة تخرب الخطوة<span class="tag sol">مثال السلايدات 3</span></h2>
+  <div class="idea">أحياناً الخطوة تمشي لكل k إلا أول قيمة. تثبت هذي القيمة لوحدها في سطر <span class="lt">Small k</span>، وتكمل الخطوة للباقي.</div>
+  <div class="stmt"><p class="en"><span class="lb">Result 6.9.</span> For every nonnegative integer \(n\), \(\;2^n \gt n\).</p></div>
+  <div class="tpl">
+    <div class="r"><div class="l">Base</div><div class="v">The inequality holds for \(n = 0\) since \(2^0 = 1 \gt 0\).</div></div>
+    <div class="r"><div class="l">Assume</div><div class="v">Assume that \(2^k \gt k\), where \(k\) is a nonnegative integer.</div></div>
+    <div class="r"><div class="l">Show</div><div class="v">We show that \(2^{k+1} \gt k + 1\).</div></div>
+    <div class="r"><div class="l">Small k</div><div class="v">When \(k = 0\), we have \(2^{k+1} = 2 \gt 1 = k + 1\). We therefore assume that \(k \ge 1\).</div></div>
+    <div class="r"><div class="l">Step</div><div class="v">Then \(2^{k+1} = 2 \cdot 2^k \gt 2k = k + k \ge k + 1\).</div></div>
+    <div class="r"><div class="l">Conclude</div><div class="v">By the Principle of Mathematical Induction, \(2^n \gt n\) for every nonnegative integer \(n\).</div></div>
+  </div>
+  <div class="why2">
+    <h3>ليش فصلنا \(k = 0\)؟ (من تحليل الكتاب)</h3>
+    <p>بعد الفرض وصلنا \(2^{k+1} \gt 2k\)، ونحتاج \(2k \ge k + 1\)، يعني \(k \ge 1\). عند \(k = 0\) تصير \(0 \ge 1\)، وهذا خطأ. فأثبتنا حالة \(k = 0\) بالأرقام، وكملنا الخطوة لـ \(k \ge 1\).</p>
+  </div>
+  <div class="box">
+    <h3>كيف تعرف إنك تحتاج سطر <span class="lt">Small k</span>؟</h3>
+    <ol>
+      <li>اكتب الخطوة في المسودة، وشوف وش شرط k اللي استخدمته (هنا \(k \ge 1\)).</li>
+      <li>قارنه مع بداية الفرض (هنا \(k \ge 0\)).</li>
+      <li>القيم اللي بينهم (هنا \(k = 0\)) تثبتها لوحدها: تحسب \(P(k+1)\) بالأرقام.</li>
+    </ol>
+  </div>
+  <div class="note trap"><span class="k">انتبه:</span>سطر <span class="lt">Small k</span> يثبت \(P(k+1)\) للـ k الصغيرة، مو \(P(k)\). هنا أثبت \(P(1)\): \(2^1 \gt 1\).</div>
 </section>
 
 <section class="page" id="p-622">
   <div class="hdr"><span class="u">الوحدة 5 · المتباينات</span><span class="pn"></span></div>
   <h2 class="t">تمرين 6.22<span class="tag ex">دورك</span></h2>
   <div class="stmt"><p class="en"><span class="lb">6.22.</span> Prove that \(3^n \gt n^2\) for every positive integer \(n\).</p></div>
-  <div class="note star"><span class="k">درس من الكتاب (Result 6.9):</span>في <span class="mx">\(2^n \gt n\)</span> لكل <span class="mx">\(n \ge 0\)</span>، الخطوة تحتاج <span class="mx">\(2k \ge k+1\)</span>، وهذي خاطئة عند <span class="mx">\(k = 0\)</span>. فالكتاب أثبت حالة <span class="mx">\(k = 0\)</span> لوحدها، وبعدين افترض <span class="mx">\(k \ge 1\)</span>. نفس الشي بيصير معك هنا، عشان كذا في القالب سطر زيادة.</div>
+  <div class="note star"><span class="k">نفس فكرة Result 6.9:</span>اكتب الخطوة في المسودة أول، وشوف أي k صغيرة ما تمشي معها. هذي تثبتها في سطر <span class="lt">Small k</span>، وتكمل الخطوة للباقي.</div>
   <div class="tpl grow">
     <div class="r"><div class="l">Base</div><div class="v b b1"></div></div>
     <div class="r"><div class="l">Assume</div><div class="v b b1"></div></div>
@@ -126,11 +215,36 @@
   </div>
 </section>
 
+<section class="page" id="p-sumineq">
+  <div class="hdr"><span class="u">الوحدة 5 · المتباينات</span><span class="pn"></span></div>
+  <h2 class="t">مثال محلول: متباينة فيها مجموع<span class="tag sol">مثال إضافي</span></h2>
+  <div class="idea">الفرض يغطي المجموع كله ما عدا الحد الجديد. بعده يبقى لك تقارن الحد الجديد بشي بسيط.</div>
+  <div class="stmt"><p class="en"><span class="lb">Example.</span> For every positive integer \(n\), \(\;1 + \dfrac{1}{2} + \dfrac{1}{3} + \cdots + \dfrac{1}{n} \le \dfrac{n+1}{2}\).</p></div>
+  <div class="why2">
+    <h3>كيف تفكر في المسودة</h3>
+    <div class="flow">
+      <div class="f"><span class="num">1</span><span>الهدف: \(1 + \frac{1}{2} + \cdots + \frac{1}{k+1} \le \frac{k+2}{2}\).</span></div>
+      <div class="f"><span class="num">2</span><span>افصل الحد الجديد وطبّق الفرض: المجموع \(\le \frac{k+1}{2} + \frac{1}{k+1}\).</span></div>
+      <div class="f"><span class="num">3</span><span>قارن مع الهدف: \(\frac{k+2}{2} = \frac{k+1}{2} + \frac{1}{2}\). يعني يكفيك \(\frac{1}{k+1} \le \frac{1}{2}\).</span></div>
+      <div class="f"><span class="num">4</span><span>وهذي صحيحة لأن \(k + 1 \ge 2\). الحين اكتب البرهان بالترتيب.</span></div>
+    </div>
+  </div>
+  <div class="tpl">
+    <div class="r"><div class="l">Base</div><div class="v">Since \(1 \le \frac{1+1}{2} = 1\), the inequality holds for \(n = 1\).</div></div>
+    <div class="r"><div class="l">Assume</div><div class="v">Assume that \(1 + \frac{1}{2} + \cdots + \frac{1}{k} \le \frac{k+1}{2}\) for a positive integer \(k\).</div></div>
+    <div class="r"><div class="l">Show</div><div class="v">We show that \(1 + \frac{1}{2} + \cdots + \frac{1}{k+1} \le \frac{k+2}{2}\).</div></div>
+    <div class="r"><div class="l">Step</div><div class="v">Since \(k \ge 1\), we have \(k + 1 \ge 2\), and so \(\frac{1}{k+1} \le \frac{1}{2}\). By the inductive hypothesis, \[1 + \frac{1}{2} + \cdots + \frac{1}{k} + \frac{1}{k+1} \le \frac{k+1}{2} + \frac{1}{k+1} \le \frac{k+1}{2} + \frac{1}{2} = \frac{k+2}{2}.\]</div></div>
+    <div class="r"><div class="l">Conclude</div><div class="v">By the Principle of Mathematical Induction, the inequality holds for every positive integer \(n\).</div></div>
+  </div>
+  <div class="note trap"><span class="k">فخ:</span>المسودة تمشي من الهدف لورا، بس البرهان لا. لو بدأت البرهان من الهدف ووصلت لشي صحيح، تكون افترضت المطلوب. هذا نفس الخطأ اللي في <span class="ref" data-to="p-sumk"></span>.</div>
+  <p class="small">مثال إضافي مو من السلايدات ولا الكتاب: حطيته عشان تشوف نوع تمرين 6.27 محلول قبل ما تحله في الصفحة الجاية.</p>
+</section>
+
 <section class="page" id="p-627">
   <div class="hdr"><span class="u">الوحدة 5 · المتباينات</span><span class="pn"></span></div>
   <h2 class="t">تمرين 6.27<span class="tag ex">دورك</span></h2>
   <div class="stmt"><p class="en"><span class="lb">6.27.</span> Prove that \(1 + \dfrac{1}{4} + \dfrac{1}{9} + \cdots + \dfrac{1}{n^2} \le 2 - \dfrac{1}{n}\) for every positive integer \(n\).</p></div>
-  <div class="note trick"><span class="k">تريك المسودة:</span>لما تعلق في متباينة، اكتب في المسودة اللي تبي توصل له، وبسّطه لين يصير شي واضح أنه صحيح. بعدين اكتب البرهان بالترتيب الصحيح من البداية.</div>
+  <div class="note trick"><span class="k">نفس طريقة المثال اللي قبل:</span>بعد الفرض اكتب في المسودة وش يبقى لك عشان توصل للهدف، وبسّطه لين يصير شي واضح أنه صحيح. بعدين اكتب البرهان بالترتيب.</div>
   <div class="tpl grow">
     <div class="r"><div class="l">Base</div><div class="v b b1"></div></div>
     <div class="r"><div class="l">Assume</div><div class="v b b2"></div></div>
@@ -145,11 +259,34 @@
   </div>
 </section>
 
+<section class="page" id="p-pa">
+  <div class="hdr"><span class="u">الوحدة 5 · الاستقراء على عدد الأشياء</span><span class="pn"></span></div>
+  <h2 class="t">مثال محلول: الاستقراء على عدد العناصر<span class="tag sol">من السلايدات</span></h2>
+  <div class="idea">هنا n هو عدد عناصر المجموعة، و \(P(n)\) جملة «إذا… فإن…». الفرض عن <b>أي</b> مجموعة فيها k عنصر، والخطوة عن مجموعة فيها \(k + 1\).</div>
+  <div class="stmt"><p class="en"><span class="lb">Theorem 6.16.</span> If \(A\) is a finite set of cardinality \(n \ge 0\), then the cardinality of its power set \(\mathcal{P}(A)\) is \(2^n\).</p></div>
+  <div class="tpl">
+    <div class="r"><div class="l">Base</div><div class="v">If \(A\) is a set with \(|A| = 0\), then \(A = \emptyset\). Thus, \(\mathcal{P}(A) = \{\emptyset\}\) and so \(|\mathcal{P}(A)| = 1 = 2^0\). Therefore, the theorem is true for \(n = 0\).</div></div>
+    <div class="r"><div class="l">Assume</div><div class="v">Assume that if \(B\) is any set with \(|B| = k\) for some nonnegative integer \(k\), then \(|\mathcal{P}(B)| = 2^k\).</div></div>
+    <div class="r"><div class="l">Show</div><div class="v">We show that if \(C\) is a set with \(|C| = k + 1\), then \(|\mathcal{P}(C)| = 2^{k+1}\). Let \(C = \{c_1, c_2, \ldots, c_{k+1}\}\).</div></div>
+    <div class="r"><div class="l">Step</div><div class="v">By the inductive hypothesis, there are \(2^k\) subsets of the set \(\{c_1, c_2, \ldots, c_k\}\), that is, there are \(2^k\) subsets of \(C\) not containing \(c_{k+1}\). Any subset of \(C\) containing \(c_{k+1}\) can be expressed as \(D \cup \{c_{k+1}\}\), where \(D \subseteq \{c_1, c_2, \ldots, c_k\}\). Again, by the inductive hypothesis, there are \(2^k\) such subsets \(D\). Therefore, there are \(2^k + 2^k = 2 \cdot 2^k = 2^{k+1}\) subsets of \(C\).</div></div>
+    <div class="r"><div class="l">Conclude</div><div class="v">By the Principle of Mathematical Induction, it follows for every nonnegative integer \(n\) that if \(|A| = n\), then \(|\mathcal{P}(A)| = 2^n\).</div></div>
+  </div>
+  <div class="box">
+    <h3>شف الخطوة بأرقام: \(C = \{1, 2, 3\}\)</h3>
+    <table class="t">
+      <tr><th>مجموعات جزئية ما فيها 3</th><th>مجموعات جزئية فيها 3</th></tr>
+      <tr><td>\(\emptyset,\ \{1\},\ \{2\},\ \{1, 2\}\)</td><td>\(\{3\},\ \{1, 3\},\ \{2, 3\},\ \{1, 2, 3\}\)</td></tr>
+    </table>
+    <p>اللي ما فيها 3 هي المجموعات الجزئية من \(\{1, 2\}\)، وعددها \(2^2 = 4\) بالفرض. واللي فيها 3 نفس العدد، لأن كل وحدة منها تساوي \(D \cup \{3\}\) لمجموعة D من الأولى. المجموع \(4 + 4 = 8 = 2^3\).</p>
+  </div>
+  <div class="note trick"><span class="k">لاحظ الأسماء:</span>الفرض عن «أي مجموعة B»، والخطوة عن مجموعة جديدة C. الفرض لازم يكون عن أي مجموعة فيها k عنصر، عشان تقدر تطبّقه على \(\{c_1, \ldots, c_k\}\). ونفس الشي في 6.19: الفرض عن أي أعداد \(y_1, \ldots, y_k\).</div>
+</section>
+
 <section class="page" id="p-619">
   <div class="hdr"><span class="u">الوحدة 5 · الاستقراء على عدد الأشياء</span><span class="pn"></span></div>
   <h2 class="t">تمرين 6.19<span class="tag ex">دورك</span></h2>
   <div class="stmt"><p class="en"><span class="lb">6.19.</span> Prove the following implication for every integer \(n \ge 2\): If \(x_1, x_2, \ldots, x_n\) are any \(n\) real numbers such that \(x_1 \cdot x_2 \cdots x_n = 0\), then at least one of the numbers \(x_1, x_2, \ldots, x_n\) is \(0\). (Use the fact that if the product of two real numbers is \(0\), then at least one of the numbers is \(0\).)</p></div>
-  <div class="idea">هنا <span class="mx">\(P(n)\)</span> نفسها جملة «إذا… فإن…»، والاستقراء على عدد الأعداد n. والأساس <span class="mx">\(n = 2\)</span> هو الحقيقة المعطاة في السؤال.</div>
+  <div class="idea">نفس فكرة المثال اللي قبل: الجملة «إذا… فإن…»، والفرض عن أي k أعداد بأسماء جديدة. الأساس هنا \(n = 2\) هو الحقيقة المعطاة في السؤال، وفي الخطوة تجمّع أول k أعداد في عدد واحد، وتطلع لك حالتين.</div>
   <div class="tpl grow">
     <div class="r"><div class="l">Base</div><div class="v b b1"></div></div>
     <div class="r"><div class="l">Assume</div><div class="v b b2"></div></div>
@@ -160,11 +297,10 @@
   <div class="hints">
     <p><b>تلميح 1:</b> اكتب <span class="mx">\(x_1 x_2 \cdots x_{k+1} = (x_1 x_2 \cdots x_k) \cdot x_{k+1}\)</span>، وطبّق الحقيقة على العددين <span class="mx">\(x_1 \cdots x_k\)</span> و <span class="mx">\(x_{k+1}\)</span>.</p>
     <p><b>تلميح 2 (من الكتاب):</b> في سطر Assume استخدم أسماء مختلفة مثل <span class="mx">\(y_1, \ldots, y_k\)</span>، عشان ما تتداخل مع أعداد الخطوة.</p>
-    <p class="small">بنفس الأسلوب يبرهن الكتاب قانون دي مورجان لـ n مجموعة (Theorem 6.15)، وأن <span class="mx">\(|\mathcal{P}(A)| = 2^n\)</span> (Theorem 6.16).</p>
   </div>
 </section>
 
-<section class="page sol" id="p-s5">
+<section class="page sol" id="p-s5" style="gap:3mm">
   <div class="hdr"><span class="u">حلول الوحدة 5</span><span class="pn"></span></div>
   <h2 class="t">الحلول<span class="tag sol">شيّك</span></h2>
   <h3>تمرين 6.22</h3>
@@ -173,7 +309,7 @@
     <div class="r"><div class="l">Assume</div><div class="v">Assume that \(3^k \gt k^2\) for a positive integer \(k\).</div></div>
     <div class="r"><div class="l">Show</div><div class="v">We show that \(3^{k+1} \gt (k+1)^2\).</div></div>
     <div class="r"><div class="l">Small k</div><div class="v">If \(k = 1\), then \(3^{k+1} = 9 \gt 4 = (k+1)^2\). So we may assume that \(k \ge 2\).</div></div>
-    <div class="r"><div class="l">Step</div><div class="v">\(3^{k+1} = 3 \cdot 3^k \gt 3k^2 = k^2 + 2k^2 \ge k^2 + 4k = k^2 + 2k + 2k \ge k^2 + 2k + 4 \gt (k+1)^2,\) since \(k \ge 2\).</div></div>
+    <div class="r"><div class="l">Step</div><div class="v">By the inductive hypothesis and since \(k \ge 2\), \(3^{k+1} = {3 \cdot 3^k} \gt {3k^2} = {k^2 + 2k^2} \ge {k^2 + 4k} = {k^2 + 2k + 2k} \ge {k^2 + 2k + 4} \gt {(k+1)^2}.\)</div></div>
     <div class="r"><div class="l">Conclude</div><div class="v">By the Principle of Mathematical Induction, \(3^n \gt n^2\) for every positive integer \(n\).</div></div>
   </div>
   <h3>تمرين 6.27</h3>
@@ -181,7 +317,7 @@
     <div class="r"><div class="l">Base</div><div class="v">Since \(1 \le 2 - \frac{1}{1} = 1\), the statement is true for \(n = 1\).</div></div>
     <div class="r"><div class="l">Assume</div><div class="v">Assume that \(1 + \frac{1}{4} + \cdots + \frac{1}{k^2} \le 2 - \frac{1}{k}\) for a positive integer \(k\).</div></div>
     <div class="r"><div class="l">Show</div><div class="v">We show that \(1 + \frac{1}{4} + \cdots + \frac{1}{(k+1)^2} \le 2 - \frac{1}{k+1}\).</div></div>
-    <div class="r"><div class="l">Step</div><div class="v">Since \(k(k+1) \lt (k+1)^2\), we have \(\frac{1}{(k+1)^2} \lt \frac{1}{k(k+1)} = \frac{1}{k} - \frac{1}{k+1}\). Hence \[1 + \cdots + \frac{1}{k^2} + \frac{1}{(k+1)^2} \le 2 - \frac{1}{k} + \frac{1}{(k+1)^2} \lt 2 - \frac{1}{k} + \frac{1}{k} - \frac{1}{k+1} = 2 - \frac{1}{k+1}.\]</div></div>
+    <div class="r"><div class="l">Step</div><div class="v">Since \(k(k+1) \lt (k+1)^2\), we have \(\frac{1}{(k+1)^2} \lt \frac{1}{k(k+1)} = \frac{1}{k} - \frac{1}{k+1}\). Hence, by the inductive hypothesis, \[1 + \cdots + \frac{1}{k^2} + \frac{1}{(k+1)^2} \le 2 - \frac{1}{k} + \frac{1}{(k+1)^2} \lt 2 - \frac{1}{k} + \frac{1}{k} - \frac{1}{k+1} = 2 - \frac{1}{k+1}.\]</div></div>
     <div class="r"><div class="l">Conclude</div><div class="v">By the Principle of Mathematical Induction, the inequality holds for every positive integer \(n\).</div></div>
   </div>
   <h3>تمرين 6.19</h3>

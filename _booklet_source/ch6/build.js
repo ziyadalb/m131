@@ -41,7 +41,8 @@ function render(tex, display) {
 src = src.replace(/<span class="mx">(\\\([^<]+?\\\))<\/span>/g, '$1');
 src = src.replace(/\\\[([\s\S]+?)\\\]/g, (_, t) => render(t.trim(), true));
 src = src.replace(/\\\(([\s\S]+?)\\\)([,.;:،؛])?/g, (_, t, p) => {
-  const m = '<span class="mx">' + render(t.trim(), false) + '</span>';
+  const tex = t.trim();
+  const m = '<span class="mx" data-tex="' + tex.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;') + '">' + render(tex, false) + '</span>';
   return p ? '<span style="white-space:nowrap">' + m + p + '</span>' : m;
 });
 const out = path.join(dir, 'out.html');
@@ -58,6 +59,15 @@ console.log('KaTeX errors:', errors);
   await page.goto('file://' + out, { waitUntil: 'networkidle', timeout: 90000 });
   await page.evaluate(() => document.fonts.ready);
   await page.emulateMedia({ media: 'print' });
+  // keep short inline formulas on one line; long ones may wrap (only at the breaks KaTeX allows)
+  await page.evaluate(() => {
+    document.querySelectorAll('.mx').forEach(el => {
+      el.style.whiteSpace = 'nowrap';
+      const w = el.getBoundingClientRect().width;
+      const box = el.closest('p, li, td, th, .v, .idea, .note, .aa, .qq, .f, .stmt, .q, .tf, .cap, h2, h3, .err') || el.parentElement;
+      if (w > 0.6 * box.clientWidth) el.style.whiteSpace = 'normal';
+    });
+  });
   const report = await page.evaluate(() => {
     const res = [];
     document.querySelectorAll('.page').forEach((p, i) => {
@@ -69,7 +79,12 @@ console.log('KaTeX errors:', errors);
       let bot = 0; const pr = p.getBoundingClientRect();
       Array.from(p.children).forEach(c => { if (!c.classList.contains('foot')) bot = Math.max(bot, c.getBoundingClientRect().bottom - pr.top); });
       const free = Math.round((pr.height - bot) / pr.height * 297 - 13);
-      res.push({ n: i + 1, id: p.id, over, wide, spaces, free });
+      const wraps = [];
+      p.querySelectorAll('.mx[data-tex]').forEach(el => {
+        const tops = new Set(Array.from(el.getClientRects()).map(r => Math.round(r.top)));
+        if (tops.size > 1) wraps.push(el.dataset.tex);
+      });
+      res.push({ n: i + 1, id: p.id, over, wide, spaces, free, wraps });
     });
     const fonts = Array.from(document.fonts).filter(f => f.status === 'loaded').map(f => f.family);
     return { res, fonts: Array.from(new Set(fonts)) };
@@ -78,6 +93,7 @@ console.log('KaTeX errors:', errors);
   report.res.forEach(r => {
     const flag = (r.over > 1 ? ' OVERFLOW ' + r.over + 'px' : '') + (r.wide ? ' WIDE x' + r.wide : '');
     console.log(String(r.n).padStart(2), r.id.padEnd(10), 'free', String(r.free).padStart(3)+'mm', flag || 'ok', r.spaces.length ? 'spaces(px): ' + r.spaces.join(',') : '');
+    if (process.env.WRAPS) r.wraps.forEach(w => console.log('      wrap:', w));
   });
   await page.pdf({ path: pdfPath, format: 'A4', printBackground: true, preferCSSPageSize: true, margin: { top: 0, right: 0, bottom: 0, left: 0 } });
   console.log('PDF:', pdfPath);
