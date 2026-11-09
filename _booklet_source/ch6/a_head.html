@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>ملزمة الفصل 6: الاستقراء الرياضي</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="KATEX_CSS">
+<style>
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+:root {
+  --ink: #1d2327; --muted: #5f6b73; --line: #d3dade; --faint: #e7ecef;
+  --acc: #0b6b66; --acc-soft: #e5f1f0;
+  --red: #b3261e; --red-soft: #fcebea;
+  --gold: #855700; --gold-soft: #fff1cf;
+  --ar: "IBM Plex Sans Arabic", "DejaVu Sans", sans-serif;
+  --en: "KaTeX_Main", "DejaVu Serif", serif;
+}
+html, body { margin: 0; padding: 0; background: #fff; }
+body { font-family: var(--ar); color: var(--ink); counter-reset: pg; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 210mm; height: 297mm; padding: 12mm 15mm 11mm; display: flex; flex-direction: column; gap: 3.3mm;
+  overflow: hidden; break-after: page; page-break-after: always; counter-increment: pg; direction: rtl; position: relative; }
+.page:last-child { break-after: auto; page-break-after: auto; }
+.hdr { display: flex; justify-content: space-between; align-items: baseline; font-size: 8.6pt; color: var(--muted);
+  border-bottom: .6pt solid var(--line); padding-bottom: 1.6mm; flex: none; }
+.hdr .u { color: var(--acc); font-weight: 600; }
+.hdr .pn::before { content: "ص " counter(pg); }
+h1 { margin: 0; font-size: 34pt; line-height: 1.25; font-weight: 700; }
+h2.t { margin: 0; font-size: 17pt; line-height: 1.35; font-weight: 700; }
+h2.t .tag { font-size: 10pt; font-weight: 600; border-radius: 1.4mm; padding: .4mm 2.4mm; margin-inline-start: 4mm; vertical-align: 1.2mm; }
+.lt { direction: ltr; unicode-bidi: isolate; font-family: var(--en); white-space: nowrap; }
+.tag.ex { background: var(--acc-soft); color: var(--acc); }
+.tag.past { background: var(--gold-soft); color: var(--gold); }
+.tag.sol { background: #eef1f3; color: var(--muted); }
+h3 { margin: 0 0 1.2mm; font-size: 12pt; font-weight: 700; color: var(--acc); }
+p { margin: 0; font-size: 11.2pt; line-height: 1.78; }
+ol, ul { margin: 0; padding-inline-start: 6mm; }
+li { font-size: 11.2pt; line-height: 1.72; margin-bottom: .7mm; }
+.idea { background: var(--acc-soft); border-radius: 2mm; padding: 2.6mm 4mm; font-size: 11.4pt; line-height: 1.7; flex: none; }
+.idea::before { content: "الفكرة: "; font-weight: 700; color: var(--acc); }
+.en { direction: ltr; text-align: left; font-family: var(--en); font-size: 11.3pt; line-height: 1.62; }
+.stmt { direction: ltr; text-align: left; font-family: var(--en); font-size: 11.6pt; line-height: 1.62;
+  border: .7pt solid var(--line); border-radius: 2mm; padding: 2.6mm 4mm; flex: none; }
+.stmt .lb { font-weight: bold; }
+.box { border: .7pt solid var(--line); border-radius: 2mm; padding: 2.8mm 4mm; flex: none; }
+.tpl { direction: ltr; border: .7pt solid var(--line); border-radius: 2mm; overflow: hidden; font-family: var(--en); flex: none; }
+.tpl .r { display: grid; grid-template-columns: 19mm 1fr; border-top: .6pt solid var(--line); }
+.tpl .r:first-child { border-top: 0; }
+.tpl .l { background: var(--acc-soft); color: var(--acc); font-family: var(--ar); font-size: 9pt; font-weight: 700; padding: 2.2mm 2.4mm; text-align: left; }
+.tpl .v { padding: 2.1mm 3mm; font-size: 11pt; line-height: 1.6; text-align: left; min-width: 0; }
+.tpl .v.b { background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, var(--faint) 7.2mm 7.5mm); }
+.tpl .v.b1 { min-height: 9.5mm; } .tpl .v.b2 { min-height: 17mm; } .tpl .v.b3 { min-height: 30mm; } .tpl .v.b4 { min-height: 46mm; }
+.tpl.grow { flex: 1 1 auto; display: flex; flex-direction: column; }
+.tpl.grow .r.fill { flex: 1 1 auto; }
+.note { border-radius: 2mm; padding: 2.4mm 4mm; font-size: 10.8pt; line-height: 1.7; flex: none; }
+.note .k { font-weight: 700; margin-inline-end: 1.5mm; }
+.trick { background: var(--acc-soft); } .trick .k { color: var(--acc); }
+.trap { background: var(--red-soft); } .trap .k { color: var(--red); }
+.star { background: var(--gold-soft); } .star .k { color: var(--gold); }
+.notes li { font-size: 10.6pt; line-height: 1.65; }
+.space { flex: 1 1 auto; min-height: 18mm; border: .7pt solid var(--line); border-radius: 2mm; position: relative;
+  background-image: repeating-linear-gradient(to bottom, transparent 0 7.2mm, var(--faint) 7.2mm 7.5mm); }
+.space::before { content: attr(data-label); position: absolute; top: 1.4mm; right: 3mm; font-size: 8.6pt; color: var(--muted); }
+.hints { font-size: 9.6pt; color: var(--muted); line-height: 1.62; border-top: .6pt dashed var(--line); padding-top: 1.6mm; flex: none; }
+.hints p { font-size: 9.6pt; line-height: 1.62; }
+.hints b { color: var(--ink); font-weight: 600; }
+.num { display: inline-block; min-width: 4.6mm; height: 4.6mm; line-height: 4.6mm; text-align: center; border-radius: 50%;
+  background: var(--acc); color: #fff; font-family: var(--ar); font-size: 7.8pt; font-weight: 700; margin-inline-end: 1.4mm; vertical-align: .3mm; }
+table.t { border-collapse: collapse; width: 100%; font-size: 10.4pt; }
+.t th, .t td { border: .6pt solid var(--line); padding: 1.3mm 2.4mm; text-align: center; line-height: 1.5; }
+.t th { background: var(--acc-soft); color: var(--acc); font-weight: 700; }
+.t td.s { text-align: start; }
+.cb { display: inline-block; width: 3.4mm; height: 3.4mm; border: .8pt solid var(--ink); border-radius: .6mm; vertical-align: -.5mm; margin-inline-end: 1.6mm; }
+.small { font-size: 9.6pt; color: var(--muted); line-height: 1.6; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3.3mm; flex: none; }
+.grid2 > * { min-width: 0; }
+.chain { direction: rtl; display: flex; flex-wrap: wrap; align-items: center; gap: 1.6mm; font-size: 10.6pt; }
+.chain span.c { background: var(--acc-soft); color: var(--ink); border-radius: 1.4mm; padding: .8mm 2.4mm; }
+.chain span.a { color: var(--acc); font-weight: 700; }
+.dom { direction: ltr; display: flex; align-items: center; justify-content: center; gap: 2mm; font-family: var(--en); font-size: 12pt; }
+.dom .d { border: .9pt solid var(--acc); border-radius: 1.6mm; padding: 1.6mm 3.2mm; background: #fff; }
+.dom .d.f { background: var(--acc); color: #fff; }
+.dom .ar { color: var(--acc); font-weight: 700; }
+.sol .tpl .v { font-size: 10.3pt; line-height: 1.52; padding: 1.7mm 3mm; }
+.sol .tpl .l { padding: 1.7mm 2.4mm; font-size: 8.6pt; }
+.sol h3 { margin-top: .6mm; }
+.blank { display: inline-block; min-width: 26mm; border-bottom: .8pt solid var(--ink); }
+.blank.w { min-width: 44mm; }
+.blank.s { min-width: 9mm; }
+.katex { font-size: 1.07em; }
+.mx { direction: ltr; unicode-bidi: isolate; }
+.katex-display { margin: .6mm 0; }
+.cover { justify-content: flex-start; gap: 4.2mm; }
+.cover .kicker { color: var(--acc); font-weight: 600; font-size: 11pt; }
+.cover .sub { color: var(--muted); font-size: 11.2pt; }
+.cover hr { border: 0; border-top: .7pt solid var(--line); margin: 0; }
+.chk li { list-style: none; margin-inline-start: -6mm; font-size: 10.6pt; line-height: 1.75; }
+.chk .pg { color: var(--muted); font-size: 9.4pt; }
+.qrow { display: grid; grid-template-columns: 1fr auto; gap: 2mm; align-items: baseline; }
+.mk { color: var(--muted); font-size: 9.6pt; white-space: nowrap; }
+.paper .q { direction: ltr; text-align: left; font-family: var(--en); font-size: 11.4pt; line-height: 1.6; padding: 2.2mm 0; border-bottom: .6pt dashed var(--line); }
+.paper .q:last-child { border-bottom: 0; }
+.tf { direction: ltr; text-align: left; font-family: var(--en); font-size: 11pt; line-height: 1.55; display: grid; grid-template-columns: 7mm 1fr 34mm; gap: 1mm 2mm;
+  padding: 2mm 0; border-bottom: .6pt dashed var(--line); align-items: start; }
+.tf .o { font-family: var(--ar); font-size: 9.6pt; white-space: nowrap; }
+.why { grid-column: 2 / 4; min-height: 7mm; border-bottom: .6pt solid var(--faint); }
+</style>
+</head>
+<body>
