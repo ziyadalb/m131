@@ -1,38 +1,42 @@
-
-<!-- ============ UNIT 7 ============ -->
 <section class="page" id="p-pod">
-  <div class="hdr"><span class="u">الوحدة 7 · تدريب الاختبار</span><span class="pn"></span></div>
-  <h2 class="t"><span class="lt">Prove or disprove</span>: كيف تكتب الجواب</h2>
-  <div class="idea">في ميد 1447 كل الفقرات كانت تحت «<span class="lt">Prove or disprove</span>». أول شي تقرر: صح أو خطأ. بعدين تكتب الجواب بالشكل اللي يناسب قرارك.</div>
-  <div class="why2">
-    <h3>القرار في 3 خطوات</h3>
+  <div class="hdr"><span class="u">الوحدة 7 · تدريب الاختبار</span><span class="lv must">أساسي</span><span class="pn"></span></div>
+  <h2 class="t"><span class="lt">Prove or disprove</span>: كيف تجاوب</h2>
+  <div class="idea">في ميد 1447 كل الفقرات كانت تحت «<span class="lt">Prove or disprove</span>» (اثبت أو انفِ). أول شي تقرر: الجملة صح أو خطأ. بعدين تكتب الجواب.</div>
+  <div class="qbox"><div class="lab">السؤال</div>
+    <p class="en"><span class="lb">5.</span> For every odd positive integer \(n\), \(3 \mid (n^2 - 1)\). (2 marks)</p>
+    <p class="ar">بالعربي: لكل عدد فردي موجب n، العدد 3 يقسم \(n^2 - 1\). اثبت أو انفِ. (هذا سؤال 5 من ميد 1447.)</p>
+  </div>
+  <div class="think">
+    <h3>نفكر</h3>
     <div class="flow">
-      <div class="f"><span class="num">1</span><span>جرّب أول ثلاث قيم من المجموعة اللي في السؤال، مثلاً \(n = 1, 2, 3\).</span></div>
-      <div class="f"><span class="num">2</span><span>لو قيمة وحدة فشلت: الجواب <b>False</b>، واكتب المثال المضاد.</span></div>
-      <div class="f"><span class="num">3</span><span>لو كلها نجحت: غالباً <b>True</b>، فاكتب البرهان كامل.</span></div>
+      <div class="f"><span class="num">1</span><span>نجرب أول ثلاث أعداد فردية. \(n = 1\): \(1^2 - 1 = 0\)، و3 يقسم 0 <span class="ok">✓</span></span></div>
+      <div class="f"><span class="num">2</span><span>\(n = 3\): \(3^2 - 1 = 8\)، و3 ما يقسم 8 <span class="no">✗</span></span></div>
+      <div class="f"><span class="num">3</span><span>لقينا عدد تفشل عنده الجملة، فالجواب: <b>False</b>. والعدد 3 هو المثال المضاد (<span class="lt">counterexample</span>).</span></div>
     </div>
+    <p class="small">لاحظ: عند \(n = 1\) مشت. لو وقفت عندها كان حكمت غلط. عشان كذا جرّب ثلاث قيم.</p>
   </div>
-  <h3>شكل جواب False: الحل الرسمي من ميد 1447</h3>
-  <div class="stmt"><p class="en"><span class="lb">5.</span> For every odd positive integer \(n\), \(3 \mid (n^2 - 1)\). (2 marks)</p></div>
-  <div class="tpl wl">
-    <div class="r"><div class="l" dir="rtl">الحكم</div><div class="v">False.</div></div>
-    <div class="r"><div class="l" dir="rtl">الحل الرسمي</div><div class="v">Since \(3 \nmid 8\), so \(3 \nmid (3^2 - 1)\). It follows that \(n = 3\) is a counterexample.</div></div>
+  <h3>نكتب (الحل الرسمي)</h3>
+  <div class="tpl">
+    <div class="r"><div class="l">الحكم</div><div class="v">False.<span class="g">الجملة خاطئة.</span></div></div>
+    <div class="r"><div class="l">الحل<i>الرسمي</i></div><div class="v">Since \(3 \nmid 8\), so \(3 \nmid (3^2 - 1)\). It follows that \(n = 3\) is a counterexample.<span class="g">3 ما يقسم 8، يعني ما يقسم \(3^2 - 1\). فـ \(n = 3\) مثال مضاد.</span></div></div>
   </div>
-  <p>لاحظ: عند \(n = 1\) تطلع \(1^2 - 1 = 0\)، و \(3 \mid 0\). يعني العبارة تمشي مع أول قيمة، ولو وقفت عندها بتحكم غلط. عشان كذا جرّب ثلاث قيم.</p>
-  <h3>شكل جواب True</h3>
-  <p>تكتب True، وبعدها البرهان كامل. مثل سؤال المتتابعة في نفس الاختبار <span class="ref" data-to="p-strongex"></span>.</p>
+  <div class="box">
+    <h3>وإذا طلعت صحيحة؟</h3>
+    <p>تكتب True، وبعدها البرهان كامل، مثل سؤال المتتابعة في نفس الاختبار <span class="ref" data-to="p-sx"></span>.</p>
+  </div>
   <div class="box">
     <h3>قواعد تحفظها</h3>
     <ul>
       <li>مثال مضاد واحد يكفي لـ False. احسبه بالأرقام، واكتب أنه <span class="lt">counterexample</span>.</li>
       <li>المثال لازم يكون من المجموعة اللي في السؤال. هنا عدد فردي موجب.</li>
-      <li>عدد واحد يفشل يكفي. \(2^n \gt n^2\) تفشل عند 2 و3 و4 بس، ومع كذا العبارة «لكل n» خاطئة.</li>
+      <li>عدد واحد يفشل يكفي. \(2^n \gt n^2\) تفشل عند 2 و3 و4 بس، ومع كذا «لكل n» خاطئة.</li>
     </ul>
   </div>
+
 </section>
 
 <section class="page" id="p-traps">
-  <div class="hdr"><span class="u">الوحدة 7 · تدريب الاختبار</span><span class="pn"></span></div>
+  <div class="hdr"><span class="u">الوحدة 7 · تدريب الاختبار</span><span class="lv must">أساسي</span><span class="pn"></span></div>
   <h2 class="t">تدريب الفخاخ: صح أو خطأ؟<span class="tag ex">دورك</span></h2>
   <div class="idea">في <span class="lt">Prove or disprove</span> كل شي يبدأ من قرارك: لو حكمت غلط، البرهان كله يروح. قرّر لكل عبارة واكتب السبب في سطر. هنا بدون ترجمة مثل الاختبار، ولو علقت بكلمة شوف القاموس <span class="ref" data-to="p-dict"></span>.</div>
   <div class="paper">
@@ -50,7 +54,7 @@
 </section>
 
 <section class="page" id="p-mock">
-  <div class="hdr"><span class="u">الوحدة 7 · تدريب الاختبار</span><span class="pn"></span></div>
+  <div class="hdr"><span class="u">الوحدة 7 · تدريب الاختبار</span><span class="lv must">أساسي</span><span class="pn"></span></div>
   <h2 class="t">اختبار قصير على الفصل<span class="tag ex">35 دقيقة</span></h2>
   <div class="idea">نفس صيغة ميدكم. شغّل مؤقت 35 دقيقة، وحل على ورقة أو على صفحات فاضية في الآيباد. لا تفتح الحلول قبل ما يخلص الوقت.</div>
   <div class="box paper">
@@ -75,13 +79,13 @@
 
 <section class="page sol" id="p-sm1">
   <div class="hdr"><span class="u">حلول الوحدة 7</span><span class="pn"></span></div>
-  <h2 class="t">أجوبة الفخاخ<span class="tag sol">شيّك</span></h2>
+  <h2 class="t">أجوبة الفخاخ، وحل السؤال 1<span class="tag sol">شيّك</span></h2>
   <table class="t">
     <tr><th>#</th><th>الحكم</th><th>السبب</th></tr>
     <tr><td>1</td><td>False</td><td class="s"><span class="mx">\(n = 2\)</span>: <span class="mx">\(4 \gt 4\)</span> خطأ. الصحيحة تحتاج <span class="mx">\(n \ge 5\)</span>.</td></tr>
     <tr><td>2</td><td>True</td><td class="s">تمرين 6.22.</td></tr>
     <tr><td>3</td><td>False</td><td class="s"><span class="mx">\(n = 1\)</span>: الطرف الأيسر 1 والأيمن 3. الصحيحة <span class="mx">\(2n^2 - n\)</span>.</td></tr>
-    <tr><td>4</td><td>True</td><td class="s">Result 6.11.</td></tr>
+    <tr><td>4</td><td>True</td><td class="s">نفس طريقة مثال القسمة على 9، بالاستقراء من \(n = 0\).</td></tr>
     <tr><td>5</td><td>False</td><td class="s"><span class="mx">\(n = 1\)</span>: <span class="mx">\(2^1 - 1 = 1\)</span> و <span class="mx">\(3 \nmid 1\)</span>.</td></tr>
     <tr><td>6</td><td>False</td><td class="s"><span class="mx">\((0, 1)\)</span> جزئية منها بدون أصغر عنصر.</td></tr>
     <tr><td>7</td><td>True</td><td class="s">مجموعة جزئية من <span class="mx">\(\mathbb{N}\)</span> (تمرين 6.1 d).</td></tr>
@@ -89,55 +93,89 @@
     <tr><td>9</td><td>False</td><td class="s"><span class="mx">\(a_1 = 1 \ne 2^1\)</span>. الصحيحة <span class="mx">\(a_n = 2^{n-1}\)</span>.</td></tr>
     <tr><td>10</td><td>True</td><td class="s">من تمرين 6.36: <span class="mx">\(F_n\)</span> زوجي ⟺ <span class="mx">\(3 \mid n\)</span>.</td></tr>
   </table>
-  <h2 class="t" style="margin-top:2mm">حلول الاختبار القصير<span class="tag sol">1 و2</span></h2>
   <h3>1. True</h3>
   <div class="tpl">
-    <div class="r"><div class="l">Base</div><div class="v">Since \(1 \cdot 2 = 2 = \frac{1 \cdot 2 \cdot 3}{3}\), the formula holds for \(n = 1\).</div></div>
-    <div class="r"><div class="l">Assume</div><div class="v">Assume that \(1 \cdot 2 + \cdots + k(k+1) = \frac{k(k+1)(k+2)}{3}\) for a positive integer \(k\).</div></div>
-    <div class="r"><div class="l">Step</div><div class="v">\({1 \cdot 2 + \cdots + (k+1)(k+2)} = {\frac{k(k+1)(k+2)}{3} + (k+1)(k+2)} = {(k+1)(k+2)\left(\frac{k}{3} + 1\right)} = \frac{(k+1)(k+2)(k+3)}{3}.\)</div></div>
-    <div class="r"><div class="l">Conclude</div><div class="v">By the Principle of Mathematical Induction, the formula holds for every positive integer \(n\).</div></div>
+    <div class="r"><div class="l">Base<i>الأساس</i></div><div class="v">Since \(1 \cdot 2 = 2 = \frac{1 \cdot 2 \cdot 3}{3}\), the formula holds for \(n = 1\).<span class="g">عند \(n = 1\) الطرفين يساوون 2.</span></div></div>
+    <div class="r"><div class="l">Assume<i>الفرض</i></div><div class="v">Assume that \(1 \cdot 2 + \cdots + k(k+1) = \frac{k(k+1)(k+2)}{3}\) for a positive integer \(k\).<span class="g">نفترض أنها صحيحة عند k.</span></div></div>
+    <div class="r"><div class="l">Show<i>المطلوب</i></div><div class="v">We show that \(1 \cdot 2 + \cdots + (k+1)(k+2) = \frac{(k+1)(k+2)(k+3)}{3}\).<span class="g">نثبتها عند \(k + 1\).</span></div></div>
+    <div class="r"><div class="l">Step<i>الخطوة</i></div><div class="v">\({1 \cdot 2 + \cdots + (k+1)(k+2)} = {\frac{k(k+1)(k+2)}{3} + (k+1)(k+2)} = {(k+1)(k+2)\left(\frac{k}{3} + 1\right)} = \frac{(k+1)(k+2)(k+3)}{3}.\)<span class="g">فصلنا آخر حد، وبدّلنا الباقي بالفرض، وطلّعنا \((k+1)(k+2)\) عامل مشترك.</span></div></div>
+    <div class="r"><div class="l">Conclude<i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, the formula holds for every positive integer \(n\).<span class="g">إذن صحيحة لكل n.</span></div></div>
   </div>
+  <div class="note trick"><span class="k">كيف تستفيد:</span>كل عبارة غلطت فيها، ارجع للوحدة اللي منها. العبارات 1 و2 من الوحدة 5، و3 من الوحدة 3، و4 و5 من الوحدة 4، و6 و7 من الوحدة 1، و8 من الوحدة 2، و9 و10 من الوحدة 6.</div>
+
+</section>
+
+<section class="page sol" id="p-sm2" style="gap:2.6mm">
+  <div class="hdr"><span class="u">حلول الوحدة 7</span><span class="pn"></span></div>
+  <h2 class="t">حلول الاختبار القصير<span class="tag sol">2 إلى 4</span></h2>
   <h3>2. True</h3>
   <div class="tpl">
-    <div class="r"><div class="l">Base</div><div class="v">When \(n = 1\), \(6^1 - 1 = 5\) and \(5 \mid 5\).</div></div>
-    <div class="r"><div class="l">Assume</div><div class="v">Assume that \(5 \mid (6^k - 1)\). Then \(6^k - 1 = 5x\) for some integer \(x\), so \(6^k = 5x + 1\).</div></div>
-    <div class="r"><div class="l">Step</div><div class="v">\(6^{k+1} - 1 = 6 \cdot 6^k - 1 = 6(5x + 1) - 1 = 30x + 5 = 5(6x + 1)\). Since \(6x + 1 \in \mathbb{Z}\), \(5 \mid (6^{k+1} - 1)\).</div></div>
-    <div class="r"><div class="l">Conclude</div><div class="v">By the Principle of Mathematical Induction, \(5 \mid (6^n - 1)\) for every positive integer \(n\).</div></div>
+    <div class="r"><div class="l">Base<i>الأساس</i></div><div class="v">When \(n = 1\), \(6^1 - 1 = 5\) and \(5 \mid 5\).<span class="g">عند \(n = 1\) العبارة 5.</span></div></div>
+    <div class="r"><div class="l">Assume<i>الفرض</i></div><div class="v">Assume that \(5 \mid (6^k - 1)\) for a positive integer \(k\). Then \(6^k - 1 = 5x\) for some integer \(x\), so \(6^k = 5x + 1\).<span class="g">نفترض أن 5 يقسمها عند k، ونعزل القوة.</span></div></div>
+    <div class="r"><div class="l">Step<i>الخطوة</i></div><div class="v">\(6^{k+1} - 1 = 6 \cdot 6^k - 1 = 6(5x + 1) - 1 = 30x + 5 = 5(6x + 1)\). Since \(6x + 1 \in \mathbb{Z}\), \(5 \mid (6^{k+1} - 1)\).<span class="g">طلّعنا 6، وعوّضنا، وطلّعنا 5 عامل مشترك.</span></div></div>
+    <div class="r"><div class="l">Conclude<i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, \(5 \mid (6^n - 1)\) for every positive integer \(n\).<span class="g">إذن صحيحة لكل n.</span></div></div>
+  </div>
+  <h3>3. False</h3>
+  <div class="tpl">
+    <div class="r"><div class="l">Answer<i>الجواب</i></div><div class="v">Let \(n = 1\). Then \(1! = 1\) and \(2^1 = 2\), so \(n! \gt 2^n\) is false. Hence \(n = 1\) is a counterexample.<span class="g">عند \(n = 1\): \(1! = 1\) مو أكبر من 2، فهو مثال مضاد. (صحيحة بس من 4 وفوق.)</span></div></div>
+  </div>
+
+  <h3>4. True</h3>
+  <div class="tpl">
+    <div class="r"><div class="l">Base<i>الأساس</i></div><div class="v">Since \(a_1 = 2 = 2^1\), the formula holds for \(n = 1\).<span class="g">عند \(n = 1\): \(a_1 = 2 = 2^1\).</span></div></div>
+    <div class="r"><div class="l">Assume<i>الفرض</i></div><div class="v">Assume for an arbitrary positive integer \(k\) that \(a_i = 2^i\) for every integer \(i\) with \(1 \le i \le k\).<span class="g">فرض قوي: صحيحة لكل الحدود من 1 إلى k.</span></div></div>
+    <div class="r"><div class="l">Show<i>المطلوب</i></div><div class="v">We show that \(a_{k+1} = 2^{k+1}\).<span class="g">نثبتها عند \(k + 1\).</span></div></div>
+    <div class="r"><div class="l">Small k<i>k الصغيرة</i></div><div class="v">If \(k = 1\), then \(a_{k+1} = a_2 = 4 = 2^2\). So we may assume that \(k \ge 2\).<span class="g">عند \(k = 1\): \(a_2 = 4\) معطى.</span></div></div>
+    <div class="r"><div class="l">Step<i>الخطوة</i></div><div class="v">Since \(k + 1 \ge 3\), by the inductive hypothesis \(a_{k+1} = a_k + 2a_{k-1} = 2^k + 2 \cdot 2^{k-1} = 2^k + 2^k = 2^{k+1}\).<span class="g">القاعدة، ثم الفرض على \(a_k\) و \(a_{k-1}\).</span></div></div>
+    <div class="r"><div class="l">Conclude<i>الختام</i></div><div class="v">By the Strong Principle of Mathematical Induction, \(a_n = 2^n\) for all \(n \in \mathbb{N}\).<span class="g">إذن صحيحة لكل n.</span></div></div>
   </div>
 </section>
 
-<section class="page sol" id="p-sm2" style="gap:2.9mm">
+<section class="page sol" id="p-sm3">
   <div class="hdr"><span class="u">حلول الوحدة 7</span><span class="pn"></span></div>
-  <h2 class="t">حلول الاختبار القصير<span class="tag sol">3 إلى 5</span></h2>
-  <h3>3. False</h3>
-  <div class="tpl"><div class="r"><div class="l">Answer</div><div class="v">Let \(n = 1\). Then \(1! = 1\) and \(2^1 = 2\), so \(n! \gt 2^n\) is false. Hence \(n = 1\) is a counterexample. (The inequality is true only for \(n \ge 4\).)</div></div></div>
-  <p class="small">لاحظ: جواب False يكفيه مثال واحد محسوب، زي الحل الرسمي في <span class="ref" data-to="p-pod"></span>. لا تكتب برهان.</p>
-  <h3>4. True</h3>
-  <div class="tpl">
-    <div class="r"><div class="l">Base</div><div class="v">Since \(a_1 = 2 = 2^1\), the formula holds for \(n = 1\).</div></div>
-    <div class="r"><div class="l">Assume</div><div class="v">Assume for an arbitrary positive integer \(k\) that \(a_i = 2^i\) for every integer \(i\) with \(1 \le i \le k\).</div></div>
-    <div class="r"><div class="l">Show</div><div class="v">We show that \(a_{k+1} = 2^{k+1}\).</div></div>
-    <div class="r"><div class="l">Small k</div><div class="v">If \(k = 1\), then \(a_{k+1} = a_2 = 4 = 2^2\). So we may assume that \(k \ge 2\).</div></div>
-    <div class="r"><div class="l">Step</div><div class="v">Since \(k + 1 \ge 3\), by the inductive hypothesis \(a_{k+1} = a_k + 2a_{k-1} = 2^k + 2 \cdot 2^{k-1} = 2^k + 2^k = 2^{k+1}\).</div></div>
-    <div class="r"><div class="l">Conclude</div><div class="v">By the Strong Principle of Mathematical Induction, \(a_n = 2^n\) for all \(n \in \mathbb{N}\).</div></div>
-  </div>
+  <h2 class="t">حل السؤال 5، وصحّح نفسك<span class="tag sol">شيّك</span></h2>
   <h3>5. True</h3>
-  <p>هذا مبدأ الاستقراء نفسه (<span class="lt">Theorem 6.2</span>)، وبرهانه بالترتيب الحسن. صحّح برهانك من <span class="ref" data-to="p-pmi"></span> سطر بسطر: تعريف S، والترتيب الحسن، و \(s \ge 2\)، و \(P(s-1)\) صحيحة، والتناقض.</p>
+  <p>هذا مبدأ الاستقراء نفسه (<span class="lt">Theorem 6.2</span>). صحّح برهانك من <span class="ref" data-to="p-pmi2"></span> سطر بسطر: الافتراض بالعكس، تعريف S والترتيب الحسن، \(s \ge 2\)، \(P(s-1)\) صحيحة، والتناقض.</p>
   <h3>صحّح نفسك</h3>
   <table class="t">
     <tr><th>السؤال</th><th>النوع</th><th>الدرجة</th><th>درجتي</th><th>لو نقصت، ارجع لـ</th></tr>
-    <tr><td>1</td><td>مجموع</td><td>3</td><td></td><td>الوحدة 3 <span class="ref" data-to="p-u3"></span></td></tr>
-    <tr><td>2</td><td>قسمة</td><td>3</td><td></td><td>الوحدة 4 <span class="ref" data-to="p-u4"></span></td></tr>
+    <tr><td>1</td><td>مجموع</td><td>3</td><td></td><td>مثال 1 <span class="ref" data-to="p-ex1"></span></td></tr>
+    <tr><td>2</td><td>قسمة</td><td>3</td><td></td><td>مثال القسمة <span class="ref" data-to="p-ex5"></span></td></tr>
     <tr><td>3</td><td>عبارة خاطئة</td><td>2</td><td></td><td>جواب False <span class="ref" data-to="p-pod"></span></td></tr>
-    <tr><td>4</td><td>متتابعة</td><td>4</td><td></td><td>الوحدة 6 <span class="ref" data-to="p-strongex"></span></td></tr>
-    <tr><td>5</td><td>برهان المبدأ</td><td>3</td><td></td><td>الوحدة 2 <span class="ref" data-to="p-pmi"></span></td></tr>
+    <tr><td>4</td><td>متتابعة</td><td>4</td><td></td><td>سؤال الميد <span class="ref" data-to="p-sx"></span></td></tr>
+    <tr><td>5</td><td>برهان المبدأ</td><td>3</td><td></td><td>برهان المبدأ <span class="ref" data-to="p-pmi"></span></td></tr>
     <tr><th colspan="2">المجموع</th><th>15</th><th></th><th></th></tr>
   </table>
-  <div class="note star"><span class="k">كيف تصحح:</span>12 وفوق: جاهز. أقل: حل تمرين الوحدة اللي نقصت فيها مرة ثانية بدون تلميحات.</div>
+  <div class="note star"><span class="k">كيف تصحح:</span>12 وفوق: جاهز. أقل: ارجع للمثال المحلول حق السؤال اللي نقصت فيه، وبعدها حل تمرين من نفس الوحدة بدون تلميحات.</div>
+
+</section>
+
+<section class="page" id="p-tpls">
+  <div class="hdr"><span class="u">الوحدة 7 · تدريب الاختبار</span><span class="lv must">أساسي</span><span class="pn"></span></div>
+  <h2 class="t">القوالب والجمل الجاهزة</h2>
+  <div class="idea">الحين بعد ما شفت الأمثلة، هذي القوالب اللي طلعت منها. راجعها قبل الاختبار.</div>
+  <h3>برهان الاستقراء: خمس أسطر</h3>
+  <div class="tpl">
+    <div class="r"><div class="l">Base<i>الأساس</i></div><div class="v">Since …, the statement \(P(1)\) is true.<span class="g">عوّض \(n = 1\) وبيّن أن الطرفين متساويين.</span></div></div>
+    <div class="r"><div class="l">Assume<i>الفرض</i></div><div class="v">Assume that \(P(k)\) is true for an arbitrary positive integer \(k\), that is, …<span class="g">انسخ الجملة وبدّل n بـ k.</span></div></div>
+    <div class="r"><div class="l">Show<i>المطلوب</i></div><div class="v">We show that \(P(k+1)\) is true, that is, …<span class="g">انسخ الجملة وبدّل n بـ \(k+1\). اكتبه قبل ما تحسب.</span></div></div>
+    <div class="r"><div class="l">Step<i>الخطوة</i></div><div class="v">Observe that … (use the hypothesis here) …, as desired.<span class="g">ابدأ من الطرف الأيسر، استخدم الفرض، وكمّل لين توصل للأيمن.</span></div></div>
+    <div class="r"><div class="l">Conclude<i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, \(P(n)\) is true for every positive integer \(n\).<span class="g">جملة الختام فيها اسم المبدأ.</span></div></div>
+  </div>
+  <div class="box">
+    <h3>التعديلات</h3>
+    <ul>
+      <li><b>البداية من m:</b> الأساس \(P(m)\)، والفرض «<span class="lt">where \(k \ge m\)</span>»، والختام «<span class="lt">for every integer \(n \ge m\)</span>».</li>
+      <li><b>القوي:</b> الفرض «<span class="lt">\(P(i)\) for every \(i\) with \(1 \le i \le k\)</span>»، وسطر <span class="lt">Small k</span> للقيم الابتدائية، والختام «<span class="lt">By the Strong Principle …</span>».</li>
+      <li><b>القسمة:</b> «<span class="lt">Then … \(= dx\) for some integer \(x\)</span>» و«<span class="lt">Since … is an integer, \(d \mid\) …</span>».</li>
+      <li><b>False:</b> «<span class="lt">Hence \(n = \) … is a counterexample.</span>»</li>
+    </ul>
+  </div>
+  <p class="small">وجمل الترتيب الحسن («نعم» بثلاث حالات، و«لا» بقطعة): <span class="ref" data-to="p-u1e"></span> و <span class="ref" data-to="p-u1d"></span>.</p>
 </section>
 
 <section class="page" id="p-night">
-  <div class="hdr"><span class="u">ورقة ليلة الاختبار</span><span class="pn"></span></div>
+  <div class="hdr"><span class="u">ورقة ليلة الاختبار</span><span class="lv must">أساسي</span><span class="pn"></span></div>
   <h2 class="t">الفصل كله في صفحة</h2>
   <div class="grid2">
     <div class="box">
