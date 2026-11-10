@@ -14,6 +14,7 @@
     </div>
   </div>
   <div class="stmt"><p class="en"><span class="lb">Result 6.11.</span> For every nonnegative integer \(n\), \(\;3 \mid (2^{2n} - 1)\).</p></div>
+  <div class="tr"><p><span class="k">بالعربي:</span>لكل عدد صحيح غير سالب n (يعني 0, 1, 2, …)، العدد \(2^{2n} - 1\) يقبل القسمة على 3.</p></div>
   <div class="tpl">
     <div class="r"><div class="l">Base</div><div class="v">When \(n = 0\), \(2^{2n} - 1 = 0\), and \(3 \mid 0\).</div></div>
     <div class="r"><div class="l">Assume</div><div class="v">Assume that \(3 \mid (2^{2k} - 1)\) for a nonnegative integer \(k\). Then \(2^{2k} - 1 = 3x\) for some integer \(x\), so <b>\(2^{2k} = 3x + 1\)</b>.</div></div>
@@ -30,6 +31,7 @@
   <h2 class="t">مثال محلول ثاني: نفس الحركة<span class="tag sol">مثال السلايدات 5</span></h2>
   <div class="idea">نفس الأربع خطوات بالضبط. تابع وين عزلنا القوة، ووين طلّعنا 9 عامل مشترك.</div>
   <div class="stmt"><p class="en"><span class="lb">Result 6.12.</span> For every nonnegative integer \(n\), \(\;9 \mid (4^{3n} - 1)\).</p></div>
+  <div class="tr"><p><span class="k">بالعربي:</span>لكل عدد صحيح غير سالب n، العدد \(4^{3n} - 1\) يقبل القسمة على 9.</p></div>
   <div class="tpl">
     <div class="r"><div class="l">Base</div><div class="v">When \(n = 0\), \(4^{3n} - 1 = 0\). Since \(9 \mid 0\), the statement is true when \(n = 0\).</div></div>
     <div class="r"><div class="l">Assume</div><div class="v">Assume that \(9 \mid (4^{3k} - 1)\), where \(k\) is a nonnegative integer. Then \(4^{3k} - 1 = 9x\) for some integer \(x\). Hence, <b>\(4^{3k} = 9x + 1\).</b></div></div>
@@ -54,6 +56,7 @@
   <div class="hdr"><span class="u">الوحدة 4 · القسمة</span><span class="pn"></span></div>
   <h2 class="t">تمرين 6.16<span class="tag ex">دورك</span></h2>
   <div class="stmt"><p class="en"><span class="lb">6.16.</span> Prove that \(7 \mid \left[3^{4n+1} - 5^{2n-1}\right]\) for every positive integer \(n\).</p></div>
+  <div class="tr"><p><span class="k">بالعربي:</span>اثبت أن 7 يقسم \(3^{4n+1} - 5^{2n-1}\) لكل عدد صحيح موجب n.</p></div>
   <p>فيها أساسين (3 و5)، بس الحركة نفسها: من الفرض اعزل <span class="mx">\(3^{4k+1}\)</span> وعوّض.</p>
   <div class="tpl grow">
     <div class="r"><div class="l">Base</div><div class="v b b1"></div></div>
@@ -106,8 +109,9 @@
 <section class="page" id="p-u5">
   <div class="hdr"><span class="u">الوحدة 5 · الاستقراء العام والمتباينات · 6.2</span><span class="pn"></span></div>
   <h2 class="t">لما البداية مو 1: الاستقراء العام</h2>
-  <div class="idea">نفس القالب بالضبط، بس الأساس عند أول عدد في السؤال (نسميه m)، والفرض لـ \(k \ge m\).</div>
+  <div class="idea">نفس مبدأ الاستقراء بالضبط، بس الدومينو يبدأ من أول عدد في السؤال (نسميه m) بدل 1، والفرض لـ \(k \ge m\). وهذا مسموح بسبب <span class="lt">Theorem 6.7</span>.</div>
   <div class="stmt"><p class="en"><span class="lb">Theorem 6.8.</span> For a fixed integer \(m\), let \(S = \{i \in \mathbb{Z} : i \ge m\}\). For each \(n \in S\), let \(P(n)\) be a statement. If (1) \(P(m)\) is true and (2) \(P(k) \Rightarrow P(k+1)\) is true for every \(k \in S\), then \(P(n)\) is true for every \(n \in S\).</p></div>
+  <div class="tr"><p><span class="k">بالعربي:</span>خل m عدد صحيح ثابت، و S الأعداد الصحيحة من m وفوق. لكل n في S خل \(P(n)\) جملة. إذا كان (1) \(P(m)\) صحيحة، و(2) «إذا \(P(k)\) فإن \(P(k+1)\)» صحيحة لكل k في S، فإن \(P(n)\) صحيحة لكل n في S.</p></div>
   <h3>وش يتغير في القالب؟ ثلاث أسطر بس</h3>
   <table class="t">
     <tr><th style="width:18%">السطر</th><th>البداية من 1</th><th>البداية من m</th></tr>
@@ -116,16 +120,13 @@
     <tr><td><span class="lt">Conclude</span></td><td><span class="lt">for every positive integer \(n\)</span></td><td><span class="lt">for every integer \(n \ge m\)</span></td></tr>
   </table>
   <p class="small">شفته قبل: Result 6.11 في الوحدة 4 كان <span class="lt">nonnegative</span>، يعني \(m = 0\). وقتها تكتب في الفرض <span class="lt">where \(k\) is a nonnegative integer</span>.</p>
-  <div class="grid2" style="grid-template-columns: 34mm 1fr; align-items:start">
-    <table class="t">
-      <tr><th>\(n\)</th><th>\(2^n\)</th><th>\(n^2\)</th></tr>
-      <tr><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>2</td><td>1</td></tr><tr><td>2</td><td>4</td><td>4</td></tr><tr><td>3</td><td>8</td><td>9</td></tr><tr><td>4</td><td>16</td><td>16</td></tr><tr><td>5</td><td>32</td><td>25</td></tr><tr><td>6</td><td>64</td><td>36</td></tr>
-    </table>
-    <div>
-      <p>وقيمة m تجي من السؤال نفسه. الجدول يوضح ليش الكتاب قال \(n \ge 5\) في \(2^n \gt n^2\): عند 2 و3 و4 العبارة تفشل، ومن 5 وفوق تصير صحيحة.</p>
-      <div class="note trap" style="margin-top:2mm"><span class="k">فخ <span class="lt">Prove or disprove</span>:</span>«\(2^n \gt n^2\) لكل \(n \in \mathbb{N}\)» خاطئة. جوابها False مع \(n = 2\): \(4 \gt 4\) خطأ.</div>
-    </div>
-  </div>
+  <p>وقيمة m تجي من السؤال نفسه. الجدول يوضح ليش الكتاب قال \(n \ge 5\) في \(2^n \gt n^2\): عند 2 و3 و4 العبارة تفشل، ومن 5 وفوق تصير صحيحة.</p>
+  <table class="t" style="direction:ltr">
+    <tr><th>\(n\)</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
+    <tr><td>\(2^n\)</td><td>1</td><td>2</td><td>4</td><td>8</td><td>16</td><td>32</td><td>64</td></tr>
+    <tr><td>\(n^2\)</td><td>0</td><td>1</td><td>4</td><td>9</td><td>16</td><td>25</td><td>36</td></tr>
+  </table>
+  <div class="note trap"><span class="k">فخ <span class="lt">Prove or disprove</span>:</span>«\(2^n \gt n^2\) لكل \(n \in \mathbb{N}\)» خاطئة. جوابها False مع \(n = 2\): \(4 \gt 4\) خطأ.</div>
   <div class="why2">
     <h3>اسأل نفسك</h3>
     <div class="qa">
@@ -140,6 +141,7 @@
   <h2 class="t">المتباينات: كيف تبني السلسلة<span class="tag sol">مثال السلايدات 4</span></h2>
   <div class="idea">ابدأ من الطرف الأيسر لـ \(P(k+1)\)، استخدم الفرض مرة وحدة، وبعدها كبّر خطوة خطوة لين توصل للطرف الأيمن.</div>
   <div class="stmt"><p class="en"><span class="lb">Result 6.10.</span> For every integer \(n \ge 5\), \(\;2^n \gt n^2\).</p></div>
+  <div class="tr"><p><span class="k">بالعربي:</span>لكل عدد صحيح n من 5 وفوق، \(2^n \gt n^2\).</p></div>
   <div class="why2">
     <h3>كيف تفكر في المسودة (من شرح الكتاب)</h3>
     <div class="flow">
@@ -172,6 +174,7 @@
   <h2 class="t">مثال محلول: لما k الصغيرة تخرب الخطوة<span class="tag sol">مثال السلايدات 3</span></h2>
   <div class="idea">أحياناً الخطوة تمشي لكل k إلا أول قيمة. تثبت هذي القيمة لوحدها في سطر <span class="lt">Small k</span>، وتكمل الخطوة للباقي.</div>
   <div class="stmt"><p class="en"><span class="lb">Result 6.9.</span> For every nonnegative integer \(n\), \(\;2^n \gt n\).</p></div>
+  <div class="tr"><p><span class="k">بالعربي:</span>لكل عدد صحيح غير سالب n (يعني 0, 1, 2, …)، \(2^n \gt n\).</p></div>
   <div class="tpl">
     <div class="r"><div class="l">Base</div><div class="v">The inequality holds for \(n = 0\) since \(2^0 = 1 \gt 0\).</div></div>
     <div class="r"><div class="l">Assume</div><div class="v">Assume that \(2^k \gt k\), where \(k\) is a nonnegative integer.</div></div>
@@ -199,6 +202,7 @@
   <div class="hdr"><span class="u">الوحدة 5 · المتباينات</span><span class="pn"></span></div>
   <h2 class="t">تمرين 6.22<span class="tag ex">دورك</span></h2>
   <div class="stmt"><p class="en"><span class="lb">6.22.</span> Prove that \(3^n \gt n^2\) for every positive integer \(n\).</p></div>
+  <div class="tr"><p><span class="k">بالعربي:</span>اثبت أن \(3^n \gt n^2\) لكل عدد صحيح موجب n.</p></div>
   <div class="note star"><span class="k">نفس فكرة Result 6.9:</span>اكتب الخطوة في المسودة أول، وشوف أي k صغيرة ما تمشي معها. هذي تثبتها في سطر <span class="lt">Small k</span>، وتكمل الخطوة للباقي.</div>
   <div class="tpl grow">
     <div class="r"><div class="l">Base</div><div class="v b b1"></div></div>
@@ -220,12 +224,13 @@
   <h2 class="t">مثال محلول: متباينة فيها مجموع<span class="tag sol">مثال إضافي</span></h2>
   <div class="idea">الفرض يغطي المجموع كله ما عدا الحد الجديد. بعده يبقى لك تقارن الحد الجديد بشي بسيط.</div>
   <div class="stmt"><p class="en"><span class="lb">Example.</span> For every positive integer \(n\), \(\;1 + \dfrac{1}{2} + \dfrac{1}{3} + \cdots + \dfrac{1}{n} \le \dfrac{n+1}{2}\).</p></div>
+  <div class="tr"><p><span class="k">بالعربي:</span>لكل عدد صحيح موجب n، المجموع \(1 + 1/2 + \cdots + 1/n\) أصغر من أو يساوي \((n+1)/2\).</p></div>
   <div class="why2">
     <h3>كيف تفكر في المسودة</h3>
     <div class="flow">
-      <div class="f"><span class="num">1</span><span>الهدف: \(1 + \frac{1}{2} + \cdots + \frac{1}{k+1} \le \frac{k+2}{2}\).</span></div>
-      <div class="f"><span class="num">2</span><span>افصل الحد الجديد وطبّق الفرض: المجموع \(\le \frac{k+1}{2} + \frac{1}{k+1}\).</span></div>
-      <div class="f"><span class="num">3</span><span>قارن مع الهدف: \(\frac{k+2}{2} = \frac{k+1}{2} + \frac{1}{2}\). يعني يكفيك \(\frac{1}{k+1} \le \frac{1}{2}\).</span></div>
+      <div class="f"><span class="num">1</span><span>الهدف: \(1 + 1/2 + \cdots + 1/(k+1) \le (k+2)/2\).</span></div>
+      <div class="f"><span class="num">2</span><span>افصل الحد الجديد وطبّق الفرض: المجموع \(\le (k+1)/2 + 1/(k+1)\).</span></div>
+      <div class="f"><span class="num">3</span><span>قارن مع الهدف: \((k+2)/2 = (k+1)/2 + 1/2\). يعني يكفيك \(1/(k+1) \le 1/2\).</span></div>
       <div class="f"><span class="num">4</span><span>وهذي صحيحة لأن \(k + 1 \ge 2\). الحين اكتب البرهان بالترتيب.</span></div>
     </div>
   </div>
@@ -244,6 +249,7 @@
   <div class="hdr"><span class="u">الوحدة 5 · المتباينات</span><span class="pn"></span></div>
   <h2 class="t">تمرين 6.27<span class="tag ex">دورك</span></h2>
   <div class="stmt"><p class="en"><span class="lb">6.27.</span> Prove that \(1 + \dfrac{1}{4} + \dfrac{1}{9} + \cdots + \dfrac{1}{n^2} \le 2 - \dfrac{1}{n}\) for every positive integer \(n\).</p></div>
+  <div class="tr"><p><span class="k">بالعربي:</span>اثبت أن \(1 + 1/4 + 1/9 + \cdots + 1/n^2 \le 2 - 1/n\) لكل عدد صحيح موجب n.</p></div>
   <div class="note trick"><span class="k">نفس طريقة المثال اللي قبل:</span>بعد الفرض اكتب في المسودة وش يبقى لك عشان توصل للهدف، وبسّطه لين يصير شي واضح أنه صحيح. بعدين اكتب البرهان بالترتيب.</div>
   <div class="tpl grow">
     <div class="r"><div class="l">Base</div><div class="v b b1"></div></div>
@@ -257,6 +263,32 @@
     <p><b>تلميح 2:</b> بعد الفرض عندك <span class="mx">\(\le 2 - \frac{1}{k} + \frac{1}{(k+1)^2}\)</span>، وتبي توصل لـ <span class="mx">\(2 - \frac{1}{k+1}\)</span>.</p>
     <p><b>تلميح 3:</b> يكفي <span class="mx">\(\frac{1}{(k+1)^2} \le \frac{1}{k} - \frac{1}{k+1} = \frac{1}{k(k+1)}\)</span>، وهذا صحيح لأن <span class="mx">\(k(k+1) \lt (k+1)^2\)</span>.</p>
   </div>
+</section>
+
+<section class="page" id="p-pa0">
+  <div class="hdr"><span class="u">الوحدة 5 · الاستقراء على عدد الأشياء · 6.2</span><span class="pn"></span></div>
+  <h2 class="t"><span class="lt">Theorem 6.16</span> بالعربي: كم مجموعة جزئية؟</h2>
+  <div class="idea">قبل البرهان افهم وش تقول النظرية: كل ما زاد عنصر واحد، يتضاعف عدد المجموعات الجزئية.</div>
+  <div class="stmt"><p class="en"><span class="lb">Theorem 6.16.</span> If \(A\) is a finite set of cardinality \(n \ge 0\), then the cardinality of its power set \(\mathcal{P}(A)\) is \(2^n\).</p></div>
+  <div class="tr"><p><span class="k">بالعربي:</span>إذا كانت A مجموعة منتهية عدد عناصرها n (حيث \(n \ge 0\))، فإن عدد عناصر مجموعة القوة \(\mathcal{P}(A)\) يساوي \(2^n\).</p></div>
+  <div class="box">
+    <h3>الكلمات</h3>
+    <ul>
+      <li><span class="lt">cardinality</span>: عدد العناصر، ونكتبه \(|A|\).</li>
+      <li><span class="lt">power set</span> \(\mathcal{P}(A)\): مجموعة كل المجموعات الجزئية من A، ومنها \(\emptyset\) و A نفسها.</li>
+    </ul>
+  </div>
+  <table class="t">
+    <tr><th style="width:22%">A</th><th>\(\mathcal{P}(A)\)</th><th style="width:20%">العدد</th></tr>
+    <tr><td>\(\emptyset\)</td><td>\(\{\emptyset\}\)</td><td>\(1 = 2^0\)</td></tr>
+    <tr><td>\(\{1\}\)</td><td>\(\{\emptyset,\ \{1\}\}\)</td><td>\(2 = 2^1\)</td></tr>
+    <tr><td>\(\{1, 2\}\)</td><td>\(\{\emptyset,\ \{1\},\ \{2\},\ \{1, 2\}\}\)</td><td>\(4 = 2^2\)</td></tr>
+  </table>
+  <div class="why2">
+    <h3>ليش \(2^n\)؟ الفكرة بدون رموز</h3>
+    <p>عشان تبني مجموعة جزئية، تمر على كل عنصر وتقرر: داخل أو برا. خيارين لكل عنصر، وعندك n عنصر، فعدد الطرق \(2 \times 2 \times \cdots \times 2 = 2^n\).</p>
+  </div>
+  <div class="note star"><span class="k">في الاختبار:</span>الفكرة هذي للفهم بس. البرهان المطلوب بالاستقراء، وتلقاه محلول في الصفحة الجاية.</div>
 </section>
 
 <section class="page" id="p-pa">
@@ -286,6 +318,7 @@
   <div class="hdr"><span class="u">الوحدة 5 · الاستقراء على عدد الأشياء</span><span class="pn"></span></div>
   <h2 class="t">تمرين 6.19<span class="tag ex">دورك</span></h2>
   <div class="stmt"><p class="en"><span class="lb">6.19.</span> Prove the following implication for every integer \(n \ge 2\): If \(x_1, x_2, \ldots, x_n\) are any \(n\) real numbers such that \(x_1 \cdot x_2 \cdots x_n = 0\), then at least one of the numbers \(x_1, x_2, \ldots, x_n\) is \(0\). (Use the fact that if the product of two real numbers is \(0\), then at least one of the numbers is \(0\).)</p></div>
+  <div class="tr"><p><span class="k">بالعربي:</span>اثبت هذي الجملة لكل عدد صحيح \(n \ge 2\): إذا كانت \(x_1, x_2, \ldots, x_n\) أي n أعداد حقيقية حاصل ضربها صفر، فواحد منها على الأقل يساوي صفر. (استخدم الحقيقة: إذا حاصل ضرب عددين حقيقيين صفر، فواحد منهما على الأقل صفر.)</p></div>
   <div class="idea">نفس فكرة المثال اللي قبل: الجملة «إذا… فإن…»، والفرض عن أي k أعداد بأسماء جديدة. الأساس هنا \(n = 2\) هو الحقيقة المعطاة في السؤال، وفي الخطوة تجمّع أول k أعداد في عدد واحد، وتطلع لك حالتين.</div>
   <div class="tpl grow">
     <div class="r"><div class="l">Base</div><div class="v b b1"></div></div>
