@@ -1,0 +1,97 @@
+<section class="page" id="p-u4" style="gap:3mm">
+  <div class="hdr"><span class="u">الوحدة 4 · القسمة · 6.2</span><span class="lv must">أساسي</span><span class="pn"></span></div>
+  <h2 class="t">القسمة: الفكرة بالأرقام</h2>
+  <div class="idea">تثبت أن عدد يقسم عبارة فيها n، لكل n. الحركة كلها: من الفرض اعزل القوة، وعوّضها.</div>
+  <div class="think">
+    <h3>وش يعني \(a \mid b\)؟</h3>
+    <p>\(3 \mid 15\) تنقرأ «3 يقسم 15»، لأن \(15 = 3 \times 5\) والـ 5 عدد صحيح. أما \(3 \nmid 16\). وبالتعريف: \(a \mid b\) يعني \(b = a \cdot x\) لعدد صحيح x. حوّلها لمعادلة دايماً، لأن المعادلة تقدر تعوّض فيها.</p>
+  </div>
+  <div class="think">
+    <h3>نجرب السؤال اللي بنحله: \(9 \mid (4^{3n} - 1)\)</h3>
+    <table class="t" style="direction:ltr">
+      <tr><th>\(n\)</th><th>0</th><th>1</th><th>2</th></tr>
+      <tr><td>\(4^{3n} - 1\)</td><td>\(1 - 1 = 0\)</td><td>\(64 - 1 = 63\)</td><td>\(4096 - 1 = 4095\)</td></tr>
+      <tr><td>على 9؟</td><td>\(0 = 9 \times 0\) <span class="ok">✓</span></td><td>\(63 = 9 \times 7\) <span class="ok">✓</span></td><td>\(4095 = 9 \times 455\) <span class="ok">✓</span></td></tr>
+    </table>
+  </div>
+  <div class="think">
+    <h3>الحركة «اعزل وعوّض» بأرقام: من n = 1 إلى n = 2</h3>
+    <div class="flow">
+      <div class="f"><span class="num">1</span><span>من \(n = 1\): \(4^3 - 1 = 9 \times 7\). نعزل القوة لوحدها: \(4^3 = 9 \times 7 + 1\).</span></div>
+      <div class="f"><span class="num">2</span><span>نبي \(n = 2\): \(4^6 = 4^3 \cdot 4^3 = 64 \cdot 4^3\)، ونعوّض: \(4^6 - 1 = 64(9 \times 7 + 1) - 1 = 64 \times 9 \times 7 + 63\).</span></div>
+      <div class="f"><span class="num">3</span><span>نطلّع 9 عامل مشترك: \(= 9(64 \times 7 + 7) = 9 \times 455\) <span class="ok">✓</span> والصفحة الجاية نفس الشي بالحروف، والـ 7 تصير x.</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>بطاقة الخطوة 4: القسمة</h3>
+    <div class="s"><span class="num">1</span><span class="nm">اعزل</span><span>حوّل الفرض لمعادلة، واعزل القوة: \(4^{3k} - 1 = 9x\) يعني \(4^{3k} = 9x + 1\).</span></div>
+    <div class="s"><span class="num">2</span><span class="nm">عوّض</span><span>في المطلوب طلّع القوة القديمة: \(4^{3k+3} = 4^3 \cdot 4^{3k}\)، وعوّض.</span></div>
+    <div class="s"><span class="num">3</span><span class="nm">اختم</span><span>طلّع العدد عامل مشترك، واكتب <span class="lt">Since … is an integer, \(9 \mid \ldots\)</span></span></div>
+  </div>
+  <div class="note trap"><span class="k">انتبه:</span>\(64 \cdot 4^{3k} - 1\) مو نفس \(64(4^{3k} - 1)\). عشان كذا نعوّض \(4^{3k}\) كاملة.</div>
+
+</section>
+
+<section class="page" id="p-ex5">
+  <div class="hdr"><span class="u">الوحدة 4 · القسمة</span><span class="lv must">أساسي</span><span class="pn"></span></div>
+  <h2 class="t">مثال: القسمة على 9<span class="tag sol">مثال السلايدات 5</span></h2>
+  <div class="qbox"><div class="lab">مثال 5</div>
+    <p class="en">Prove that \(9 \mid (4^{3n} - 1)\) for every nonnegative integer \(n\).</p>
+    <p class="ar">بالعربي: لكل عدد صحيح غير سالب n (0، 1، 2، …)، 9 يقسم \(4^{3n} - 1\). <b>نفكر:</b> «غير سالب» يعني نبدأ من 0، فالأساس \(n = 0\). والخطوة: البطاقة بالضبط.</p>
+  </div>
+  <h3>نكتب (برهان السلايدات)</h3>
+  <div class="tpl">
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">When \(n = 0\), \(4^{3n} - 1 = 0\). Since \(9 \mid 0\), the statement is true when \(n = 0\).<span class="g">عند \(n = 0\) العبارة 0، والصفر يقبل القسمة على 9.</span></div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(9 \mid (4^{3k} - 1)\), where \(k\) is a nonnegative integer. Then \(4^{3k} - 1 = 9x\) for some integer \(x\). Hence, \(4^{3k} = 9x + 1.\)<span class="g">حركة 1 «اعزل»: معادلة، والقوة لوحدها.</span></div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(9 \mid (4^{3k+3} - 1)\).<span class="g">\(4^{3(k+1)} = 4^{3k+3}\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">\[4^{3k+3} - 1 = 4^3 \cdot 4^{3k} - 1 = 64(9x + 1) - 1 = 64 \cdot 9x + 63 = 9(64x + 7).\] Since \(64x + 7\) is an integer, \(9 \mid (4^{3k+3} - 1)\).<span class="g">حركة 2 «عوّض»، وحركة 3 «اختم»: 9 عامل مشترك، و \(64x + 7\) عدد صحيح.</span></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, \(9 \mid (4^{3n} - 1)\) for every nonnegative integer \(n\).</div></div>
+  </div>
+  <div class="note trick"><span class="k">تريك «اجمع واطرح» (أسرع):</span>بدل ما تعزل: \(4^{3k+3} - 1 = 64 \cdot 4^{3k} - 64 + 63 = 64(4^{3k} - 1) + 63\). القوس يقبل القسمة على 9 بالفرض، و \(63 = 9 \cdot 7\). نفس النتيجة بسطر واحد.</div>
+  <div class="note star"><span class="k">من الكتاب:</span>ما ضربنا \(64 \cdot 9\)، لأننا بنطلّع 9 عامل مشترك بعدها. خل العدد اللي تقسم عليه ظاهر.</div>
+  <div class="note trap"><span class="k">اقرأ البداية:</span><span class="lt">positive</span> تبدأ من 1، و<span class="lt">nonnegative</span> تبدأ من 0.</div>
+
+</section>
+
+<section class="page" id="p-616">
+  <div class="hdr"><span class="u">الوحدة 4 · القسمة</span><span class="lv must">أساسي</span><span class="pn"></span></div>
+  <h2 class="t">تمرين 6.16<span class="tag ex">دورك</span></h2>
+  <div class="qbox ex"><div class="lab">دورك · تمرين 6.16</div>
+    <p class="en"><span class="lb">6.16.</span> Prove that \(7 \mid \left[3^{4n+1} - 5^{2n-1}\right]\) for every positive integer \(n\).</p>
+    <p class="ar">بالعربي: اثبت أن 7 يقسم \(3^{4n+1} - 5^{2n-1}\)، لكل عدد صحيح موجب n. فيها أساسين (3 و5)، بس نفس البطاقة.</p>
+  </div>
+  <p class="recall">غطّ البطاقة واكتب حركاتها: اعزل، عوّض، اختم. والأسس الجديدة: \(4(k+1)+1 = 4k+5\)، و \(2(k+1)-1 = 2k+1\).</p>
+  <div class="tpl grow">
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v b b1"></div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v b b2"></div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v b b1"></div></div>
+    <div class="r fill"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v b b3"></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v b b1"></div></div>
+  </div>
+  <div class="hints"><p><b>تلميح 1:</b> الأساس \(n = 1\): \(3^5 - 5^1 = 243 - 5 = 238 = 7 \cdot 34\).</p><p><b>تلميح 2:</b> اعزل \(3^{4k+1} = 7x + 5^{2k-1}\).</p><p><b>تلميح 3:</b> \(3^{4k+5} = 81 \cdot 3^{4k+1}\) و \(5^{2k+1} = 25 \cdot 5^{2k-1}\).</p></div>
+
+</section>
+
+<section class="page sol" id="p-616s">
+  <div class="hdr"><span class="u">حل الوحدة 4</span><span class="pn"></span></div>
+  <h2 class="t">حل تمرين 6.16<span class="tag sol">شيّك</span></h2>
+  <div class="tpl">
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">When \(n = 1\), \(3^{4n+1} - 5^{2n-1} = 3^5 - 5 = 238 = 7 \cdot 34\), so \(7 \mid 238\).<span class="g">عند \(n = 1\) العبارة 238، وهي \(7 \times 34\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(7 \mid (3^{4k+1} - 5^{2k-1})\) for a positive integer \(k\). Then \(3^{4k+1} - 5^{2k-1} = 7x\) for some integer \(x\), so \(3^{4k+1} = 7x + 5^{2k-1}\).<span class="g">اعزل \(3^{4k+1}\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(7 \mid (3^{4k+5} - 5^{2k+1})\).</div></div>
+    <div class="r"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">\[\begin{aligned} 3^{4k+5} - 5^{2k+1} &= 81 \cdot 3^{4k+1} - 25 \cdot 5^{2k-1} = 81\left(7x + 5^{2k-1}\right) - 25 \cdot 5^{2k-1} \\ &= 567x + 56 \cdot 5^{2k-1} = 7\left(81x + 8 \cdot 5^{2k-1}\right). \end{aligned}\] Since \(81x + 8 \cdot 5^{2k-1}\) is an integer, \(7 \mid (3^{4k+5} - 5^{2k+1})\).<span class="g">عوّض، ثم 7 عامل مشترك: \(567 = 7 \cdot 81\) و \(56 = 7 \cdot 8\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, \(7 \mid (3^{4n+1} - 5^{2n-1})\) for every positive integer \(n\).</div></div>
+  </div>
+  <div class="note trick"><span class="k">نفس الشي بـ «اجمع واطرح»:</span>\(81 \cdot 3^{4k+1} - 25 \cdot 5^{2k-1} = 81\left(3^{4k+1} - 5^{2k-1}\right) + 56 \cdot 5^{2k-1}\). القوس يقبل القسمة على 7 بالفرض، و \(56 = 7 \cdot 8\).</div>
+  <div class="note trap"><span class="k">تفصيلة:</span>\(5^{2k-1}\) عدد صحيح لأن \(k \ge 1\)، فالأس \(2k - 1 \ge 1\).</div>
+  <p class="small">تأكد بالأرقام عند \(n = 2\): \(3^9 - 5^3 = 19683 - 125 = 19558 = 7 \cdot 2794\).</p>
+  <div class="box">
+    <h3>راجع نفسك (دقيقتين)</h3>
+    <ul class="chk">
+      <li><span class="cb"></span>أحوّل \(a \mid b\) إلى معادلة \(b = a \cdot x\).</li>
+      <li><span class="cb"></span>أقول حركات القسمة من ذاكرتي: اعزل، عوّض، اختم.</li>
+      <li><span class="cb"></span>أعرف تريك «اجمع واطرح».</li>
+    </ul>
+  </div>
+
+</section>

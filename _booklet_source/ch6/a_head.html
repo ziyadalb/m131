@@ -50,7 +50,7 @@ li { font-size: 12pt; line-height: 1.75; margin-bottom: .7mm; }
 .tpl .v { padding: 2.4mm 3.2mm; font-size: 11.8pt; line-height: 1.62; text-align: left; min-width: 0; }
 .tpl .v.b { background-image: repeating-linear-gradient(to bottom, transparent 0 8.2mm, var(--faint) 8.2mm 8.5mm); }
 .tpl .v.b1 { min-height: 9.5mm; } .tpl .v.b2 { min-height: 17mm; } .tpl .v.b3 { min-height: 30mm; } .tpl .v.b4 { min-height: 46mm; }
-.tpl.grow { flex: 1 1 auto; display: flex; flex-direction: column; }
+.tpl.grow { flex: 1 0 auto; display: flex; flex-direction: column; }
 .tpl.grow .r.fill { flex: 1 1 auto; }
 .note { border-radius: 2mm; padding: 2.8mm 4.5mm; font-size: 11.6pt; line-height: 1.75; flex: none; }
 .note .k { font-weight: 700; margin-inline-end: 1.5mm; }
@@ -90,7 +90,7 @@ table.t { border-collapse: collapse; width: 100%; font-size: 11.2pt; }
 .katex { font-size: 1.07em; }
 .mx { direction: ltr; unicode-bidi: isolate; }
 .katex-display { margin: .6mm 0; }
-.cover { justify-content: flex-start; gap: 3.6mm; }
+.cover { justify-content: flex-start; gap: 3.1mm; }
 .cover .kicker { color: var(--acc); font-weight: 600; font-size: 11pt; }
 .cover .sub { color: var(--muted); font-size: 11.2pt; }
 .cover hr { border: 0; border-top: .7pt solid var(--line); margin: 0; }
@@ -103,6 +103,7 @@ table.t { border-collapse: collapse; width: 100%; font-size: 11.2pt; }
 .tf { direction: ltr; text-align: left; font-family: var(--en); font-size: 11.8pt; line-height: 1.55; display: grid; grid-template-columns: 7mm 1fr 34mm; gap: 1mm 2mm;
   padding: 2mm 0; border-bottom: .6pt dashed var(--line); align-items: start; }
 .tf .o { font-family: var(--ar); font-size: 9.6pt; white-space: nowrap; }
+.paper[style*="--tfp"] .tf { padding: var(--tfp) 0; }
 .why { grid-column: 2 / 4; min-height: 9mm; border-bottom: .6pt solid var(--faint); }
 
 /* ---- v2: page identity, footer progress, new blocks ---- */
@@ -159,6 +160,34 @@ table.bi { width: 100%; border-collapse: collapse; flex: none; }
 .tpl .v .g { display: block; direction: rtl; text-align: right; font-family: var(--ar); font-size: 10.6pt; line-height: 1.6; color: #44505a; background: #f3f6f7; border-radius: 1.2mm; padding: .6mm 2.2mm; margin-top: 1.2mm; }
 .sol .tpl .v .g { font-size: 10.2pt; padding: .4mm 2mm; margin-top: .9mm; }
 .ok { color: #1e7a3a; font-weight: 700; } .no { color: var(--red); font-weight: 700; }
+/* ---- ch5: example then exercise, step cards ---- */
+.qbox.ex { border-color: #2f5fa8; background: #f7faff; }
+.qbox.ex .lab { color: #2f5fa8; }
+.card { border: 1pt dashed #b47a00; background: #fffaf0; border-radius: 2mm; padding: 2.4mm 4.5mm; flex: none; }
+.card h3 { color: var(--gold); margin-bottom: 1.2mm; }
+.card .s { display: grid; grid-template-columns: 6mm 15mm 1fr; gap: 1.6mm; align-items: baseline; font-size: 11.4pt; line-height: 1.7; }
+.card .s .num { background: #b47a00; }
+.card .s .nm { font-weight: 700; color: var(--gold); }
+.recall { font-size: 10.8pt; line-height: 1.6; color: #2f5fa8; font-weight: 600; flex: none; }
+.tpl .l b.n { display: inline-block; min-width: 5mm; height: 5mm; line-height: 5mm; text-align: center; border-radius: 50%; background: var(--acc); color: #fff; font-size: 8.6pt; }
+.tpl .l i { margin-top: .6mm; direction: rtl; text-align: left; }
+.sub3 { margin: 0; font-size: 11.6pt; font-weight: 700; color: #37424a; flex: none; }
+.think .t td, .think .t th, .box .t td, .box .t th { padding: 1.3mm 2mm; }
+.cap2 { font-size: 10.4pt; color: var(--muted); line-height: 1.6; }
+.toc td { font-size: 10.8pt; padding: 1.5mm 2mm; }
+.toc th { font-size: 10.4pt; padding: 1.3mm 2mm; }
+/* ---- ch6 v5 ---- */
+.tpl .l b.n.st { background: #b47a00; }
+.card .s { grid-template-columns: 6mm 21mm 1fr; }
+.tf .why { font-family: var(--ar); font-size: 9.2pt; color: var(--muted); padding-top: .6mm; direction: rtl; text-align: right; }
+.tpl.cmp .v { font-size: 11.2pt; line-height: 1.5; padding: 1.8mm 3mm; }
+.tpl.cmp .v .g { font-size: 10.2pt; padding: .4mm 2mm; margin-top: .8mm; }
+.tpl.cmp .l { padding: 1.6mm 2.2mm; }
+.wl { background-image: repeating-linear-gradient(to bottom, transparent 0 7.9mm, var(--faint) 7.9mm 8.2mm); }
+.bi2 { direction: ltr; width: 100%; border-collapse: collapse; flex: none; }
+.bi2 th { background: var(--acc-soft); color: var(--acc); font-size: 10.2pt; font-weight: 700; padding: 1.3mm 2.4mm; border: .6pt solid var(--line); font-family: var(--ar); }
+.bi2 td { border: .6pt solid var(--line); padding: 1.6mm 2.6mm; vertical-align: top; direction: ltr; text-align: left; font-family: var(--en); font-size: 11pt; line-height: 1.5; width: 50%; }
+.bi2 td:first-child { background: #fbfcfc; }
 .tpl.wl .l { text-align: right; }
 </style>
 </head>

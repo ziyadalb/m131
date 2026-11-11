@@ -5,7 +5,8 @@ const katex = require('katex');
 const { chromium } = require('playwright');
 
 const dir = __dirname;
-const parts = ['a_head.html', 'b_u1u2.html', 'c_u3.html', 'd_u4u5.html', 'e_u6.html', 'f_u7.html'];
+const TOTAL_UNITS = 7;
+const parts = ['a_head.html'].concat(fs.readdirSync(dir).filter(f => /^[b-z]_.*\.html$/.test(f)).sort());
 let src = parts.map(p => fs.readFileSync(path.join(dir, p), 'utf8')).join('\n');
 src = src.replace('KATEX_CSS', 'file://' + path.join(dir, 'node_modules/katex/dist/katex.min.css'));
 
@@ -21,8 +22,8 @@ src = src.replace(/<section class="page([^"]*)" id="([^"]+)"([^>]*)>([\s\S]*?)<\
   if (um) {
     const u = +(um[2] || um[1]);
     let bar = '';
-    for (let i = 1; i <= 7; i++) bar += '<i class="' + (i < u ? 'd' : i === u ? 'c' : '') + '"></i>';
-    foot = '<div class="foot"><span>الوحدة ' + u + ' من 7</span><div class="bar">' + bar + '</div></div>';
+    for (let i = 1; i <= TOTAL_UNITS; i++) bar += '<i class="' + (i < u ? 'd' : i === u ? 'c' : '') + '"></i>';
+    foot = '<div class="foot"><span>الوحدة ' + u + ' من ' + TOTAL_UNITS + '</span><div class="bar">' + bar + '</div></div>';
   }
   return '<section class="page' + cls + kind + '" id="' + id + '"' + attrs + '>' + body + foot + '</section>';
 });

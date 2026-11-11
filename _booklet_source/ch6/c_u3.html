@@ -1,77 +1,104 @@
-<section class="page" id="p-64">
+<section class="page" id="p-u3" style="gap:2.8mm">
   <div class="hdr"><span class="u">الوحدة 3 · المجاميع · 6.1</span><span class="lv must">أساسي</span><span class="pn"></span></div>
-  <h2 class="t">تمرين 6.4<span class="tag past">نهائي 1446 · 3 درجات</span></h2>
-  <div class="qbox"><div class="lab">السؤال</div>
-    <p class="en"><span class="lb">6.4.</span> Prove that \(1 + 3 + 5 + \cdots + (2n-1) = n^2\) for every positive integer \(n\) (1) by mathematical induction and (2) by adding \(1 + 3 + 5 + \cdots + (2n-1)\) and \((2n-1) + (2n-3) + \cdots + 1\).</p>
-    <p class="ar">بالعربي: اثبت أن مجموع الأعداد الفردية \(1 + 3 + 5 + \cdots + (2n-1)\) يساوي \(n^2\)، لكل عدد صحيح موجب n، بطريقتين: (1) بالاستقراء، و(2) بجمع المجموع مع نفسه مكتوب بالعكس.</p>
+  <h2 class="t">القالب الذهبي، وأول برهان<span class="tag sol">مثال السلايدات 1</span></h2>
+  <div class="card">
+    <h3>القالب الذهبي: 5 أسطر في كل برهان استقراء</h3>
+    <div class="s"><span class="num">1</span><span class="nm">الأساس</span><span>عوّض \(n = 1\) وبيّن أن الطرفين متساويين: <span class="lt">Since …, the statement is true for \(n = 1\).</span></span></div>
+    <div class="s"><span class="num">2</span><span class="nm">الفرض</span><span>انسخ الجملة وبدّل n بـ k: <span class="lt">Assume that … for a positive integer \(k\).</span></span></div>
+    <div class="s"><span class="num">3</span><span class="nm">المطلوب</span><span>انسخها وبدّل n بـ \(k + 1\)، واكتبها قبل ما تحسب: <span class="lt">We show that …</span></span></div>
+    <div class="s"><span class="num">4</span><span class="nm">الخطوة</span><span>ابدأ من يسار المطلوب، استخدم الفرض، ووصّل لليمين: <span class="lt">By the inductive hypothesis, …</span></span></div>
+    <div class="s"><span class="num">5</span><span class="nm">الختام</span><span><span class="lt">By the Principle of Mathematical Induction, … for every positive integer \(n\).</span></span></div>
   </div>
-  <h3>(1) بالاستقراء: نفس خطوات مثال <span class="ref" data-to="p-ex1"></span>. كمّل الأسطر الفاضية</h3>
+  <div class="qbox"><div class="lab">مثال 1</div>
+    <p class="en">Prove that \(1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}\) for every positive integer \(n\).</p>
+    <p class="ar">بالعربي: مجموع الأعداد من 1 إلى n يساوي \(n(n+1)/2\). <b>نفكر:</b> المجموع إلى \(k+1\) = (المجموع إلى k) + الحد الجديد \(k+1\). بأرقام: \(6 + 4 = 10 = 4 \cdot 5/2\).</p>
+  </div>
+  <h3>نكتب (برهان السلايدات)</h3>
+  <div class="tpl cmp">
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">Since \(1 = \frac{1 \cdot 2}{2}\), the statement is true for \(n = 1\).<span class="g">الطرفين يساوون 1.</span></div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(1 + 2 + \cdots + k = \frac{k(k+1)}{2}\) for a positive integer \(k\).<span class="g">الجملة عند k.</span></div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(1 + 2 + \cdots + (k+1) = \frac{(k+1)(k+2)}{2}\).<span class="g">الجملة عند \(k + 1\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">By the inductive hypothesis, \[\begin{aligned} 1 + 2 + \cdots + (k+1) &= (1 + 2 + \cdots + k) + (k+1) = \frac{k(k+1)}{2} + (k+1) \\ &= \frac{k(k+1) + 2(k+1)}{2} = \frac{(k+1)(k+2)}{2}. \end{aligned}\]<span class="g">فصلنا آخر حد، وعوّضنا الفرض، وطلّعنا \((k+1)\) عامل مشترك.</span></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, \(1 + 2 + \cdots + n = \frac{n(n+1)}{2}\) for every positive integer \(n\).</div></div>
+  </div>
+  <div class="note trick"><span class="k">تريك «الفرق»:</span>المطلوب = الفرض + الحد الجديد. فاحسب في المسودة: (يمين المطلوب) − (يمين الفرض)، لازم يطلع الحد الجديد بالضبط. هنا: \(\frac{(k+1)(k+2)}{2} - \frac{k(k+1)}{2} = \frac{(k+1) \cdot 2}{2} = k + 1\) <span class="ok">✓</span> وكذا تعرف الخطوة قبل ما تكتبها.</div>
+
+</section>
+
+<section class="page" id="p-64" style="gap:3mm">
+  <div class="hdr"><span class="u">الوحدة 3 · المجاميع</span><span class="lv must">أساسي</span><span class="pn"></span></div>
+  <h2 class="t">تمرين 6.4<span class="tag past">نهائي 1446 · 3 درجات</span></h2>
+  <div class="qbox ex"><div class="lab">دورك · تمرين 6.4</div>
+    <p class="en"><span class="lb">6.4.</span> Prove that \(1 + 3 + 5 + \cdots + (2n-1) = n^2\) for every positive integer \(n\) (1) by mathematical induction and (2) by adding \(1 + 3 + 5 + \cdots + (2n-1)\) and \((2n-1) + (2n-3) + \cdots + 1\).</p>
+    <p class="ar">بالعربي: مجموع الفرديات يساوي \(n^2\)، بطريقتين: (1) بالاستقراء، (2) بجمع المجموع مع نفسه مكتوب بالعكس. (في نهائي 1446 انطلب الجزء (1) بس، عليه 3 درجات.)</p>
+  </div>
+  <h3>(1) بالاستقراء: نفس مثال 1. كمّل الأسطر الفاضية</h3>
+  <p class="recall">تريك الفرق قبل ما تكتب: \((k+1)^2 - k^2 = 2k + 1\)، وهو نفسه الحد الجديد <span class="ok">✓</span> فالخطوة: الفرض + \(2k+1\).</p>
   <div class="tpl">
-    <div class="r"><div class="l">Base<i>الأساس</i></div><div class="v">Since \(1 = 1^2\), the statement is true for \(n = 1\).<span class="g">عند \(n = 1\): الطرفين يساوون 1.</span></div></div>
-    <div class="r"><div class="l">Assume<i>الفرض</i></div><div class="v b b2"></div></div>
-    <div class="r"><div class="l">Show<i>المطلوب</i></div><div class="v">We show that \(1 + 3 + 5 + \cdots + (2k+1) = (k+1)^2\).<span class="g">الحد الأخير عند \(k+1\): \(2(k+1) - 1 = 2k + 1\).</span></div></div>
-    <div class="r"><div class="l">Step<i>الخطوة</i></div><div class="v b b2"></div></div>
-    <div class="r"><div class="l">Conclude<i>الختام</i></div><div class="v b b1"></div></div>
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">Since \(1 = 1^2\), the statement is true for \(n = 1\).<span class="g">عند \(n = 1\) الطرفين يساوون 1.</span></div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v b b1"></div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(1 + 3 + 5 + \cdots + (2k+1) = (k+1)^2\).<span class="g">الحد الأخير عند \(k + 1\): \(2(k+1) - 1 = 2k + 1\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v b b2"></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v b b1"></div></div>
   </div>
   <h3>(2) بالجمع</h3>
   <div class="think">
     <h3>نفكر بأرقام أصغر</h3>
-    <p>خذ \(1 + 2 + 3 + 4\). اكتبه مرة ثانية بالعكس \(4 + 3 + 2 + 1\)، واجمع عمود عمود: \(5 + 5 + 5 + 5 = 20\). هذا ضعف المجموع، فالمجموع 10.</p>
-    <p>سوّ نفس الشي على \(1 + 3 + \cdots + (2n-1)\): كم مجموع كل عمود؟ وكم عمود؟</p>
+    <p>\(1 + 2 + 3 + 4\) واكتبه تحته بالعكس \(4 + 3 + 2 + 1\). اجمع عمود عمود: \(5 + 5 + 5 + 5 = 20\)، وهذا ضعف المجموع، فالمجموع 10. سوّ نفس الشي على الفرديات: كم مجموع كل عمود؟ وكم عمود؟</p>
   </div>
   <div class="space" data-label="S = 1 + 3 + ⋯ + (2n−1)   و   S = (2n−1) + (2n−3) + ⋯ + 1"></div>
-  <div class="hints"><p><b>تلميح (1):</b> في الخطوة افصل آخر حد \((2k+1)\)، وبدّل الباقي بالفرض، و \(k^2 + 2k + 1 = (k+1)^2\).</p><p><b>تلميح (2):</b> كل عمود مجموعه \(2n\)، وعندك n عمود.</p></div>
+  <div class="hints"><p><b>تلميح (1):</b> افصل آخر حد \((2k+1)\)، وعوّض الباقي بالفرض \(k^2\).</p><p><b>تلميح (2):</b> كل عمود مجموعه \(2n\)، وعندك n عمود.</p></div>
 
 </section>
 
 <section class="page" id="p-65">
   <div class="hdr"><span class="u">الوحدة 3 · المجاميع</span><span class="lv extra">إضافي</span><span class="pn"></span></div>
   <h2 class="t">تمرين 6.5<span class="tag ex">دورك</span></h2>
-  <div class="qbox"><div class="lab">السؤال</div>
+  <div class="qbox ex"><div class="lab">دورك · تمرين 6.5</div>
     <p class="en"><span class="lb">6.5.</span> Use mathematical induction to prove that \(1 + 5 + 9 + \cdots + (4n-3) = 2n^2 - n\) for every positive integer \(n\).</p>
     <p class="ar">بالعربي: استخدم الاستقراء عشان تثبت أن \(1 + 5 + 9 + \cdots + (4n-3) = 2n^2 - n\)، لكل عدد صحيح موجب n.</p>
   </div>
   <div class="think">
-    <h3>قبل ما تكتب: جاوب في المسودة</h3>
+    <h3>قبل ما تكتب: تريك الفرق في المسودة</h3>
     <div class="flow">
-      <div class="f"><span class="num">1</span><span>تأكد من الأساس بالأرقام: عند \(n = 1\) الطرف الأيسر كم؟ والأيمن كم؟</span></div>
-      <div class="f"><span class="num">2</span><span>وش الحد الأخير عند \(k+1\)؟ (بدّل n بـ \(k+1\) في \(4n - 3\).)</span></div>
-      <div class="f"><span class="num">3</span><span>وش الطرف الأيمن عند \(k+1\)؟ (بدّل n بـ \(k+1\) في \(2n^2 - n\) وفكّه.)</span></div>
+      <div class="f"><span class="num">1</span><span>الحد الجديد: بدّل n بـ \(k+1\) في \(4n - 3\): يطلع \(4k + 1\).</span></div>
+      <div class="f"><span class="num">2</span><span>احسب \(\left[2(k+1)^2 - (k+1)\right] - \left[2k^2 - k\right]\). لازم يطلع \(4k + 1\). طلع؟ إذن الخطوة بتمشي.</span></div>
+      <div class="f"><span class="num">3</span><span>وتحقق سريع عند \(n = 2\): \(1 + 5 = 6\) و \(2 \cdot 4 - 2 = 6\) <span class="ok">✓</span></span></div>
     </div>
   </div>
   <div class="tpl grow">
-    <div class="r"><div class="l">Base<i>الأساس</i></div><div class="v b b1"></div></div>
-    <div class="r"><div class="l">Assume<i>الفرض</i></div><div class="v b b2"></div></div>
-    <div class="r"><div class="l">Show<i>المطلوب</i></div><div class="v b b2"></div></div>
-    <div class="r fill"><div class="l">Step<i>الخطوة</i></div><div class="v b b3"></div></div>
-    <div class="r"><div class="l">Conclude<i>الختام</i></div><div class="v b b1"></div></div>
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v b b1"></div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v b b2"></div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v b b2"></div></div>
+    <div class="r fill"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v b b3"></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v b b1"></div></div>
   </div>
-  <div class="hints"><p><b>تلميح 1:</b> الحد الأخير \(4(k+1) - 3 = 4k + 1\).</p><p><b>تلميح 2:</b> الهدف بعد الفك: \(2(k+1)^2 - (k+1) = 2k^2 + 3k + 1\).</p></div>
+  <div class="hints"><p><b>تلميح:</b> الهدف بعد الفك: \(2(k+1)^2 - (k+1) = 2k^2 + 3k + 1\).</p></div>
 
 </section>
 
 <section class="page" id="p-ex2">
   <div class="hdr"><span class="u">الوحدة 3 · المجاميع</span><span class="lv extra">إضافي</span><span class="pn"></span></div>
-  <h2 class="t">مثال محلول: مجموع كسور<span class="tag sol">مثال السلايدات 2</span></h2>
-  <div class="qbox"><div class="lab">السؤال</div>
+  <h2 class="t">مثال: مجموع كسور<span class="tag sol">مثال السلايدات 2</span></h2>
+  <div class="qbox"><div class="lab">مثال 2</div>
     <p class="en">Prove that \(\frac{1}{2\cdot 3} + \frac{1}{3\cdot 4} + \cdots + \frac{1}{(n+1)(n+2)} = \frac{n}{2n+4}\) for every positive integer \(n\).</p>
-    <p class="ar">بالعربي: اثبت أن مجموع هذي الكسور يساوي \(n/(2n+4)\)، لكل عدد صحيح موجب n.</p>
+    <p class="ar">بالعربي: مجموع هذي الكسور يساوي \(n/(2n+4)\). <b>نفكر:</b> نفس القالب. الحد الجديد عند \(k+1\): \(\frac{1}{(k+2)(k+3)}\). والهدف \(\frac{k+1}{2k+6}\) ما فيه \((k+2)\)، فلازم \((k+2)\) يختصر من البسط.</p>
   </div>
-  <div class="think">
-    <h3>نفكر</h3>
-    <div class="flow">
-      <div class="f"><span class="num">1</span><span>نفس خطوات مثال 1. الجديد بس الكسور: الحد الجديد عند \(k+1\) هو \(\frac{1}{(k+2)(k+3)}\) (بدّلنا n بـ \(k+1\)).</span></div>
-      <div class="f"><span class="num">2</span><span>نبدّل كل اللي قبله بالفرض \(\frac{k}{2k+4}\)، ونكتب \(2k + 4 = 2(k+2)\) عشان يبان المقام المشترك \(2(k+2)(k+3)\).</span></div>
-      <div class="f"><span class="num">3</span><span>الهدف \(\frac{k+1}{2k+6}\) ما فيه \((k+2)\)، فلازم البسط فيه \((k+2)\) وبيختصر: \(k^2 + 3k + 2 = (k+1)(k+2)\).</span></div>
-    </div>
-  </div>
-  <h3>نكتب</h3>
+  <h3>نكتب (برهان السلايدات)</h3>
   <div class="tpl">
-    <div class="r"><div class="l">Base<i>الأساس</i></div><div class="v">Since \(\frac{1}{2\cdot 3} = \frac{1}{6} = \frac{1}{2\cdot 1 + 4}\), the formula holds for \(n = 1\).<span class="g">عند \(n = 1\) الطرفين يساوون \(1/6\).</span></div></div>
-    <div class="r"><div class="l">Assume<i>الفرض</i></div><div class="v">Assume that \(\frac{1}{2\cdot 3} + \cdots + \frac{1}{(k+1)(k+2)} = \frac{k}{2k+4}\) for a positive integer \(k\).<span class="g">نفترض أنها صحيحة عند k.</span></div></div>
-    <div class="r"><div class="l">Show<i>المطلوب</i></div><div class="v">We show that \(\frac{1}{2\cdot 3} + \cdots + \frac{1}{(k+2)(k+3)} = \frac{k+1}{2k+6}\).<span class="g">نثبتها عند \(k + 1\).</span></div></div>
-    <div class="r"><div class="l">Step<i>الخطوة</i></div><div class="v">\[\begin{aligned} \frac{1}{2\cdot 3} + \cdots + \frac{1}{(k+2)(k+3)} &= \frac{k}{2(k+2)} + \frac{1}{(k+2)(k+3)} = \frac{k(k+3) + 2}{2(k+2)(k+3)} \\ &= \frac{(k+1)(k+2)}{2(k+2)(k+3)} = \frac{k+1}{2k+6}. \end{aligned}\]<span class="g">بدّلنا الكسور اللي قبل الحد الجديد بالفرض، ووحّدنا المقام، وحلّلنا البسط، واختصرنا \((k+2)\).</span></div></div>
-    <div class="r"><div class="l">Conclude<i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, the formula holds for every positive integer \(n\).<span class="g">حسب مبدأ الاستقراء، صحيحة لكل n.</span></div></div>
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">Since \(\frac{1}{2\cdot 3} = \frac{1}{6} = \frac{1}{2\cdot 1 + 4}\), the formula holds for \(n = 1\).<span class="g">الطرفين يساوون \(1/6\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(\frac{1}{2\cdot 3} + \cdots + \frac{1}{(k+1)(k+2)} = \frac{k}{2k+4}\) for a positive integer \(k\).<span class="g">الجملة عند k.</span></div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(\frac{1}{2\cdot 3} + \cdots + \frac{1}{(k+2)(k+3)} = \frac{k+1}{2k+6}\).<span class="g">الجملة عند \(k + 1\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">By the inductive hypothesis, \[\begin{aligned} \frac{1}{2\cdot 3} + \cdots + \frac{1}{(k+2)(k+3)} &= \frac{k}{2(k+2)} + \frac{1}{(k+2)(k+3)} = \frac{k(k+3) + 2}{2(k+2)(k+3)} \\ &= \frac{(k+1)(k+2)}{2(k+2)(k+3)} = \frac{k+1}{2k+6}. \end{aligned}\]<span class="g">عوّضنا الفرض، ووحّدنا المقام، وحلّلنا البسط، واختصرنا \((k+2)\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, the formula holds for every positive integer \(n\).</div></div>
+  </div>
+  <div class="box">
+    <h3>3 قواعد للكسور</h3>
+    <ol>
+      <li>اكتب المقام مضروب: \(2k + 4 = 2(k + 2)\). كذا يبان المقام المشترك.</li>
+      <li>لا تفك المقام المشترك. خله مضروب عشان تشوف وش يختصر.</li>
+      <li>الهدف يقول لك وش يختصر: العامل اللي مو في الهدف، دوّره في البسط.</li>
+    </ol>
   </div>
 
 </section>
@@ -79,23 +106,24 @@
 <section class="page" id="p-611">
   <div class="hdr"><span class="u">الوحدة 3 · المجاميع</span><span class="lv extra">إضافي</span><span class="pn"></span></div>
   <h2 class="t">تمرين 6.11<span class="tag ex">دورك</span></h2>
-  <div class="qbox"><div class="lab">السؤال</div>
+  <div class="qbox ex"><div class="lab">دورك · تمرين 6.11</div>
     <p class="en"><span class="lb">6.11.</span> Prove that \(\frac{1}{3\cdot 4} + \frac{1}{4\cdot 5} + \cdots + \frac{1}{(n+2)(n+3)} = \frac{n}{3n+9}\) for every positive integer \(n\).</p>
-    <p class="ar">بالعربي: اثبت أن هذا المجموع يساوي \(n/(3n+9)\)، لكل عدد صحيح موجب n.</p>
+    <p class="ar">بالعربي: اثبت أن هذا المجموع يساوي \(n/(3n+9)\)، لكل عدد صحيح موجب n. توأم مثال 2.</p>
   </div>
   <div class="think">
     <h3>قبل ما تكتب: سخّن</h3>
-    <p>هذا توأم المثال اللي قبله. جهّز الحركتين اللي بتحتاجها:</p>
-    <p class="en">\(k^2 + 4k + 3 = (\) <span class="blank"></span> \()(\) <span class="blank"></span> \()\) &nbsp;&nbsp;&nbsp; \(3k + 9 = 3(\) <span class="blank"></span> \()\)</p>
+    <p>جهّز الحركتين اللي بتحتاجها:</p>
+    <p class="en">\(k^2 + 4k + 3 = (\) <span class="blank"></span> \()(\) <span class="blank"></span> \()\) &nbsp;&nbsp;&nbsp;&nbsp; \(3k + 9 = 3(\) <span class="blank"></span> \()\)</p>
+    <p>وتريك الفرق: \(\frac{k+1}{3(k+4)} - \frac{k}{3(k+3)}\) لازم يساوي الحد الجديد \(\frac{1}{(k+3)(k+4)}\).</p>
   </div>
   <div class="tpl grow">
-    <div class="r"><div class="l">Base<i>الأساس</i></div><div class="v b b1"></div></div>
-    <div class="r"><div class="l">Assume<i>الفرض</i></div><div class="v b b2"></div></div>
-    <div class="r"><div class="l">Show<i>المطلوب</i></div><div class="v b b2"></div></div>
-    <div class="r fill"><div class="l">Step<i>الخطوة</i></div><div class="v b b3"></div></div>
-    <div class="r"><div class="l">Conclude<i>الختام</i></div><div class="v b b1"></div></div>
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v b b1"></div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v b b2"></div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v b b2"></div></div>
+    <div class="r fill"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v b b3"></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v b b1"></div></div>
   </div>
-  <div class="hints"><p><b>تلميح 1:</b> \(3k+9 = 3(k+3)\)، فالمقام المشترك \(3(k+3)(k+4)\).</p><p><b>تلميح 2:</b> البسط \(k(k+4) + 3 = (k+1)(k+3)\).</p><p><b>تلميح 3:</b> الهدف \(\frac{k+1}{3(k+1)+9} = \frac{k+1}{3(k+4)}\).</p></div>
+  <div class="hints"><p><b>تلميح 1:</b> \(3k + 9 = 3(k + 3)\)، فالمقام المشترك \(3(k+3)(k+4)\).</p><p><b>تلميح 2:</b> البسط \(k(k+4) + 3 = (k+1)(k+3)\).</p><p><b>تلميح 3:</b> الهدف \(\frac{k+1}{3(k+1)+9} = \frac{k+1}{3(k+4)}\).</p></div>
 
 </section>
 
@@ -104,21 +132,21 @@
   <h2 class="t">الحلول<span class="tag sol">شيّك</span></h2>
   <h3>تمرين 6.4 (1)</h3>
   <div class="tpl">
-    <div class="r"><div class="l">Assume<i>الفرض</i></div><div class="v">Assume that \(1 + 3 + 5 + \cdots + (2k-1) = k^2\) for an arbitrary positive integer \(k\).<span class="g">نفترض أنها صحيحة عند k.</span></div></div>
-    <div class="r"><div class="l">Step<i>الخطوة</i></div><div class="v">By the inductive hypothesis, \({1 + 3 + \cdots + (2k-1) + (2k+1)} = {k^2 + (2k+1)} = {(k+1)^2}.\)<span class="g">فصلنا آخر حد \((2k+1)\) وبدّلنا الباقي بالفرض \(k^2\)، و \(k^2 + 2k + 1 = (k+1)^2\).</span></div></div>
-    <div class="r"><div class="l">Conclude<i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, \(1 + 3 + 5 + \cdots + (2n-1) = n^2\) for every positive integer \(n\).<span class="g">إذن صحيحة لكل n.</span></div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(1 + 3 + 5 + \cdots + (2k-1) = k^2\) for a positive integer \(k\).<span class="g">الجملة عند k.</span></div></div>
+    <div class="r"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">By the inductive hypothesis, \({1 + 3 + \cdots + (2k-1) + (2k+1)} = {k^2 + (2k+1)} = {(k+1)^2}.\)<span class="g">فصلنا آخر حد \((2k+1)\)، وعوّضنا الباقي بـ \(k^2\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, \(1 + 3 + 5 + \cdots + (2n-1) = n^2\) for every positive integer \(n\).</div></div>
   </div>
   <h3>تمرين 6.4 (2)</h3>
   <div class="tpl">
-    <div class="r"><div class="l">Proof<i>البرهان</i></div><div class="v">Let \(S = 1 + 3 + \cdots + (2n-1)\). Writing the terms in reverse order, \(S = (2n-1) + (2n-3) + \cdots + 1\). Adding the two expressions term by term, each of the \(n\) pairs has sum \(2n\), so \(2S = n(2n) = 2n^2\). Hence \(S = n^2\).<span class="g">كتبنا المجموع مرتين، مرة بالعكس، وجمعنا عمود عمود: كل عمود \(2n\)، وعندنا n عمود. فـ \(2S = 2n^2\)، يعني \(S = n^2\).</span></div></div>
+    <div class="r"><div class="l"><i>البرهان</i></div><div class="v">Let \(S = 1 + 3 + \cdots + (2n-1)\). Writing the terms in reverse order, \(S = (2n-1) + (2n-3) + \cdots + 1\). Adding the two expressions term by term, each of the \(n\) pairs has sum \(2n\), so \(2S = n(2n) = 2n^2\). Hence \(S = n^2\).<span class="g">كل عمود مجموعه \(2n\)، وعندنا n عمود. فـ \(2S = 2n^2\).</span></div></div>
   </div>
   <h3>تمرين 6.5</h3>
   <div class="tpl">
-    <div class="r"><div class="l">Base<i>الأساس</i></div><div class="v">Since \(1 = 2\cdot 1^2 - 1\), the statement is true for \(n = 1\).<span class="g">عند \(n = 1\) الطرفين يساوون 1.</span></div></div>
-    <div class="r"><div class="l">Assume<i>الفرض</i></div><div class="v">Assume that \(1 + 5 + \cdots + (4k-3) = 2k^2 - k\) for an arbitrary positive integer \(k\).<span class="g">نفترض أنها صحيحة عند k.</span></div></div>
-    <div class="r"><div class="l">Show<i>المطلوب</i></div><div class="v">We show that \(1 + 5 + \cdots + (4k+1) = 2(k+1)^2 - (k+1)\).<span class="g">نثبتها عند \(k + 1\)، والحد الأخير \(4k + 1\).</span></div></div>
-    <div class="r"><div class="l">Step<i>الخطوة</i></div><div class="v">By the inductive hypothesis, \({1 + 5 + \cdots + (4k-3) + (4k+1)} = {(2k^2 - k) + (4k + 1)} = {2k^2 + 3k + 1} = {2(k+1)^2 - (k+1)}.\)<span class="g">فصلنا آخر حد وبدّلنا الباقي بالفرض، وجمعنا، وطلع نفس الهدف بعد ما نفكّه.</span></div></div>
-    <div class="r"><div class="l">Conclude<i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, the formula holds for every positive integer \(n\).<span class="g">إذن صحيحة لكل n.</span></div></div>
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">Since \(1 = 2 \cdot 1^2 - 1\), the statement is true for \(n = 1\).</div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(1 + 5 + \cdots + (4k-3) = 2k^2 - k\) for a positive integer \(k\).</div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(1 + 5 + \cdots + (4k+1) = 2(k+1)^2 - (k+1)\).<span class="g">الحد الأخير \(4(k+1) - 3 = 4k + 1\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">By the inductive hypothesis, \({1 + 5 + \cdots + (4k-3) + (4k+1)} = {(2k^2 - k) + (4k + 1)} = {2k^2 + 3k + 1} = {2(k+1)^2 - (k+1)}.\)<span class="g">تريك الفرق قال لنا الجواب: \(2k^2 - k\) + \(4k + 1\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, the formula holds for every positive integer \(n\).</div></div>
   </div>
 
 </section>
@@ -127,19 +155,19 @@
   <div class="hdr"><span class="u">حلول الوحدة 3</span><span class="pn"></span></div>
   <h2 class="t">حل تمرين 6.11<span class="tag sol">شيّك</span></h2>
   <div class="tpl">
-    <div class="r"><div class="l">Base<i>الأساس</i></div><div class="v">Since \(\frac{1}{3\cdot 4} = \frac{1}{12} = \frac{1}{3\cdot 1 + 9}\), the formula holds for \(n = 1\).<span class="g">عند \(n = 1\) الطرفين يساوون \(1/12\).</span></div></div>
-    <div class="r"><div class="l">Assume<i>الفرض</i></div><div class="v">Assume that \(\frac{1}{3\cdot 4} + \cdots + \frac{1}{(k+2)(k+3)} = \frac{k}{3k+9}\) for a positive integer \(k\).<span class="g">نفترض أنها صحيحة عند k.</span></div></div>
-    <div class="r"><div class="l">Show<i>المطلوب</i></div><div class="v">We show that \(\frac{1}{3\cdot 4} + \cdots + \frac{1}{(k+3)(k+4)} = \frac{k+1}{3k+12}\).<span class="g">نثبتها عند \(k + 1\): الحد الجديد \(\frac{1}{(k+3)(k+4)}\).</span></div></div>
-    <div class="r"><div class="l">Step<i>الخطوة</i></div><div class="v">By the inductive hypothesis, \[\begin{aligned} \frac{1}{3\cdot 4} + \cdots + \frac{1}{(k+3)(k+4)} &= \frac{k}{3(k+3)} + \frac{1}{(k+3)(k+4)} = \frac{k(k+4) + 3}{3(k+3)(k+4)} \\ &= \frac{(k+1)(k+3)}{3(k+3)(k+4)} = \frac{k+1}{3(k+4)} = \frac{k+1}{3k+12}. \end{aligned}\]<span class="g">نفس حركات مثال الكسور: الفرض، ثم مقام مشترك، ثم تحليل البسط، ثم نختصر \((k+3)\).</span></div></div>
-    <div class="r"><div class="l">Conclude<i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, the formula holds for every positive integer \(n\).<span class="g">إذن صحيحة لكل n.</span></div></div>
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">Since \(\frac{1}{3\cdot 4} = \frac{1}{12} = \frac{1}{3\cdot 1 + 9}\), the formula holds for \(n = 1\).<span class="g">الطرفين \(1/12\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(\frac{1}{3\cdot 4} + \cdots + \frac{1}{(k+2)(k+3)} = \frac{k}{3k+9}\) for a positive integer \(k\).</div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(\frac{1}{3\cdot 4} + \cdots + \frac{1}{(k+3)(k+4)} = \frac{k+1}{3k+12}\).<span class="g">الحد الجديد \(\frac{1}{(k+3)(k+4)}\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">By the inductive hypothesis, \[\begin{aligned} \frac{1}{3\cdot 4} + \cdots + \frac{1}{(k+3)(k+4)} &= \frac{k}{3(k+3)} + \frac{1}{(k+3)(k+4)} = \frac{k(k+4) + 3}{3(k+3)(k+4)} \\ &= \frac{(k+1)(k+3)}{3(k+3)(k+4)} = \frac{k+1}{3(k+4)} = \frac{k+1}{3k+12}. \end{aligned}\]<span class="g">نفس قواعد الكسور: الفرض، مقام مشترك بدون فك، تحليل البسط، نختصر \((k+3)\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, the formula holds for every positive integer \(n\).</div></div>
   </div>
-  <p class="small">أجوبة التسخين: \(k^2+4k+3 = (k+1)(k+3)\) و \(3k+9 = 3(k+3)\).</p>
+  <p class="small">أجوبة التسخين: \(k^2+4k+3 = (k+1)(k+3)\) و \(3k+9 = 3(k+3)\). وتريك الفرق: \(\frac{(k+1)(k+3) - k(k+4)}{3(k+3)(k+4)} = \frac{3}{3(k+3)(k+4)} = \frac{1}{(k+3)(k+4)}\) ✓</p>
   <div class="box">
-    <h3>راجع نفسك قبل ما تكمل</h3>
+    <h3>راجع نفسك (3 دقائق)</h3>
     <ul class="chk">
-      <li><span class="cb"></span>أعرف أكتب الأسطر الخمسة بالترتيب بدون ما أطالع.</li>
-      <li><span class="cb"></span>أعرف أكتب \(P(k+1)\) صح، وأفصل آخر حد.</li>
-      <li><span class="cb"></span>أعرف أكتب برهان مبدأ الاستقراء من ذاكرتي.</li>
+      <li><span class="cb"></span>أكتب القالب الذهبي (5 أسطر) بدون ما أطالع.</li>
+      <li><span class="cb"></span>أحسب تريك الفرق قبل ما أكتب الخطوة.</li>
+      <li><span class="cb"></span>أفصل آخر حد، وأكتب <span class="lt">By the inductive hypothesis</span> في السطر اللي أعوّض فيه.</li>
     </ul>
   </div>
 
