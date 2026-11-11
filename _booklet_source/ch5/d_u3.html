@@ -1,0 +1,92 @@
+<section class="page" id="p-u3" style="gap:3mm">
+  <div class="hdr"><span class="u">الوحدة 3 · ثلاث طرق للبرهان · 5.3</span><span class="lv must">أساسي</span><span class="pn"></span></div>
+  <h2 class="t">ثلاث طرق لنفس الجملة<span class="tag sol">مثال توأم 5.36</span></h2>
+  <div class="idea">جملة «إذا P فإن Q» تنبرهن بثلاث طرق. الفرق كله في أول سطر: وش تفترض، ووين تبي توصل.</div>
+  <div class="think">
+    <h3>الفرق في أول سطر</h3>
+    <table class="t">
+      <tr><th style="width:40%">الطريقة</th><th>تفترض (أول سطر)</th><th>توصل لـ</th></tr>
+      <tr><td class="s">مباشر (<span class="lt">direct proof</span>)</td><td>P صح</td><td>Q صح</td></tr>
+      <tr><td class="s">عكس النقيض (<span class="lt">proof by contrapositive</span>)</td><td>Q خطأ</td><td>P خطأ</td></tr>
+      <tr><td class="s">تناقض (<span class="lt">proof by contradiction</span>)</td><td>P صح و Q خطأ</td><td>شي مستحيل</td></tr>
+    </table>
+  </div>
+  <div class="qbox"><div class="lab">السؤال</div>
+    <p class="en">Prove that if \(n\) is an even integer, then \(3n + 7\) is odd.</p>
+    <p class="ar">بالعربي: اثبت: إذا n زوجي، فإن \(3n + 7\) فردي. هنا P هي «n زوجي»، و Q هي «\(3n + 7\) فردي».</p>
+  </div>
+  <h3>نكتب: نفس الجملة بثلاث طرق</h3>
+  <div class="tpl">
+    <div class="r"><div class="l">(a)<i>مباشر</i></div><div class="v">Assume that \(n\) is even. Then \(n = 2k\) for some integer \(k\). So \(3n + 7 = 6k + 7 = 2(3k + 3) + 1\). Since \(3k + 3\) is an integer, \(3n + 7\) is odd.<span class="g">افترضنا P (n زوجي)، ووصلنا لـ Q (\(3n + 7\) فردي).</span></div></div>
+    <div class="r"><div class="l">(b)<i>عكس النقيض</i></div><div class="v">Assume that \(3n + 7\) is even. Then \(3n + 7 = 2k\) for some integer \(k\). So \(n = (3n + 7) - 2n - 7 = 2k - 2n - 7 = 2(k - n - 4) + 1\). Since \(k - n - 4\) is an integer, \(n\) is odd.<span class="g">افترضنا أن Q خطأ (\(3n + 7\) زوجي)، ووصلنا أن P خطأ (n فردي).</span></div></div>
+    <div class="r"><div class="l">(c)<i>تناقض</i></div><div class="v">Assume, to the contrary, that there exists an even integer \(n\) such that \(3n + 7\) is even. Then \(n = 2x\) and \(3n + 7 = 2y\) for some integers \(x\) and \(y\). Hence \(3(2x) + 7 = 2y\), and so \(7 = 2y - 6x = 2(y - 3x)\). Since \(y - 3x\) is an integer, 7 is even, which is a contradiction.<span class="g">افترضنا P صح و Q خطأ مع بعض، فطلع أن 7 زوجي. مستحيل.</span></div></div>
+  </div>
+  <div class="note trap"><span class="k">انتبه:</span>لا تبدأ بـ «<span class="lt">Assume that \(3n + 7\) is odd</span>»: هذا افتراض للمطلوب نفسه.</div>
+  <div class="note trick"><span class="k">أي طريقة؟</span>لو السؤال حددها التزم فيها. لو ما حدد: جرّب المباشر أول.</div>
+
+</section>
+
+<section class="page" id="p-536">
+  <div class="hdr"><span class="u">الوحدة 3 · ثلاث طرق للبرهان</span><span class="lv must">أساسي</span><span class="pn"></span></div>
+  <h2 class="t">تمرين 5.36<span class="tag ex">دورك</span></h2>
+  <div class="qbox ex"><div class="lab">دورك · تمرين 5.36</div>
+    <p class="en"><span class="lb">5.36.</span> Prove that if \(n\) is an odd integer, then \(7n - 5\) is even by (a) a direct proof, (b) a proof by contrapositive and (c) a proof by contradiction.</p>
+    <p class="ar">بالعربي: اثبت: إذا n فردي، فإن \(7n - 5\) زوجي، بثلاث طرق: (a) مباشر، (b) عكس النقيض، (c) تناقض.</p>
+  </div>
+  <p class="recall">قبل ما تكتب: حدّد P و Q. واكتب أول سطر لكل طريقة من ذاكرتك، وبعدها كمّل.</p>
+  <div class="tpl grow">
+    <div class="r fill"><div class="l">(a)<i>مباشر</i></div><div class="v b b3"></div></div>
+    <div class="r fill"><div class="l">(b)<i>عكس النقيض</i></div><div class="v b b3"></div></div>
+    <div class="r fill"><div class="l">(c)<i>تناقض</i></div><div class="v b b3"></div></div>
+  </div>
+  <div class="hints"><p><b>تلميح (b):</b> من \(7n - 5 = 2k + 1\) طلّع n لوحدها: \(n = (7n - 5) - 6n + 5\).</p><p><b>تلميح (c):</b> \(n = 2x + 1\) و \(7n - 5 = 2y + 1\). عوّض الأولى في الثانية، وشوف أي عدد يطلع «زوجي» وهو مو زوجي.</p></div>
+
+</section>
+
+<section class="page" id="p-539">
+  <div class="hdr"><span class="u">الوحدة 3 · ثلاث طرق للبرهان</span><span class="lv extra">إضافي</span><span class="pn"></span></div>
+  <h2 class="t">تمرين 5.39<span class="tag ex">دورك</span></h2>
+  <div class="qbox ex"><div class="lab">دورك · تمرين 5.39</div>
+    <p class="en"><span class="lb">5.39.</span> Let \(x, y \in \mathbb{R}^+\). Prove that if \(x \le y\), then \(x^2 \le y^2\) by (a) a direct proof, (b) a proof by contrapositive and (c) a proof by contradiction.</p>
+    <p class="ar">بالعربي: x و y عددين حقيقيين موجبين. اثبت: إذا \(x \le y\) فإن \(x^2 \le y^2\)، بثلاث طرق.</p>
+  </div>
+  <div class="think">
+    <h3>قبل ما تكتب</h3>
+    <div class="flow">
+      <div class="f"><span class="num">1</span><span>بأرقام: \(2 \le 3\) و \(4 \le 9\) <span class="ok">✓</span> وشرط «موجبين» مهم: \(-3 \le 2\) لكن \(9 \le 4\) خطأ.</span></div>
+      <div class="f"><span class="num">2</span><span>حركتين تحتاجهم: لو ضربت متباينة في عدد موجب، اتجاهها ما يتغير. و \(x^2 - y^2 = (x - y)(x + y)\).</span></div>
+    </div>
+  </div>
+  <div class="tpl grow">
+    <div class="r fill"><div class="l">(a)<i>مباشر</i></div><div class="v b b3"></div></div>
+    <div class="r fill"><div class="l">(b)<i>عكس النقيض</i></div><div class="v b b3"></div></div>
+    <div class="r fill"><div class="l">(c)<i>تناقض</i></div><div class="v b b3"></div></div>
+  </div>
+  <div class="hints"><p><b>تلميح (a):</b> اضرب \(x \le y\) في x مرة، وفي y مرة.</p><p><b>تلميح (b) و(c):</b> عكس \(x^2 \le y^2\) هو \(x^2 \gt y^2\)، يعني \((x - y)(x + y) \gt 0\). و \(x + y\) موجب.</p></div>
+
+</section>
+
+<section class="page sol" id="p-s3">
+  <div class="hdr"><span class="u">حلول الوحدة 3</span><span class="pn"></span></div>
+  <h2 class="t">الحلول<span class="tag sol">شيّك</span></h2>
+  <h3>تمرين 5.36</h3>
+  <div class="tpl">
+    <div class="r"><div class="l">(a)<i>مباشر</i></div><div class="v">Assume that \(n\) is odd. Then \(n = 2k + 1\) for some integer \(k\). So \(7n - 5 = 7(2k + 1) - 5 = 14k + 2 = 2(7k + 1)\). Since \(7k + 1\) is an integer, \(7n - 5\) is even.<span class="g">افترضنا P ووصلنا لـ Q.</span></div></div>
+    <div class="r"><div class="l">(b)<i>عكس النقيض</i></div><div class="v">Assume that \(7n - 5\) is odd. Then \(7n - 5 = 2k + 1\) for some integer \(k\). So \(n = (7n - 5) - 6n + 5 = 2k + 1 - 6n + 5 = 2(k - 3n + 3)\). Since \(k - 3n + 3\) is an integer, \(n\) is even.<span class="g">افترضنا أن Q خطأ، ووصلنا أن P خطأ (n زوجي).</span></div></div>
+    <div class="r"><div class="l">(c)<i>تناقض</i></div><div class="v">Assume, to the contrary, that there exists an odd integer \(n\) such that \(7n - 5\) is odd. Then \(n = 2x + 1\) and \(7n - 5 = 2y + 1\) for some integers \(x\) and \(y\). Hence \(7(2x + 1) - 5 = 2y + 1\), so \(14x + 2 = 2y + 1\) and \(1 = 2y - 14x = 2(y - 7x)\). Since \(y - 7x\) is an integer, 1 is even, which is a contradiction.<span class="g">افترضنا P صح و Q خطأ، فطلع أن 1 زوجي. مستحيل.</span></div></div>
+  </div>
+  <h3>تمرين 5.39</h3>
+  <div class="tpl">
+    <div class="r"><div class="l">(a)<i>مباشر</i></div><div class="v">Assume that \(x \le y\). Since \(x \gt 0\), multiplying both sides by \(x\) gives \(x^2 \le xy\). Since \(y \gt 0\), multiplying both sides of \(x \le y\) by \(y\) gives \(xy \le y^2\). Therefore \(x^2 \le xy \le y^2\), and so \(x^2 \le y^2\).<span class="g">ضربنا المتباينة في x مرة وفي y مرة، وربطنا النتيجتين.</span></div></div>
+    <div class="r"><div class="l">(b)<i>عكس النقيض</i></div><div class="v">Assume that \(x^2 \gt y^2\). Then \(x^2 - y^2 \gt 0\), and so \((x - y)(x + y) \gt 0\). Since \(x + y \gt 0\), dividing both sides by \(x + y\) gives \(x - y \gt 0\). Hence \(x \gt y\).<span class="g">افترضنا أن Q خطأ (\(x^2 \gt y^2\))، ووصلنا أن P خطأ (\(x \gt y\)).</span></div></div>
+    <div class="r"><div class="l">(c)<i>تناقض</i></div><div class="v">Assume, to the contrary, that there exist positive real numbers \(x\) and \(y\) such that \(x \le y\) and \(x^2 \gt y^2\). Then \((x - y)(x + y) = x^2 - y^2 \gt 0\). Since \(x + y \gt 0\), it follows that \(x - y \gt 0\), and so \(x \gt y\). This contradicts \(x \le y\).<span class="g">افترضنا P صح و Q خطأ، فطلع \(x \gt y\) و \(x \le y\) مع بعض. مستحيل.</span></div></div>
+  </div>
+  <div class="box">
+    <h3>راجع نفسك (دقيقتين)</h3>
+    <ul class="chk">
+      <li><span class="cb"></span>أكتب أول سطر لكل طريقة من الثلاث بدون ما أطالع.</li>
+      <li><span class="cb"></span>أعرف وين أوصل في كل طريقة: Q، أو عكس P، أو شي مستحيل.</li>
+    </ul>
+  </div>
+
+</section>
