@@ -1,0 +1,12 @@
+
+<script>
+(function () {
+  var pages = Array.prototype.slice.call(document.querySelectorAll('.page'));
+  document.querySelectorAll('.ref').forEach(function (el) {
+    var i = pages.findIndex(function (p) { return p.id === el.dataset.to; });
+    el.textContent = i >= 0 ? ('ص ' + (i + 1)) : '؟';
+  });
+})();
+</script>
+</body>
+</html>
