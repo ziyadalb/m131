@@ -1,67 +1,93 @@
-<section class="page" id="p-s1" style="gap:2.4mm">
+<section class="page" id="p-s1" style="gap:2.6mm">
   <div class="hdr"><span class="u">ملخص الفصل 5 · الوجود والبرهان بالتناقض</span><span class="pn"></span></div>
   <h2 class="t">ملخص الفصل 5: خمس أنواع أسئلة</h2>
+  <div class="idea">الفصل كله خمس أنواع أسئلة. أول شي اعرف نوع السؤال من كلماته (الجدول تحت)، وبعدين امشِ على خطوات النوع. الأجوبة مكتوبة بالإنجليزي مثل ما تكتبها في الاختبار، وتحت كل جواب معناه بالعربي.</div>
+  <h3>كيف تعرف نوع السؤال؟</h3>
   <table class="t">
-    <tr><th style="width:44%">في السؤال</th><th>النوع</th><th style="width:30%">أول سطر</th></tr>
-    <tr><td><span class="lt">Disprove</span> + <span class="lt">For every …</span> أو <span class="lt">If …, then …</span></td><td>1. مثال مضاد</td><td><span class="lt">For \(n = \ldots\), …</span></td></tr>
-    <tr><td><span class="lt">Prove</span> + <span class="lt">There is no …</span> أو <span class="lt">irrational</span></td><td>2. تناقض</td><td><span class="lt">Assume, to the contrary, …</span></td></tr>
-    <tr><td><span class="lt">by (a) direct, (b) contrapositive, (c) …</span></td><td>3. ثلاث طرق</td><td>جدول النوع 3</td></tr>
-    <tr><td><span class="lt">Prove</span> + <span class="lt">There exists …</span></td><td>4. وجود</td><td><span class="lt">Let \(x = \ldots\) / Consider …</span></td></tr>
-    <tr><td><span class="lt">Disprove</span> + <span class="lt">There exists …</span></td><td>5. نفي وجود</td><td><span class="lt">We show that if …, then …</span></td></tr>
-    <tr><td><span class="lt">Prove or disprove</span></td><td colspan="2">جرّب 3 قيم أول، وبعدها قرّر النوع</td></tr>
+    <tr><th style="width:43%">لو شفت في السؤال</th><th style="width:22%">فهو</th><th>أول شي تكتبه</th></tr>
+    <tr><td><span class="lt">Disprove</span> + <span class="lt">For every</span> (أو <span class="lt">If …, then …</span>)</td><td>1. مثال مضاد</td><td><span class="lt">For \(n = \ldots\), …</span></td></tr>
+    <tr><td><span class="lt">Prove</span> + <span class="lt">There is no</span> (أو <span class="lt">irrational</span>)</td><td>2. تناقض</td><td><span class="lt">Assume, to the contrary, …</span></td></tr>
+    <tr><td><span class="lt">by (a) direct, (b) contrapositive, (c) …</span></td><td>3. ثلاث طرق</td><td>حسب الطريقة</td></tr>
+    <tr><td><span class="lt">Prove</span> + <span class="lt">There exists</span></td><td>4. وجود</td><td><span class="lt">Let \(x = \ldots\)</span></td></tr>
+    <tr><td><span class="lt">Disprove</span> + <span class="lt">There exists</span></td><td>5. نفي وجود</td><td><span class="lt">We show that …</span></td></tr>
+    <tr><td><span class="lt">Prove or disprove</span></td><td>أنت تقرر</td><td>جرّب ثلاث أرقام أول</td></tr>
   </table>
+  <p class="gl"><span class="lt">Prove</span> = اثبت إنها صح · <span class="lt">Disprove</span> = اثبت إنها غلط · <span class="lt">For every</span> = لكل · <span class="lt">There exists</span> = يوجد · <span class="lt">There is no</span> = ما فيه</p>
   <div class="tb">
-    <div class="tbh"><span class="tn">1</span><span class="tt">المثال المضاد</span><span class="tk">تعرفه: <span class="lt">Disprove</span> + <span class="lt">For every</span></span></div>
-    <div class="chain"><span class="c">جرّب</span><span class="a">←</span><span class="c">احسب</span><span class="a">←</span><span class="c">احكم</span></div>
-    <div class="exq"><span class="lb2">مثال</span><span class="e2">For every even positive integer \(n\), \(12 \mid (n^2 - 4)\).</span></div>
-    <p class="try">جرّب: \(n = 2\) يعطي 0 <span class="ok">✓</span> · \(n = 4\) يعطي 12 <span class="ok">✓</span> · \(n = 6\) يعطي 32 <span class="no">✗</span></p>
-    <div class="ans"><span class="lb2">الجواب</span><span class="e2"><b>False.</b> For \(n = 6\), \(n^2 - 4 = 32\) and \(12 \nmid 32\). Thus, \(n = 6\) is a counterexample.</span></div>
-    <p class="warn"><b>⚠️</b> أول قيمة أو قيمتين ممكن يمشون: جرّب 3 قيم. وفي «إذا… فإن…» المثال المضاد: الشرط صح والنتيجة خطأ.</p>
-  </div>
-  <div class="tb">
-    <div class="tbh"><span class="tn">2</span><span class="tt">البرهان بالتناقض</span><span class="tk">تعرفه: <span class="lt">There is no</span> أو <span class="lt">irrational</span></span></div>
-    <div class="chain"><span class="c">نعكس</span><span class="a">←</span><span class="c">نمشي</span><span class="a">←</span><span class="c">تناقض</span></div>
-    <div class="exq"><span class="lb2">مثال 1</span><span class="e2">There is no smallest positive real number.</span></div>
-    <div class="ans"><span class="lb2">الجواب</span><span class="e2">Assume, to the contrary, that there is a smallest positive real number, say \(r\). Since \(0 \lt r/2 \lt r\), \(r/2\) is a positive real number smaller than \(r\). This is a contradiction.</span></div>
-    <div class="exq"><span class="lb2">مثال 2</span><span class="e2">Prove that \(\sqrt{2}\) is irrational.</span></div>
-    <div class="ans"><span class="lb2">الجواب</span><span class="e2">Assume, to the contrary, that \(\sqrt{2}\) is rational. Then \(\sqrt{2} = a/b\), where \(a, b \in \mathbb{Z}\), \(b \ne 0\), and \(a/b\) is in lowest terms. So \(a^2 = 2b^2\), and \(a\) is even. Let \(a = 2c\). Then \(4c^2 = 2b^2\), so \(b^2 = 2c^2\) and \(b\) is even. Since \(a\) and \(b\) are both even, this contradicts that \(a/b\) is in lowest terms.</span></div>
-    <p class="warn"><b>⚠️ العكس:</b> «ما فيه» ← «فيه» · «غير نسبي» ← «نسبي» · «إذا P فإن Q» ← «P صح و Q خطأ» · «و» ← «أو».</p>
-  </div>
-  <div class="box">
-    <h3>5 جمل تحفظها</h3>
-    <ul class="notes" style="direction:ltr; text-align:left; font-family:var(--en); columns:2; column-gap:8mm">
-      <li>Thus, \(n = \ldots\) is a counterexample.</li><li>Assume, to the contrary, that …</li><li>This is a contradiction.</li>
-      <li>… has the desired property.</li><li>We show that if …, then …</li>
-    </ul>
+    <div class="tbh"><span class="tn">1</span><span class="tt">المثال المضاد</span></div>
+    <p class="meta"><b>متى يجيك:</b> لما يقول لك اثبت إن الجملة غلط (<span class="lt">Disprove</span>)، والجملة تقول «لكل…».</p>
+    <p class="meta"><b>الفكرة:</b> جملة «لكل» تطيح برقم واحد بس يخالفها.</p>
+    <div class="steps"><span><span class="n">1</span>جرّب أرقام من المجموعة اللي في السؤال، لين تلقى رقم يخرّبها.</span><span><span class="n">2</span>اكتب الحساب بالأرقام.</span><span><span class="n">3</span>قل إن هذا الرقم مثال مضاد.</span></div>
+    <div class="exq"><span class="lb2">مثال</span><span class="bx"><span class="e2">For every even positive integer \(n\), \(12 \mid (n^2 - 4)\).</span><span class="a2">يعني: لكل عدد زوجي موجب n، الـ 12 تقسم \(n^2 - 4\).</span></span></div>
+    <p class="think2"><b>كيف تفكر:</b> نجرب الأعداد الزوجية بالترتيب: \(n = 2\) يطلع 0، و12 تقسمه <span class="ok">✓</span>. \(n = 4\) يطلع 12 <span class="ok">✓</span>. \(n = 6\) يطلع 32، و12 ما تقسمه <span class="no">✗</span>. لقينا الرقم.</p>
+    <div class="ans"><span class="lb2">تكتب</span><span class="bx"><span class="e2"><b>False.</b> For \(n = 6\), \(n^2 - 4 = 32\) and \(12 \nmid 32\). Thus, \(n = 6\) is a counterexample.</span><span class="a2">يعني: الجملة غلط. لما n = 6 يطلع 32، و12 ما تقسم 32. إذن 6 مثال مضاد.</span></span></div>
+    <p class="warn"><b>⚠️ انتبه:</b> أول رقم أو رقمين ممكن يمشون، فجرّب ثلاثة على الأقل. ولو الجملة «إذا… فإن…»، دوّر رقم يخلي الشرط صح والنتيجة غلط.</p>
   </div>
 </section>
 
-<section class="page" id="p-s2" style="gap:2.4mm">
+<section class="page" id="p-s2" style="gap:2.6mm">
   <div class="hdr"><span class="u">ملخص الفصل 5 · الوجود والبرهان بالتناقض</span><span class="pn"></span></div>
   <div class="tb">
-    <div class="tbh"><span class="tn">3</span><span class="tt">ثلاث طرق</span><span class="tk">تعرفه: <span class="lt">by (a) direct, (b) contrapositive, (c) contradiction</span></span></div>
-    <div class="fl"><div class="h">مباشر</div><div class="h">عكس النقيض</div><div class="h">تناقض</div>
-      <div>افترض P ← وصّل لـ Q</div><div>افترض عكس Q ← وصّل لعكس P</div><div>افترض P وعكس Q ← مستحيل</div></div>
-    <div class="exq"><span class="lb2">مثال</span><span class="e2">If \(n\) is an even integer, then \(5n + 1\) is odd.</span></div>
-    <div class="ans"><span class="lb2">(a) مباشر</span><span class="e2">Assume that \(n\) is even. Then \(n = 2k\) for some integer \(k\). So \(5n + 1 = 10k + 1 = 2(5k) + 1\), which is odd.</span></div>
-    <div class="ans"><span class="lb2">(b) عكس النقيض</span><span class="e2">Assume that \(5n + 1\) is even. Then \(5n + 1 = 2k\) for some integer \(k\). So \(n = (5n + 1) - 4n - 1 = 2(k - 2n - 1) + 1\), which is odd.</span></div>
-    <div class="ans"><span class="lb2">(c) تناقض</span><span class="e2">Assume, to the contrary, that there is an even integer \(n\) such that \(5n + 1\) is even. Then \(n = 2x\) and \(5n + 1 = 2y\) for some integers \(x, y\). So \(10x + 1 = 2y\) and \(1 = 2(y - 5x)\). Thus 1 is even, which is a contradiction.</span></div>
-    <p class="warn"><b>⚠️</b> لا تبدأ أبداً بافتراض Q (أن \(5n + 1\) فردي). هذا افتراض للمطلوب.</p>
+    <div class="tbh"><span class="tn">2</span><span class="tt">البرهان بالتناقض</span></div>
+    <p class="meta"><b>متى يجيك:</b> لما يقول «<span class="lt">There is no</span>» (ما فيه…) أو «<span class="lt">irrational</span>» (غير نسبي).</p>
+    <p class="meta"><b>الفكرة:</b> تفترض عكس المطلوب، وتمشي بخطوات صحيحة لين توصل لشي مستحيل. معناها افتراضك غلط، والجملة صح.</p>
+    <div class="steps"><span><span class="n">1</span>اكتب العكس: <span class="lt">Assume, to the contrary, that …</span></span><span><span class="n">2</span>امشِ بخطوات صحيحة: تعريف وحساب.</span><span><span class="n">3</span>وصّل لشي مستحيل واكتب <span class="lt">This is a contradiction.</span></span></div>
+    <div class="exq"><span class="lb2">مثال 1</span><span class="bx"><span class="e2">There is no smallest positive real number.</span><span class="a2">يعني: ما فيه أصغر عدد حقيقي موجب.</span></span></div>
+    <p class="think2"><b>كيف تفكر:</b> أي عدد موجب تختاره، نصّه أصغر منه وبعده موجب. فما فيه «أصغر واحد».</p>
+    <div class="ans"><span class="lb2">تكتب</span><span class="bx"><span class="e2">Assume, to the contrary, that there is a smallest positive real number, say \(r\). Since \(0 \lt r/2 \lt r\), \(r/2\) is a positive real number smaller than \(r\). This is a contradiction.</span><span class="a2">يعني: نفترض فيه أصغر عدد موجب، ونسميه r. بس نص r موجب وأصغر منه، وهذا يناقض إن r هو الأصغر.</span></span></div>
+    <div class="exq"><span class="lb2">مثال 2</span><span class="bx"><span class="e2">Prove that \(\sqrt{2}\) is irrational.</span><span class="a2">يعني: اثبت إن \(\sqrt{2}\) ما ينكتب ككسر.</span></span></div>
+    <p class="think2"><b>كيف تفكر:</b> نفترض \(\sqrt{2} = a/b\)، كسر مبسّط لآخر حد. نربّع الطرفين، فيطلع إن a و b الاثنين زوجيين، يعني الكسر ينبسط بعد. تناقض!</p>
+    <div class="ans"><span class="lb2">تكتب</span><span class="bx"><span class="e2">Assume, to the contrary, that \(\sqrt{2}\) is rational. Then \(\sqrt{2} = a/b\), where \(a, b \in \mathbb{Z}\), \(b \ne 0\), and \(a/b\) is in lowest terms. So \(a^2 = 2b^2\), and \(a\) is even. Let \(a = 2c\). Then \(4c^2 = 2b^2\), so \(b^2 = 2c^2\) and \(b\) is even. Since \(a\) and \(b\) are both even, this contradicts that \(a/b\) is in lowest terms.</span><span class="a2">يعني: \(a^2 = 2b^2\) فـ a زوجي. نكتبه 2c ونعوّض، فيطلع b زوجي بعد. والكسر المبسّط ما يكون بسطه ومقامه الاثنين زوجيين.</span></span></div>
+    <p class="warn"><b>⚠️ انتبه:</b> كيف تكتب العكس: «ما فيه» يصير «فيه». «غير نسبي» يصير «نسبي». «إذا P فإن Q» يصير «P صح و Q غلط». و«و» تصير «أو».</p>
+  </div>
+</section>
+
+<section class="page" id="p-s3" style="gap:1.6mm">
+  <div class="hdr"><span class="u">ملخص الفصل 5 · الوجود والبرهان بالتناقض</span><span class="pn"></span></div>
+  <div class="tb">
+    <div class="tbh"><span class="tn">3</span><span class="tt">ثلاث طرق</span></div>
+    <p class="meta"><b>متى يجيك:</b> لما يطلب نفس الجملة بثلاث طرق: <span class="lt">direct</span> و <span class="lt">contrapositive</span> و <span class="lt">contradiction</span>.</p>
+    <p class="meta"><b>الفكرة:</b> الجملة «إذا P فإن Q». الفرق بين الطرق بس في وش تفترض بأول سطر، ووين توصل.</p>
+    <div class="steps"><span><span class="n">1</span><b>مباشر:</b> تفترض P، وتوصل لـ Q.</span><span><span class="n">2</span><b>عكس النقيض:</b> تفترض إن Q غلط، وتوصل إن P غلط.</span><span><span class="n">3</span><b>تناقض:</b> تفترض P صح و Q غلط مع بعض، وتوصل لشي مستحيل.</span></div>
+    <div class="exq"><span class="lb2">مثال</span><span class="bx"><span class="e2">If \(n\) is an even integer, then \(5n + 1\) is odd.</span><span class="a2">يعني: لو n زوجي، فـ \(5n + 1\) فردي. هنا P = «n زوجي»، و Q = «\(5n + 1\) فردي».</span></span></div>
+    <div class="ans"><span class="lb2">(a) مباشر</span><span class="bx"><span class="e2">Assume that \(n\) is even. Then \(n = 2k\) for some integer \(k\). So \(5n + 1 = 10k + 1 = 2(5k) + 1\), which is odd.</span><span class="a2">يعني: n زوجي فنكتبه 2k، ونعوّض. يطلع \(5n + 1\) على شكل \(2(\ldots) + 1\)، يعني فردي.</span></span></div>
+    <div class="ans"><span class="lb2">(b) عكس النقيض</span><span class="bx"><span class="e2">Assume that \(5n + 1\) is even. Then \(5n + 1 = 2k\) for some integer \(k\). So \(n = (5n + 1) - 4n - 1 = 2(k - 2n - 1) + 1\), which is odd.</span><span class="a2">يعني: نفترض \(5n + 1\) زوجي (عكس Q)، ونطلّع n منها. يطلع n فردي (عكس P).</span></span></div>
+    <div class="ans"><span class="lb2">(c) تناقض</span><span class="bx"><span class="e2">Assume, to the contrary, that there is an even integer \(n\) such that \(5n + 1\) is even. Then \(n = 2x\) and \(5n + 1 = 2y\) for some integers \(x, y\). So \(10x + 1 = 2y\) and \(1 = 2(y - 5x)\). Thus 1 is even, which is a contradiction.</span><span class="a2">يعني: نفترض n زوجي و \(5n + 1\) زوجي مع بعض. يطلع إن 1 زوجي، وهذا مستحيل.</span></span></div>
+    <p class="warn"><b>⚠️ انتبه:</b> لا تبدأ أبداً بإنك تفترض Q (إن \(5n + 1\) فردي)، لأن هذا هو اللي مطلوب منك تثبته.</p>
   </div>
   <div class="tb">
-    <div class="tbh"><span class="tn">4</span><span class="tt">الوجود</span><span class="tk">تعرفه: <span class="lt">Prove</span> + <span class="lt">There exists</span></span></div>
-    <div class="chain"><span class="c">اختر</span><span class="a">←</span><span class="c">تحقق</span><span class="a">←</span><span class="c">اختم</span></div>
-    <div class="exq"><span class="lb2">مثال 1</span><span class="e2">There exists an integer whose cube equals its square.</span></div>
-    <div class="ans"><span class="lb2">الجواب</span><span class="e2">Since \(1^3 = 1^2 = 1\), the integer 1 has the desired property.</span></div>
-    <div class="exq"><span class="lb2">مثال 2</span><span class="e2">The equation \(x^5 + 2x - 5 = 0\) has a unique real solution between \(x = 1\) and \(x = 2\).</span></div>
-    <div class="ans"><span class="lb2">الجواب</span><span class="e2"><b>Existence.</b> Let \(f(x) = x^5 + 2x - 5\). Since \(f\) is a polynomial, it is continuous on \([1, 2]\). Since \(f(1) = -2 \lt 0 \lt 31 = f(2)\), by the Intermediate Value Theorem there is \(c \in (1, 2)\) with \(f(c) = 0\).<br><b>Uniqueness.</b> Assume, to the contrary, that there are two solutions \(a \lt b\) in \((1, 2)\). Then \(a^5 + 2a - 5 \lt b^5 + 2b - 5\), so \(0 \lt 0\), a contradiction.</span></div>
-    <p class="warn"><b>⚠️</b> «حل وحيد» = جزأين: الوجود بالقيمة الوسطى، والوحدانية بالتناقض.</p>
+    <div class="tbh"><span class="tn">4</span><span class="tt">الوجود</span></div>
+    <p class="meta"><b>متى يجيك:</b> لما يقول «<span class="lt">Prove: There exists …</span>» (اثبت إنه يوجد…).</p>
+    <p class="meta"><b>الفكرة:</b> يكفي تجيب مثال واحد يحقق الشرط، وتتحقق منه بالأرقام.</p>
+    <div class="steps"><span><span class="n">1</span>اختر الشي: رقم أو أرقام.</span><span><span class="n">2</span>تحقق إنه يمشي مع كل شروط السؤال.</span><span><span class="n">3</span>قل إنه هو المطلوب.</span></div>
+    <div class="exq"><span class="lb2">مثال 1</span><span class="bx"><span class="e2">There exists an integer whose cube equals its square.</span><span class="a2">يعني: فيه عدد صحيح مكعبه يساوي مربعه.</span></span></div>
+    <div class="ans"><span class="lb2">تكتب</span><span class="bx"><span class="e2">Since \(1^3 = 1^2 = 1\), the integer 1 has the desired property.</span></span></div>
+    <div class="exq"><span class="lb2">مثال 2</span><span class="bx"><span class="e2">The equation \(x^5 + 2x - 5 = 0\) has a unique real solution between \(x = 1\) and \(x = 2\).</span><span class="a2">يعني: المعادلة لها حل واحد بس بين 1 و2.</span></span></div>
+    <p class="think2"><b>كيف تفكر:</b> عند 1 الدالة سالبة (\(-2\))، وعند 2 موجبة (31)، فلازم تقطع الصفر بينهم. ولو فيه حلين، يطلع \(0 \lt 0\). مستحيل.</p>
+    <div class="ans"><span class="lb2">تكتب</span><span class="bx"><span class="e2"><b>Existence.</b> Let \(f(x) = x^5 + 2x - 5\). Since \(f\) is a polynomial, it is continuous on \([1, 2]\). Since \(f(1) = -2 \lt 0 \lt 31 = f(2)\), by the Intermediate Value Theorem there is \(c \in (1, 2)\) with \(f(c) = 0\).<br><b>Uniqueness.</b> Assume, to the contrary, that there are two solutions \(a \lt b\) in \((1, 2)\). Then \(a^5 + 2a - 5 \lt b^5 + 2b - 5\), so \(0 \lt 0\), a contradiction.</span><span class="a2">يعني: «حل وحيد» (<span class="lt">unique</span>) جزأين: إنه موجود (بالقيمة الوسطى)، وإنه واحد بس (بالتناقض).</span></span></div>
   </div>
+</section>
+
+<section class="page" id="p-s4" style="gap:2.6mm">
+  <div class="hdr"><span class="u">ملخص الفصل 5 · الوجود والبرهان بالتناقض</span><span class="pn"></span></div>
   <div class="tb">
-    <div class="tbh"><span class="tn">5</span><span class="tt">نفي الوجود</span><span class="tk">تعرفه: <span class="lt">Disprove</span> + <span class="lt">There exists</span></span></div>
-    <div class="chain"><span class="c">اقلب</span><span class="a">←</span><span class="c">خذ أي x</span><span class="a">←</span><span class="c">اثبت</span></div>
-    <div class="exq"><span class="lb2">مثال</span><span class="e2">Disprove: There exists an integer \(n\) such that \(n^3 - n + 1\) is even.</span></div>
-    <div class="ans"><span class="lb2">الجواب</span><span class="e2">We show that \(n^3 - n + 1\) is odd for every \(n \in \mathbb{Z}\).<br><i>Case 1.</i> \(n = 2a\): \(n^3 - n + 1 = 8a^3 - 2a + 1 = 2(4a^3 - a) + 1\), which is odd.<br><i>Case 2.</i> \(n = 2b + 1\): \(n^3 - n + 1 = 8b^3 + 12b^2 + 4b + 1 = 2(4b^3 + 6b^2 + 2b) + 1\), which is odd.</span></div>
-    <p class="warn"><b>⚠️</b> هنا مثال واحد ما يكفي: لازم تثبت «لكل n».</p>
+    <div class="tbh"><span class="tn">5</span><span class="tt">نفي الوجود</span></div>
+    <p class="meta"><b>متى يجيك:</b> لما يقول «<span class="lt">Disprove: There exists …</span>» (اثبت إنه ما يوجد…).</p>
+    <p class="meta"><b>الفكرة:</b> هنا مثال واحد ما يكفي. لازم تثبت إن الشي غلط مع كل الأرقام.</p>
+    <div class="steps"><span><span class="n">1</span>اقلب السؤال: بدل «فيه رقم كذا»، تثبت إن كل الأرقام عكس كذا.</span><span><span class="n">2</span>خذ رقم عام (مو رقم معيّن) واكتبه بالرموز.</span><span><span class="n">3</span>اثبت بالحساب، أو بحالتين: زوجي وفردي.</span></div>
+    <div class="exq"><span class="lb2">مثال</span><span class="bx"><span class="e2">Disprove: There exists an integer \(n\) such that \(n^3 - n + 1\) is even.</span><span class="a2">يعني: اثبت إنه ما فيه عدد صحيح يخلي \(n^3 - n + 1\) زوجي.</span></span></div>
+    <p class="think2"><b>كيف تفكر:</b> نجرب 0، 1، 2، 3: يطلع 1، 1، 7، 25، كلها فردية. فنثبت إنها فردية دايماً: مرة n زوجي، ومرة n فردي.</p>
+    <div class="ans"><span class="lb2">تكتب</span><span class="bx"><span class="e2">We show that \(n^3 - n + 1\) is odd for every \(n \in \mathbb{Z}\).<br><i>Case 1.</i> \(n = 2a\): \(n^3 - n + 1 = 8a^3 - 2a + 1 = 2(4a^3 - a) + 1\), which is odd.<br><i>Case 2.</i> \(n = 2b + 1\): \(n^3 - n + 1 = 8b^3 + 12b^2 + 4b + 1 = 2(4b^3 + 6b^2 + 2b) + 1\), which is odd.</span><span class="a2">يعني: في الحالتين يطلع الناتج على شكل \(2(\ldots) + 1\)، يعني فردي دايماً.</span></span></div>
+    <p class="warn"><b>⚠️ انتبه:</b> لا تخلط: «<span class="lt">Disprove: For every</span>» يكفيها مثال واحد. أما «<span class="lt">Disprove: There exists</span>» فلازم برهان لكل الأرقام.</p>
+  </div>
+  <div class="box">
+    <h3>خمس جمل احفظها بالإنجليزي</h3>
+  <table class="bi">
+    <tr><td class="a">إذن هذا الرقم مثال مضاد.</td><td class="e">Thus, \(n = \ldots\) is a counterexample.</td></tr>
+    <tr><td class="a">نفترض العكس إن …</td><td class="e">Assume, to the contrary, that …</td></tr>
+    <tr><td class="a">وهذا تناقض.</td><td class="e">This is a contradiction.</td></tr>
+    <tr><td class="a">وهذا يحقق المطلوب.</td><td class="e">… has the desired property.</td></tr>
+    <tr><td class="a">نثبت إن …</td><td class="e">We show that …</td></tr>
+  </table>
   </div>
 </section>

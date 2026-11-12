@@ -177,8 +177,8 @@ table.bi { width: 100%; border-collapse: collapse; flex: none; }
 .toc td { font-size: 10.8pt; padding: 1.5mm 2mm; }
 .toc th { font-size: 10.4pt; padding: 1.3mm 2mm; }
 /* ---- quick summary ---- */
-#p-s1 table.t td, #p-s1 table.t th { padding: 1.1mm 2mm; font-size: 10.4pt; }
-.page#p-s1, .page#p-s2 { padding-top: 11mm; }
+#p-s1 table.t td, #p-s1 table.t th { padding: 1.3mm 2mm; font-size: 10.6pt; }
+.page#p-s1, .page#p-s2, .page#p-s3, .page#p-s4 { padding-top: 11mm; }
 .tb { border: .8pt solid var(--line); border-radius: 2.4mm; padding: 1.8mm 3.4mm 2mm; flex: none; display: flex; flex-direction: column; gap: 1.1mm; }
 .tbh { display: flex; align-items: center; gap: 2.4mm; flex-wrap: wrap; }
 .tbh .tn { display: inline-block; width: 7.4mm; height: 7.4mm; line-height: 7.4mm; text-align: center; border-radius: 50%; background: var(--acc); color: #fff; font-weight: 700; font-size: 12.5pt; flex: none; }
@@ -200,6 +200,16 @@ table.bi { width: 100%; border-collapse: collapse; flex: none; }
 .fl div { padding: .8mm 2mm; border-inline-start: .6pt solid var(--line); text-align: center; }
 .fl div:first-child { border-inline-start: 0; }
 .fl .h { background: var(--acc-soft); color: var(--acc); font-weight: 700; }
+.exq .bx, .ans .bx { display: flex; flex-direction: column; gap: .7mm; min-width: 0; }
+.a2 { direction: rtl; text-align: right; font-family: var(--ar); font-size: 10.6pt; line-height: 1.6; color: #37424a; border-top: .6pt dashed rgba(0,0,0,.12); padding-top: .7mm; }
+.meta { font-size: 10.8pt; line-height: 1.65; }
+.meta b { color: var(--acc); }
+.steps { display: flex; flex-direction: column; gap: .3mm; font-size: 10.6pt; line-height: 1.6; }
+.steps span.n { display: inline-block; width: 4.6mm; height: 4.6mm; line-height: 4.6mm; text-align: center; border-radius: 50%; background: #b47a00; color: #fff; font-size: 8pt; font-weight: 700; margin-inline-end: 1.2mm; }
+.think2 { font-size: 10.6pt; line-height: 1.6; background: #fbfaf5; border-radius: 1.6mm; padding: 1.1mm 2.6mm; }
+.think2 b { color: #855700; }
+.gl { font-size: 10pt; color: var(--muted); line-height: 1.55; }
+#p-s3 .e2 { font-size: 10.5pt; line-height: 1.45; } #p-s3 .a2, #p-s3 .meta, #p-s3 .steps, #p-s3 .think2, #p-s3 .warn { font-size: 10.2pt; line-height: 1.5; } #p-s3 .tb { gap: .9mm; }
 .wl { background-image: repeating-linear-gradient(to bottom, transparent 0 7.9mm, var(--faint) 7.9mm 8.2mm); }
 .bi2 { direction: ltr; width: 100%; border-collapse: collapse; flex: none; }
 .bi2 th { background: var(--acc-soft); color: var(--acc); font-size: 10.2pt; font-weight: 700; padding: 1.3mm 2.4mm; border: .6pt solid var(--line); font-family: var(--ar); }
