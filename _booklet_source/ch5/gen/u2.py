@@ -45,19 +45,36 @@ P.append(page('p-neg', U[2], 'must', 'أهم سطر: كيف تكتب العكس�
     '  <p class="small">تتأكد من أجوبتك من أول سطر في حلول 5.12 ' + ref('p-s2a') + ' و5.21 ' + ref('p-rt3') + ' و5.36 (c) ' + ref('p-s3') + '.</p>\n'))
 
 # ---------- p-ex5 ----------
-P.append(page('p-ex5', U[2], 'must', 'سؤال ميد 1447، وبعده دورك' + tag('past', 'ميد 1447 · 3 درجات'),
-    qbox('<span class="lb">4.</span> There is no smallest positive real number. (3 marks)',
-         'ما فيه أصغر عدد حقيقي موجب. جا تحت «' + lt('Prove or disprove') + '»، وهو مثال 5 في السلايدات بالحرف.') +
+def frow(en, take, why):
+    return [(en, 'class="e"'), take, (why, 'class="s"')]
+
+P.append(page('p-ex5', U[2], 'top', 'أكثر سؤال تكرر: ما فيه أصغر عدد موجب' + tag('past', '1447 · البنات · نوفمبر · 3 درجات'),
+    qbox('<span class="lb">2.</span> There is no smallest positive real number. (3 marks)',
+         'ما فيه أصغر عدد حقيقي موجب. جا بالحرف في ميد 1447 وميد البنات وميد نوفمبر، وهو مثال 5 في السلايدات.') +
     think('نفكر', [r'نجرب: هل 1 أصغر عدد موجب؟ لا، \(0.5\) أصغر. هل \(0.5\)؟ لا، \(0.25\) أصغر. أي عدد تختاره، نصّه أصغر منه وموجب.',
                    'فالجملة صحيحة، ونبرهنها بالتناقض. <b>نعكس:</b> نفترض فيه أصغر عدد موجب، ونسميه r.',
                    r'<b>نمشي:</b> نصّه \(r/2\) موجب وأصغر من r. <b>تناقض:</b> لقينا عدد موجب أصغر من «الأصغر».']) +
     W([('1', 'نعكس', r'Assume, to the contrary, that there is a smallest positive real number, say \(r\).', 'نفترض العكس: فيه أصغر عدد حقيقي موجب، ونسميه r.'),
        ('2', 'نمشي', r'Since \(0 \lt r/2 \lt r\), it follows that \(r/2\) is a positive real number that is smaller than \(r\).', 'نص r موجب، وأصغر من r.'),
        ('3', 'تناقض', 'This, however, is a contradiction.', 'وهذا يناقض أن r هو الأصغر.')], title='نكتب (الحل الرسمي: ثلاث جمل عليها 3 درجات)') +
+    '  <h3>نفس القالب لعائلة كاملة: تغيّر الكلمة، وتاخذ العدد المناسب</h3>\n' +
+    tbl([('لو جاك', 'width:47%'), ('خذ', 'width:10%'), 'ليش يكسر الافتراض'], [
+        frow('There is no smallest positive real number.', r'\(r/2\)', r'\(0 \lt r/2 \lt r\)'),
+        frow('There is no smallest positive rational number.', r'\(r/2\)', r'نفسه، وسطر زيادة: \(r/2 = a/(2b)\) نسبي'),
+        frow('There is no largest negative rational number.', r'\(r/2\)', r'\(r \lt r/2 \lt 0\)، وسطر «نسبي» (تمرين 5.12)'),
+        frow('There is no largest negative real number.', r'\(r/2\)', r'\(r \lt r/2 \lt 0\)'),
+        frow('There is no largest even integer.', r'\(n + 2\)', 'زوجي، وأكبر من n')]).replace('    <table', '  <table').replace('    </table>', '  </table>') +
+    note('trap', 'انتبه:', r'لو الجملة فيها «' + lt('rational') + r'»، قل ليش \(r/2\) نسبي. بدون هالسطر البرهان ناقص.'), style='gap:3mm'))
+
+# ---------- p-fam ----------
+P.append(page('p-fam', U[2], 'top', 'دورك: نفس العائلة' + tag('ex', 'دورك'),
+    qbox('There is no smallest positive rational number.',
+         'ما فيه أصغر عدد نسبي موجب. توأم سؤال الميد: «حقيقي» صارت «نسبي». أكمل الفراغات بدون ما تطالع الصفحة اللي قبل.', lab='أكمل الفراغ · توأم سؤال الميد', cls='ex') +
+    fillp([('', r'Assume, to the contrary, that there is a ' + B('w') + r' positive rational number, say \(r\). Then \(r = a/b\) for some integers \(a\) and \(b\) with \(b \ne 0\), and so \(r/2 =\) ' + B() + r' is a rational number. Since \(0 \lt r/2 \lt\) ' + B('s') + r', it follows that \(r/2\) is a positive rational number that is ' + B() + r' than \(r\). This is a ' + B('w') + '.')]) +
     duork('5.12', '<span class="lb">5.12.</span> Prove that there is no largest negative rational number.',
-          r'اثبت أنه ما فيه أكبر عدد نسبي سالب. (النسبي: ينكتب \(a/b\) حيث a و b أعداد صحيحة و \(b \ne 0\).)') +
-    W([('1', 'نعكس', None, None, 'b2'), ('2', 'نمشي', None, None, 'b2'), ('3', 'تناقض', None, None, 'b1')], title='') +
-    hints([r'<b>تلميح:</b> نص \(-1\) هو \(-0.5\)، وهو أكبر منه. فلو r سالب فإن \(r \lt r/2 \lt 0\). وقل ليش \(r/2\) نسبي: لو \(r = a/b\) فإن \(r/2 = a/(2b)\).']), style='gap:3.1mm'))
+          r'اثبت أنه ما فيه أكبر عدد نسبي سالب. (النسبي: ينكتب \(a/b\) حيث a و b أعداد صحيحة و \(b \ne 0\).) هنا من الصفر.') +
+    W([('1', 'نعكس', None, None, 'b2'), ('2', 'نمشي', None, None, 'b3'), ('3', 'تناقض', None, None, 'b1')], title='', cls='tpl grow') +
+    hints([r'<b>تلميح:</b> نص \(-1\) هو \(-0.5\)، وهو أكبر منه. فلو r سالب فإن \(r \lt r/2 \lt 0\). وقل ليش \(r/2\) نسبي: لو \(r = a/b\) فإن \(r/2 = a/(2b)\).'])))
 
 # ---------- p-ex7 ----------
 P.append(page('p-ex7', U[2], 'must', 'مثال: «إذا… فإن…» بالتناقض' + tag('sol', 'مثال السلايدات 7') + tag('ex', 'دورك'),
@@ -72,7 +89,7 @@ P.append(page('p-ex7', U[2], 'must', 'مثال: «إذا… فإن…» بالت
     hints([r'<b>تلميح:</b> العكس فيه «أو» (شف القواعد في ' + ref('p-neg') + r'). ولو \(5 \mid x\) فإن \(x = 5k\)، فـ \(xy = 5(ky)\).']), style='gap:3.1mm'))
 
 # ---------- p-rt2a ----------
-P.append(page('p-rt2a', U[2], 'must', r'\(\sqrt{2}\) غير نسبي: نفكر' + tag('sol', 'نظرية من السلايدات'),
+P.append(page('p-rt2a', U[2], 'top', r'\(\sqrt{2}\) غير نسبي: نفكر' + tag('sol', 'نظرية من السلايدات'),
     qbox(r'<span class="lb">Theorem.</span> The real number \(\sqrt{2}\) is irrational.',
          r'العدد \(\sqrt{2}\) غير نسبي، يعني ما ينكتب ككسر \(a/b\) من أعداد صحيحة.', lab='النظرية') +
     think('ثلاث أشياء تحتاجها قبل البرهان', [
@@ -85,24 +102,27 @@ P.append(page('p-rt2a', U[2], 'must', r'\(\sqrt{2}\) غير نسبي: نفكر' 
     think('خطة البرهان (بالتناقض)',
           before=chain([r'نفترض \(\sqrt{2} = a/b\) في أبسط صورة', r'نربّع: \(a^2 = 2b^2\)', 'a زوجي', r'نكتب \(a = 2c\) ونعوّض: \(b^2 = 2c^2\)', 'b زوجي', '2 يقسم a و b', 'تناقض مع «أبسط صورة»']),
           extra='    <p class="small">اقرأ السلسلة من اليمين. كل محطة تطلع من اللي قبلها. في الصفحة الجاية نكتبها بالإنجليزي.</p>\n') +
-    note('star', 'ليش مهمة؟', r'السلايدات تقول إنها من أشهر البراهين بالتناقض. وجا مثلها في نهائي 1446: \(\sqrt[3]{7}\) غير نسبي (3 درجات).') +
+    note('star', 'ليش مهمة؟', r'جت بالحرف في ميد نوفمبر (4 درجات)، وتوأمها \(\sqrt[3]{7}\) جا في نهائي 1446 (3 درجات). والسلايدات تقول إنها من أشهر البراهين بالتناقض.') +
     '  <div class="space" data-label="دورك: غطِّ السلسلة، واكتب المحطات السبع من ذاكرتك" style="min-height:34mm"></div>\n'))
 
 # ---------- p-rt2b ----------
-P.append(page('p-rt2b', U[2], 'must', r'\(\sqrt{2}\) غير نسبي: نكتب' + tag('sol', 'نظرية من السلايدات'),
+P.append(page('p-rt2b', U[2], 'top', r'\(\sqrt{2}\) غير نسبي: نكتب' + tag('sol', 'نظرية من السلايدات'),
     W([('1', 'نعكس', r'Assume, to the contrary, that \(\sqrt{2}\) is rational. Then \(\sqrt{2} = a/b\), where \(a, b \in \mathbb{Z}\) and \(b \ne 0\). We may further assume that \(a/b\) has been expressed in (or reduced to) lowest terms.', r'نفترض \(\sqrt{2}\) نسبي: كسر \(a/b\). ونفترض أن الكسر في أبسط صورة.'),
        ('2', 'نربّع', r'Then \(2 = a^2/b^2\); so \(a^2 = 2b^2\). Since \(b^2\) is an integer, \(a^2\) is even. Then \(a\) is even.', r'نربّع الطرفين. \(a^2\) يساوي 2 في عدد صحيح، يعني زوجي. فـ a زوجي.'),
        ('3', 'نعوّض', r'So, \(a = 2c\), where \(c \in \mathbb{Z}\). Thus, \((2c)^2 = 2b^2\) and so \(4c^2 = 2b^2\). Therefore, \(b^2 = 2c^2\). Because \(c^2\) is an integer, \(b^2\) is even, which implies that \(b\) is even.', r'نكتب \(a = 2c\) ونعوّض. يطلع \(b^2 = 2c^2\)، فـ b زوجي بعد.'),
        ('4', 'تناقض', r'Since \(a\) and \(b\) are even, each has 2 as a divisor, which is a contradiction since \(a/b\) has been reduced to lowest terms.', 'a و b الاثنين يقبلون القسمة على 2، وهذا يناقض أن الكسر في أبسط صورة.')], title='') +
     note('trap', 'انتبه:', 'لا تنسَ جملة «أبسط صورة» (' + lt('lowest terms') + ') في المحطة 1. بدونها ما فيه تناقض في المحطة 4.') +
-    note('trick', 'نفس القالب لغيره:', r'يشتغل لـ \(\sqrt{3}\) و \(\sqrt{5}\) و \(\sqrt[3]{7}\). بدّل «زوجي» بـ «يقبل القسمة على 3» (أو 5 أو 7)، والباقي نفسه.') +
     '  <div class="why2"><h3>اسأل نفسك</h3><div class="qa">\n    <div class="qq">وين استخدمنا أن الكسر في أبسط صورة؟</div>\n    <div class="aa">في آخر سطر بس. طلع أن 2 يقسم a و b، والكسر اللي في أبسط صورة ما يصير بسطه ومقامه الاثنين زوجيين. هذا هو التناقض.</div>\n  </div></div>\n' +
-    box('استراحة: لغز السجناء الثلاثة (من السلايدات، إضافي)', '''    <p style="font-size:11pt">السجّان غطّى عيون ثلاثة سجناء، وحط على جبين كل واحد نقطة حمراء أو زرقاء. بعدين شال الغطاء وقال: اللي يشوف نقطة حمراء على واحد من الاثنين الباقين يرفع يده، وأول واحد يعرف لون نقطته يطلع. هو حط حمراء للثلاثة، فكلهم رفعوا يدهم. بعد مدة قال واحد: «نقطتي حمراء!». كيف عرف؟</p>
-    <p style="font-size:11pt"><b>الحل (تناقض):</b> قال في نفسه: «نفترض أن نقطتي زرقاء. الثاني يشوف الثالث رافع يده، والثالث ما يشوف حمراء عندي، فلازم يشوفها عند الثاني. يعني الثاني بيعرف على طول أن نقطته حمراء. بس مر وقت ومحد تكلم. تناقض! إذن نقطتي حمراء.»</p>
-''')))
+    '  <h3>قالب الجذر: نفس المحطات، تغيّر الرقم بس</h3>\n' +
+    tbl(['السؤال', 'بعد ما تربّع أو تكعّب', 'المحطة 2', 'المحطة 3', 'وين جا'], [
+        [r'\(\sqrt{2}\)', r'\(a^2 = 2b^2\)', 'a زوجي', r'\(a = 2c\) ← b زوجي', 'ميد نوفمبر'],
+        [r'\(\sqrt{3}\)', r'\(a^2 = 3b^2\)', r'\(3 \mid a\)', r'\(a = 3c\) ← \(3 \mid b\)', 'تمرين 5.21'],
+        [r'\(\sqrt{5}\)', r'\(a^2 = 5b^2\)', r'\(5 \mid a\)', r'\(a = 5c\) ← \(5 \mid b\)', 'الاختبار التجريبي'],
+        [r'\(\sqrt[3]{7}\)', r'\(a^3 = 7b^3\)', r'\(7 \mid a\)', r'\(a = 7c\) ← \(7 \mid b\)', 'نهائي 1446']]).replace('    <table', '  <table').replace('    </table>', '  </table>') +
+    note('star', 'الدرجات:', 'عليها 3 إلى 4 درجات، فاكتب المحطات الأربع كاملة ولا تختصر.'), style='gap:3.2mm'))
 
 # ---------- p-rt3 ----------
-P.append(page('p-rt3', U[2], 'must', 'دورك: توأم النظرية، ثم سؤال النهائي' + tag('past', 'نهائي 1446 · 3 درجات'),
+P.append(page('p-rt3', U[2], 'top', 'دورك: توأم النظرية، ثم سؤال النهائي' + tag('past', 'نهائي 1446 · 3 درجات'),
     duork('5.21', r'<span class="lb">5.21.</span> Prove that \(\sqrt{3}\) is irrational. [Hint: By Result 4.8, for an integer \(a\), \(3 \mid a^2\) if and only if \(3 \mid a\).]',
           r'اثبت أن \(\sqrt{3}\) غير نسبي. (تلميح الكتاب: 3 يقسم \(a^2\) إذا وفقط إذا 3 يقسم a.) كمّل الفراغات من ذاكرتك.') +
     r'''  <div class="stmt" style="line-height:2.15">
@@ -129,6 +149,11 @@ P.append(page('p-518', U[2], 'extra', 'مثال: نسبي + غير نسبي' + t
 
 # ---------- p-s2a ----------
 P.append(page('p-s2a', 'حلول الوحدة 2', '', 'الحلول' + tag('sol', 'شيّك'),
+    '  <h3>أكمل الفراغ ' + ref('p-fam') + ': بالترتيب</h3>\n' +
+    r'''  <ol class="notes" style="direction:ltr; text-align:left; font-family:var(--en); columns:5; column-gap:6mm">
+    <li>smallest</li><li>\(a/(2b)\)</li><li>\(r\)</li><li>smaller</li><li>contradiction</li>
+  </ol>
+''' +
     '  <h3>تمرين 5.12</h3>\n' +
     W([('1', 'نعكس', r'Assume, to the contrary, that there is a largest negative rational number, say \(r\).', 'نفترض فيه أكبر عدد نسبي سالب r.'),
        ('2', 'نمشي', r'Then \(r = a/b\) for some integers \(a\) and \(b\) with \(b \ne 0\), and so \(r/2 = a/(2b)\) is a rational number. Since \(r \lt 0\), it follows that \(r \lt r/2 \lt 0\).', r'نص r نسبي بعد، وهو سالب وأكبر من r. (مثل: نص \(-1\) هو \(-0.5\)، وهو أكبر من \(-1\).)'),

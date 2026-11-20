@@ -5,53 +5,56 @@ from h5 import *
 def toc_row(u, kind, words, ex, pid):
     return ['<b>' + u + '</b>', (kind, 'class="s"'), (words, 'class="s"'), ex, ref(pid)]
 
+def prow(kind, ex, where, mk, st, pid):
+    return ['<b>' + kind + '</b><br><span class="small">' + ex + '</span>', where, mk, st, ref(pid)]
+
+S3 = '<span class="stars">★★★</span>'
+S2 = '<span class="stars">★★</span><span class="stars dim">★</span>'
+S1 = '<span class="stars">★</span><span class="stars dim">★★</span>'
+
 cover = r'''<section class="page cover" id="p-cover">
-  <div class="hdr"><span class="u">131 ريض · الميد الثاني</span><span class="pn"></span></div>
+  <div class="hdr"><span class="u">131 ريض · الميد الثاني والاختبار البديل</span><span class="pn"></span></div>
   <div>
-    <p class="kicker">ملزمة الفصل 5 · الأقسام 5.1 إلى 5.5</p>
+    <p class="kicker">ملزمة الفصل 5 · الأقسام 5.1 إلى 5.5 · نسخة التدريب</p>
     <h1>الوجود والبرهان بالتناقض</h1>
-    <p class="sub">الفصل كله خمس أنواع أسئلة. لكل نوع: بطاقة خطوات، وأمثلة محلولة سطر بسطر، وبعد كل مثال تمرين من نفس نوعه تحله بنفس الخطوات.</p>
+    <p class="sub">رتّبناها على اللي جا فعلاً في أربع ميدات: ميد 1446، وميد 1447، وميد البنات، وميد نوفمبر 2026. الأسئلة تتكرر، والأرقام بس تتغير.</p>
   </div>
   <div class="box">
-    <h3>كيف تستخدمها</h3>
-    <ol>
-      <li>امشِ بالترتيب. كل وحدة تبدأ بـ«بطاقة خطوات» فيها ثلاث خطوات تحفظها.</li>
-      <li>كل مثال يمشي كذا: السؤال، ثم نفكر بالأرقام، ثم نكتب الجواب وتحت كل سطر معناه.</li>
-      <li>بعد المثال يجي «دورك»: تمرين من نفس النوع. غطِّ المثال وحلّه، وبعدها شيّك من الحلول.</li>
-      <li>مستعجل؟ امشِ على الصفحات اللي فوقها «أساسي» بس.</li>
-    </ol>
+    <h3>وش يجي من الفصل 5؟</h3>
+''' + tbl([('نوع السؤال، ومثال من الاختبار', 'width:41%'), 'جا في', ('الدرجة', 'width:11%'), ('الأهمية', 'width:11%'), ('الصفحة', 'width:9%')], [
+    prow('ثلاث طرق للبرهان', r'إذا n زوجي فإن \(5n + 3\) فردي', 'ميد 1446 · البنات · نوفمبر', '6 إلى 7', S3, 'p-u3'),
+    prow('ما فيه أصغر عدد موجب', lt('There is no smallest positive real number.'), 'ميد 1447 · البنات · نوفمبر', '3', S3, 'p-ex5'),
+    prow('مثال مضاد فيه فخ', r'لكل n زوجي موجب، 12 يقسم \(n^2 - 4\)', 'ميد 1447 · البنات · نوفمبر', '2 إلى 3', S3, 'p-mid5'),
+    prow('غير نسبي', r'\(\sqrt{2}\) غير نسبي، و \(\sqrt[3]{7}\) غير نسبي', 'نوفمبر · نهائي 1446', '3 إلى 4', S2, 'p-rt2a'),
+    prow('الوجود ونفي الوجود', lt('There exists …'), 'ما جا ولا مرة', '—', S1, 'p-u4'),
+], cls='t toc').replace('    <table', '  <table').replace('    </table>', '  </table>') + r'''    <p class="small" style="margin-top:1.2mm">ميد نوفمبر كان كذا: سؤال 1 (14 درجة) فيه ثلاث فقرات من الفصل 5 وفقرة استقراء، وسؤال 2 ثلاث طرق (6 درجات)، وسؤال 3 استقراء قوي (5 درجات). يعني الفصل 5 عليه 16 من 25.</p>
   </div>
   <div class="box">
-    <h3>خريطة الملزمة: خمس أنواع أسئلة</h3>
-''' + tbl([('الوحدة', 'width:9%'), ('نوع السؤال', 'width:19%'), 'كيف يجي في الاختبار', ('تمارين الخطة', 'width:21%'), ('الصفحة', 'width:9%')], [
-    toc_row('1', 'مثال مضاد', lt('Disprove: For every …') + ' أو ' + lt('If …, then …'), '5.2 · 5.3 · 5.4 · 5.5', 'p-u1'),
-    toc_row('2', 'برهان بالتناقض', lt('Prove: There is no …') + ' أو ' + lt('… is irrational'), '5.12 · 5.18 · 5.21 · 5.33', 'p-u2'),
-    toc_row('3', 'ثلاث طرق للبرهان', lt('Prove … by a direct proof, …'), '5.36 · 5.39', 'p-u3'),
-    toc_row('4', 'برهان الوجود', lt('Prove: There exists …'), '5.42 · 5.46 · 5.51 · 5.53', 'p-u4'),
-    toc_row('5', 'نفي الوجود', lt('Disprove: There exists …'), '5.55 · 5.57', 'p-u5'),
-    toc_row('6', 'تدريب الاختبار', 'أي طريقة؟ · جمل الكتابة · اختبار قصير · ورقة ليلة الاختبار', '—', 'p-which'),
-], cls='t toc') + r'''  </div>
+    <h3>كيف تتدرب: كل نوع بأربع مستويات</h3>
+    <div class="levels">
+      <div class="lvx"><b><span class="num">1</span>شوف</b>مثال محلول سطر بسطر، وتحت كل سطر معناه.</div>
+      <div class="lvx"><b><span class="num">2</span>أكمل</b>نفس الحل وفيه فراغات. تعبيها من ذاكرتك.</div>
+      <div class="lvx"><b><span class="num">3</span>اكتب لحالك</b>«دورك»: تحل من الصفر، وبعدها تشيّك من الحلول.</div>
+      <div class="lvx"><b><span class="num">4</span>اختبر نفسك</b>اختبارين بوقت بصيغة ميد نوفمبر، وتصحح بالدرجات.</div>
+    </div>
+  </div>
   <div class="grid2">
     <div class="box">
-      <h3>أسئلة الاختبارات السابقة</h3>
-      <ul class="chk">
-        <li><span class="cb"></span>ما فيه أصغر عدد موجب · ميد 1447 <span class="pg ref" data-to="p-ex5"></span></li>
-        <li><span class="cb"></span>مثال مضاد · ميد 1447 <span class="pg ref" data-to="p-mid5"></span></li>
-        <li><span class="cb"></span>\(\sqrt[3]{7}\) غير نسبي · نهائي 1446 <span class="pg ref" data-to="p-rt3"></span></li>
-      </ul>
+      <h3>خطة المذاكرة</h3>
+      <p class="fl3"><b>الجلسة 1 (ساعتين):</b> الوحدتين 1 و2، وركّز على صفحات&nbsp;★.</p>
+      <p class="fl3"><b>الجلسة 2 (ساعتين):</b> الوحدة 3 كلها (أهم سؤال)، وبعدها الوحدتين 4 و5 بسرعة.</p>
+      <p class="fl3"><b>الجلسة 3 (ساعة ونص):</b> الاختبار التجريبي 1، صحّحه، ارجع للي نقصت فيه، وبعدها الاختبار 2.</p>
+      <p class="fl3"><b>ليلة الاختبار:</b> ورقة ليلة الاختبار <span class="ref" data-to="p-night"></span>.</p>
     </div>
     <div class="box">
-      <h3>خطة المذاكرة</h3>
-      <p style="font-size:11pt"><b>الجلسة 1:</b> الوحدتين 1 و2. تقريباً ساعتين وربع.</p>
-      <p style="font-size:11pt"><b>الجلسة 2:</b> الوحدات 3 و4 و5. تقريباً ساعتين ونص.</p>
-      <p style="font-size:11pt"><b>قبل الاختبار:</b> الوحدة 6. تقريباً ساعة.</p>
+      <h3>رموز الصفحات</h3>
+      <p class="fl3"><span class="lv top">★ يتكرر في الاختبارات</span> سؤاله جا أكثر من مرة. وقتك قليل؟ ذاكر هذي بس.</p>
+      <p class="fl3"><span class="lv must">أساسي</span> شرح تحتاجه.</p>
+      <p class="fl3"><span class="lv low">احتمال أقل</span> من الخطة، بس ما جا في الميدات.</p>
+      <p class="fl3"><span style="color:var(--acc);font-weight:700">■</span> شرح <span style="color:#2f5fa8;font-weight:700">■</span> دورك <span style="color:#b47a00;font-weight:700">■</span> سؤال اختبار <span style="color:#8a959c;font-weight:700">■</span> حلول</p>
     </div>
   </div>
-  <div class="box">
-    <h3>ألوان الصفحات</h3>
-    <p style="font-size:11pt"><span style="color:var(--acc);font-weight:700">■ أخضر:</span> شرح ومثال محلول &nbsp;·&nbsp; <span style="color:#2f5fa8;font-weight:700">■ أزرق:</span> مثال وبعده تمرين تحله &nbsp;·&nbsp; <span style="color:#b47a00;font-weight:700">■ ذهبي:</span> سؤال اختبار سابق &nbsp;·&nbsp; <span style="color:#8a959c;font-weight:700">■ رمادي:</span> حلول</p>
-  </div>
-  <p class="small">ليش هالفصل مهم: في ميد 1447 جا منه سؤالين (5 درجات من 25)، والاثنين من أمثلة الكتاب بالحرف. علقت بكلمة إنجليزية؟ شوف <span class="ref" data-to="p-phr"></span>.</p>
+  <p class="small">أسئلة الاستقراء (في ميد نوفمبر: فقرة 1.4 وسؤال 3) في ملزمة الفصل 6. علقت بكلمة إنجليزية؟ شوف <span class="ref" data-to="p-phr"></span>.</p>
 </section>
 '''
 
@@ -74,12 +77,12 @@ P.append(page('p-u1', U1, 'must', 'المثال المضاد: الفكرة با�
           (r'<span class="lb">Definition.</span> If a statement \(P\) is shown to be false in some manner, then \(P\) is said to be <i>disproved</i>.',
            'لما تثبت أن جملة خاطئة، نقول إنك <b>نفيتها</b>. فكلمة ' + lt('Disprove') + ' في السؤال معناها: اثبت أنها خاطئة.')]) +
     card('بطاقة الخطوات: المثال المضاد', [
-        ('جرّب', r'قيم من المجموعة اللي في السؤال، لين تلقى وحدة تفشل. ابدأ بـ 0 و1 و\(-1\) و2.'),
+        ('جرّب', r'قيم من مجموعة السؤال بالترتيب، لين تلقى وحدة تفشل. جرّب 4 قيم على الأقل.'),
         ('احسب', 'واكتب القيمة والحساب بالأرقام: ' + lt(r'For \(x = \ldots\), …')),
         ('احكم', lt(r'Thus, \(x = \ldots\) is a counterexample.'))]), style='gap:3.1mm'))
 
 # ---------- p-mid5 ----------
-P.append(page('p-mid5', U[1], 'must', 'سؤال ميد 1447، وبعده دورك' + tag('past', 'ميد 1447 · درجتين'),
+P.append(page('p-mid5', U[1], 'top', 'فخ أول قيمة: سؤال ميد 1447، وبعده دورك' + tag('past', 'ميد 1447 · درجتين'),
     qbox(r'<span class="lb">5.</span> For every odd positive integer \(n\), \(3 \mid (n^2 - 1)\). (2 marks)',
          r'لكل عدد فردي موجب n، العدد 3 يقسم \(n^2 - 1\). السؤال جا تحت «' + lt('Prove or disprove') + '»، يعني أنت تقرر: صح أو خطأ.') +
     think('نفكر', [r'نجرب الأعداد الفردية الموجبة بالترتيب. \(n = 1\): \(1^2 - 1 = 0\)، و3 يقسم 0 (لأن \(0 = 3 \times 0\)) ' + OK,
@@ -87,12 +90,33 @@ P.append(page('p-mid5', U[1], 'must', 'سؤال ميد 1447، وبعده دور�
                    r'لقينا قيمة تفشل، فالجملة خاطئة، و \(n = 3\) مثال مضاد.']) +
     W([('1', 'الحكم', 'False.', 'الجملة خاطئة.'),
        ('2', 'الحل الرسمي', r'Since \(3 \nmid 8\), so \(3 \nmid (3^2 - 1)\). It follows that \(n = 3\) is a counterexample.', r'3 ما يقسم 8، يعني ما يقسم \(3^2 - 1\). فـ \(n = 3\) مثال مضاد.')], title='نكتب (الحل الرسمي)') +
-    note('trap', 'انتبه:', r'أول قيمة مشت! لو وقفت عند \(n = 1\) كان حكمت «صح» وراحت الدرجتين. جرّب ثلاث قيم على الأقل. والمثال لازم يكون من مجموعة السؤال: هنا فردي وموجب.') +
+    note('trap', 'انتبه:', r'أول قيمة مشت! لو وقفت عند \(n = 1\) كان حكمت «صح» وراحت الدرجتين. جرّب 4 قيم على الأقل. والمثال لازم يكون من مجموعة السؤال: هنا فردي وموجب.') +
     duork('5.3', r'<span class="lb">5.3.</span> Disprove the statement: If \(n \in \{1, 2, 3, 4, 5\}\), then \(3 \mid (2n^2 + 1)\).',
           r'انفِ الجملة: لكل n من 1 إلى 5، العدد 3 يقسم \(2n^2 + 1\). كمّل الجدول، ووقّف عند أول قيمة تفشل.') +
     tbl([r'\(n\)', '1', '2', '3', '4', '5'],
         [[r'\(2n^2 + 1\)', '3', '9', ('', 'style="height:9mm"'), '', ''], ['3 يقسمه؟', OK, OK, ('', 'style="height:9mm"'), '', '']], ltr=True, style='table-layout:fixed').replace('    <table', '  <table').replace('    </table>', '  </table>') +
     W([('', 'الجواب', None, None, 'b2')], title=''), style='gap:3.2mm'))
+
+# ---------- p-trap: the same trap in the girls' exam and the November exam ----------
+def drow(n, en):
+    return [n, (en, 'class="e"'), '', '']
+
+P.append(page('p-trap', U[1], 'top', 'نفس الفخ في ميد البنات وميد نوفمبر' + tag('past', 'البنات · نوفمبر'),
+    qbox(r'<span class="lb">3-</span> For every even positive integer \(n\), \(12 \mid (n^2 - 4)\). (2 marks)',
+         r'لكل عدد زوجي موجب n، العدد 12 يقسم \(n^2 - 4\).', lab='سؤال ميد البنات · درجتين') +
+    think('نفكر', before=tbl([r'\(n\)', '2', '4', '6'], [[r'\(n^2 - 4\)', '0', '12', '32'], ['12 يقسمه؟', OK, OK, NO]], ltr=True),
+          extra='    <p>أول قيمتين مشت، والثالثة فشلت. اللي يوقف عند قيمتين يحكم «صح» ويخسر الدرجتين.</p>\n') +
+    W([('', 'الجواب', r'False. For \(n = 6\), \(n^2 - 4 = 32\) and \(12 \nmid 32\). Thus, \(n = 6\) is a counterexample.', '')], title='') +
+    qbox(r'<span class="lb">1.</span> If \(n\) is an odd integer, then \(n^2 - n\) is odd.',
+         r'إذا n فردي، فإن \(n^2 - n\) فردي. <b>نفكر:</b> \(n = 1\) يعطي 0، و \(n = 3\) يعطي 6. الاثنين زوجي ' + NO + r' كل القيم تفشل، لأن \(n^2 - n = n(n - 1)\) عددين ورا بعض، وواحد منهم زوجي. فالفخ هنا عكسي: شكلها «برهن»، وهي خاطئة.', lab='سؤال ميد نوفمبر · 3 درجات') +
+    W([('', 'الجواب', r'False. For \(n = 3\), \(n^2 - n = 9 - 3 = 6\), which is even. Thus, \(n = 3\) is a counterexample.', '')], title='') +
+    '  <h3>تدريب سرعة: لقِ أول قيمة تفشل (نفس الفخ بأرقام ثانية)</h3>\n' +
+    tbl([('', 'width:6%'), 'الجملة', ('أول قيمة تفشل', 'width:17%'), ('الحساب', 'width:24%')], [
+        drow('1', r'For every odd positive integer \(n\), \(5 \mid (n^2 - 1)\).'),
+        drow('2', r'For every even positive integer \(n\), \(8 \mid (n^2 + 4)\).'),
+        drow('3', r'For every positive integer \(n\), \(2^n + 1\) is a prime number.'),
+        drow('4', r'If \(n\) is an even integer, then \(n^2 + n\) is odd.')], cls='t drill').replace('    <table', '  <table').replace('    </table>', '  </table>') +
+    note('trick', 'القاعدة:', 'جرّب 4 قيم على الأقل بالترتيب. ولو كل القيم فشلت (مثل سؤال نوفمبر)، فالجملة خاطئة من أساسها: اختر أوضح قيمة واكتب حسابها.'), style='gap:3mm'))
 
 # ---------- p-ex2 ----------
 P.append(page('p-ex2', U[1], 'must', 'مثال: قيمة تخلي الجملة بدون معنى' + tag('sol', 'مثال السلايدات 2') + tag('ex', 'دورك'),
@@ -153,19 +177,19 @@ P.append(page('p-s1', 'حلول الوحدة 1', '', 'الحلول' + tag('sol',
         r'عند \(n = 2\) الشرط صح (3 فردي) والنتيجة خطأ (6 زوجي). أما \(n = 3\) فالشرط عندها خطأ (6 زوجي)، فما تنفع.'),
        ('5.5', '', r'Let \(a = 1\) and \(b = 2\). Then \((a + b)^3 = 3^3 = 27\), while \(a^3 + 2a^2b + 2ab + 2ab^2 + b^3 = 1 + 4 + 4 + 8 + 8 = 25\). Since \(27 \ne 25\), \(a = 1\) and \(b = 2\) constitute a counterexample.',
         r'الأيسر 27 والأيمن 25. (\(a = b = 1\) ما تنفع، لأن الطرفين 8.)')], title='') +
+    '  <h3>تدريب السرعة ' + ref('p-trap') + '</h3>\n' +
+    tbl(['', 'أول قيمة تفشل', 'الحساب'], [
+        ['1', r'\(n = 3\)', r'\(3^2 - 1 = 8\)، و5 ما يقسم 8'],
+        ['2', r'\(n = 4\)', r'\(16 + 4 = 20\)، و8 ما يقسم 20'],
+        ['3', r'\(n = 3\)', r'\(2^3 + 1 = 9 = 3 \times 3\)، مو أولي'],
+        ['4', r'\(n = 2\)', r'\(4 + 2 = 6\) زوجي. أي زوجي يمشي']]).replace('    <table', '  <table').replace('    </table>', '  </table>') +
     box('خمس تريكات للمثال المضاد', r'''    <ol>
-      <li>ابدأ بالقيم السهلة: 0، 1، \(-1\)، 2، 3. أغلب الأمثلة المضادة في الكتاب منها.</li>
+      <li>ابدأ بالقيم السهلة: 0، 1، \(-1\)، 2، 3، وجرّب 4 قيم على الأقل. في الاختبارات أول قيمة أو قيمتين ممكن يمشون.</li>
       <li>دوّر قيمة تخلي مقام صفر، يعني تخلي الجملة بدون معنى.</li>
       <li>في «إذا… فإن…»: الشرط صح والنتيجة خطأ. جهّز جدول فيه عمود لكل واحد.</li>
       <li>لو فيه أكثر من متغير، لا تخليهم متساويين.</li>
       <li>لا تكتب «الجملة خاطئة» وتسكت. اكتب القيمة، والحساب، وكلمة ''' + lt('counterexample') + r'''.</li>
     </ol>
-''') +
-    box('راجع نفسك (دقيقتين)', '''    <ul class="chk">
-      <li><span class="cb"></span>أقول الخطوات الثلاث من ذاكرتي: جرّب، احسب، احكم.</li>
-      <li><span class="cb"></span>أعرف الشرطين في مثال مضاد لجملة «إذا… فإن…».</li>
-      <li><span class="cb"></span>أكتب جملة الحكم بالإنجليزي بدون ما أطالع.</li>
-    </ul>
 '''), sol=True))
 
 save('b_u1.html', P)

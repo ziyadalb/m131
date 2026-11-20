@@ -5,7 +5,10 @@ U = {1: 'الوحدة 1 · المثال المضاد', 2: 'الوحدة 2 · ا�
      4: 'الوحدة 4 · براهين الوجود', 5: 'الوحدة 5 · نفي الوجود', 6: 'الوحدة 6 · تدريب الاختبار'}
 
 def hdr(unit_text, lvl):
-    lv = {'must': '<span class="lv must">أساسي</span>', 'extra': '<span class="lv extra">إضافي</span>'}.get(lvl, '')
+    lv = {'top': '<span class="lv top">★ يتكرر في الاختبارات</span>',
+          'must': '<span class="lv must">أساسي</span>',
+          'low': '<span class="lv low">احتمال أقل</span>',
+          'extra': '<span class="lv extra">إضافي</span>'}.get(lvl, '')
     return '<div class="hdr"><span class="u">' + unit_text + '</span>' + lv + '<span class="pn"></span></div>'
 
 def page(pid, unit_text, lvl, title, body, sol=False, style=''):
@@ -66,6 +69,17 @@ def stmt(pairs):
             out += '    <p class="ar">بالعربي: ' + ar + '</p>\n'
     return out + '  </div>\n'
 
+def fillp(paras, style=''):
+    """paras: list of (label_html, english_with_blanks). Blanks: <span class="blank"></span> etc."""
+    st = (' style="' + style + '"') if style else ''
+    out = '  <div class="stmt fillp"' + st + '>\n'
+    for lab, en in paras:
+        out += '    <p class="en">' + (('<b>' + lab + '</b> ') if lab else '') + en + '</p>\n'
+    return out + '  </div>\n'
+
+def B(kind=''):
+    return '<span class="blank' + ((' ' + kind) if kind else '') + '"></span>'
+
 def note(kind, k, t):
     return '  <div class="note ' + kind + '"><span class="k">' + k + '</span>' + t + '</div>\n'
 
@@ -115,5 +129,6 @@ def wl(n=1):
 OK = '<span class="ok">✓</span>'
 NO = '<span class="no">✗</span>'
 def save(name, pages, tail=''):
-    open(D + name, 'w', encoding='utf-8').write('\n'.join(pages) + tail)
+    with open(D + name, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(pages) + tail)
     print(name, 'written:', len(pages), 'pages')

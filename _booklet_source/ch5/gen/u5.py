@@ -5,7 +5,7 @@ P = []
 U5 = U[5] + ' · 5.5'
 
 # ---------- p-u5: idea + card + slides Example 14 ----------
-P.append(page('p-u5', U5, 'must', 'نفي الوجود: الفكرة' + tag('sol', 'مثال السلايدات 14'),
+P.append(page('p-u5', U5, 'low', 'نفي الوجود: الفكرة' + tag('sol', 'مثال السلايدات 14'),
     idea('جملة «يوجد…» ما تنقض بمثال. لازم تثبت أن الشي ما يتحقق لأي عنصر: «لكل x، الجملة خطأ».') +
     stmt([(r'Since \(\sim (\exists x \in S, R(x)) \equiv \forall x \in S, \sim R(x)\), it follows that the statement \(\exists x \in S, R(x)\) is false if \(R(x)\) is false for every \(x \in S\).',
            r'نفي «يوجد x بحيث \(R(x)\)» هو «لكل x، \(R(x)\) خطأ». فعشان تنفي جملة «يوجد»، تثبت أن \(R(x)\) خطأ لكل x في S.')]) +
@@ -25,7 +25,7 @@ P.append(page('p-u5', U5, 'must', 'نفي الوجود: الفكرة' + tag('sol
     style='gap:2.9mm'))
 
 # ---------- p-555: slides Example 13 + 5.55 ----------
-P.append(page('p-555', U[5], 'must', 'مثال: نفي الوجود بالتعويض' + tag('sol', 'مثال السلايدات 13') + tag('ex', 'دورك'),
+P.append(page('p-555', U[5], 'low', 'مثال: نفي الوجود بالتعويض' + tag('sol', 'مثال السلايدات 13') + tag('ex', 'دورك'),
     qbox(r'Disprove the statement: There exists an odd integer \(n\) such that \(n^2 + 2n + 3\) is odd.',
          r'انفِ: يوجد عدد فردي n بحيث \(n^2 + 2n + 3\) فردي. <b>نفكر:</b> \(n = 1, 3, 5\) يعطون 6 و18 و38، كلها زوجية! فنثبت أنها زوجية لكل n فردي.', lab='مثال 13') +
     W([('1', 'اقلب', r'We show that if \(n\) is an odd integer, then \(n^2 + 2n + 3\) is even.', 'نقلب «يوجد… فردي» إلى «لكل… زوجي».'),
@@ -40,7 +40,7 @@ P.append(page('p-555', U[5], 'must', 'مثال: نفي الوجود بالتعو
     style='gap:2.6mm'))
 
 # ---------- p-ex15: slides Example 15 + 5.57 ----------
-P.append(page('p-ex15', U[5], 'must', 'مثال: نفي الوجود بالحالات' + tag('sol', 'مثال السلايدات 15') + tag('ex', 'دورك'),
+P.append(page('p-ex15', U[5], 'low', 'مثال: نفي الوجود بالحالات' + tag('sol', 'مثال السلايدات 15') + tag('ex', 'دورك'),
     qbox(r'Disprove the statement: There exists an integer \(n\) such that \(n^3 - n + 1\) is even.',
          r'انفِ: يوجد عدد صحيح n بحيث \(n^3 - n + 1\) زوجي. <b>نفكر:</b> \(n = 0, 1, 2, 3\) يعطون 1 و1 و7 و25، كلها فردية. وما فيه شرط على n، فنقسم: زوجي أو فردي.', lab='مثال 15') +
     W([('1', 'حالة 1', r'Let \(n \in \mathbb{Z}\). We consider two cases. <i>Case 1.</i> \(n\) is even. Then \(n = 2a\), where \(a \in \mathbb{Z}\). So \(n^3 - n + 1 = (2a)^3 - (2a) + 1 = 8a^3 - 2a + 1 = 2(4a^3 - a) + 1\). Since \(4a^3 - a\) is an integer, \(n^3 - n + 1\) is odd and so it is not even.',

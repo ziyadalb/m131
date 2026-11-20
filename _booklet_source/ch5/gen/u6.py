@@ -16,7 +16,7 @@ P.append(page('p-which', U[6], 'must', 'أي طريقة؟ درّب عينك',
         [(lt('Prove … by (a) a direct proof, …'), 'class="s"'), '3. ثلاث طرق', 'حسب الطريقة', ref('p-u3')],
         [(lt('Prove: There exist(s) …'), 'class="s"'), '4. وجود', lt('Let … / Consider …'), ref('p-u4')],
         [(lt('Disprove: There exist(s) …'), 'class="s"'), '5. نفي وجود', lt('We show that if …, then …'), ref('p-u5')]]).replace('    <table', '  <table').replace('    </table>', '  </table>') +
-    note('star', lt('Prove or disprove') + '؟', 'جرّب ثلاث قيم أول. «لكل» وفشلت قيمة: <b>False</b> + مثال مضاد. «يوجد» ولقيت مثال: <b>True</b> + المثال. غير كذا برهن بالطريقة اللي في الجدول.') +
+    note('star', lt('Prove or disprove') + '؟', 'جرّب 4 قيم أول. «لكل» وفشلت قيمة: <b>False</b> + مثال مضاد. «يوجد» ولقيت مثال: <b>True</b> + المثال. غير كذا برهن بالطريقة اللي في الجدول.') +
     '  <h3>دورك: اكتب رقم النوع (1 إلى 5) جنب كل جملة، بدون حل</h3>\n' +
     '  <div class="paper" style="--tfp:1.3mm">\n' +
     wrow(1, r'Disprove: For every real number \(x\), \(x^2 \ge x\).') +
@@ -65,94 +65,143 @@ P.append(page('p-phr', U[6], 'must', 'جمل الكتابة والاختصارا
       <li>«''' + lt('for every k') + '» بدل «' + lt('for some integer k') + '''».</li>
       <li>مثال مضاد من برا المجموعة.</li>
       <li>تنفي «يوجد» بمثال واحد.</li>
+      <li>في عكس النقيض تفترض عكس الفرض بدل عكس النتيجة.</li>
     </ul>
 ''').replace('  <div class="box">', '    <div class="box">') +
     '  </div>\n'))
 
-# ---------- p-mock ----------
-P.append(page('p-mock', U[6], 'must', 'اختبار قصير على الفصل' + tag('ex', '30 دقيقة'),
-    idea('نفس صيغة ميد 1447. شغّل مؤقت 30 دقيقة، وحل على ورقة أو صفحات فاضية. لا تفتح الحلول قبل ما يخلص الوقت.') +
-    r'''  <div class="box paper">
-    <div class="qrow" style="direction:ltr"><span class="en"><b>Q: Prove or disprove the following:</b></span><span class="mk">15 marks</span></div>
-    <div class="q">1. For every positive integer \(n\), \(2^n + 1\) is a prime number. <span class="mk">(2 marks)</span></div>
-    <div class="q">2. There is no smallest positive rational number. <span class="mk">(3 marks)</span></div>
-    <div class="q">3. The real number \(\sqrt{5}\) is irrational. <span class="mk">(3 marks)</span></div>
-    <div class="q">4. There exists an integer \(n\) such that \(n^2 + n + 1\) is even. <span class="mk">(3 marks)</span></div>
-    <div class="q">5. The equation \(x^3 + x - 1 = 0\) has a unique real number solution between \(x = 0\) and \(x = 1\). <span class="mk">(4 marks)</span></div>
-  </div>
-''' +
-    box('بعد ما تخلص', '''    <ul class="chk">
-      <li><span class="cb"></span>كل فقرة بدأت بسطر الحكم: True أو False.</li>
-      <li><span class="cb"></span>في False كتبت القيمة والحساب، أو برهان لكل n (لو الجملة «يوجد»).</li>
+
+# ---------- mocks ----------
+def qrow(head, mk):
+    return '    <div class="qrow" style="direction:ltr"><span class="en">' + head + '</span><span class="mk">' + mk + '</span></div>\n'
+
+def q(t):
+    return '    <div class="q">' + t + '</div>\n'
+
+AFTER = box('بعد ما تخلص', '''    <ul class="chk">
+      <li><span class="cb"></span>كل فقرة في سؤال 1 بدأت بسطر الحكم: True أو False.</li>
+      <li><span class="cb"></span>في False كتبت القيمة والحساب، مو بس «خطأ».</li>
       <li><span class="cb"></span>في التناقض بدأت بـ ''' + lt('Assume, to the contrary') + '''.</li>
-      <li><span class="cb"></span>في «حل وحيد» كتبت الوجود والوحدانية.</li>
+      <li><span class="cb"></span>في عكس النقيض افترضت عكس النتيجة، مو عكس الفرض.</li>
     </ul>
-''') +
+''')
+
+def score(rows, total):
+    out = '  <h3>صحّح نفسك</h3>\n  <table class="t">\n    <tr><th>الفقرة</th><th>النوع</th><th>الدرجة</th><th>درجتي</th><th>لو نقصت، ارجع لـ</th></tr>\n'
+    for r in rows:
+        out += '    <tr><td>' + r[0] + '</td><td>' + r[1] + '</td><td>' + r[2] + '</td><td></td><td>' + ref(r[3]) + '</td></tr>\n'
+    return out + '    <tr><th colspan="2">المجموع</th><th>' + total + '</th><th></th><th></th></tr>\n  </table>\n'
+
+# ---------- p-mockA ----------
+P.append(page('p-mockA', U[6], 'top', 'اختبار تجريبي 1: بصيغة ميد نوفمبر' + tag('ex', '35 دقيقة'),
+    idea('هذا جزء الفصل 5 من ميد نوفمبر (16 درجة)، بأسئلة توأم. شغّل مؤقت 35 دقيقة، وحل على ورقة. لا تفتح الحلول قبل ما يخلص الوقت.') +
+    '  <div class="box paper">\n' +
+    qrow('<b>Question 1: (3+3+4)</b> Prove or disprove the following:', '10 marks') +
+    q(r'1. For every positive integer \(n\), \(n^2 + n + 1\) is a prime number.') +
+    q('2. There is no largest negative real number.') +
+    q(r'3. The real number \(\sqrt{5}\) is irrational. [You may use: for an integer \(a\), if \(5 \mid a^2\), then \(5 \mid a\).]') +
+    '  </div>\n  <div class="box paper">\n' +
+    qrow(r'<b>Question 2: (2+2+2)</b> Prove that if \(n\) is an even integer, then \(7n + 3\) is odd by', '6 marks') +
+    q('1. a direct proof. &nbsp; 2. a proof by contrapositive. &nbsp; 3. a proof by contradiction.') +
+    '  </div>\n' + AFTER +
     '  <div class="space" data-label="ملاحظات: وش الفقرة اللي أخذت منك وقت أكثر؟"></div>\n'))
 
-# ---------- p-mocks ----------
-P.append(page('p-mocks', 'حلول الوحدة 6', '', 'حلول الاختبار القصير' + tag('sol', 'شيّك'),
-    W([('1. False', '', r'Let \(n = 3\). Then \(2^3 + 1 = 9 = 3 \cdot 3\), which is not a prime. Thus, \(n = 3\) is a counterexample.',
-        r'\(n = 1\) و \(n = 2\) يعطون 3 و5 (أوليين). أول قيمة تفشل \(n = 3\).'),
-       ('2. True', '', r'Assume, to the contrary, that there is a smallest positive rational number, say \(r\). Then \(r = a/b\) for some integers \(a\) and \(b\) with \(b \ne 0\), and so \(r/2 = a/(2b)\) is a positive rational number. Since \(0 \lt r/2 \lt r\), this is a contradiction.',
-        'نفس سؤال ميد 1447، ومعه سطر «ليش r/2 نسبي».'),
-       ('3. True', '', r'Assume, to the contrary, that \(\sqrt{5}\) is rational. Then \(\sqrt{5} = a/b\), where \(a, b \in \mathbb{Z}\), \(b \ne 0\) and \(a/b\) has been reduced to lowest terms. Then \(a^2 = 5b^2\). Thus \(5 \mid a^2\), and since 5 is a prime, \(5 \mid a\). So \(a = 5c\) for some \(c \in \mathbb{Z}\), and \(25c^2 = 5b^2\), that is, \(b^2 = 5c^2\). Thus \(5 \mid b^2\), and so \(5 \mid b\). Since \(5 \mid a\) and \(5 \mid b\), this is a contradiction since \(a/b\) has been reduced to lowest terms.',
+# ---------- p-mockAs ----------
+P.append(page('p-mockAs', 'حلول الوحدة 6', '', 'حلول الاختبار التجريبي 1' + tag('sol', 'شيّك'),
+    W([('1.1 False', '', r'Let \(n = 4\). Then \(n^2 + n + 1 = 16 + 4 + 1 = 21 = 3 \cdot 7\), which is not a prime number. Thus, \(n = 4\) is a counterexample.',
+        r'أول ثلاث قيم تعطي 3 و7 و13، وكلها أولية. الفخ: لازم توصل لـ \(n = 4\).'),
+       ('1.2 True', '', r'Assume, to the contrary, that there is a largest negative real number, say \(r\). Since \(r \lt r/2 \lt 0\), it follows that \(r/2\) is a negative real number that is larger than \(r\). This is a contradiction.',
+        'توأم «ما فيه أصغر عدد موجب»: «أصغر» صارت «أكبر»، و«موجب» صارت «سالب».'),
+       ('1.3 True', '', r'Assume, to the contrary, that \(\sqrt{5}\) is rational. Then \(\sqrt{5} = a/b\), where \(a, b \in \mathbb{Z}\), \(b \ne 0\) and \(a/b\) has been reduced to lowest terms. Then \(a^2 = 5b^2\). Thus \(5 \mid a^2\), and so \(5 \mid a\). So \(a = 5c\) for some \(c \in \mathbb{Z}\), and \(25c^2 = 5b^2\), that is, \(b^2 = 5c^2\). Thus \(5 \mid b^2\), and so \(5 \mid b\). Since \(5 \mid a\) and \(5 \mid b\), this is a contradiction since \(a/b\) has been reduced to lowest terms.',
         r'قالب \(\sqrt{2}\) نفسه، و«زوجي» صارت «يقبل القسمة على 5».'),
-       ('4. False', '', r'We show that if \(n \in \mathbb{Z}\), then \(n^2 + n + 1\) is odd. <i>Case 1.</i> \(n = 2k\) for some \(k \in \mathbb{Z}\). Then \(n^2 + n + 1 = 4k^2 + 2k + 1 = 2(2k^2 + k) + 1\), which is odd. <i>Case 2.</i> \(n = 2k + 1\) for some \(k \in \mathbb{Z}\). Then \(n^2 + n + 1 = 4k^2 + 6k + 3 = 2(2k^2 + 3k + 1) + 1\), which is odd. Hence there is no integer \(n\) such that \(n^2 + n + 1\) is even.',
-        'نفي وجود بالحالات، مثل مثال 15.'),
-       ('5. True', '', r'Let \(f(x) = x^3 + x - 1\). Since \(f\) is a polynomial, it is continuous on \([0, 1]\). Since \(f(0) = -1\) and \(f(1) = 1\), it follows by the Intermediate Value Theorem of Calculus that there is \(c \in (0, 1)\) with \(f(c) = 0\). For uniqueness, assume, to the contrary, that there are two solutions \(a\) and \(b\) with \(0 \lt a \lt b \lt 1\). Then \(a^3 \lt b^3\) and \(a \lt b\), so \(0 = a^3 + a - 1 \lt b^3 + b - 1 = 0\), which is a contradiction.',
-        'الوجود بالقيمة الوسطى، والوحدانية بالتناقض، مثل مثالي 11 و12.')], title='') +
-    r'''  <h3>صحّح نفسك</h3>
-  <table class="t">
-    <tr><th>السؤال</th><th>النوع</th><th>الدرجة</th><th>درجتي</th><th>لو نقصت، ارجع لـ</th></tr>
-    <tr><td>1</td><td>مثال مضاد</td><td>2</td><td></td><td>سؤال الميد <span class="ref" data-to="p-mid5"></span></td></tr>
-    <tr><td>2</td><td>تناقض</td><td>3</td><td></td><td>سؤال الميد <span class="ref" data-to="p-ex5"></span></td></tr>
-    <tr><td>3</td><td>غير نسبي</td><td>3</td><td></td><td>\(\sqrt{2}\) <span class="ref" data-to="p-rt2b"></span></td></tr>
-    <tr><td>4</td><td>نفي وجود</td><td>3</td><td></td><td>مثال 15 <span class="ref" data-to="p-ex15"></span></td></tr>
-    <tr><td>5</td><td>وجود ووحدانية</td><td>4</td><td></td><td>مثالا 11 و12 <span class="ref" data-to="p-ivt"></span></td></tr>
-    <tr><th colspan="2">المجموع</th><th>15</th><th></th><th></th></tr>
-  </table>
-''', sol=True))
+       ('2 (1)', 'مباشر', r'Assume that \(n\) is even. Then \(n = 2k\) for some integer \(k\). So \(7n + 3 = 14k + 3 = 2(7k + 1) + 1\). Since \(7k + 1\) is an integer, \(7n + 3\) is odd.', ''),
+       ('2 (2)', 'عكس النقيض', r'Assume that \(7n + 3\) is even. Then \(7n + 3 = 2k\) for some integer \(k\). So \(n = (7n + 3) - 6n - 3 = 2k - 6n - 3 = 2(k - 3n - 2) + 1\). Since \(k - 3n - 2\) is an integer, \(n\) is odd.', ''),
+       ('2 (3)', 'تناقض', r'Assume, to the contrary, that there exists an even integer \(n\) such that \(7n + 3\) is even. Then \(n = 2x\) and \(7n + 3 = 2y\) for some integers \(x\) and \(y\). Hence \(14x + 3 = 2y\), and so \(3 = 2y - 14x = 2(y - 7x)\). Since \(y - 7x\) is an integer, 3 is even, which is a contradiction.', '')], title='') +
+    score([('1.1', 'مثال مضاد فيه فخ', '3', 'p-trap'), ('1.2', 'ما فيه أكبر ولا أصغر', '3', 'p-ex5'),
+           ('1.3', 'غير نسبي', '4', 'p-rt2b'), ('2', 'ثلاث طرق', '6', 'p-tpl3')], '16') +
+    note('star', 'كل فقرة توأم سؤال من ميد نوفمبر:', r'1.1 توأم «\(n^2 - n\) فردي»، و1.2 توأم «ما فيه أصغر عدد موجب»، و1.3 توأم \(\sqrt{2}\)، وسؤال 2 توأم \(5n + 3\). يعني لو حليت هذا، أنت جاهز لنسخة البديل.'), sol=True))
+
+# ---------- p-mockB ----------
+P.append(page('p-mockB', U[6], 'top', 'اختبار تجريبي 2: بعد ما تصحح الأول' + tag('ex', '40 دقيقة'),
+    idea('سوّه بعد ما تصحح الاختبار الأول وترجع للي نقصت فيه. فيه فقرة وجود (1.4) احتياط، لو جا سؤال من الوحدة 4. شغّل مؤقت 40 دقيقة.') +
+    '  <div class="box paper">\n' +
+    qrow('<b>Question 1: (2+3+4+3)</b> Prove or disprove the following:', '12 marks') +
+    q(r'1. For every odd positive integer \(n\), \(3 \mid (n^2 + 2)\).') +
+    q('2. There is no smallest positive rational number.') +
+    q(r'3. The real number \(\sqrt[3]{2}\) is irrational. [You may use: for an integer \(a\), if \(a^3\) is even, then \(a\) is even.]') +
+    q(r'4. The equation \(x^3 + x - 1 = 0\) has a real number solution between \(x = 0\) and \(x = 1\).') +
+    '  </div>\n  <div class="box paper">\n' +
+    qrow(r'<b>Question 2: (2+2+2)</b> Prove that if \(n\) is an odd integer, then \(5n - 3\) is even by', '6 marks') +
+    q('1. a direct proof. &nbsp; 2. a proof by contrapositive. &nbsp; 3. a proof by contradiction.') +
+    '  </div>\n' + AFTER +
+    '  <div class="space" data-label="قارن: كم جبت في الأول، وكم جبت هنا؟"></div>\n'))
+
+# ---------- p-mockBs ----------
+P.append(page('p-mockBs', 'حلول الوحدة 6', '', 'حلول الاختبار التجريبي 2' + tag('sol', 'شيّك'),
+    W([('1.1 False', '', r'Let \(n = 3\). Then \(n^2 + 2 = 11\) and \(3 \nmid 11\). Thus, \(n = 3\) is a counterexample.',
+        ''),
+       ('1.2 True', '', r'Assume, to the contrary, that there is a smallest positive rational number, say \(r\). Then \(r = a/b\) for some integers \(a\) and \(b\) with \(b \ne 0\), and so \(r/2 = a/(2b)\) is a positive rational number. Since \(0 \lt r/2 \lt r\), this is a contradiction.', ''),
+       ('1.3 True', '', r'Assume, to the contrary, that \(\sqrt[3]{2}\) is rational. Then \(\sqrt[3]{2} = a/b\), where \(a, b \in \mathbb{Z}\), \(b \ne 0\) and \(a/b\) has been reduced to lowest terms. Then \(a^3 = 2b^3\), so \(a^3\) is even, and so \(a\) is even. So \(a = 2c\) for some \(c \in \mathbb{Z}\), and \(8c^3 = 2b^3\), that is, \(b^3 = 4c^3 = 2(2c^3)\). Thus \(b^3\) is even, and so \(b\) is even. Since \(a\) and \(b\) are even, this is a contradiction since \(a/b\) has been reduced to lowest terms.',
+        ''),
+       ('1.4 True', '', r'Let \(f(x) = x^3 + x - 1\). Since \(f\) is a polynomial function, it is continuous on \([0, 1]\). Now \(f(0) = -1\) and \(f(1) = 1\). Since 0 is between \(f(0)\) and \(f(1)\), it follows by the Intermediate Value Theorem of Calculus that there is a number \(c\) between 0 and 1 such that \(f(c) = 0\). Hence \(c\) is a solution.',
+        ''),
+       ('2 (1)', 'مباشر', r'Assume that \(n\) is odd. Then \(n = 2k + 1\) for some integer \(k\). So \(5n - 3 = 10k + 2 = 2(5k + 1)\). Since \(5k + 1\) is an integer, \(5n - 3\) is even.', ''),
+       ('2 (2)', 'عكس النقيض', r'Assume that \(5n - 3\) is odd. Then \(5n - 3 = 2k + 1\) for some integer \(k\). So \(n = (5n - 3) - 4n + 3 = 2k - 4n + 4 = 2(k - 2n + 2)\). Since \(k - 2n + 2\) is an integer, \(n\) is even.', ''),
+       ('2 (3)', 'تناقض', r'Assume, to the contrary, that there exists an odd integer \(n\) such that \(5n - 3\) is odd. Then \(n = 2x + 1\) and \(5n - 3 = 2y + 1\) for some integers \(x\) and \(y\). Hence \(10x + 2 = 2y + 1\), and so \(1 = 2y - 10x = 2(y - 5x)\). Since \(y - 5x\) is an integer, 1 is even, which is a contradiction.', '')], title='') +
+    score([('1.1', 'مثال مضاد فيه فخ', '2', 'p-trap'), ('1.2', 'ما فيه أصغر', '3', 'p-fam'), ('1.3', 'غير نسبي', '4', 'p-rt2b'),
+           ('1.4', 'وجود', '3', 'p-ivt'), ('2', 'ثلاث طرق', '6', 'p-536')], '18'), sol=True))
 
 # ---------- p-night ----------
-P.append(page('p-night', 'ورقة ليلة الاختبار', 'must', 'الفصل كله في صفحة',
+def nb(title, inner):
+    return box(title, inner).replace('  <div class="box">', '    <div class="box">')
+
+AR = 'font-family:var(--ar);direction:rtl;text-align:right'
+P.append(page('p-night', 'ورقة ليلة الاختبار', 'top', 'الفصل كله في صفحة',
     '  <div class="grid2">\n' +
-    box('البطاقات الخمس', r'''    <ol>
+    nb('البطاقات الخمس', '''    <ol>
       <li><b>مثال مضاد:</b> جرّب ← احسب ← احكم.</li>
       <li><b>تناقض:</b> نعكس ← نمشي ← تناقض.</li>
-      <li><b>ثلاث طرق:</b> مباشر: افترض P ووصّل لـ Q. عكس النقيض: افترض عكس Q ووصّل لعكس P. تناقض: افترض P وعكس Q ووصّل لمستحيل.</li>
+      <li><b>ثلاث طرق:</b> الفرق في أول سطر (تحت).</li>
       <li><b>وجود:</b> اختر ← تحقق ← اختم.</li>
       <li><b>نفي وجود:</b> اقلب ← خذ أي x ← اثبت.</li>
     </ol>
-''').replace('  <div class="box">', '    <div class="box">') +
-    box('خريطة القرار', r'''    <ul>
-      <li>''' + lt('Disprove + For every') + r''' ← 1</li>
-      <li>''' + lt('Prove + There is no / irrational') + r''' ← 2</li>
-      <li>''' + lt('Prove … by (a), (b), (c)') + r''' ← 3</li>
-      <li>''' + lt('Prove + There exists') + r''' ← 4</li>
-      <li>''' + lt('Disprove + There exists') + r''' ← 5</li>
-      <li>''' + lt('Prove or disprove') + r''': جرّب ثلاث قيم أول.</li>
+''') +
+    nb('خريطة القرار', '''    <ul>
+      <li>''' + lt('Disprove + For every') + ''' ← 1</li>
+      <li>''' + lt('Prove + There is no / irrational') + ''' ← 2</li>
+      <li>''' + lt('Prove … by (a), (b), (c)') + ''' ← 3</li>
+      <li>''' + lt('Prove + There exists') + ''' ← 4</li>
+      <li>''' + lt('Disprove + There exists') + ''' ← 5</li>
+      <li>''' + lt('Prove or disprove') + ''': جرّب 4 قيم أول.</li>
     </ul>
-''').replace('  <div class="box">', '    <div class="box">') +
+''') +
     '  </div>\n' +
-    box(r'قالب «غير نسبي» (\(\sqrt{2}\) و \(\sqrt{3}\) و \(\sqrt[3]{7}\))', chain([r'\(a/b\) في أبسط صورة', 'ربّع (أو كعّب)', 'p يقسم a', r'\(a = pc\) وعوّض', 'p يقسم b', 'تناقض مع أبسط صورة'])) +
+    r'  <h3>ثلاث طرق: أول سطر لكل طريقة (مثال: n زوجي، و \(5n + 3\) فردي)</h3>' + '\n' +
+    W([('1', 'مباشر', r'Assume that \(n\) is even.', ''),
+       ('2', 'عكس النقيض', r'Assume that \(5n + 3\) is even. Then \(n = (5n + 3) - 4n - 3 = \ldots\)', ''),
+       ('3', 'تناقض', r'Assume, to the contrary, that there exists an even integer \(n\) such that \(5n + 3\) is even.', '')], title='') +
     '  <div class="grid2">\n' +
-    box('الفخاخ', r'''    <ul>
-      <li>أول قيمة ممكن تمشي. جرّب ثلاث.</li>
-      <li>في «إذا… فإن…»: المثال المضاد الشرط فيه صح والنتيجة خطأ.</li>
+    nb('ما فيه أصغر عدد موجب', chain(['نفترض r الأصغر', r'\(0 \lt r/2 \lt r\)', 'تناقض']) +
+       '    <p class="small">سالب؟ \\(r \\lt r/2 \\lt 0\\). نسبي؟ زد سطر: \\(r/2 = a/(2b)\\).</p>\n') +
+    nb('قالب «غير نسبي»', chain([r'\(a/b\) أبسط صورة', 'ربّع أو كعّب', 'p يقسم a', r'\(a = pc\)', 'p يقسم b', 'تناقض'])) +
+    '  </div>\n' +
+    '  <div class="grid2">\n' +
+    nb('الفخاخ', '''    <ul>
+      <li>أول قيمة أو قيمتين تمشي. جرّب 4.</li>
+      <li>في (2) ابدأ بعكس النتيجة، مو بعكس الفرض.</li>
       <li>عكس «و» هو «أو».</li>
-      <li>لا تنسَ «''' + lt('lowest terms') + r'''».</li>
-      <li>«يوجد» ما تنقض بمثال.</li>
-      <li>«حل وحيد» = وجود + وحدانية.</li>
+      <li>لا تنسَ «''' + lt('lowest terms') + '''».</li>
+      <li>«يوجد» ما تنقضها بمثال.</li>
     </ul>
-''').replace('  <div class="box">', '    <div class="box">') +
-    box('أسئلة الاختبارات السابقة', r'''    <ul class="chk">
-      <li><span class="cb"></span>ما فيه أصغر عدد موجب · ميد 1447 <span class="pg ref" data-to="p-ex5"></span></li>
-      <li><span class="cb"></span>مثال مضاد لـ \(3 \mid (n^2 - 1)\) · ميد 1447 <span class="pg ref" data-to="p-mid5"></span></li>
-      <li><span class="cb"></span>\(\sqrt[3]{7}\) غير نسبي · نهائي 1446 <span class="pg ref" data-to="p-rt3"></span></li>
+''') +
+    nb('أسئلة الاختبارات السابقة', r'''    <ul class="chk">
+      <li><span class="cb"></span>ثلاث طرق: \(5n + 3\) و \(5n + 1\) و \(7n - 5\) <span class="pg ref" data-to="p-tpl3"></span></li>
+      <li><span class="cb"></span>ما فيه أصغر عدد موجب <span class="pg ref" data-to="p-ex5"></span></li>
+      <li><span class="cb"></span>فخاخ: \(3 \mid (n^2 - 1)\) و \(12 \mid (n^2 - 4)\) و \(n^2 - n\) <span class="pg ref" data-to="p-trap"></span></li>
+      <li><span class="cb"></span>\(\sqrt{2}\) و \(\sqrt[3]{7}\) غير نسبي <span class="pg ref" data-to="p-rt2b"></span></li>
     </ul>
-    <p class="small">جهّز نفسك لـ: توأم واحد من هذي، و«حل وحيد» بالقيمة الوسطى، ونفي وجود بالحالات.</p>
-''').replace('  <div class="box">', '    <div class="box">') +
-    '  </div>\n'))
+''') +
+    '  </div>\n' +
+    note('star', 'توقّع البديل:', r'نفس الأنواع الأربعة بأرقام ثانية: ثلاث طرق بعدد ثاني، و«ما فيه أكبر أو أصغر» بكلمة ثانية، وجذر ثاني (\(\sqrt{3}\) أو \(\sqrt{5}\) أو \(\sqrt[3]{7}\))، وفخ قسمة جديد.')))
 
 save('g_u6.html', P)

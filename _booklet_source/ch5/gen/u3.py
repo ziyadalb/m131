@@ -5,7 +5,7 @@ P = []
 U3 = U[3] + ' · 5.3'
 
 # ---------- p-u3 ----------
-P.append(page('p-u3', U3, 'must', 'ثلاث طرق لنفس الجملة' + tag('sol', 'مثال توأم 5.36'),
+P.append(page('p-u3', U3, 'top', 'ثلاث طرق لنفس الجملة' + tag('sol', 'مثال توأم 5.36'),
     idea('جملة «إذا P فإن Q» تنبرهن بثلاث طرق. الفرق كله في أول سطر: وش تفترض، ووين تبي توصل.') +
     think('الفرق في أول سطر', before=tbl([('الطريقة', 'width:40%'), 'تفترض (أول سطر)', 'توصل لـ'],
         [[('مباشر (' + lt('direct proof') + ')', 'class="s"'), 'P صح', 'Q صح'],
@@ -22,11 +22,41 @@ P.append(page('p-u3', U3, 'must', 'ثلاث طرق لنفس الجملة' + tag(
     note('trap', 'انتبه:', 'لا تبدأ بـ «' + lt(r'Assume that \(3n + 7\) is odd') + '»: هذا افتراض للمطلوب نفسه.') +
     note('trick', 'أي طريقة؟', 'لو السؤال حددها التزم فيها. لو ما حدد: جرّب المباشر أول.'), style='gap:3mm'))
 
+# ---------- p-tpl3: the November question with the same template ----------
+P.append(page('p-tpl3', U[3], 'top', 'سؤال ميد نوفمبر: نفس القالب، أرقام ثانية' + tag('past', 'نوفمبر · 2+2+2'),
+    qbox(r'<span class="lb">Question 2:</span> Prove that if \(n\) is an even integer, then \(5n + 3\) is odd by 1. a direct proof. 2. a proof by contrapositive. 3. a proof by contradiction.',
+         r'إذا n زوجي، فإن \(5n + 3\) فردي، بثلاث طرق. كل طريقة عليها درجتين.', lab='سؤال ميد نوفمبر · 6 درجات') +
+    think(r'نفكر: وش يتغير عن \(3n + 7\)؟', before=tbl([('الطريقة', 'width:22%'), r'في \(3n + 7\) (الصفحة اللي قبل)', r'في \(5n + 3\)'], [
+        [('مباشر', 'class="s"'), r'\(6k + 7 = 2(3k + 3) + 1\)', r'\(10k + 3 = 2(5k + 1) + 1\)'],
+        [('عكس النقيض', 'class="s"'), r'\(n = (3n + 7) - 2n - 7\)', r'\(n = (5n + 3) - 4n - 3\)'],
+        [('تناقض', 'class="s"'), r'\(7 = 2(y - 3x)\)', r'\(3 = 2(y - 5x)\)']]),
+        extra='    <p>الجمل الإنجليزية نفسها حرف بحرف. اللي يتغير سطر الحساب بس.</p>\n') +
+    W([('1', 'مباشر', r'Assume that \(n\) is even. Then \(n = 2k\) for some integer \(k\). So \(5n + 3 = 10k + 3 = 2(5k + 1) + 1\). Since \(5k + 1\) is an integer, \(5n + 3\) is odd.',
+        'افترضنا P (n زوجي)، ووصلنا لـ Q.'),
+       ('2', 'عكس النقيض', r'Assume that \(5n + 3\) is even. Then \(5n + 3 = 2k\) for some integer \(k\). So \(n = (5n + 3) - 4n - 3 = 2k - 4n - 3 = 2(k - 2n - 2) + 1\). Since \(k - 2n - 2\) is an integer, \(n\) is odd.',
+        r'افترضنا عكس Q (\(5n + 3\) زوجي)، ووصلنا لعكس P (n فردي).'),
+       ('3', 'تناقض', r'Assume, to the contrary, that there exists an even integer \(n\) such that \(5n + 3\) is even. Then \(n = 2x\) and \(5n + 3 = 2y\) for some integers \(x\) and \(y\). Hence \(10x + 3 = 2y\), and so \(3 = 2y - 10x = 2(y - 5x)\). Since \(y - 5x\) is an integer, 3 is even, which is a contradiction.',
+        'افترضنا P وعكس Q مع بعض، فطلع أن 3 زوجي. مستحيل.')], title='نكتب (كل طريقة درجتين)') +
+    note('trap', 'أكثر غلطة:', r'في (2) تفترض «n فردي» وتوصل «\(5n + 3\) زوجي». هذا مو عكس النقيض! عكس النقيض يبدأ من النتيجة: افترض أن \(5n + 3\) زوجي.') +
+    note('trick', 'تريك (2):', r'اكتب \(n = (5n + 3) - 4n - 3\). المعامل 5 صار 4، وهو زوجي، فتطلع 2 عامل مشترك بسهولة.'), style='gap:2.6mm'))
+
+# ---------- p-fill3: the girls' exam question, fill in the blanks ----------
+P.append(page('p-fill3', U[3], 'top', 'دورك 1: سؤال ميد البنات بالفراغات' + tag('past', 'البنات · 6 درجات') + tag('ex', 'دورك'),
+    qbox(r'<span class="lb">1-</span> “If \(n\) is an even integer, then \(5n + 1\) is odd” using three ways: direct proof, proof by contrapositive and proof by contradiction. (6 marks)',
+         r'نفس سؤال نوفمبر، بس \(+1\) بدل \(+3\). غطِّ الصفحة اللي قبل، وأكمل الفراغات.', lab='دورك · سؤال ميد البنات', cls='ex') +
+    fillp([('(1) مباشر:', r'Assume that \(n\) is ' + B('s') + r'. Then \(n =\) ' + B('s') + r' for some integer \(k\). So \(5n + 1 =\) ' + B() + r' \(= 2(\) ' + B('s') + r' \() + 1\). Since ' + B('s') + r' is an integer, \(5n + 1\) is odd.'),
+           ('(2) عكس النقيض:', r'Assume that \(5n + 1\) is ' + B('s') + r'. Then \(5n + 1 = 2k\) for some integer \(k\). So \(n = (5n + 1) -\) ' + B('s') + r' \(- 1 = 2k - 4n - 1 = 2(\) ' + B() + r' \() + 1\). Since ' + B() + r' is an integer, \(n\) is ' + B('s') + '.'),
+           ('(3) تناقض:', r'Assume, to the contrary, that there exists an ' + B('s') + r' integer \(n\) such that \(5n + 1\) is ' + B('s') + r'. Then \(n = 2x\) and \(5n + 1 = 2y\) for some integers \(x\) and \(y\). Hence \(10x + 1 = 2y\), and so \(1 =\) ' + B() + r' \(= 2(\) ' + B() + r' \()\). Since ' + B() + r' is an integer, 1 is ' + B('s') + ', which is a contradiction.')]) +
+    '  <h3>لقِ الغلط: طالب كتب هذا في (2)</h3>\n' +
+    '  <div class="err"><p class="en">' + r'Assume that \(n\) is odd. Then \(n = 2k + 1\) for some integer \(k\). So \(5n + 1 = 10k + 6 = 2(5k + 3)\). Since \(5k + 3\) is an integer, \(5n + 1\) is even.' + '</p></div>\n' +
+    recall('الحساب صح، بس البرهان نفسه غلط. ليش؟ وش لازم يكون أول سطر؟') +
+    W([('', 'جوابك', None, None, 'b3')], title='', cls='tpl grow'), style='gap:3mm'))
+
 # ---------- p-536 ----------
-P.append(page('p-536', U[3], 'must', 'تمرين 5.36' + tag('ex', 'دورك'),
+P.append(page('p-536', U[3], 'top', 'دورك 2: سؤال ميد 1446 من الصفر' + tag('past', 'ميد 1446 · 7 درجات') + tag('ex', 'تمرين 5.36'),
     duork('5.36', r'<span class="lb">5.36.</span> Prove that if \(n\) is an odd integer, then \(7n - 5\) is even by (a) a direct proof, (b) a proof by contrapositive and (c) a proof by contradiction.',
-          r'اثبت: إذا n فردي، فإن \(7n - 5\) زوجي، بثلاث طرق: (a) مباشر، (b) عكس النقيض، (c) تناقض.') +
-    recall('قبل ما تكتب: حدّد P و Q. واكتب أول سطر لكل طريقة من ذاكرتك، وبعدها كمّل.') +
+          r'اثبت: إذا n فردي، فإن \(7n - 5\) زوجي، بثلاث طرق. جا بالحرف في ميد 1446. هنا الفرض «فردي»: \(n = 2k + 1\)، والنتيجة «زوجي».') +
+    recall('غطِّ الصفحات اللي قبل. اكتب أول سطر لكل طريقة من ذاكرتك، وبعدها كمّل.') +
     W([('(a)', 'مباشر', None, None, 'b3'), ('(b)', 'عكس النقيض', None, None, 'b3'), ('(c)', 'تناقض', None, None, 'b3')], title='', cls='tpl grow') +
     hints([r'<b>تلميح (b):</b> من \(7n - 5 = 2k + 1\) طلّع n لوحدها: \(n = (7n - 5) - 6n + 5\).',
            r'<b>تلميح (c):</b> \(n = 2x + 1\) و \(7n - 5 = 2y + 1\). عوّض الأولى في الثانية، وشوف أي عدد يطلع «زوجي» وهو مو زوجي.'])))
@@ -43,18 +73,21 @@ P.append(page('p-539', U[3], 'extra', 'تمرين 5.39' + tag('ex', 'دورك'),
 
 # ---------- p-s3 ----------
 P.append(page('p-s3', 'حلول الوحدة 3', '', 'الحلول' + tag('sol', 'شيّك'),
-    '  <h3>تمرين 5.36</h3>\n' +
-    W([('(a)', 'مباشر', r'Assume that \(n\) is odd. Then \(n = 2k + 1\) for some integer \(k\). So \(7n - 5 = 7(2k + 1) - 5 = 14k + 2 = 2(7k + 1)\). Since \(7k + 1\) is an integer, \(7n - 5\) is even.', 'افترضنا P ووصلنا لـ Q.'),
-       ('(b)', 'عكس النقيض', r'Assume that \(7n - 5\) is odd. Then \(7n - 5 = 2k + 1\) for some integer \(k\). So \(n = (7n - 5) - 6n + 5 = 2k + 1 - 6n + 5 = 2(k - 3n + 3)\). Since \(k - 3n + 3\) is an integer, \(n\) is even.', 'افترضنا أن Q خطأ، ووصلنا أن P خطأ (n زوجي).'),
-       ('(c)', 'تناقض', r'Assume, to the contrary, that there exists an odd integer \(n\) such that \(7n - 5\) is odd. Then \(n = 2x + 1\) and \(7n - 5 = 2y + 1\) for some integers \(x\) and \(y\). Hence \(7(2x + 1) - 5 = 2y + 1\), so \(14x + 2 = 2y + 1\) and \(1 = 2y - 14x = 2(y - 7x)\). Since \(y - 7x\) is an integer, 1 is even, which is a contradiction.', 'افترضنا P صح و Q خطأ، فطلع أن 1 زوجي. مستحيل.')], title='') +
+    '  <h3>سؤال البنات ' + ref('p-fill3') + ': الفراغات بالترتيب</h3>\n' +
+    r'''  <div class="stmt" style="padding:2mm 4mm">
+    <p class="en">(1) even · \(2k\) · \(10k + 1\) · \(5k\) · \(5k\)</p>
+    <p class="en">(2) even · \(4n\) · \(k - 2n - 1\) · \(k - 2n - 1\) · odd</p>
+    <p class="en">(3) even · even · \(2y - 10x\) · \(y - 5x\) · \(y - 5x\) · even</p>
+  </div>
+''' +
+    note('trap', 'لقِ الغلط:', r'الطالب افترض «n فردي» ووصّل «\(5n + 1\) زوجي». هذا يثبت جملة ثانية (عكس P يعطي عكس Q)، مو عكس النقيض. الصح: ' + lt(r'Assume that \(5n + 1\) is even.') + ' ويوصّل أن n فردي.') +
+    '  <h3>تمرين 5.36 (ميد 1446)</h3>\n' +
+    W([('(a)', 'مباشر', r'Assume that \(n\) is odd. Then \(n = 2k + 1\) for some integer \(k\). So \(7n - 5 = 7(2k + 1) - 5 = 14k + 2 = 2(7k + 1)\). Since \(7k + 1\) is an integer, \(7n - 5\) is even.', ''),
+       ('(b)', 'عكس النقيض', r'Assume that \(7n - 5\) is odd. Then \(7n - 5 = 2k + 1\) for some integer \(k\). So \(n = (7n - 5) - 6n + 5 = 2k + 1 - 6n + 5 = 2(k - 3n + 3)\). Since \(k - 3n + 3\) is an integer, \(n\) is even.', ''),
+       ('(c)', 'تناقض', r'Assume, to the contrary, that there exists an odd integer \(n\) such that \(7n - 5\) is odd. Then \(n = 2x + 1\) and \(7n - 5 = 2y + 1\) for some integers \(x\) and \(y\). Hence \(7(2x + 1) - 5 = 2y + 1\), so \(14x + 2 = 2y + 1\) and \(1 = 2y - 14x = 2(y - 7x)\). Since \(y - 7x\) is an integer, 1 is even, which is a contradiction.', '')], title='') +
     '  <h3>تمرين 5.39</h3>\n' +
     W([('(a)', 'مباشر', r'Assume that \(x \le y\). Since \(x \gt 0\), multiplying both sides by \(x\) gives \(x^2 \le xy\). Since \(y \gt 0\), multiplying both sides of \(x \le y\) by \(y\) gives \(xy \le y^2\). Therefore \(x^2 \le xy \le y^2\), and so \(x^2 \le y^2\).', 'ضربنا المتباينة في x مرة وفي y مرة، وربطنا النتيجتين.'),
        ('(b)', 'عكس النقيض', r'Assume that \(x^2 \gt y^2\). Then \(x^2 - y^2 \gt 0\), and so \((x - y)(x + y) \gt 0\). Since \(x + y \gt 0\), dividing both sides by \(x + y\) gives \(x - y \gt 0\). Hence \(x \gt y\).', r'افترضنا أن Q خطأ (\(x^2 \gt y^2\))، ووصلنا أن P خطأ (\(x \gt y\)).'),
-       ('(c)', 'تناقض', r'Assume, to the contrary, that there exist positive real numbers \(x\) and \(y\) such that \(x \le y\) and \(x^2 \gt y^2\). Then \((x - y)(x + y) = x^2 - y^2 \gt 0\). Since \(x + y \gt 0\), it follows that \(x - y \gt 0\), and so \(x \gt y\). This contradicts \(x \le y\).', r'افترضنا P صح و Q خطأ، فطلع \(x \gt y\) و \(x \le y\) مع بعض. مستحيل.')], title='') +
-    box('راجع نفسك (دقيقتين)', '''    <ul class="chk">
-      <li><span class="cb"></span>أكتب أول سطر لكل طريقة من الثلاث بدون ما أطالع.</li>
-      <li><span class="cb"></span>أعرف وين أوصل في كل طريقة: Q، أو عكس P، أو شي مستحيل.</li>
-    </ul>
-'''), sol=True))
+       ('(c)', 'تناقض', r'Assume, to the contrary, that there exist positive real numbers \(x\) and \(y\) such that \(x \le y\) and \(x^2 \gt y^2\). Then \((x - y)(x + y) = x^2 - y^2 \gt 0\). Since \(x + y \gt 0\), it follows that \(x - y \gt 0\), and so \(x \gt y\). This contradicts \(x \le y\).', r'افترضنا P صح و Q خطأ، فطلع \(x \gt y\) و \(x \le y\) مع بعض. مستحيل.')], title=''), sol=True))
 
 save('d_u3.html', P)

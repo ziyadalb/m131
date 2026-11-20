@@ -5,7 +5,7 @@ P = []
 U4 = U[4] + ' · 5.4'
 
 # ---------- p-u4: idea + card + slides Examples 8, 9 ----------
-P.append(page('p-u4', U4, 'must', 'براهين الوجود: الفكرة' + tag('sol', 'مثالا السلايدات 8 و9'),
+P.append(page('p-u4', U4, 'low', 'براهين الوجود: الفكرة' + tag('sol', 'مثالا السلايدات 8 و9'),
     idea('جملة «يوجد…» (' + lt('There exists') + ') يكفيها مثال واحد صحيح: تختاره، وتتحقق منه بالأرقام. (عكس «لكل»: هذي تنقضها بمثال واحد.)') +
     stmt([(r'<span class="lb">Definition.</span> An <i>existence theorem</i> is expressed as \(\exists x \in S, R(x)\): There exists \(x \in S\) such that \(R(x)\). Such a statement is true if \(R(x)\) is true for some \(x \in S\). Its proof is called an <i>existence proof</i>.',
            r'نظرية الوجود تقول إن فيه شي له خاصية معينة: «يوجد x في S بحيث \(R(x)\)». وتكون صحيحة لو \(R(x)\) صحيحة لعنصر واحد على الأقل. وبرهانها اسمه <b>برهان وجود</b>.')]) +
@@ -23,7 +23,7 @@ P.append(page('p-u4', U4, 'must', 'براهين الوجود: الفكرة' + ta
     style='gap:3mm'))
 
 # ---------- p-ex10: slides Example 10 + 5.42 ----------
-P.append(page('p-ex10', U[4], 'must', 'مثال: وجود بحالتين' + tag('sol', 'مثال السلايدات 10') + tag('ex', 'دورك'),
+P.append(page('p-ex10', U[4], 'low', 'مثال: وجود بحالتين' + tag('sol', 'مثال السلايدات 10') + tag('ex', 'دورك'),
     qbox(r'<span class="lb">Result.</span> There exist irrational numbers \(a\) and \(b\) such that \(a^b\) is rational.',
          r'يوجد عددين غير نسبيين a و b بحيث \(a^b\) نسبي. <b>نفكر:</b> المرشح \(\sqrt{2}^{\sqrt{2}}\). ما نعرف هو نسبي أو لا، والحلو أننا ما نحتاج نعرف: لو نسبي خلصنا، ولو غير نسبي نرفعه للأس \(\sqrt{2}\) فيطلع 2. في الحالتين لقينا a و b.') +
     W([('1', 'حالة 1', r'Consider the number \(\sqrt{2}^{\sqrt{2}}\). Of course, this number is either rational or irrational. <i>Case 1.</i> \(\sqrt{2}^{\sqrt{2}}\) is rational. Then we can take \(a = b = \sqrt{2}\) and we have the desired result.',
@@ -35,7 +35,7 @@ P.append(page('p-ex10', U[4], 'must', 'مثال: وجود بحالتين' + tag(
     W([('1', 'اختر', None, None, 'b1'), ('2', 'تحقق', None, None, 'b2'), ('3', 'اختم', None, None, 'b1')], title=''), style='gap:3mm'))
 
 # ---------- p-ivt: IVT + slides Example 11 ----------
-P.append(page('p-ivt', U[4], 'must', 'القيمة الوسطى: وجود حل بدون ما تلقاه' + tag('sol', 'مثال السلايدات 11'),
+P.append(page('p-ivt', U[4], 'low', 'القيمة الوسطى: وجود حل بدون ما تلقاه' + tag('sol', 'مثال السلايدات 11'),
     idea('أحياناً ما نقدر نحسب الحل. بس نقدر نثبت أنه موجود: لو الدالة سالبة عند طرف وموجبة عند الثاني، فلازم تمر بالصفر بينهم.') +
     stmt([(r'<span class="lb">The Intermediate Value Theorem of Calculus.</span> If \(f\) is a function that is continuous on the closed interval \([a, b]\) and \(k\) is a number between \(f(a)\) and \(f(b)\), then there exists a number \(c \in (a, b)\) such that \(f(c) = k\).',
            r'لو f متصلة على \([a, b]\)، و k عدد بين \(f(a)\) و \(f(b)\)، فيوجد c بين a و b بحيث \(f(c) = k\). وفي أسئلتنا \(k = 0\).')]) +
@@ -51,7 +51,7 @@ P.append(page('p-ivt', U[4], 'must', 'القيمة الوسطى: وجود حل �
     recall('الخطوات الثلاث: الدالة متصلة ← الطرفين بإشارتين مختلفتين ← النظرية تعطي c.')))
 
 # ---------- p-uniq: slides Example 12 + 5.46 ----------
-P.append(page('p-uniq', U[4], 'must', 'مثال: الحل وحيد' + tag('sol', 'مثال السلايدات 12') + tag('ex', 'دورك'),
+P.append(page('p-uniq', U[4], 'low', 'مثال: الحل وحيد' + tag('sol', 'مثال السلايدات 12') + tag('ex', 'دورك'),
     qbox(r'<span class="lb">Result.</span> The equation \(x^5 + 2x - 5 = 0\) has a unique real number solution between \(x = 1\) and \(x = 2\).',
          r'نفس المعادلة، والحل <b>وحيد</b> (' + lt('unique') + r'). <b>نفكر:</b> الوجود ثبت في مثال 11. للوحدانية نفترض حلين \(a \lt b\). بس الدالة متزايدة: \(a^5 \lt b^5\) و \(2a \lt 2b\)، فيطلع \(0 \lt 0\). تناقض!', lab='مثال 12') +
     W([('1', 'نعكس', r'Assume, to the contrary, that the equation \(x^5 + 2x - 5 = 0\) has two distinct real number solutions \(a\) and \(b\) between \(x = 1\) and \(x = 2\). We may assume that \(a \lt b\).',
@@ -67,7 +67,7 @@ P.append(page('p-uniq', U[4], 'must', 'مثال: الحل وحيد' + tag('sol',
     style='gap:2.6mm'))
 
 # ---------- p-cases: book proof (n >= 7, 2a + 3b) + 5.51 ----------
-P.append(page('p-cases', U[4], 'must', 'مثال: وجود «لكل n» بالحالات' + tag('sol', 'برهان من الكتاب') + tag('ex', 'دورك'),
+P.append(page('p-cases', U[4], 'low', 'مثال: وجود «لكل n» بالحالات' + tag('sol', 'برهان من الكتاب') + tag('ex', 'دورك'),
     qbox(r'<span class="lb">Result.</span> For every integer \(n \ge 7\), there exist positive integers \(a\) and \(b\) such that \(n = 2a + 3b\).',
          r'كل عدد صحيح من 7 وفوق ينكتب \(2a + 3b\)، حيث a و b موجبين. <b>نفكر:</b> \(7 = 2 \cdot 2 + 3 \cdot 1\) و \(8 = 2 \cdot 1 + 3 \cdot 2\). بس الجملة «لكل n»، فنقسم n لزوجي وفردي، ونعيّن a و b بدلالة q.') +
     W([('1', 'الحالات', r'Let \(n\) be an integer such that \(n \ge 7\). Since \(n\) is even or odd, either \(n = 2q\) or \(n = 2q + 1\) for some integer \(q\). We consider these two cases.', 'n يا زوجي يا فردي.'),
@@ -82,7 +82,7 @@ P.append(page('p-cases', U[4], 'must', 'مثال: وجود «لكل n» بالح
     style='gap:2.8mm'))
 
 # ---------- p-553: extra twin + 5.53 ----------
-P.append(page('p-553', U[4], 'must', 'مثال: عيّن الشي، وتحقق من كل شرط' + tag('sol', 'مثال إضافي') + tag('ex', 'دورك'),
+P.append(page('p-553', U[4], 'low', 'مثال: عيّن الشي، وتحقق من كل شرط' + tag('sol', 'مثال إضافي') + tag('ex', 'دورك'),
     qbox(r'Prove that there exist three distinct primes whose sum is also a prime.',
          'اثبت أنه يوجد ثلاث أعداد أولية مختلفة مجموعها عدد أولي. (مثال إضافي مو من الكتاب، عشان تشوف نوع 5.53 محلول.)') +
     think('نفكر', ['لو 2 واحد منهم، فالمجموع = 2 + عددين فرديين = عدد زوجي أكبر من 2، يعني مو أولي. فـ 2 ممنوع، ونختار أعداد أولية فردية.',
