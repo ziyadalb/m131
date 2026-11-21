@@ -1,6 +1,7 @@
 import sys
 import os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from h5 import *
+import re
 
 def toc_row(u, kind, words, ex, pid):
     return ['<b>' + u + '</b>', (kind, 'class="s"'), (words, 'class="s"'), ex, ref(pid)]
@@ -48,13 +49,14 @@ cover = r'''<section class="page cover" id="p-cover">
     </div>
     <div class="box">
       <h3>رموز الصفحات</h3>
-      <p class="fl3"><span class="lv top">★ يتكرر في الاختبارات</span> سؤاله جا أكثر من مرة. وقتك قليل؟ ذاكر هذي بس.</p>
+      <p class="fl3"><span class="lv top">★ يتكرر في الاختبارات</span> سؤاله جا أكثر من مرة.</p>
+      <p class="fl3"><span class="lv top">★ مرشّح للبديل</span> من أمثلة الكتاب اللي ياخذون منها، وما جا للحين. وقتك قليل؟ ذاكر صفحات النجمة بس.</p>
       <p class="fl3"><span class="lv must">أساسي</span> شرح تحتاجه.</p>
       <p class="fl3"><span class="lv low">احتمال أقل</span> من الخطة، بس ما جا في الميدات.</p>
       <p class="fl3"><span style="color:var(--acc);font-weight:700">■</span> شرح <span style="color:#2f5fa8;font-weight:700">■</span> دورك <span style="color:#b47a00;font-weight:700">■</span> سؤال اختبار <span style="color:#8a959c;font-weight:700">■</span> حلول</p>
     </div>
   </div>
-  <p class="small">أسئلة الاستقراء (في ميد نوفمبر: فقرة 1.4 وسؤال 3) في ملزمة الفصل 6. علقت بكلمة إنجليزية؟ شوف <span class="ref" data-to="p-phr"></span>.</p>
+  <p class="small">«توأم» في الملزمة يعني: نفس السؤال، بأرقام أو كلمة ثانية. أسئلة الاستقراء (في ميد نوفمبر: فقرة 1.4 وسؤال 3) في ملزمة الفصل 6. علقت بكلمة إنجليزية؟ شوف <span class="ref" data-to="p-phr"></span>.</p>
 </section>
 '''
 
@@ -108,15 +110,15 @@ P.append(page('p-trap', U[1], 'top', 'نفس الفخ في ميد البنات �
           extra='    <p>أول قيمتين مشت، والثالثة فشلت. اللي يوقف عند قيمتين يحكم «صح» ويخسر الدرجتين.</p>\n') +
     W([('', 'الجواب', r'False. For \(n = 6\), \(n^2 - 4 = 32\) and \(12 \nmid 32\). Thus, \(n = 6\) is a counterexample.', '')], title='') +
     qbox(r'<span class="lb">1.</span> If \(n\) is an odd integer, then \(n^2 - n\) is odd.',
-         r'إذا n فردي، فإن \(n^2 - n\) فردي. <b>نفكر:</b> \(n = 1\) يعطي 0، و \(n = 3\) يعطي 6. الاثنين زوجي ' + NO + r' كل القيم تفشل، لأن \(n^2 - n = n(n - 1)\) عددين ورا بعض، وواحد منهم زوجي. فالفخ هنا عكسي: شكلها «برهن»، وهي خاطئة.', lab='سؤال ميد نوفمبر · 3 درجات') +
-    W([('', 'الجواب', r'False. For \(n = 3\), \(n^2 - n = 9 - 3 = 6\), which is even. Thus, \(n = 3\) is a counterexample.', '')], title='') +
+         r'إذا n فردي، فإن \(n^2 - n\) فردي. <b>نفكر:</b> المثال لازم يكون فردي (الشرط صح). \(n = 1\) يعطي 0، و \(n = 3\) يعطي 6، والاثنين زوجي ' + NO + r' كل القيم تفشل، لأن \(n^2 - n = n(n - 1)\) عددين ورا بعض، وواحد منهم زوجي. فالفخ هنا عكسي: شكلها «برهن»، وهي خاطئة.', lab='سؤال ميد نوفمبر · 3 درجات') +
+    W([('', 'الجواب', r'False. For the odd integer \(n = 1\), the integer \(n^2 - n = 1^2 - 1 = 0\) is even. Thus, \(n = 1\) is a counterexample.', r'هذا حل الكتاب (مثال 5.6). و \(n = 3\) يمشي بعد: \(9 - 3 = 6\) زوجي.')], title='') +
     '  <h3>تدريب سرعة: لقِ أول قيمة تفشل (نفس الفخ بأرقام ثانية)</h3>\n' +
     tbl([('', 'width:6%'), 'الجملة', ('أول قيمة تفشل', 'width:17%'), ('الحساب', 'width:24%')], [
         drow('1', r'For every odd positive integer \(n\), \(5 \mid (n^2 - 1)\).'),
         drow('2', r'For every even positive integer \(n\), \(8 \mid (n^2 + 4)\).'),
         drow('3', r'For every positive integer \(n\), \(2^n + 1\) is a prime number.'),
         drow('4', r'If \(n\) is an even integer, then \(n^2 + n\) is odd.')], cls='t drill').replace('    <table', '  <table').replace('    </table>', '  </table>') +
-    note('trick', 'القاعدة:', 'جرّب 4 قيم على الأقل بالترتيب. ولو كل القيم فشلت (مثل سؤال نوفمبر)، فالجملة خاطئة من أساسها: اختر أوضح قيمة واكتب حسابها.'), style='gap:3mm'))
+    note('trick', 'القاعدة:', 'جرّب 4 قيم على الأقل. ولو كل القيم فشلت (مثل نوفمبر)، اختر أسهل قيمة واكتب حسابها.'), style='gap:2.5mm'))
 
 # ---------- p-ex2 ----------
 P.append(page('p-ex2', U[1], 'must', 'مثال: قيمة تخلي الجملة بدون معنى' + tag('sol', 'مثال السلايدات 2') + tag('ex', 'دورك'),
@@ -167,16 +169,29 @@ P.append(page('p-ex4', U[1], 'must', 'مثال: أكثر من متغير' + tag(
     W([('', 'الجواب', None, None, 'b2')], title='') +
     hints(['<b>تريك:</b> لو فيه أكثر من متغير، لا تخليهم كلهم 1 ولا كلهم متساويين. القيم «الخاصة» تخبي الخطأ.']), style='gap:3.2mm'))
 
+# ---------- p-book: the remaining examples of the book's section 5.1 ----------
+P.append(page('p-book', U[1], 'cand', 'أمثلة الكتاب الباقية: مرشّحة للبديل' + tag('sol', 'أمثلة الكتاب 5.2 و5.5 و5.9'),
+    idea('الميدات أخذت مثالين من أمثلة الكتاب في 5.1 بالحرف: 5.4 (ميد 1447) و5.6 (نوفمبر). هذي الثلاثة الباقية، وكل واحد على فكرة شفتها قبل. غطِّ «حل الكتاب»، حاول، وبعدها قارن.') +
+    qbox(r'<span class="lb">Example 5.5.</span> Disprove the statement: Let \(n \in \mathbb{Z}\). If \(n^2 + 3n\) is even, then \(n\) is odd.',
+         r'إذا \(n^2 + 3n\) زوجي، فإن n فردي. <b>الفكرة</b> ' + ref('p-ex3') + r': «إذا… فإن…»، فنبي الشرط صح والنتيجة خطأ، يعني n زوجي و \(n^2 + 3n\) زوجي. جرّب \(n = 2\).', lab='مثال الكتاب 5.5') +
+    W([('', 'حل الكتاب', r'If \(n = 2\), then \(n^2 + 3n = 2^2 + 3 \cdot 2 = 10\) is even and 2 is even. Thus, \(n = 2\) is a counterexample.', 'الشرط صح (10 زوجي) والنتيجة خطأ (2 مو فردي). وأي عدد زوجي يمشي.')], title='') +
+    qbox(r'<span class="lb">Example 5.2.</span> Disprove the statement: If \(x\) is a real number, then \(\tan^2 x + 1 = \sec^2 x\).',
+         r'لكل عدد حقيقي x، \(\tan^2 x + 1 = \sec^2 x\). <b>الفكرة</b> ' + ref('p-ex2') + r': قيمة تخلي الطرفين بدون معنى. \(\tan x\) و \(\sec x\) غير معرّفين لما \(\cos x = 0\)، مثل \(x = \pi/2\).', lab='مثال الكتاب 5.2') +
+    W([('', 'حل الكتاب', r'Since \(\tan x\) and \(\sec x\) are not defined when \(x = \pi/2\), it follows that \(\tan^2 x + 1\) and \(\sec^2 x\) have no numerical value when \(x = \pi/2\) and, consequently, \(\tan^2 x + 1\) and \(\sec^2 x\) are not equal when \(x = \pi/2\). That is, \(x = \pi/2\) is a counterexample to the statement.', '')], title='') +
+    qbox(r'<span class="lb">Example 5.9.</span> Show that the statement: Let \(a\) and \(b\) be nonzero real numbers. If \(x, y \in \mathbb{R}^+\), then \(\dfrac{a^2}{2b^2}x^2 + \dfrac{b^2}{2a^2}y^2 \gt xy\) is false.',
+         r'a و b حقيقيين مو صفر، و x و y موجبين. <b>الفكرة</b> ' + ref('p-ex4') + r': أكثر من متغير، فاختر قيم «ذكية» تخلي الحدين متساويين. لو \(x = b^2\) و \(y = a^2\)، كل حد يصير \(a^2b^2/2\)، والمجموع يساوي xy بالضبط، مو أكبر.', lab='مثال الكتاب 5.9') +
+    W([('', 'حل الكتاب', r'Let \(x = b^2\) and \(y = a^2\). Then \(\frac{a^2}{2b^2}x^2 + \frac{b^2}{2a^2}y^2 = \frac{a^2b^2}{2} + \frac{a^2b^2}{2} = a^2b^2 = xy\). Thus, \(x = b^2\) and \(y = a^2\) is a counterexample and so the inequality is false.', '')], title=''), style='gap:2.8mm'))
+
 # ---------- p-s1 ----------
 P.append(page('p-s1', 'حلول الوحدة 1', '', 'الحلول' + tag('sol', 'شيّك'),
-    W([('5.3', '', r'Let \(n = 3\). Then \(2n^2 + 1 = 2 \cdot 9 + 1 = 19\) and \(3 \nmid 19\). Thus, \(n = 3\) is a counterexample.',
-        'القيم بالترتيب: 3، 9، 19، 33، 51. كلها تقبل القسمة على 3 إلا 19.'),
-       ('5.2', '', r'Let \(n = 4\). Then \(2^4 + 3^4 + 4 \cdot 3 \cdot 2 = 16 + 81 + 24 = 121 = 11 \cdot 11\), which is not a prime number. Thus, \(n = 4\) is a counterexample.',
+    W([('5.2', '', r'Let \(n = 4\). Then \(2^4 + 3^4 + 4 \cdot 3 \cdot 2 = 16 + 81 + 24 = 121 = 11 \cdot 11\), which is not a prime number. Thus, \(n = 4\) is a counterexample.',
         r'القيم من 0 إلى 3 تعطي 2 و5 و13 و41، وكلها أولية. بس عند \(n = 4\) يطلع 121، وهو \(11 \times 11\).'),
        ('5.4', '', r'Let \(n = 2\). Then \(\frac{n(n+1)}{2} = 3\) is odd, but \(\frac{(n+1)(n+2)}{2} = 6\) is even. Thus, \(n = 2\) is a counterexample.',
         r'عند \(n = 2\) الشرط صح (3 فردي) والنتيجة خطأ (6 زوجي). أما \(n = 3\) فالشرط عندها خطأ (6 زوجي)، فما تنفع.'),
        ('5.5', '', r'Let \(a = 1\) and \(b = 2\). Then \((a + b)^3 = 3^3 = 27\), while \(a^3 + 2a^2b + 2ab + 2ab^2 + b^3 = 1 + 4 + 4 + 8 + 8 = 25\). Since \(27 \ne 25\), \(a = 1\) and \(b = 2\) constitute a counterexample.',
-        r'الأيسر 27 والأيمن 25. (\(a = b = 1\) ما تنفع، لأن الطرفين 8.)')], title='') +
+        r'الأيسر 27 والأيمن 25. (\(a = b = 1\) ما تنفع، لأن الطرفين 8.)'),
+       ('5.3', '', r'Let \(n = 3\). Then \(2n^2 + 1 = 2 \cdot 9 + 1 = 19\) and \(3 \nmid 19\). Thus, \(n = 3\) is a counterexample.',
+        'القيم بالترتيب: 3، 9، 19، 33، 51. كلها تقبل القسمة على 3 إلا 19.')], title='') +
     '  <h3>تدريب السرعة ' + ref('p-trap') + '</h3>\n' +
     tbl(['', 'أول قيمة تفشل', 'الحساب'], [
         ['1', r'\(n = 3\)', r'\(3^2 - 1 = 8\)، و5 ما يقسم 8'],
@@ -192,4 +207,6 @@ P.append(page('p-s1', 'حلول الوحدة 1', '', 'الحلول' + tag('sol',
     </ol>
 '''), sol=True))
 
+ORDER = ['p-cover', 'p-u1', 'p-ex2', 'p-ex3', 'p-ex4', 'p-mid5', 'p-trap', 'p-book', 'p-s1']
+P.sort(key=lambda h: ORDER.index(re.search(r'id="([^"]+)"', h).group(1)))
 save('b_u1.html', P)

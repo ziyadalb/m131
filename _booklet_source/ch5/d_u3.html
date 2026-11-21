@@ -1,4 +1,4 @@
-<section class="page" id="p-u3" style="gap:3mm">
+<section class="page" id="p-u3" style="gap:2.6mm">
   <div class="hdr"><span class="u">الوحدة 3 · ثلاث طرق للبرهان · 5.3</span><span class="lv top">★ يتكرر في الاختبارات</span><span class="pn"></span></div>
   <h2 class="t">ثلاث طرق لنفس الجملة<span class="tag sol">مثال توأم 5.36</span></h2>
   <div class="idea">جملة «إذا P فإن Q» تنبرهن بثلاث طرق. الفرق كله في أول سطر: وش تفترض، ووين تبي توصل.</div>
@@ -22,7 +22,7 @@
     <div class="r"><div class="l">(c)<i>تناقض</i></div><div class="v">Assume, to the contrary, that there exists an even integer \(n\) such that \(3n + 7\) is even. Then \(n = 2x\) and \(3n + 7 = 2y\) for some integers \(x\) and \(y\). Hence \(3(2x) + 7 = 2y\), and so \(7 = 2y - 6x = 2(y - 3x)\). Since \(y - 3x\) is an integer, 7 is even, which is a contradiction.<span class="g">افترضنا P صح و Q خطأ مع بعض، فطلع أن 7 زوجي. مستحيل.</span></div></div>
   </div>
   <div class="note trap"><span class="k">انتبه:</span>لا تبدأ بـ «<span class="lt">Assume that \(3n + 7\) is odd</span>»: هذا افتراض للمطلوب نفسه.</div>
-  <div class="note trick"><span class="k">أي طريقة؟</span>لو السؤال حددها التزم فيها. لو ما حدد: جرّب المباشر أول.</div>
+  <div class="note trick"><span class="k">ليش عكس النقيض يكفي؟</span>«إذا Q خطأ فإن P خطأ» تساوي «إذا P فإن Q» بالضبط، فلو برهنت وحدة انبرهنت الثانية. واسمه «عكس النقيض» لأنك تعكس الجملة وتنفي طرفيها.</div>
 
 </section>
 
@@ -80,7 +80,7 @@
   <h2 class="t">دورك 2: سؤال ميد 1446 من الصفر<span class="tag past">ميد 1446 · 7 درجات</span><span class="tag ex">تمرين 5.36</span></h2>
   <div class="qbox ex"><div class="lab">دورك · تمرين 5.36</div>
     <p class="en"><span class="lb">5.36.</span> Prove that if \(n\) is an odd integer, then \(7n - 5\) is even by (a) a direct proof, (b) a proof by contrapositive and (c) a proof by contradiction.</p>
-    <p class="ar">بالعربي: اثبت: إذا n فردي، فإن \(7n - 5\) زوجي، بثلاث طرق. جا بالحرف في ميد 1446. هنا الفرض «فردي»: \(n = 2k + 1\)، والنتيجة «زوجي».</p>
+    <p class="ar">بالعربي: اثبت: إذا n فردي، فإن \(7n - 5\) زوجي، بثلاث طرق. جا بالحرف في ميد 1446. هنا الشرط «n فردي»: \(n = 2k + 1\)، والنتيجة «زوجي».</p>
   </div>
   <p class="recall">غطِّ الصفحات اللي قبل. اكتب أول سطر لكل طريقة من ذاكرتك، وبعدها كمّل.</p>
   <div class="tpl grow">
@@ -92,8 +92,33 @@
 
 </section>
 
+<section class="page" id="p-ineq" style="gap:3mm">
+  <div class="hdr"><span class="u">الوحدة 3 · ثلاث طرق للبرهان</span><span class="lv low">احتمال أقل</span><span class="pn"></span></div>
+  <h2 class="t">ثلاث طرق مع متباينة<span class="tag sol">مثال الكتاب في 5.3</span></h2>
+  <div class="qbox"><div class="lab">مثال الكتاب في 5.3</div>
+    <p class="en"><span class="lb">Result.</span> Let \(x\) be a nonzero real number. If \(x + \frac{1}{x} \lt 2\), then \(x \lt 0\).</p>
+    <p class="ar">بالعربي: x عدد حقيقي مو صفر. إذا \(x + 1/x \lt 2\) فإن x سالب. نفس الثلاث طرق، بس الحساب متباينات بدل زوجي وفردي.</p>
+  </div>
+  <div class="think">
+    <h3>ثلاث حركات بس</h3>
+    <div class="flow">
+      <div class="f"><span class="num">1</span><span>لو ضربت أو قسمت متباينة على عدد موجب (مثل x لما \(x \gt 0\)، أو \(x^2\))، اتجاهها ما يتغير.</span></div>
+      <div class="f"><span class="num">2</span><span>أي مربع ما يصير سالب: \((x - 1)^2 = x^2 - 2x + 1 \ge 0\).</span></div>
+      <div class="f"><span class="num">3</span><span>عكس «\(x \lt 0\)» هو «\(x \ge 0\)». ولأن x مو صفر، يصير \(x \gt 0\).</span></div>
+    </div>
+  </div>
+  <h3>نكتب ((b) و(c) من الكتاب بالحرف)</h3>
+  <div class="tpl">
+    <div class="r"><div class="l">(a)<i>مباشر</i></div><div class="v">Assume that \(x + \frac{1}{x} \lt 2\). Since \(x^2 \gt 0\), multiplying both sides by \(x^2\) gives \(x^3 + x \lt 2x^2\), and so \(x^3 - 2x^2 + x \lt 0\), that is, \(x(x - 1)^2 \lt 0\). Since \((x - 1)^2 \ge 0\) and \(x(x - 1)^2 \ne 0\), it follows that \((x - 1)^2 \gt 0\), and so \(x \lt 0\).<span class="g">نضرب في \(x^2\) (موجب دايماً)، ونجمع كل شي في طرف، ونحلل. المربع ما يصير سالب، فالسالب جا من x.</span></div></div>
+    <div class="r"><div class="l">(b)<i>عكس النقيض</i></div><div class="v">Assume that \(x \ge 0\). Since \(x \ne 0\), it follows that \(x \gt 0\). Because \((x - 1)^2 \ge 0\), we have \((x - 1)^2 = x^2 - 2x + 1 \ge 0\). Adding \(2x\) to both sides of this inequality, we obtain \(x^2 + 1 \ge 2x\). Dividing both sides of the inequality \(x^2 + 1 \ge 2x\) by the positive number \(x\), we obtain \(x + \frac{1}{x} \ge 2\), as desired.<span class="g">عكس النتيجة: x موجب. نبدأ من مربع \(\ge 0\) ونمشي لين نوصل \(x + 1/x \ge 2\)، يعني الشرط خطأ.</span></div></div>
+    <div class="r"><div class="l">(c)<i>تناقض</i></div><div class="v">Assume, to the contrary, that there exists a nonzero real number \(x\) such that \(x + \frac{1}{x} \lt 2\) and \(x \ge 0\). Since \(x \ne 0\), it follows that \(x \gt 0\). Multiplying both sides of the inequality \(x + \frac{1}{x} \lt 2\) by \(x\), we obtain \(x^2 + 1 \lt 2x\). Subtracting \(2x\) from both sides, we have \(x^2 - 2x + 1 \lt 0\). It then follows that \((x - 1)^2 \lt 0\), which is a contradiction.<span class="g">الشرط صح والنتيجة خطأ مع بعض. نضرب في x الموجب، فيطلع مربع سالب. مستحيل.</span></div></div>
+  </div>
+  <div class="note trick"><span class="k">بعدها:</span>نفس الحركات تحتاجها في تمرين 5.39 (الصفحة الجاية).</div>
+
+</section>
+
 <section class="page" id="p-539">
-  <div class="hdr"><span class="u">الوحدة 3 · ثلاث طرق للبرهان</span><span class="lv extra">إضافي</span><span class="pn"></span></div>
+  <div class="hdr"><span class="u">الوحدة 3 · ثلاث طرق للبرهان</span><span class="lv low">احتمال أقل</span><span class="pn"></span></div>
   <h2 class="t">تمرين 5.39<span class="tag ex">دورك</span></h2>
   <div class="qbox ex"><div class="lab">دورك · تمرين 5.39</div>
     <p class="en"><span class="lb">5.39.</span> Let \(x, y \in \mathbb{R}^+\). Prove that if \(x \le y\), then \(x^2 \le y^2\) by (a) a direct proof, (b) a proof by contrapositive and (c) a proof by contradiction.</p>
@@ -103,7 +128,7 @@
     <h3>قبل ما تكتب</h3>
     <div class="flow">
       <div class="f"><span class="num">1</span><span>بأرقام: \(2 \le 3\) و \(4 \le 9\) <span class="ok">✓</span> وشرط «موجبين» مهم: \(-3 \le 2\) لكن \(9 \le 4\) خطأ.</span></div>
-      <div class="f"><span class="num">2</span><span>حركتين تحتاجهم: لو ضربت متباينة في عدد موجب، اتجاهها ما يتغير. و \(x^2 - y^2 = (x - y)(x + y)\).</span></div>
+      <div class="f"><span class="num">2</span><span>حركتين تحتاجهم (زي الصفحة اللي قبل): لو ضربت متباينة في عدد موجب، اتجاهها ما يتغير. و \(x^2 - y^2 = (x - y)(x + y)\).</span></div>
     </div>
   </div>
   <div class="tpl grow">

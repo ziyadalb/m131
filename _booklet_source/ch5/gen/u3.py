@@ -20,7 +20,7 @@ P.append(page('p-u3', U3, 'top', 'ثلاث طرق لنفس الجملة' + tag('
        ('(c)', 'تناقض', r'Assume, to the contrary, that there exists an even integer \(n\) such that \(3n + 7\) is even. Then \(n = 2x\) and \(3n + 7 = 2y\) for some integers \(x\) and \(y\). Hence \(3(2x) + 7 = 2y\), and so \(7 = 2y - 6x = 2(y - 3x)\). Since \(y - 3x\) is an integer, 7 is even, which is a contradiction.',
         'افترضنا P صح و Q خطأ مع بعض، فطلع أن 7 زوجي. مستحيل.')], title='نكتب: نفس الجملة بثلاث طرق') +
     note('trap', 'انتبه:', 'لا تبدأ بـ «' + lt(r'Assume that \(3n + 7\) is odd') + '»: هذا افتراض للمطلوب نفسه.') +
-    note('trick', 'أي طريقة؟', 'لو السؤال حددها التزم فيها. لو ما حدد: جرّب المباشر أول.'), style='gap:3mm'))
+    note('trick', 'ليش عكس النقيض يكفي؟', '«إذا Q خطأ فإن P خطأ» تساوي «إذا P فإن Q» بالضبط، فلو برهنت وحدة انبرهنت الثانية. واسمه «عكس النقيض» لأنك تعكس الجملة وتنفي طرفيها.'), style='gap:2.6mm'))
 
 # ---------- p-tpl3: the November question with the same template ----------
 P.append(page('p-tpl3', U[3], 'top', 'سؤال ميد نوفمبر: نفس القالب، أرقام ثانية' + tag('past', 'نوفمبر · 2+2+2'),
@@ -55,18 +55,33 @@ P.append(page('p-fill3', U[3], 'top', 'دورك 1: سؤال ميد البنات 
 # ---------- p-536 ----------
 P.append(page('p-536', U[3], 'top', 'دورك 2: سؤال ميد 1446 من الصفر' + tag('past', 'ميد 1446 · 7 درجات') + tag('ex', 'تمرين 5.36'),
     duork('5.36', r'<span class="lb">5.36.</span> Prove that if \(n\) is an odd integer, then \(7n - 5\) is even by (a) a direct proof, (b) a proof by contrapositive and (c) a proof by contradiction.',
-          r'اثبت: إذا n فردي، فإن \(7n - 5\) زوجي، بثلاث طرق. جا بالحرف في ميد 1446. هنا الفرض «فردي»: \(n = 2k + 1\)، والنتيجة «زوجي».') +
+          r'اثبت: إذا n فردي، فإن \(7n - 5\) زوجي، بثلاث طرق. جا بالحرف في ميد 1446. هنا الشرط «n فردي»: \(n = 2k + 1\)، والنتيجة «زوجي».') +
     recall('غطِّ الصفحات اللي قبل. اكتب أول سطر لكل طريقة من ذاكرتك، وبعدها كمّل.') +
     W([('(a)', 'مباشر', None, None, 'b3'), ('(b)', 'عكس النقيض', None, None, 'b3'), ('(c)', 'تناقض', None, None, 'b3')], title='', cls='tpl grow') +
     hints([r'<b>تلميح (b):</b> من \(7n - 5 = 2k + 1\) طلّع n لوحدها: \(n = (7n - 5) - 6n + 5\).',
            r'<b>تلميح (c):</b> \(n = 2x + 1\) و \(7n - 5 = 2y + 1\). عوّض الأولى في الثانية، وشوف أي عدد يطلع «زوجي» وهو مو زوجي.'])))
 
+# ---------- p-ineq: three ways with an inequality (the book's example in 5.3) ----------
+P.append(page('p-ineq', U[3], 'low', 'ثلاث طرق مع متباينة' + tag('sol', 'مثال الكتاب في 5.3'),
+    qbox(r'<span class="lb">Result.</span> Let \(x\) be a nonzero real number. If \(x + \frac{1}{x} \lt 2\), then \(x \lt 0\).',
+         r'x عدد حقيقي مو صفر. إذا \(x + 1/x \lt 2\) فإن x سالب. نفس الثلاث طرق، بس الحساب متباينات بدل زوجي وفردي.', lab='مثال الكتاب في 5.3') +
+    think('ثلاث حركات بس', [r'لو ضربت أو قسمت متباينة على عدد موجب (مثل x لما \(x \gt 0\)، أو \(x^2\))، اتجاهها ما يتغير.',
+                            r'أي مربع ما يصير سالب: \((x - 1)^2 = x^2 - 2x + 1 \ge 0\).',
+                            r'عكس «\(x \lt 0\)» هو «\(x \ge 0\)». ولأن x مو صفر، يصير \(x \gt 0\).']) +
+    W([('(a)', 'مباشر', r'Assume that \(x + \frac{1}{x} \lt 2\). Since \(x^2 \gt 0\), multiplying both sides by \(x^2\) gives \(x^3 + x \lt 2x^2\), and so \(x^3 - 2x^2 + x \lt 0\), that is, \(x(x - 1)^2 \lt 0\). Since \((x - 1)^2 \ge 0\) and \(x(x - 1)^2 \ne 0\), it follows that \((x - 1)^2 \gt 0\), and so \(x \lt 0\).',
+        r'نضرب في \(x^2\) (موجب دايماً)، ونجمع كل شي في طرف، ونحلل. المربع ما يصير سالب، فالسالب جا من x.'),
+       ('(b)', 'عكس النقيض', r'Assume that \(x \ge 0\). Since \(x \ne 0\), it follows that \(x \gt 0\). Because \((x - 1)^2 \ge 0\), we have \((x - 1)^2 = x^2 - 2x + 1 \ge 0\). Adding \(2x\) to both sides of this inequality, we obtain \(x^2 + 1 \ge 2x\). Dividing both sides of the inequality \(x^2 + 1 \ge 2x\) by the positive number \(x\), we obtain \(x + \frac{1}{x} \ge 2\), as desired.',
+        r'عكس النتيجة: x موجب. نبدأ من مربع \(\ge 0\) ونمشي لين نوصل \(x + 1/x \ge 2\)، يعني الشرط خطأ.'),
+       ('(c)', 'تناقض', r'Assume, to the contrary, that there exists a nonzero real number \(x\) such that \(x + \frac{1}{x} \lt 2\) and \(x \ge 0\). Since \(x \ne 0\), it follows that \(x \gt 0\). Multiplying both sides of the inequality \(x + \frac{1}{x} \lt 2\) by \(x\), we obtain \(x^2 + 1 \lt 2x\). Subtracting \(2x\) from both sides, we have \(x^2 - 2x + 1 \lt 0\). It then follows that \((x - 1)^2 \lt 0\), which is a contradiction.',
+        'الشرط صح والنتيجة خطأ مع بعض. نضرب في x الموجب، فيطلع مربع سالب. مستحيل.')], title='نكتب ((b) و(c) من الكتاب بالحرف)') +
+    note('trick', 'بعدها:', 'نفس الحركات تحتاجها في تمرين 5.39 (الصفحة الجاية).'), style='gap:3mm'))
+
 # ---------- p-539 ----------
-P.append(page('p-539', U[3], 'extra', 'تمرين 5.39' + tag('ex', 'دورك'),
+P.append(page('p-539', U[3], 'low', 'تمرين 5.39' + tag('ex', 'دورك'),
     duork('5.39', r'<span class="lb">5.39.</span> Let \(x, y \in \mathbb{R}^+\). Prove that if \(x \le y\), then \(x^2 \le y^2\) by (a) a direct proof, (b) a proof by contrapositive and (c) a proof by contradiction.',
           r'x و y عددين حقيقيين موجبين. اثبت: إذا \(x \le y\) فإن \(x^2 \le y^2\)، بثلاث طرق.') +
     think('قبل ما تكتب', [r'بأرقام: \(2 \le 3\) و \(4 \le 9\) ' + OK + r' وشرط «موجبين» مهم: \(-3 \le 2\) لكن \(9 \le 4\) خطأ.',
-                          r'حركتين تحتاجهم: لو ضربت متباينة في عدد موجب، اتجاهها ما يتغير. و \(x^2 - y^2 = (x - y)(x + y)\).']) +
+                          r'حركتين تحتاجهم (زي الصفحة اللي قبل): لو ضربت متباينة في عدد موجب، اتجاهها ما يتغير. و \(x^2 - y^2 = (x - y)(x + y)\).']) +
     W([('(a)', 'مباشر', None, None, 'b3'), ('(b)', 'عكس النقيض', None, None, 'b3'), ('(c)', 'تناقض', None, None, 'b3')], title='', cls='tpl grow') +
     hints([r'<b>تلميح (a):</b> اضرب \(x \le y\) في x مرة، وفي y مرة.',
            r'<b>تلميح (b) و(c):</b> عكس \(x^2 \le y^2\) هو \(x^2 \gt y^2\)، يعني \((x - y)(x + y) \gt 0\). و \(x + y\) موجب.'])))

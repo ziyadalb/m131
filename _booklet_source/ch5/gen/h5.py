@@ -6,6 +6,7 @@ U = {1: 'الوحدة 1 · المثال المضاد', 2: 'الوحدة 2 · ا�
 
 def hdr(unit_text, lvl):
     lv = {'top': '<span class="lv top">★ يتكرر في الاختبارات</span>',
+          'cand': '<span class="lv top">★ مرشّح للبديل</span>',
           'must': '<span class="lv must">أساسي</span>',
           'low': '<span class="lv low">احتمال أقل</span>',
           'extra': '<span class="lv extra">إضافي</span>'}.get(lvl, '')
