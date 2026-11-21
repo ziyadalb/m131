@@ -28,15 +28,14 @@ cover = r'''<section class="page cover" id="p-cover">
     prow('مثال مضاد فيه فخ', r'لكل n زوجي موجب، 12 يقسم \(n^2 - 4\)', 'ميد 1447 · البنات · نوفمبر', '2 إلى 3', S3, 'p-mid5'),
     prow('غير نسبي', r'\(\sqrt{2}\) غير نسبي، و \(\sqrt[3]{7}\) غير نسبي', 'نوفمبر · نهائي 1446', '3 إلى 4', S2, 'p-rt2a'),
     prow('الوجود ونفي الوجود', lt('There exists …'), 'ما جا ولا مرة', '—', S1, 'p-u4'),
-], cls='t toc').replace('    <table', '  <table').replace('    </table>', '  </table>') + r'''    <p class="small" style="margin-top:1.2mm">ميد نوفمبر كان كذا: سؤال 1 (14 درجة) فيه ثلاث فقرات من الفصل 5 وفقرة استقراء، وسؤال 2 ثلاث طرق (6 درجات)، وسؤال 3 استقراء قوي (5 درجات). يعني الفصل 5 عليه 16 من 25.</p>
-  </div>
+], cls='t toc').replace('    <table', '  <table').replace('    </table>', '  </table>') + r'''  </div>
   <div class="box">
     <h3>كيف تتدرب: كل نوع بأربع مستويات</h3>
     <div class="levels">
       <div class="lvx"><b><span class="num">1</span>شوف</b>مثال محلول سطر بسطر، وتحت كل سطر معناه.</div>
       <div class="lvx"><b><span class="num">2</span>أكمل</b>نفس الحل وفيه فراغات. تعبيها من ذاكرتك.</div>
       <div class="lvx"><b><span class="num">3</span>اكتب لحالك</b>«دورك»: تحل من الصفر، وبعدها تشيّك من الحلول.</div>
-      <div class="lvx"><b><span class="num">4</span>اختبر نفسك</b>اختبارين بوقت بصيغة ميد نوفمبر، وتصحح بالدرجات.</div>
+      <div class="lvx"><b><span class="num">4</span>اختبر نفسك</b>«قاعة الاختبار»: أوراق بصيغة الاختبار ودرجاته.</div>
     </div>
   </div>
   <div class="grid2">
@@ -44,18 +43,18 @@ cover = r'''<section class="page cover" id="p-cover">
       <h3>خطة المذاكرة</h3>
       <p class="fl3"><b>الجلسة 1 (ساعتين):</b> الوحدتين 1 و2، وركّز على صفحات&nbsp;★.</p>
       <p class="fl3"><b>الجلسة 2 (ساعتين):</b> الوحدة 3 كلها (أهم سؤال)، وبعدها الوحدتين 4 و5 بسرعة.</p>
-      <p class="fl3"><b>الجلسة 3 (ساعة ونص):</b> الاختبار التجريبي 1، صحّحه، ارجع للي نقصت فيه، وبعدها الاختبار 2.</p>
+      <p class="fl3"><b>الجلسة 3 (ساعتين):</b> «قاعة الاختبار» <span class="ref" data-to="p-bank"></span>: البنك، وأوراق الميدات، والاختبارين التجريبيين.</p>
       <p class="fl3"><b>ليلة الاختبار:</b> ورقة ليلة الاختبار <span class="ref" data-to="p-night"></span>.</p>
     </div>
     <div class="box">
       <h3>رموز الصفحات</h3>
       <p class="fl3"><span class="lv top">★ يتكرر في الاختبارات</span> سؤاله جا أكثر من مرة.</p>
       <p class="fl3"><span class="lv top">★ مرشّح للبديل</span> من أمثلة الكتاب اللي ياخذون منها، وما جا للحين. وقتك قليل؟ ذاكر صفحات النجمة بس.</p>
-      <p class="fl3"><span class="lv must">أساسي</span> شرح تحتاجه.</p>
-      <p class="fl3"><span class="lv low">احتمال أقل</span> من الخطة، بس ما جا في الميدات.</p>
+      <p class="fl3"><span class="lv must">أساسي</span> شرح تحتاجه. <span class="lv low">احتمال أقل</span> من الخطة، بس ما جا في الميدات.</p>
       <p class="fl3"><span style="color:var(--acc);font-weight:700">■</span> شرح <span style="color:#2f5fa8;font-weight:700">■</span> دورك <span style="color:#b47a00;font-weight:700">■</span> سؤال اختبار <span style="color:#8a959c;font-weight:700">■</span> حلول</p>
     </div>
   </div>
+  <div class="note trick"><span class="k">اضغط وروح:</span>زر <a class="go" href="#p-bank">الحل ص N</a> عند كل سؤال يوديك لحله، وزر <a class="back" href="#p-cover">↩ السؤال</a> يرجعك. وأي «ص N» تنضغط.</div>
   <p class="small">«توأم» في الملزمة يعني: نفس السؤال، بأرقام أو كلمة ثانية. أسئلة الاستقراء (في ميد نوفمبر: فقرة 1.4 وسؤال 3) في ملزمة الفصل 6. علقت بكلمة إنجليزية؟ شوف <span class="ref" data-to="p-phr"></span>.</p>
 </section>
 '''
@@ -90,10 +89,10 @@ P.append(page('p-mid5', U[1], 'top', 'فخ أول قيمة: سؤال ميد 1447
     think('نفكر', [r'نجرب الأعداد الفردية الموجبة بالترتيب. \(n = 1\): \(1^2 - 1 = 0\)، و3 يقسم 0 (لأن \(0 = 3 \times 0\)) ' + OK,
                    r'\(n = 3\): \(3^2 - 1 = 8\)، و3 ما يقسم 8 ' + NO,
                    r'لقينا قيمة تفشل، فالجملة خاطئة، و \(n = 3\) مثال مضاد.']) +
-    W([('1', 'الحكم', 'False.', 'الجملة خاطئة.'),
+    W([('1', 'الحكم', 'False.', 'الجملة خاطئة.', dict(BKP, id='m-1447')),
        ('2', 'الحل الرسمي', r'Since \(3 \nmid 8\), so \(3 \nmid (3^2 - 1)\). It follows that \(n = 3\) is a counterexample.', r'3 ما يقسم 8، يعني ما يقسم \(3^2 - 1\). فـ \(n = 3\) مثال مضاد.')], title='نكتب (الحل الرسمي)') +
     note('trap', 'انتبه:', r'أول قيمة مشت! لو وقفت عند \(n = 1\) كان حكمت «صح» وراحت الدرجتين. جرّب 4 قيم على الأقل. والمثال لازم يكون من مجموعة السؤال: هنا فردي وموجب.') +
-    duork('5.3', r'<span class="lb">5.3.</span> Disprove the statement: If \(n \in \{1, 2, 3, 4, 5\}\), then \(3 \mid (2n^2 + 1)\).',
+    duork('5.3', '<span class="lb">5.3.</span> ' + EX['5.3'],
           r'انفِ الجملة: لكل n من 1 إلى 5، العدد 3 يقسم \(2n^2 + 1\). كمّل الجدول، ووقّف عند أول قيمة تفشل.') +
     tbl([r'\(n\)', '1', '2', '3', '4', '5'],
         [[r'\(2n^2 + 1\)', '3', '9', ('', 'style="height:9mm"'), '', ''], ['3 يقسمه؟', OK, OK, ('', 'style="height:9mm"'), '', '']], ltr=True, style='table-layout:fixed').replace('    <table', '  <table').replace('    </table>', '  </table>') +
@@ -108,11 +107,11 @@ P.append(page('p-trap', U[1], 'top', 'نفس الفخ في ميد البنات �
          r'لكل عدد زوجي موجب n، العدد 12 يقسم \(n^2 - 4\).', lab='سؤال ميد البنات · درجتين') +
     think('نفكر', before=tbl([r'\(n\)', '2', '4', '6'], [[r'\(n^2 - 4\)', '0', '12', '32'], ['12 يقسمه؟', OK, OK, NO]], ltr=True),
           extra='    <p>أول قيمتين مشت، والثالثة فشلت. اللي يوقف عند قيمتين يحكم «صح» ويخسر الدرجتين.</p>\n') +
-    W([('', 'الجواب', r'False. For \(n = 6\), \(n^2 - 4 = 32\) and \(12 \nmid 32\). Thus, \(n = 6\) is a counterexample.', '')], title='') +
+    W([('', 'الجواب', r'False. For \(n = 6\), \(n^2 - 4 = 32\) and \(12 \nmid 32\). Thus, \(n = 6\) is a counterexample.', '', dict(BKP, id='m-girls'))], title='') +
     qbox(r'<span class="lb">1.</span> If \(n\) is an odd integer, then \(n^2 - n\) is odd.',
          r'إذا n فردي، فإن \(n^2 - n\) فردي. <b>نفكر:</b> المثال لازم يكون فردي (الشرط صح). \(n = 1\) يعطي 0، و \(n = 3\) يعطي 6، والاثنين زوجي ' + NO + r' كل القيم تفشل، لأن \(n^2 - n = n(n - 1)\) عددين ورا بعض، وواحد منهم زوجي. فالفخ هنا عكسي: شكلها «برهن»، وهي خاطئة.', lab='سؤال ميد نوفمبر · 3 درجات') +
-    W([('', 'الجواب', r'False. For the odd integer \(n = 1\), the integer \(n^2 - n = 1^2 - 1 = 0\) is even. Thus, \(n = 1\) is a counterexample.', r'هذا حل الكتاب (مثال 5.6). و \(n = 3\) يمشي بعد: \(9 - 3 = 6\) زوجي.')], title='') +
-    '  <h3>تدريب سرعة: لقِ أول قيمة تفشل (نفس الفخ بأرقام ثانية)</h3>\n' +
+    W([('', 'الجواب', r'False. For the odd integer \(n = 1\), the integer \(n^2 - n = 1^2 - 1 = 0\) is even. Thus, \(n = 1\) is a counterexample.', r'هذا حل الكتاب (مثال 5.6). و \(n = 3\) يمشي بعد: \(9 - 3 = 6\) زوجي.', dict(BKP, id='m-nov'))], title='') +
+    hq('تدريب سرعة: لقِ أول قيمة تفشل (نفس الفخ بأرقام ثانية)', 'q-drill', 's-drill') +
     tbl([('', 'width:6%'), 'الجملة', ('أول قيمة تفشل', 'width:17%'), ('الحساب', 'width:24%')], [
         drow('1', r'For every odd positive integer \(n\), \(5 \mid (n^2 - 1)\).'),
         drow('2', r'For every even positive integer \(n\), \(8 \mid (n^2 + 4)\).'),
@@ -128,7 +127,7 @@ P.append(page('p-ex2', U[1], 'must', 'مثال: قيمة تخلي الجملة �
                    r'عند \(x = 0\): الكسر الأيسر ما له قيمة أصلاً (قسمة على صفر)، والأيمن \(\frac{0 + 1}{0 - 1} = -1\). شي ما له قيمة ما يساوي \(-1\).']) +
     W([('1', 'القيمة', r'If \(x = 0\), then \(x^2 - x = 0\) and so \(\frac{x^2 + x}{x^2 - x}\) is not defined.', r'عند \(x = 0\) المقام صفر، فالكسر الأيسر غير معرّف.'),
        ('2', 'احكم', r'On the other hand, if \(x = 0\), then \(\frac{x + 1}{x - 1} = -1\); so the expressions \(\frac{x^2 + x}{x^2 - x}\) and \(\frac{x + 1}{x - 1}\) are certainly not equal when \(x = 0\). Thus, \(x = 0\) is a counterexample to the statement.', r'والكسر الأيمن يساوي \(-1\)، فالطرفين مو متساويين. إذن \(x = 0\) مثال مضاد.')], title='نكتب (حل السلايدات)') +
-    duork('5.2', r'<span class="lb">5.2.</span> Disprove the statement: If \(n \in \{0, 1, 2, 3, 4\}\), then \(2^n + 3^n + n(n-1)(n-2)\) is a prime number.',
+    duork('5.2', '<span class="lb">5.2.</span> ' + EX['5.2'],
           r'انفِ الجملة: لكل n من 0 إلى 4، هذا العدد أولي (يعني ما يقبل القسمة إلا على 1 ونفسه). كمّل الجدول.') +
     tbl([r'\(n\)', '0', '1', '2', '3', '4'],
         [['القيمة', r'\(1 + 1 + 0 = 2\)', r'\(2 + 3 + 0 = 5\)', ('', 'style="height:9mm"'), '', ''], ['أولي؟', OK, OK, ('', 'style="height:9mm"'), '', '']], ltr=True, style='table-layout:fixed').replace('    <table', '  <table').replace('    </table>', '  </table>') +
@@ -147,7 +146,7 @@ P.append(page('p-ex3', U[1], 'must', 'مثال: جملة «إذا… فإن…»
     W([('', 'الجواب', r'Since \(4 \mid (3^2 - 1)\) but \(4 \nmid (3 - 1)\), it follows that \(n = 3\) is a counterexample.',
         r'4 يقسم \(3^2 - 1 = 8\) (الشرط صح)، لكن 4 ما يقسم \(3 - 1 = 2\) (النتيجة خطأ). فـ \(n = 3\) مثال مضاد.')], title='نكتب (حل السلايدات)') +
     note('trap', 'انتبه:', r'القيمة اللي الشرط عندها خطأ (مثل \(n = 2\)) ما تنفع مثال مضاد أبداً، لأن الجملة ما تتكلم عنها.') +
-    duork('5.4', r'<span class="lb">5.4.</span> Disprove the statement: Let \(n \in \mathbb{N}\). If \(\frac{n(n+1)}{2}\) is odd, then \(\frac{(n+1)(n+2)}{2}\) is odd.',
+    duork('5.4', '<span class="lb">5.4.</span> ' + EX['5.4'],
           r'انفِ الجملة: إذا \(n(n+1)/2\) فردي، فإن \((n+1)(n+2)/2\) فردي. (n عدد طبيعي: 1، 2، 3، …)') +
     tbl([(r'\(n\)', 'width:10%'), r'الشرط: \(\frac{n(n+1)}{2}\)', 'فردي؟', r'النتيجة: \(\frac{(n+1)(n+2)}{2}\)', 'فردي؟'],
         [['1', '1', OK, '3', OK + ' ما ينفع'], ['2', ('', 'style="height:9mm"'), '', '', ''], ['3', ('', 'style="height:9mm"'), '', '', '']]).replace('    <table', '  <table').replace('    </table>', '  </table>') +
@@ -162,7 +161,7 @@ P.append(page('p-ex4', U[1], 'must', 'مثال: أكثر من متغير' + tag(
                    r'نغيّر c: \(a = 2,\ b = 2,\ c = 3\): \(2^{2^3} = 2^8 = 256\) و \((2^2)^3 = 4^3 = 64\). مختلفين ' + NO + ' هذا المثال المضاد.']) +
     W([('1', 'احسب', r'Let \(a = 2\), \(b = 2\) and \(c = 3\). Then \(a^{b^c} = 2^{2^3} = 2^8 = 256\), while \((a^b)^c = (2^2)^3 = 4^3 = 64\).', 'نختار القيم، ونحسب كل طرف بالأرقام.'),
        ('2', 'احكم', r'Since \(256 \ne 64\), the positive integers \(a = 2\), \(b = 2\) and \(c = 3\) constitute a counterexample.', 'الطرفين مختلفين، فهذي القيم مثال مضاد.')], title='نكتب (حل السلايدات)') +
-    duork('5.5', r'<span class="lb">5.5.</span> Disprove the statement: For every two positive integers \(a\) and \(b\), \((a + b)^3 = a^3 + 2a^2b + 2ab + 2ab^2 + b^3\).',
+    duork('5.5', '<span class="lb">5.5.</span> ' + EX['5.5'],
           'انفِ الجملة: لكل عددين صحيحين موجبين a و b، المساواة صحيحة.') +
     tbl([(r'\((a, b)\)', 'width:14%'), r'الأيسر: \((a+b)^3\)', r'الأيمن: \(a^3 + 2a^2b + 2ab + 2ab^2 + b^3\)', ('متساويين؟', 'width:20%')],
         [[r'\((1, 1)\)', r'\(2^3 = 8\)', r'\(1 + 2 + 2 + 2 + 1 = 8\)', 'نعم، ما نفعت'], [r'\((1, 2)\)', ('', 'style="height:9mm"'), '', '']]).replace('    <table', '  <table').replace('    </table>', '  </table>') +
@@ -185,14 +184,14 @@ P.append(page('p-book', U[1], 'cand', 'أمثلة الكتاب الباقية: �
 # ---------- p-s1 ----------
 P.append(page('p-s1', 'حلول الوحدة 1', '', 'الحلول' + tag('sol', 'شيّك'),
     W([('5.2', '', r'Let \(n = 4\). Then \(2^4 + 3^4 + 4 \cdot 3 \cdot 2 = 16 + 81 + 24 = 121 = 11 \cdot 11\), which is not a prime number. Thus, \(n = 4\) is a counterexample.',
-        r'القيم من 0 إلى 3 تعطي 2 و5 و13 و41، وكلها أولية. بس عند \(n = 4\) يطلع 121، وهو \(11 \times 11\).'),
+        r'القيم من 0 إلى 3 تعطي 2 و5 و13 و41، وكلها أولية. بس عند \(n = 4\) يطلع 121، وهو \(11 \times 11\).', SM('52')),
        ('5.4', '', r'Let \(n = 2\). Then \(\frac{n(n+1)}{2} = 3\) is odd, but \(\frac{(n+1)(n+2)}{2} = 6\) is even. Thus, \(n = 2\) is a counterexample.',
-        r'عند \(n = 2\) الشرط صح (3 فردي) والنتيجة خطأ (6 زوجي). أما \(n = 3\) فالشرط عندها خطأ (6 زوجي)، فما تنفع.'),
+        r'عند \(n = 2\) الشرط صح (3 فردي) والنتيجة خطأ (6 زوجي). أما \(n = 3\) فالشرط عندها خطأ (6 زوجي)، فما تنفع.', SM('54')),
        ('5.5', '', r'Let \(a = 1\) and \(b = 2\). Then \((a + b)^3 = 3^3 = 27\), while \(a^3 + 2a^2b + 2ab + 2ab^2 + b^3 = 1 + 4 + 4 + 8 + 8 = 25\). Since \(27 \ne 25\), \(a = 1\) and \(b = 2\) constitute a counterexample.',
-        r'الأيسر 27 والأيمن 25. (\(a = b = 1\) ما تنفع، لأن الطرفين 8.)'),
+        r'الأيسر 27 والأيمن 25. (\(a = b = 1\) ما تنفع، لأن الطرفين 8.)', SM('55')),
        ('5.3', '', r'Let \(n = 3\). Then \(2n^2 + 1 = 2 \cdot 9 + 1 = 19\) and \(3 \nmid 19\). Thus, \(n = 3\) is a counterexample.',
-        'القيم بالترتيب: 3، 9، 19، 33، 51. كلها تقبل القسمة على 3 إلا 19.')], title='') +
-    '  <h3>تدريب السرعة ' + ref('p-trap') + '</h3>\n' +
+        'القيم بالترتيب: 3، 9، 19، 33، 51. كلها تقبل القسمة على 3 إلا 19.', SM('53'))], title='') +
+    sh('تدريب السرعة: الأجوبة', 's-drill', [('q-drill', 'السؤال')]) +
     tbl(['', 'أول قيمة تفشل', 'الحساب'], [
         ['1', r'\(n = 3\)', r'\(3^2 - 1 = 8\)، و5 ما يقسم 8'],
         ['2', r'\(n = 4\)', r'\(16 + 4 = 20\)، و8 ما يقسم 20'],

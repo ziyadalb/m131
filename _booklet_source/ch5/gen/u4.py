@@ -30,7 +30,7 @@ P.append(page('p-ex10', U[4], 'low', 'مثال: وجود بحالتين' + tag('
         r'العدد يا نسبي يا غير نسبي. لو نسبي، \(a = b = \sqrt{2}\) تكفي.'),
        ('2', 'حالة 2', r'<i>Case 2.</i> \(\sqrt{2}^{\sqrt{2}}\) is irrational. In this case, consider \(a^b\), where \(a = \sqrt{2}^{\sqrt{2}}\) and \(b = \sqrt{2}\). Observe that \[a^b = \left(\sqrt{2}^{\sqrt{2}}\right)^{\sqrt{2}} = \sqrt{2}^{\sqrt{2} \cdot \sqrt{2}} = \sqrt{2}^{\,2} = 2,\] which is rational.',
         r'لو غير نسبي، نأخذه هو a، و \(b = \sqrt{2}\).')], title='نكتب (برهان السلايدات)') +
-    duork('5.42', r'<span class="lb">5.42.</span> Show that there exist a rational number \(a\) and an irrational number \(b\) such that \(a^b\) is rational.',
+    duork('5.42', '<span class="lb">5.42.</span> ' + EX['5.42'],
           r'اثبت أنه يوجد عدد نسبي a وعدد غير نسبي b بحيث \(a^b\) نسبي. أسهل من المثال: فكّر في عدد نسبي أي أس تحطه له يطلع نفس العدد.') +
     W([('1', 'اختر', None, None, 'b1'), ('2', 'تحقق', None, None, 'b2'), ('3', 'اختم', None, None, 'b1')], title=''), style='gap:3mm'))
 
@@ -59,7 +59,7 @@ P.append(page('p-uniq', U[4], 'low', 'مثال: الحل وحيد' + tag('sol', 
        ('2', 'نمشي', r'Since \(1 \lt a \lt b \lt 2\), it follows that \(a^5 + 2a - 5 \lt b^5 + 2b - 5\). On the other hand, \(a^5 + 2a - 5 = 0\) and \(b^5 + 2b - 5 = 0\).',
         'الدالة متزايدة، و a و b حلول (يعني قيمتها عندهم صفر).'),
        ('3', 'تناقض', r'Thus, \(0 = a^5 + 2a - 5 \lt b^5 + 2b - 5 = 0\), which produces a contradiction.', 'طلع أن صفر أصغر من صفر.')], title='نكتب (برهان السلايدات)') +
-    duork('5.46', r'<span class="lb">5.46.</span> Prove that there exists a unique real number solution to the equation \(x^3 + x^2 - 1 = 0\) between \(x = 2/3\) and \(x = 1\).',
+    duork('5.46', '<span class="lb">5.46.</span> ' + EX['5.46'],
           r'اثبت أن للمعادلة حل حقيقي واحد بس بين \(2/3\) و1. جزأين: الوجود (مثال 11)، ثم الوحدانية (مثال 12).') +
     recall(r'قبل ما تكتب: احسب \(f(2/3)\) و \(f(1)\) في المسودة، وفكّر ليش f متزايدة بين \(2/3\) و1.') +
     W([('1', 'الوجود', None, None, 'b3'), ('2', 'الوحدانية', None, None, 'b3')], title='', cls='tpl grow') +
@@ -75,7 +75,7 @@ P.append(page('p-cases', U[4], 'low', 'مثال: وجود «لكل n» بالح�
         r'نأخذ ستة من n: \(a = q - 3\) و \(b = 2\). و \(q \ge 4\) لأن \(2q \ge 7\)، وهذا اللي يخلي a موجب.'),
        ('3', 'حالة 2', r'<i>Case 2.</i> \(n = 2q + 1\). Since \(n \ge 7\), it follows that \(q \ge 3\). Thus, \(n = 2q + 1 = 2(q - 1) + 2 + 1 = 2(q - 1) + 3 \cdot 1\). Since \(q \ge 3\), it follows that \(q - 1 \in \mathbb{N}\).',
         r'نأخذ ثلاثة من n: \(a = q - 1\) و \(b = 1\).')], title='نكتب (برهان الكتاب)') +
-    duork('5.51', r'<span class="lb">5.51.</span> Prove for every integer \(n \ge 8\) that there exist nonnegative integers \(a\) and \(b\) such that \(n = 3a + 5b\).',
+    duork('5.51', '<span class="lb">5.51.</span> ' + EX['5.51'],
           r'كل عدد صحيح من 8 وفوق ينكتب \(3a + 5b\)، حيث a و b أعداد صحيحة غير سالبة. (نفس مثال 8 في ملزمة الفصل 6، بس هنا بالحالات.)') +
     W([('1', 'حالة 1', None, None, 'b1'), ('2', 'حالة 2', None, None, 'b2'), ('3', 'حالة 3', None, None, 'b2')], title='') +
     hints([r'<b>تلميح:</b> اقسم حسب الباقي على 3: \(n = 3q\) أو \(3q + 1\) أو \(3q + 2\). في \(3q + 1\) خذ عشرة (\(5 \cdot 2\))، وفي \(3q + 2\) خذ خمسة. وشرط q في كل حالة.']),
@@ -89,7 +89,7 @@ P.append(page('p-553', U[4], 'low', 'مثال: عيّن الشي، وتحقق م
                    r'نجرب: \(3 + 5 + 7 = 15 = 3 \cdot 5\) ' + NO + r' و \(3 + 5 + 11 = 19\)، و19 أولي ' + OK]) +
     W([('1', 'اختر', r'Let \(p = 3\), \(q = 5\) and \(r = 11\). These are three distinct primes.', 'نعيّن الأعداد، ونتأكد أنها أولية ومختلفة.'),
        ('2', 'تحقق', r'Since \(p + q + r = 3 + 5 + 11 = 19\) and 19 is a prime, the primes 3, 5 and 11 have the desired property.', 'نحسب المجموع ونتأكد أنه أولي.')], title='نكتب') +
-    duork('5.53', r'<span class="lb">5.53.</span> Prove that there exists a set \(S\) of four distinct primes such that the sum of every three elements of \(S\) is also a prime.',
+    duork('5.53', '<span class="lb">5.53.</span> ' + EX['5.53'],
           'اثبت أنه يوجد مجموعة S فيها أربع أعداد أولية مختلفة، ومجموع أي ثلاثة منها عدد أولي.') +
     recall('قبل ما تكتب: ليش 2 ممنوع هنا بعد؟ وكم مجموع ثلاثي لازم تتحقق منه؟') +
     W([('1', 'اختر', None, None, 'b1'), ('2', 'تحقق', None, None, 'b3')], title='', cls='tpl grow') +
@@ -97,20 +97,21 @@ P.append(page('p-553', U[4], 'low', 'مثال: عيّن الشي، وتحقق م
 
 # ---------- solutions ----------
 P.append(page('p-s4', 'حلول الوحدة 4', '', 'الحلول' + tag('sol', 'شيّك'),
-    '  <h3>تمرين 5.42</h3>\n' +
+    sh('تمرين 5.42', 's-542', SM('542')['back']) +
     W([('', 'الجواب', r'Let \(a = 1\) and \(b = \sqrt{2}\). Then \(a\) is rational and \(b\) is irrational. Since \(a^b = 1^{\sqrt{2}} = 1\) and 1 is rational, the numbers \(a\) and \(b\) have the desired property.',
         r'1 أس أي عدد يساوي 1. (\(\sqrt{2}\) غير نسبي من الوحدة 2.)')], title='') +
-    '  <h3>تمرين 5.46</h3>\n' +
+    sh('تمرين 5.46', 's-546', SM('546')['back']) +
     W([('1', 'الوجود', r'Let \(f(x) = x^3 + x^2 - 1\). Since \(f\) is a polynomial function, it is continuous on \([2/3, 1]\). Now, \(f(2/3) = \frac{8}{27} + \frac{12}{27} - \frac{27}{27} = -\frac{7}{27}\) and \(f(1) = 1\). Since 0 is between \(f(2/3)\) and \(f(1)\), it follows by the Intermediate Value Theorem of Calculus that there is a number \(c\) between \(2/3\) and 1 such that \(f(c) = 0\).',
         r'\(f(2/3)\) سالب و \(f(1)\) موجب، فالنظرية تعطي حل بينهم.'),
        ('2', 'الوحدانية', r'Assume, to the contrary, that the equation has two distinct real number solutions \(a\) and \(b\) between \(x = 2/3\) and \(x = 1\). We may assume that \(a \lt b\). Since \(0 \lt a \lt b\), it follows that \(a^3 \lt b^3\) and \(a^2 \lt b^2\), and so \(a^3 + a^2 - 1 \lt b^3 + b^2 - 1\). Thus, \(0 = a^3 + a^2 - 1 \lt b^3 + b^2 - 1 = 0\), which is a contradiction.',
         r'نفس مثال 12: الدالة متزايدة، فحلين يعطون \(0 \lt 0\).')], title='') +
-    '  <h3>تمرين 5.53</h3>\n' +
+    sh('تمرين 5.53', 's-553', SM('553')['back']) +
     W([('', 'الجواب', r'Let \(S = \{5, 7, 17, 19\}\). The elements of \(S\) are four distinct primes, and \(5 + 7 + 17 = 29\), \(5 + 7 + 19 = 31\), \(5 + 17 + 19 = 41\) and \(7 + 17 + 19 = 43\) are all primes. Thus \(S\) has the desired property.',
         r'أربع مجاميع ثلاثية، كلها أولية. وفيه أجوبة ثانية صحيحة، مثل \(\{7, 11, 13, 23\}\): مجاميعها 31 و41 و43 و47.')], title=''),
     sol=True))
 
 P.append(page('p-s4b', 'حلول الوحدة 4', '', 'حل تمرين 5.51' + tag('sol', 'شيّك'),
+    '  <div class="bkbar" id="s-551">' + back('q-551') + back('p-bank2', 'البنك') + '</div>\n' +
     W([('1', 'الحالات', r'Let \(n\) be an integer such that \(n \ge 8\). Then \(n = 3q\), \(n = 3q + 1\) or \(n = 3q + 2\) for some integer \(q\). We consider these three cases.', 'الباقي لما نقسم على 3: يا 0 يا 1 يا 2.'),
        ('2', 'حالة 1', r'<i>Case 1.</i> \(n = 3q\). Since \(n \ge 8\), it follows that \(q \ge 3\). Thus, \(n = 3q + 5 \cdot 0\). Let \(a = q\) and \(b = 0\).', r'مثل \(9 = 3 \cdot 3 + 5 \cdot 0\).'),
        ('3', 'حالة 2', r'<i>Case 2.</i> \(n = 3q + 1\). Since \(n \ge 8\), it follows that \(q \ge 3\). Thus, \(n = 3q + 1 = 3(q - 3) + 10 = 3(q - 3) + 5 \cdot 2\). Let \(a = q - 3\) and \(b = 2\). Since \(q \ge 3\), \(a \ge 0\).',

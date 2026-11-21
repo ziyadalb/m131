@@ -2,9 +2,19 @@
 <script>
 (function () {
   var pages = Array.prototype.slice.call(document.querySelectorAll('.page'));
+  function pageOf(id) {
+    var el = document.getElementById(id);
+    return el ? pages.indexOf(el.closest('.page')) : -1;
+  }
   document.querySelectorAll('.ref').forEach(function (el) {
-    var i = pages.findIndex(function (p) { return p.id === el.dataset.to; });
+    var i = pageOf(el.dataset.to);
     el.textContent = i >= 0 ? ('ص ' + (i + 1)) : '؟';
+    // every page reference is also a link you can tap
+    if (i >= 0 && !el.closest('a')) {
+      var a = document.createElement('a');
+      a.href = '#' + el.dataset.to; a.className = 'lnk';
+      el.parentNode.insertBefore(a, el); a.appendChild(el);
+    }
   });
 })();
 </script>

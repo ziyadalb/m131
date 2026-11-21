@@ -38,11 +38,11 @@ P.append(page('p-neg', U[2], 'must', 'أهم سطر: كيف تكتب العكس�
     </ul>
 ''') +
     note('star', 'من السلايدات:', 'البرهان بالتناقض يبدأ بـ «' + lt('Suppose that …') + '» أو «' + lt('Assume, to the contrary, that …') + '». والثانية هي اللي في الحلول الرسمية، فاستخدمها.') +
-    '  <h3>دورك: اكتب أول سطر بس</h3>\n' +
+    hq('دورك: اكتب أول سطر بس', 'q-neg', 's-neg') +
     W([('1', '', 'Prove that there is no largest negative rational number.' + wl(1.2), None),
        ('2', '', r'Prove that \(\sqrt{3}\) is irrational.' + wl(1.2), None),
        ('3', '', r'Prove that if \(n\) is an odd integer, then \(7n - 5\) is even.' + wl(1.2), None)], title='') +
-    '  <p class="small">تتأكد من أجوبتك من أول سطر في حلول 5.12 ' + ref('p-s2a') + ' و5.21 ' + ref('p-rt3') + ' و5.36 (c) ' + ref('p-s3') + '.</p>\n'))
+    '  <p class="small">اضغط «الأجوبة» فوق عشان تتأكد. وكمّل البرهان كامل لما توصل لتمرينه.</p>\n'))
 
 # ---------- p-ex5 ----------
 def frow(en, take, why):
@@ -54,7 +54,7 @@ P.append(page('p-ex5', U[2], 'top', 'أكثر سؤال تكرر: ما فيه أ�
     think('نفكر', [r'نجرب: هل 1 أصغر عدد موجب؟ لا، \(0.5\) أصغر. هل \(0.5\)؟ لا، \(0.25\) أصغر. أي عدد تختاره، نصّه أصغر منه وموجب.',
                    'فالجملة صحيحة، ونبرهنها بالتناقض. <b>نعكس:</b> نفترض فيه أصغر عدد موجب، ونسميه r.',
                    r'<b>نمشي:</b> نصّه \(r/2\) موجب وأصغر من r. <b>تناقض:</b> لقينا عدد موجب أصغر من «الأصغر».']) +
-    W([('1', 'نعكس', r'Assume, to the contrary, that there is a smallest positive real number, say \(r\).', 'نفترض العكس: فيه أصغر عدد حقيقي موجب، ونسميه r.'),
+    W([('1', 'نعكس', r'Assume, to the contrary, that there is a smallest positive real number, say \(r\).', 'نفترض العكس: فيه أصغر عدد حقيقي موجب، ونسميه r.', dict(BKP, id='m-small')),
        ('2', 'نمشي', r'Since \(0 \lt r/2 \lt r\), it follows that \(r/2\) is a positive real number that is smaller than \(r\).', 'نص r موجب، وأصغر من r.'),
        ('3', 'تناقض', 'This, however, is a contradiction.', 'وهذا يناقض أن r هو الأصغر.')], title='نكتب (الحل الرسمي: ثلاث جمل عليها 3 درجات)') +
     '  <h3>نفس القالب لعائلة كاملة: تغيّر الكلمة، وتاخذ العدد المناسب</h3>\n' +
@@ -69,9 +69,9 @@ P.append(page('p-ex5', U[2], 'top', 'أكثر سؤال تكرر: ما فيه أ�
 # ---------- p-fam ----------
 P.append(page('p-fam', U[2], 'top', 'دورك: نفس العائلة' + tag('ex', 'دورك'),
     qbox('There is no smallest positive rational number.',
-         'ما فيه أصغر عدد نسبي موجب. توأم سؤال الميد: «حقيقي» صارت «نسبي». أكمل الفراغات بدون ما تطالع الصفحة اللي قبل.', lab='أكمل الفراغ · توأم سؤال الميد', cls='ex') +
+         'ما فيه أصغر عدد نسبي موجب. توأم سؤال الميد: «حقيقي» صارت «نسبي». أكمل الفراغات بدون ما تطالع الصفحة اللي قبل.', lab='أكمل الفراغ · توأم سؤال الميد', cls='ex', qid='q-fam', sol='s-fam') +
     fillp([('', r'Assume, to the contrary, that there is a ' + B('w') + r' positive rational number, say \(r\). Then \(r = a/b\) for some integers \(a\) and \(b\) with \(b \ne 0\), and so \(r/2 =\) ' + B() + r' is a rational number. Since \(0 \lt r/2 \lt\) ' + B('s') + r', it follows that \(r/2\) is a positive rational number that is ' + B() + r' than \(r\). This is a ' + B('w') + '.')]) +
-    duork('5.12', '<span class="lb">5.12.</span> Prove that there is no largest negative rational number.',
+    duork('5.12', '<span class="lb">5.12.</span> ' + EX['5.12'],
           r'اثبت أنه ما فيه أكبر عدد نسبي سالب. (النسبي: ينكتب \(a/b\) حيث a و b أعداد صحيحة و \(b \ne 0\).) هنا من الصفر.') +
     W([('1', 'نعكس', None, None, 'b2'), ('2', 'نمشي', None, None, 'b3'), ('3', 'تناقض', None, None, 'b1')], title='', cls='tpl grow') +
     hints([r'<b>تلميح:</b> نص \(-1\) هو \(-0.5\)، وهو أكبر منه. فلو r سالب فإن \(r \lt r/2 \lt 0\). وقل ليش \(r/2\) نسبي: لو \(r = a/b\) فإن \(r/2 = a/(2b)\).'])))
@@ -83,7 +83,7 @@ P.append(page('p-ex7', U[2], 'must', 'مثال: «إذا… فإن…» بالت
     W([('1', 'نعكس', r'Assume, to the contrary, that there exist an even integer \(a\) and an odd integer \(b\) such that \(4 \mid (a^2 + 2b^2)\).', 'الشرط صح (a زوجي و b فردي)، والنتيجة خطأ (4 يقسم).'),
        ('2', 'نمشي', r'Thus, \(a = 2x\), \(b = 2y + 1\) and \(a^2 + 2b^2 = 4z\) for some integers \(x\), \(y\) and \(z\). Hence, \(a^2 + 2b^2 = (2x)^2 + 2(2y + 1)^2 = 4z\). Simplifying, we obtain \(4x^2 + 8y^2 + 8y + 2 = 4z\) or, equivalently, \[2 = 4z - 4x^2 - 8y^2 - 8y = 4(z - x^2 - 2y^2 - 2y).\]', 'نكتب الزوجي والفردي والقسمة كمعادلات، نعوّض، ونخلي 2 لوحدها في طرف.'),
        ('3', 'تناقض', r'Since \(z - x^2 - 2y^2 - 2y\) is an integer, \(4 \mid 2\), which is impossible.', 'طلع أن 4 يقسم 2، وهذا مستحيل.')], title='نكتب (برهان السلايدات)') +
-    duork('5.33', r'<span class="lb">5.33.</span> Use a proof by contradiction to prove the following. Let \(x, y \in \mathbb{Z}\). If \(5 \nmid xy\), then \(5 \nmid x\) and \(5 \nmid y\).',
+    duork('5.33', '<span class="lb">5.33.</span> ' + EX['5.33'],
           'استخدم التناقض: إذا 5 ما يقسم xy، فإن 5 ما يقسم x و5 ما يقسم y.') +
     W([('1', 'نعكس', None, None, 'b2'), ('2', 'نمشي', None, None, 'b2'), ('3', 'تناقض', None, None, 'b1')], title='') +
     hints([r'<b>تلميح:</b> العكس فيه «أو» (شف القواعد في ' + ref('p-neg') + r'). ولو \(5 \mid x\) فإن \(x = 5k\)، فـ \(xy = 5(ky)\).']), style='gap:3.1mm'))
@@ -107,7 +107,7 @@ P.append(page('p-rt2a', U[2], 'top', r'\(\sqrt{2}\) غير نسبي: نفكر' +
 
 # ---------- p-rt2b ----------
 P.append(page('p-rt2b', U[2], 'top', r'\(\sqrt{2}\) غير نسبي: نكتب' + tag('sol', 'نظرية من السلايدات'),
-    W([('1', 'نعكس', r'Assume, to the contrary, that \(\sqrt{2}\) is rational. Then \(\sqrt{2} = a/b\), where \(a, b \in \mathbb{Z}\) and \(b \ne 0\). We may further assume that \(a/b\) has been expressed in (or reduced to) lowest terms.', r'نفترض \(\sqrt{2}\) نسبي: كسر \(a/b\). ونفترض أن الكسر في أبسط صورة.'),
+    W([('1', 'نعكس', r'Assume, to the contrary, that \(\sqrt{2}\) is rational. Then \(\sqrt{2} = a/b\), where \(a, b \in \mathbb{Z}\) and \(b \ne 0\). We may further assume that \(a/b\) has been expressed in (or reduced to) lowest terms.', r'نفترض \(\sqrt{2}\) نسبي: كسر \(a/b\). ونفترض أن الكسر في أبسط صورة.', dict(BKP, id='m-rt2')),
        ('2', 'نربّع', r'Then \(2 = a^2/b^2\); so \(a^2 = 2b^2\). Since \(b^2\) is an integer, \(a^2\) is even. Then \(a\) is even.', r'نربّع الطرفين. \(a^2\) يساوي 2 في عدد صحيح، يعني زوجي. فـ a زوجي.'),
        ('3', 'نعوّض', r'So, \(a = 2c\), where \(c \in \mathbb{Z}\). Thus, \((2c)^2 = 2b^2\) and so \(4c^2 = 2b^2\). Therefore, \(b^2 = 2c^2\). Because \(c^2\) is an integer, \(b^2\) is even, which implies that \(b\) is even.', r'نكتب \(a = 2c\) ونعوّض. يطلع \(b^2 = 2c^2\)، فـ b زوجي بعد.'),
        ('4', 'تناقض', r'Since \(a\) and \(b\) are even, each has 2 as a divisor, which is a contradiction since \(a/b\) has been reduced to lowest terms.', 'a و b الاثنين يقبلون القسمة على 2، وهذا يناقض أن الكسر في أبسط صورة.')], title='') +
@@ -123,7 +123,7 @@ P.append(page('p-rt2b', U[2], 'top', r'\(\sqrt{2}\) غير نسبي: نكتب' +
 
 # ---------- p-rt3 ----------
 P.append(page('p-rt3', U[2], 'top', 'دورك: توأم النظرية، ثم سؤال النهائي' + tag('past', 'نهائي 1446 · 3 درجات'),
-    duork('5.21', r'<span class="lb">5.21.</span> Prove that \(\sqrt{3}\) is irrational. [Hint: By Result 4.8, for an integer \(a\), \(3 \mid a^2\) if and only if \(3 \mid a\).]',
+    duork('5.21', '<span class="lb">5.21.</span> ' + EX['5.21'],
           r'اثبت أن \(\sqrt{3}\) غير نسبي. (تلميح الكتاب: 3 يقسم \(a^2\) إذا وفقط إذا 3 يقسم a.) كمّل الفراغات من ذاكرتك.') +
     r'''  <div class="stmt" style="line-height:2.15">
     <p class="en" style="line-height:2.15">Assume, to the contrary, that \(\sqrt{3}\) is <span class="blank"></span>. Then \(\sqrt{3} = a/b\), where \(a, b \in \mathbb{Z}\) and \(b \ne 0\). We may further assume that \(a/b\) has been reduced to <span class="blank w"></span>. Then \(3 = a^2/b^2\); so \(a^2 =\) <span class="blank s"></span>. Thus \(3 \mid a^2\), and so \(3 \mid\) <span class="blank s"></span>. So, \(a = 3c\), where \(c \in \mathbb{Z}\). Thus, \((3c)^2 = 3b^2\) and so \(9c^2 = 3b^2\). Therefore, \(b^2 =\) <span class="blank s"></span>. Thus \(3 \mid b^2\), which implies that \(3 \mid\) <span class="blank s"></span>. Since \(3 \mid a\) and \(3 \mid b\), this is a <span class="blank w"></span> since \(a/b\) has been reduced to lowest terms.</p>
@@ -131,7 +131,7 @@ P.append(page('p-rt3', U[2], 'top', 'دورك: توأم النظرية، ثم س
 ''' +
     qbox(r'Use a proof by contradiction to prove that \(\sqrt[3]{7}\) is irrational.',
          'النص الأصلي (الاختبار كان بالعربي): «مستخدماً طريقة الوقوع في تناقض، أثبت أن الجذر التكعيبي للعدد سبعة هو عدد غير نسبي.» اكتبه كامل بدون ما تطالع.',
-         lab='دورك · سؤال نهائي 1446 (3 درجات)', cls='ex') +
+         lab='دورك · سؤال نهائي 1446 (3 درجات)', cls='ex', qid='q-cbrt7', sol='s-cbrt7') +
     W([('1', 'نعكس', None, None, 'b2'), ('2', 'نمشي', None, None, 'b4'), ('3', 'تناقض', None, None, 'b2')], title='', cls='tpl grow') +
     hints([r'<b>تلميح:</b> نفس محطات \(\sqrt{2}\)، بس تكعّب بدل ما تربّع: \(a^3 = 7b^3\). والحل الرسمي يقول: 7 عدد أولي، فلو 7 يقسم \(a^3\) فهو يقسم a.'])))
 
@@ -142,41 +142,47 @@ P.append(page('p-518', U[2], 'low', 'مثال: نسبي + غير نسبي' + tag
     W([('1', 'نعكس', r'Assume, to the contrary, that there exist a rational number \(x\) and an irrational number \(y\) whose sum is a rational number \(z\).', 'نفترض العكس: نسبي + غير نسبي = نسبي.'),
        ('2', 'نمشي', r'Thus, \(x + y = z\), where \(x = a/b\) and \(z = c/d\) for some integers \(a, b, c, d\) with \(b, d \ne 0\). This implies that \(y = \frac{c}{d} - \frac{a}{b} = \frac{bc - ad}{bd}\).', 'نكتب النسبيين ككسور، ونطرح: y يطلع كسر.'),
        ('3', 'تناقض', r'Since \(bc - ad\) and \(bd\) are integers and \(bd \ne 0\), it follows that \(y\) is rational, which is a contradiction.', 'y طلع نسبي، وهو غير نسبي. تناقض.')]) +
-    duork('5.18', '<span class="lb">5.18.</span> Prove that the product of an irrational number and a nonzero rational number is irrational.',
+    duork('5.18', '<span class="lb">5.18.</span> ' + EX['5.18'],
           'اثبت أن حاصل ضرب عدد غير نسبي في عدد نسبي غير الصفر هو عدد غير نسبي.') +
     W([('1', 'نعكس', None, None, 'b2'), ('2', 'نمشي', None, None, 'b2'), ('3', 'تناقض', None, None, 'b1')], title='') +
     hints([r'<b>تلميح:</b> سمِّ غير النسبي a والنسبي b. لو \(ab\) نسبي فإن \(a = (ab) \div b\)، وقسمة كسرين تعطي كسر.']), style='gap:3.1mm'))
 
 # ---------- p-s2a ----------
 P.append(page('p-s2a', 'حلول الوحدة 2', '', 'الحلول' + tag('sol', 'شيّك'),
-    '  <h3>أكمل الفراغ ' + ref('p-fam') + ': بالترتيب</h3>\n' +
+    sh('أكمل الفراغ: بالترتيب', 's-fam', [('q-fam', 'السؤال')]) +
     r'''  <ol class="notes" style="direction:ltr; text-align:left; font-family:var(--en); columns:5; column-gap:6mm">
     <li>smallest</li><li>\(a/(2b)\)</li><li>\(r\)</li><li>smaller</li><li>contradiction</li>
   </ol>
 ''' +
-    '  <h3>تمرين 5.12</h3>\n' +
+    sh('تمرين 5.12', 's-512', SM('512')['back']) +
     W([('1', 'نعكس', r'Assume, to the contrary, that there is a largest negative rational number, say \(r\).', 'نفترض فيه أكبر عدد نسبي سالب r.'),
        ('2', 'نمشي', r'Then \(r = a/b\) for some integers \(a\) and \(b\) with \(b \ne 0\), and so \(r/2 = a/(2b)\) is a rational number. Since \(r \lt 0\), it follows that \(r \lt r/2 \lt 0\).', r'نص r نسبي بعد، وهو سالب وأكبر من r. (مثل: نص \(-1\) هو \(-0.5\)، وهو أكبر من \(-1\).)'),
        ('3', 'تناقض', r'Thus \(r/2\) is a negative rational number that is larger than \(r\). This is a contradiction.', 'لقينا نسبي سالب أكبر من «الأكبر».')], title='') +
-    '  <h3>تمرين 5.33</h3>\n' +
+    sh('تمرين 5.33', 's-533', SM('533')['back']) +
     W([('1', 'نعكس', r'Assume, to the contrary, that there exist integers \(x\) and \(y\) such that \(5 \nmid xy\) and either \(5 \mid x\) or \(5 \mid y\).', 'الشرط صح (5 ما يقسم xy)، والنتيجة خطأ («و» انقلبت «أو»).'),
        ('2', 'نمشي', r'Without loss of generality, assume that \(5 \mid x\). Then \(x = 5k\) for some integer \(k\). So \(xy = (5k)y = 5(ky)\).', 'x و y لهم نفس الدور، فنكتب حالة وحدة (' + lt('Without loss of generality') + '). وتقدر تكتب الحالتين.'),
        ('3', 'تناقض', r'Since \(ky\) is an integer, \(5 \mid xy\), which is a contradiction.', '5 يقسم xy، وافتراضنا أنه ما يقسمه.')], title='') +
-    '  <h3>تمرين 5.21: الفراغات بالترتيب</h3>\n' +
+    sh('تمرين 5.21: الفراغات بالترتيب', 's-521', SM('521')['back']) +
     r'''  <ol class="notes" style="direction:ltr; text-align:left; font-family:var(--en); columns:4; column-gap:6mm">
     <li>rational</li><li>lowest terms</li><li>\(3b^2\)</li><li>\(a\)</li><li>\(3c^2\)</li><li>\(b\)</li><li>contradiction</li>
   </ol>
 ''' +
-    note('trick', 'قارن:', r'حط برهان \(\sqrt{3}\) جنب برهان \(\sqrt{2}\) ' + ref('p-rt2b') + '. الفرق الوحيد: «يقبل القسمة على 3» بدل «زوجي».'), sol=True))
+    sh('أول سطر بس: الأجوبة', 's-neg', [('q-neg', 'السؤال')]) +
+    r'''  <div class="stmt" style="padding:2mm 4mm">
+    <p class="en">1. Assume, to the contrary, that there is a largest negative rational number, say \(r\).</p>
+    <p class="en">2. Assume, to the contrary, that \(\sqrt{3}\) is rational.</p>
+    <p class="en">3. Assume, to the contrary, that there exists an odd integer \(n\) such that \(7n - 5\) is odd.</p>
+  </div>
+''', sol=True))
 
 # ---------- p-s2b ----------
 P.append(page('p-s2b', 'حلول الوحدة 2', '', 'الحلول' + tag('sol', 'شيّك'),
-    '  <h3>سؤال نهائي 1446</h3>\n' +
+    sh('سؤال نهائي 1446', 's-cbrt7', [('q-cbrt7', 'السؤال'), ('p-papers', 'ورقة الميدات')]) +
     W([('1', 'نعكس', r'Assume, to the contrary, that \(\sqrt[3]{7}\) is rational. Then \(\sqrt[3]{7} = a/b\), where \(a, b \in \mathbb{Z}\) and \(b \ne 0\). We may further assume that \(a/b\) has been reduced to lowest terms.', 'نفترض أنه نسبي: كسر في أبسط صورة.'),
        ('2', 'نمشي', r'Then \(7 = a^3/b^3\); so \(a^3 = 7b^3\). Thus \(7 \mid a^3\). Since 7 is a prime, \(7 \mid a\). So \(a = 7c\), where \(c \in \mathbb{Z}\). Thus \((7c)^3 = 7b^3\) and so \(343c^3 = 7b^3\). Therefore \(b^3 = 49c^3 = 7(7c^3)\). Thus \(7 \mid b^3\) and so \(7 \mid b\).', r'نكعّب الطرفين. 7 يقسم \(a^3\) فيقسم a (لأن 7 أولي، مثل ما في الحل الرسمي). نعوّض \(a = 7c\)، فيطلع أن 7 يقسم b بعد.'),
        ('3', 'تناقض', r'Since \(7 \mid a\) and \(7 \mid b\), this is a contradiction since \(a/b\) has been reduced to lowest terms.', '7 يقسم الاثنين، والكسر في أبسط صورة. تناقض.')], title='') +
     '  <p class="small">الحل الرسمي مكتوب بالعربي وبنفس المحطات: كسر في أبسط صورة، نكعّب، 7 يقسم a، نعوّض، 7 يقسم b، تناقض مع أن القاسم المشترك الأكبر 1.</p>\n' +
-    '  <h3>تمرين 5.18</h3>\n' +
+    sh('تمرين 5.18', 's-518', SM('518')['back']) +
     W([('1', 'نعكس', r'Assume, to the contrary, that there exist an irrational number \(a\) and a nonzero rational number \(b\) such that \(ab\) is rational.', 'نفترض العكس: غير نسبي في نسبي يعطي نسبي.'),
        ('2', 'نمشي', r'Then \(b = p/q\) and \(ab = r/s\), where \(p, q, r, s \in \mathbb{Z}\) and \(p, q, s \ne 0\). Hence \(a = \frac{ab}{b} = \frac{r}{s} \cdot \frac{q}{p} = \frac{rq}{sp}\).', r'نكتب النسبيين ككسور (\(p \ne 0\) لأن b مو صفر)، ونقسم: a يطلع كسر.'),
        ('3', 'تناقض', r'Since \(rq\) and \(sp\) are integers and \(sp \ne 0\), the number \(a\) is rational, which is a contradiction.', 'a طلع نسبي، وهو غير نسبي.')], title='') +

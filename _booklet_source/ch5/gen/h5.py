@@ -1,8 +1,10 @@
 # Helpers for the chapter 5 booklet: question -> think -> write, then a twin exercise ("دورك")
-import os
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from ex5 import EX
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..') + os.sep
 U = {1: 'الوحدة 1 · المثال المضاد', 2: 'الوحدة 2 · البرهان بالتناقض', 3: 'الوحدة 3 · ثلاث طرق للبرهان',
-     4: 'الوحدة 4 · براهين الوجود', 5: 'الوحدة 5 · نفي الوجود', 6: 'الوحدة 6 · تدريب الاختبار'}
+     4: 'الوحدة 4 · براهين الوجود', 5: 'الوحدة 5 · نفي الوجود', 6: 'الوحدة 6 · قاعة الاختبار'}
 
 def hdr(unit_text, lvl):
     lv = {'top': '<span class="lv top">★ يتكرر في الاختبارات</span>',
@@ -24,15 +26,40 @@ def tag(kind, t):
 def idea(t):
     return '  <div class="idea">' + t + '</div>\n'
 
-def qbox(en, ar, lab='السؤال', cls=''):
+def go(sid, txt='الحل'):
+    """button that jumps to a solution (shows its page number)"""
+    return '<a class="go" href="#' + sid + '">' + txt + ' <span class="ref" data-to="' + sid + '"></span></a>'
+
+def back(target, txt='السؤال'):
+    """small button that jumps back from a solution"""
+    return '<a class="back" href="#' + target + '">↩ ' + txt + '</a>'
+
+def sh(title, sid, backs):
+    """solution heading with an anchor and back buttons"""
+    return '  <h3 class="sh" id="' + sid + '"><span>' + title + '</span>' + ''.join(back(t, x) for t, x in backs) + '</h3>\n'
+
+def hq(title, qid, sol, txt='الأجوبة'):
+    """question heading with a jump to its answers"""
+    return '  <h3 class="sh" id="' + qid + '"><span>' + title + '</span>' + go(sol, txt) + '</h3>\n'
+
+def SM(k, extra=()):
+    """meta for the solution row of plan exercise k: anchor + back to the question and to the bank"""
+    bank = 'p-bank' if k in ('52', '53', '54', '55', '512', '518', '521', '533') else 'p-bank2'
+    return {'id': 's-' + k, 'back': [('q-' + k, 'السؤال'), (bank, 'البنك')] + list(extra)}
+
+BKP = {'back': [('p-papers', 'ورقة الميدات')]}
+
+def qbox(en, ar, lab='السؤال', cls='', qid=None, sol=None):
     c = 'qbox' + ((' ' + cls) if cls else '')
-    out = '  <div class="' + c + '"><div class="lab">' + lab + '</div>\n    <p class="en">' + en + '</p>\n'
+    ida = (' id="' + qid + '"') if qid else ''
+    out = '  <div class="' + c + '"' + ida + '><div class="lab"><span>' + lab + '</span>' + (go(sol) if sol else '') + '</div>\n    <p class="en">' + en + '</p>\n'
     if ar:
         out += '    <p class="ar">بالعربي: ' + ar + '</p>\n'
     return out + '  </div>\n'
 
 def duork(num, en, ar):
-    return qbox(en, ar, lab='دورك · تمرين ' + num, cls='ex')
+    k = num.replace('.', '')
+    return qbox(en, ar, lab='دورك · تمرين ' + num, cls='ex', qid='q-' + k, sol='s-' + k)
 
 def flow(steps):
     out = '    <div class="flow">\n'
@@ -51,15 +78,21 @@ def W(rows, title='نكتب', cls='tpl'):
     out = ('  <h3>' + title + '</h3>\n') if title else ''
     out += '  <div class="' + cls + '">\n'
     for r in rows:
+        meta = r[-1] if isinstance(r[-1], dict) else None
+        if meta:
+            r = r[:-1]
         num, name, en, ar = r[0], r[1], r[2], r[3]
         size = r[4] if len(r) > 4 else 'b1'
         lab = (('<b class="n">' + num + '</b>') if (num and num.isdigit()) else num) + (('<i>' + name + '</i>') if name else '')
+        if meta and meta.get('back'):
+            lab += '<span class="bks">' + ''.join(back(t, x) for t, x in meta['back']) + '</span>'
+        rid = (' id="' + meta['id'] + '"') if meta and meta.get('id') else ''
         if en is None:
-            out += '    <div class="r' + (' fill' if size in ('b3', 'b4') else '') + '"><div class="l">' + lab + '</div><div class="v b ' + size + '"></div></div>\n'
+            out += '    <div class="r' + (' fill' if size in ('b3', 'b4') else '') + '"' + rid + '><div class="l">' + lab + '</div><div class="v b ' + size + '"></div></div>\n'
         else:
             g = ('<span class="g">' + ar + '</span>') if ar else ''
             extra = (' b ' + size) if len(r) > 4 else ''
-            out += '    <div class="r"><div class="l">' + lab + '</div><div class="v' + extra + '">' + en + g + '</div></div>\n'
+            out += '    <div class="r"' + rid + '><div class="l">' + lab + '</div><div class="v' + extra + '">' + en + g + '</div></div>\n'
     return out + '  </div>\n'
 
 def stmt(pairs):

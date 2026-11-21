@@ -75,8 +75,16 @@ P.append(page('p-phr', U[6], 'must', 'جمل الكتابة والاختصارا
 def qrow(head, mk):
     return '    <div class="qrow" style="direction:ltr"><span class="en">' + head + '</span><span class="mk">' + mk + '</span></div>\n'
 
-def q(t):
-    return '    <div class="q">' + t + '</div>\n'
+def q(t, sol=None, src=''):
+    return ('    <div class="q"><span class="qt">' + t + '</span>' + (('<span class="src">' + src + '</span>') if src else '') +
+            (go(sol) if sol else '') + '</div>\n')
+
+def tagrows(rows, ids, home, txt='الورقة'):
+    """append an anchor + back button to solution rows (None = no anchor)"""
+    out = []
+    for r, i in zip(rows, ids):
+        out.append(r + ({'id': i, 'back': [(home, txt)]},) if i else r)
+    return out
 
 AFTER = box('بعد ما تخلص', '''    <ul class="chk">
       <li><span class="cb"></span>كل فقرة في سؤال 1 بدأت بسطر الحكم: True أو False.</li>
@@ -92,23 +100,74 @@ def score(rows, total):
         out += '    <tr><td>' + r[0] + '</td><td>' + r[1] + '</td><td>' + r[2] + '</td><td></td><td>' + ref(r[3]) + '</td></tr>\n'
     return out + '    <tr><th colspan="2">المجموع</th><th>' + total + '</th><th></th><th></th></tr>\n  </table>\n'
 
+# ---------- p-bank: the 16 plan exercises as an exam paper ----------
+BANK = [('مثال مضاد', 'p-u1', [('5.2', 2), ('5.3', 2), ('5.4', 2), ('5.5', 2)]),
+        ('تناقض', 'p-u2', [('5.12', 3), ('5.18', 3), ('5.21', 4), ('5.33', 3)]),
+        ('ثلاث طرق', 'p-u3', [('5.36', 6), ('5.39', 6)]),
+        ('وجود', 'p-u4', [('5.42', 2), ('5.46', 4), ('5.51', 4), ('5.53', 3)]),
+        ('نفي الوجود', 'p-u5', [('5.55', 3), ('5.57', 3)])]
+
+def bank_score(groups):
+    ks = [(k, mk) for _, _, it in groups for k, mk in it]
+    out = '  <h3>صحّح نفسك</h3>\n  <table class="t">\n    <tr>' + '<th>التمرين</th><th>الدرجة</th><th>درجتي</th>' * 2 + '</tr>\n'
+    for i in range(0, len(ks), 2):
+        out += '    <tr>' + ''.join('<td>' + k + '</td><td>' + str(mk) + '</td><td></td>' for k, mk in ks[i:i + 2]) + '</tr>\n'
+    return out + '    <tr><th colspan="2">المجموع</th><th>' + str(sum(mk for _, mk in ks)) + '</th><th colspan="3"></th></tr>\n  </table>\n'
+
+def bank_box(i, name, unit, items):
+    out = '  <div class="box paper bank">\n    <div class="bh">' + str(i) + ' · ' + name + ' <span class="small">(شرحه من ' + ref(unit) + ')</span></div>\n'
+    for k, mk in items:
+        out += q('<b>' + k + '.</b> ' + EX[k] + ' <span class="mk">(' + str(mk) + ' marks)</span>', 's-' + k.replace('.', ''))
+    return out + '  </div>\n'
+
+P.append(page('p-bank', U[6], 'must', 'بنك تمارين الخطة (1 من 2): كأنك في الاختبار' + tag('ex', '8 أسئلة'),
+    idea('تمارين الخطة الـ16 بدون أمثلة ولا تلميحات، زي ورقة الاختبار. حل كل سؤال على ورقة، وبعدها اضغط «الحل»، ومن الحل ارجع بزر «↩ البنك». الدرجات تقريبية على قد الميدات.') +
+    ''.join(bank_box(i, n, u, it) for i, (n, u, it) in list(enumerate(BANK, 1))[:2]) + bank_score(BANK[:2]), style='gap:3mm'))
+
+P.append(page('p-bank2', U[6], 'must', 'بنك تمارين الخطة (2 من 2): كأنك في الاختبار' + tag('ex', '8 أسئلة'),
+    idea('نفس الطريقة: حل على ورقة، وبعدها اضغط «الحل». الوجود ونفي الوجود من الخطة، بس ما جت في الميدات.') +
+    ''.join(bank_box(i, n, u, it) for i, (n, u, it) in list(enumerate(BANK, 1))[2:]) + bank_score(BANK[2:]), style='gap:3mm'))
+
+# ---------- p-papers: the chapter 5 questions of past midterms, word for word ----------
+P.append(page('p-papers', U[6], 'top', 'أوراق الميدات السابقة: حلها كأنك في الاختبار' + tag('past', 'بالحرف'),
+    idea('نفس أسئلة الفصل 5 اللي جت في الميدات، بنفس الصيغة والدرجات. شغّل مؤقت، وحل على ورقة بدون ما تطالع الشرح. بعدها اضغط «الحل» عند كل سؤال، وارجع بزر «↩ ورقة الميدات».') +
+    '  <div class="box paper">\n' +
+    '    <div class="bh">ورقة 1 · ميد نوفمبر 2026، الجزء حق الفصل 5 <span class="small">(16 من 25 درجة · 35 دقيقة)</span></div>\n' +
+    qrow('<b>Question 1: (3+3+4)</b> Prove or disprove the following:', '10 marks') +
+    q(r'1. If \(n\) is an odd integer, then \(n^2 - n\) is odd.', 'm-nov') +
+    q('2. There is no smallest positive real number.', 'm-small') +
+    q(r'3. The real number \(\sqrt{2}\) is irrational.', 'm-rt2') +
+    qrow(r'<b>Question 2: (2+2+2)</b> Prove that if \(n\) is an even integer, then \(5n + 3\) is odd by', '6 marks') +
+    q('1. a direct proof. &nbsp; 2. a proof by contrapositive. &nbsp; 3. a proof by contradiction.', 'm-5n3') +
+    '  </div>\n  <div class="box paper">\n' +
+    '    <div class="bh">ورقة 2 · من ميد 1446 وميد 1447 وميد البنات ونهائي 1446 <span class="small">(14 درجة · 30 دقيقة)</span></div>\n' +
+    q(r'1. For every odd positive integer \(n\), \(3 \mid (n^2 - 1)\). <span class="mk">(2 marks)</span>', 'm-1447', 'ميد 1447') +
+    q(r'2. For every even positive integer \(n\), \(12 \mid (n^2 - 4)\). <span class="mk">(2 marks)</span>', 'm-girls', 'البنات') +
+    q(r'3. Use a proof by contradiction to prove that \(\sqrt[3]{7}\) is irrational. <span class="mk">(3 marks)</span>', 's-cbrt7', 'نهائي 1446') +
+    q(r'4. Prove that if \(n\) is an odd integer, then \(7n - 5\) is even by (a) a direct proof, (b) a proof by contrapositive and (c) a proof by contradiction. <span class="mk">(7 marks)</span>', 's-536', 'ميد 1446') +
+    '  </div>\n' +
+    '  <table class="t">\n    <tr><th>الورقة</th><th>الدرجة</th><th>درجتي</th><th>الوقت اللي أخذته</th></tr>\n' +
+    '    <tr><td>ورقة 1 (نوفمبر)</td><td>16</td><td></td><td></td></tr>\n    <tr><td>ورقة 2 (الباقي)</td><td>14</td><td></td><td></td></tr>\n  </table>\n' +
+    note('star', 'بعدها:', 'الاختبارين التجريبيين الجايين فيهم توأم كل هذي الأسئلة بأرقام ثانية، يعني أقرب شي للبديل.'), style='gap:3mm'))
+
+
 # ---------- p-mockA ----------
 P.append(page('p-mockA', U[6], 'top', 'اختبار تجريبي 1: بصيغة ميد نوفمبر' + tag('ex', '35 دقيقة'),
     idea('هذا جزء الفصل 5 من ميد نوفمبر (16 درجة)، بأسئلة توأم. شغّل مؤقت 35 دقيقة، وحل على ورقة. لا تفتح الحلول قبل ما يخلص الوقت.') +
     '  <div class="box paper">\n' +
     qrow('<b>Question 1: (3+3+4)</b> Prove or disprove the following:', '10 marks') +
-    q(r'1. For every positive integer \(n\), \(n^2 + n + 1\) is a prime number.') +
-    q('2. There is no largest negative real number.') +
-    q(r'3. The real number \(\sqrt{5}\) is irrational. [You may use: for an integer \(a\), if \(5 \mid a^2\), then \(5 \mid a\).]') +
+    q(r'1. For every positive integer \(n\), \(n^2 + n + 1\) is a prime number.', 's-mA11') +
+    q('2. There is no largest negative real number.', 's-mA12') +
+    q(r'3. The real number \(\sqrt{5}\) is irrational. [You may use: for an integer \(a\), if \(5 \mid a^2\), then \(5 \mid a\).]', 's-mA13') +
     '  </div>\n  <div class="box paper">\n' +
     qrow(r'<b>Question 2: (2+2+2)</b> Prove that if \(n\) is an even integer, then \(7n + 3\) is odd by', '6 marks') +
-    q('1. a direct proof. &nbsp; 2. a proof by contrapositive. &nbsp; 3. a proof by contradiction.') +
+    q('1. a direct proof. &nbsp; 2. a proof by contrapositive. &nbsp; 3. a proof by contradiction.', 's-mA2') +
     '  </div>\n' + AFTER +
     '  <div class="space" data-label="ملاحظات: وش الفقرة اللي أخذت منك وقت أكثر؟"></div>\n'))
 
 # ---------- p-mockAs ----------
 P.append(page('p-mockAs', 'حلول الوحدة 6', '', 'حلول الاختبار التجريبي 1' + tag('sol', 'شيّك'),
-    W([('1.1 False', '', r'Let \(n = 4\). Then \(n^2 + n + 1 = 16 + 4 + 1 = 21 = 3 \cdot 7\), which is not a prime number. Thus, \(n = 4\) is a counterexample.',
+    W(tagrows([('1.1 False', '', r'Let \(n = 4\). Then \(n^2 + n + 1 = 16 + 4 + 1 = 21 = 3 \cdot 7\), which is not a prime number. Thus, \(n = 4\) is a counterexample.',
         r'أول ثلاث قيم تعطي 3 و7 و13، وكلها أولية. الفخ: لازم توصل لـ \(n = 4\).'),
        ('1.2 True', '', r'Assume, to the contrary, that there is a largest negative real number, say \(r\). Since \(r \lt r/2 \lt 0\), it follows that \(r/2\) is a negative real number that is larger than \(r\). This is a contradiction.',
         'توأم «ما فيه أصغر عدد موجب»: «أصغر» صارت «أكبر»، و«موجب» صارت «سالب».'),
@@ -116,7 +175,7 @@ P.append(page('p-mockAs', 'حلول الوحدة 6', '', 'حلول الاختب�
         r'قالب \(\sqrt{2}\) نفسه، و«زوجي» صارت «يقبل القسمة على 5».'),
        ('2 (1)', 'مباشر', r'Assume that \(n\) is even. Then \(n = 2k\) for some integer \(k\). So \(7n + 3 = 14k + 3 = 2(7k + 1) + 1\). Since \(7k + 1\) is an integer, \(7n + 3\) is odd.', ''),
        ('2 (2)', 'عكس النقيض', r'Assume that \(7n + 3\) is even. Then \(7n + 3 = 2k\) for some integer \(k\). So \(n = (7n + 3) - 6n - 3 = 2k - 6n - 3 = 2(k - 3n - 2) + 1\). Since \(k - 3n - 2\) is an integer, \(n\) is odd.', ''),
-       ('2 (3)', 'تناقض', r'Assume, to the contrary, that there exists an even integer \(n\) such that \(7n + 3\) is even. Then \(n = 2x\) and \(7n + 3 = 2y\) for some integers \(x\) and \(y\). Hence \(14x + 3 = 2y\), and so \(3 = 2y - 14x = 2(y - 7x)\). Since \(y - 7x\) is an integer, 3 is even, which is a contradiction.', '')], title='') +
+       ('2 (3)', 'تناقض', r'Assume, to the contrary, that there exists an even integer \(n\) such that \(7n + 3\) is even. Then \(n = 2x\) and \(7n + 3 = 2y\) for some integers \(x\) and \(y\). Hence \(14x + 3 = 2y\), and so \(3 = 2y - 14x = 2(y - 7x)\). Since \(y - 7x\) is an integer, 3 is even, which is a contradiction.', '')], ['s-mA11', 's-mA12', 's-mA13', 's-mA2', None, None], 'p-mockA'), title='') +
     score([('1.1', 'مثال مضاد فيه فخ', '3', 'p-trap'), ('1.2', 'ما فيه أكبر ولا أصغر', '3', 'p-ex5'),
            ('1.3', 'غير نسبي', '4', 'p-rt2b'), ('2', 'ثلاث طرق', '6', 'p-tpl3')], '16') +
     note('star', 'كل فقرة توأم سؤال من ميد نوفمبر:', r'1.1 توأم «\(n^2 - n\) فردي»، و1.2 توأم «ما فيه أصغر عدد موجب»، و1.3 توأم \(\sqrt{2}\)، وسؤال 2 توأم \(5n + 3\). يعني لو حليت هذا، أنت جاهز لنسخة البديل.'), sol=True))
@@ -126,19 +185,19 @@ P.append(page('p-mockB', U[6], 'top', 'اختبار تجريبي 2: بعد ما 
     idea('سوّه بعد ما تصحح الاختبار الأول وترجع للي نقصت فيه. فيه فقرة وجود (1.4) احتياط، لو جا سؤال من الوحدة 4. شغّل مؤقت 40 دقيقة.') +
     '  <div class="box paper">\n' +
     qrow('<b>Question 1: (2+3+4+3)</b> Prove or disprove the following:', '12 marks') +
-    q(r'1. For every odd positive integer \(n\), \(3 \mid (n^2 + 2)\).') +
-    q('2. There is no smallest positive rational number.') +
-    q(r'3. The real number \(\sqrt[3]{2}\) is irrational. [You may use: for an integer \(a\), if \(a^3\) is even, then \(a\) is even.]') +
-    q(r'4. The equation \(x^3 + x - 1 = 0\) has a real number solution between \(x = 0\) and \(x = 1\).') +
+    q(r'1. For every odd positive integer \(n\), \(3 \mid (n^2 + 2)\).', 's-mB11') +
+    q('2. There is no smallest positive rational number.', 's-mB12') +
+    q(r'3. The real number \(\sqrt[3]{2}\) is irrational. [You may use: for an integer \(a\), if \(a^3\) is even, then \(a\) is even.]', 's-mB13') +
+    q(r'4. The equation \(x^3 + x - 1 = 0\) has a real number solution between \(x = 0\) and \(x = 1\).', 's-mB14') +
     '  </div>\n  <div class="box paper">\n' +
     qrow(r'<b>Question 2: (2+2+2)</b> Prove that if \(n\) is an odd integer, then \(5n - 3\) is even by', '6 marks') +
-    q('1. a direct proof. &nbsp; 2. a proof by contrapositive. &nbsp; 3. a proof by contradiction.') +
+    q('1. a direct proof. &nbsp; 2. a proof by contrapositive. &nbsp; 3. a proof by contradiction.', 's-mB2') +
     '  </div>\n' + AFTER +
     '  <div class="space" data-label="قارن: كم جبت في الأول، وكم جبت هنا؟"></div>\n'))
 
 # ---------- p-mockBs ----------
 P.append(page('p-mockBs', 'حلول الوحدة 6', '', 'حلول الاختبار التجريبي 2' + tag('sol', 'شيّك'),
-    W([('1.1 False', '', r'Let \(n = 3\). Then \(n^2 + 2 = 11\) and \(3 \nmid 11\). Thus, \(n = 3\) is a counterexample.',
+    W(tagrows([('1.1 False', '', r'Let \(n = 3\). Then \(n^2 + 2 = 11\) and \(3 \nmid 11\). Thus, \(n = 3\) is a counterexample.',
         ''),
        ('1.2 True', '', r'Assume, to the contrary, that there is a smallest positive rational number, say \(r\). Then \(r = a/b\) for some integers \(a\) and \(b\) with \(b \ne 0\), and so \(r/2 = a/(2b)\) is a positive rational number. Since \(0 \lt r/2 \lt r\), this is a contradiction.', ''),
        ('1.3 True', '', r'Assume, to the contrary, that \(\sqrt[3]{2}\) is rational. Then \(\sqrt[3]{2} = a/b\), where \(a, b \in \mathbb{Z}\), \(b \ne 0\) and \(a/b\) has been reduced to lowest terms. Then \(a^3 = 2b^3\), so \(a^3\) is even, and so \(a\) is even. So \(a = 2c\) for some \(c \in \mathbb{Z}\), and \(8c^3 = 2b^3\), that is, \(b^3 = 4c^3 = 2(2c^3)\). Thus \(b^3\) is even, and so \(b\) is even. Since \(a\) and \(b\) are even, this is a contradiction since \(a/b\) has been reduced to lowest terms.',
@@ -147,7 +206,7 @@ P.append(page('p-mockBs', 'حلول الوحدة 6', '', 'حلول الاختب�
         ''),
        ('2 (1)', 'مباشر', r'Assume that \(n\) is odd. Then \(n = 2k + 1\) for some integer \(k\). So \(5n - 3 = 10k + 2 = 2(5k + 1)\). Since \(5k + 1\) is an integer, \(5n - 3\) is even.', ''),
        ('2 (2)', 'عكس النقيض', r'Assume that \(5n - 3\) is odd. Then \(5n - 3 = 2k + 1\) for some integer \(k\). So \(n = (5n - 3) - 4n + 3 = 2k - 4n + 4 = 2(k - 2n + 2)\). Since \(k - 2n + 2\) is an integer, \(n\) is even.', ''),
-       ('2 (3)', 'تناقض', r'Assume, to the contrary, that there exists an odd integer \(n\) such that \(5n - 3\) is odd. Then \(n = 2x + 1\) and \(5n - 3 = 2y + 1\) for some integers \(x\) and \(y\). Hence \(10x + 2 = 2y + 1\), and so \(1 = 2y - 10x = 2(y - 5x)\). Since \(y - 5x\) is an integer, 1 is even, which is a contradiction.', '')], title='') +
+       ('2 (3)', 'تناقض', r'Assume, to the contrary, that there exists an odd integer \(n\) such that \(5n - 3\) is odd. Then \(n = 2x + 1\) and \(5n - 3 = 2y + 1\) for some integers \(x\) and \(y\). Hence \(10x + 2 = 2y + 1\), and so \(1 = 2y - 10x = 2(y - 5x)\). Since \(y - 5x\) is an integer, 1 is even, which is a contradiction.', '')], ['s-mB11', 's-mB12', 's-mB13', 's-mB14', 's-mB2', None, None], 'p-mockB'), title='') +
     score([('1.1', 'مثال مضاد فيه فخ', '2', 'p-trap'), ('1.2', 'ما فيه أصغر', '3', 'p-fam'), ('1.3', 'غير نسبي', '4', 'p-rt2b'),
            ('1.4', 'وجود', '3', 'p-ivt'), ('2', 'ثلاث طرق', '6', 'p-536')], '18'), sol=True))
 

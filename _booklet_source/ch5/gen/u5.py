@@ -32,7 +32,7 @@ P.append(page('p-555', U[5], 'low', 'مثال: نفي الوجود بالتعو�
        ('2', 'خذ أي n', r'Let \(n\) be an odd integer. Then \(n = 2k + 1\) for some integer \(k\).', 'أي عدد فردي، مو عدد معين.'),
        ('3', 'اثبت', r'Thus, \[\begin{aligned} n^2 + 2n + 3 &= (2k + 1)^2 + 2(2k + 1) + 3 = 4k^2 + 4k + 1 + 4k + 2 + 3 \\ &= 4k^2 + 8k + 6 = 2(2k^2 + 4k + 3). \end{aligned}\] Since \(2k^2 + 4k + 3\) is an integer, \(n^2 + 2n + 3\) is even.',
         'نعوّض ونفك، ونطلّع 2 عامل مشترك.')], title='نكتب (حل السلايدات)') +
-    duork('5.55', r'<span class="lb">5.55.</span> Disprove the statement: There exist odd integers \(a\) and \(b\) such that \(4 \mid (3a^2 + 7b^2)\).',
+    duork('5.55', '<span class="lb">5.55.</span> ' + EX['5.55'],
           r'انفِ: يوجد عددين فرديين a و b بحيث 4 يقسم \(3a^2 + 7b^2\). جرّب: \(a = b = 1\) يعطي 10، و \(a = 1, b = 3\) يعطي 66. وش الباقي لما تقسمهم على 4؟') +
     recall(r'بعد التعويض اكتب العبارة على شكل \(4m + 2\)، وكمّل بحركة مثال 7 في التناقض: لو 4 يقسمها، يطلع 4 يقسم 2.') +
     W([('1', 'اقلب', None, None, 'b1'), ('2', 'خذ أي a و b', None, None, 'b1'), ('3', 'اثبت', None, None, 'b3')], title='', cls='tpl grow') +
@@ -47,7 +47,7 @@ P.append(page('p-ex15', U[5], 'low', 'مثال: نفي الوجود بالحال
         r'n زوجي: نعوّض ونكتبها \(2(\ldots) + 1\)، يعني فردية.'),
        ('2', 'حالة 2', r'<i>Case 2.</i> \(n\) is odd. Then \(n = 2b + 1\), where \(b \in \mathbb{Z}\). Hence, \[\begin{aligned} n^3 - n + 1 &= (2b + 1)^3 - (2b + 1) + 1 = 8b^3 + 12b^2 + 6b + 1 - 2b - 1 + 1 \\ &= 8b^3 + 12b^2 + 4b + 1 = 2(4b^3 + 6b^2 + 2b) + 1. \end{aligned}\] Since \(4b^3 + 6b^2 + 2b\) is an integer, \(n^3 - n + 1\) is odd and so it is not even.',
         r'n فردي: نفس الشي. و \((2b + 1)^3 = 8b^3 + 12b^2 + 6b + 1\).')], title='نكتب (حل السلايدات)') +
-    duork('5.57', r'<span class="lb">5.57.</span> Disprove the statement: There is an integer \(n\) such that \(n^4 + n^3 + n^2 + n\) is odd.',
+    duork('5.57', '<span class="lb">5.57.</span> ' + EX['5.57'],
           r'انفِ: يوجد عدد صحيح n بحيث \(n^4 + n^3 + n^2 + n\) فردي. جرّب: \(n = 1\) يعطي 4، و \(n = 2\) يعطي 30. وش تلاحظ؟') +
     W([('1', 'حالة 1', None, None, 'b2'), ('2', 'حالة 2', None, None, 'b3')], title='', cls='tpl grow') +
     hints([r'<b>تلميح:</b> \((2k + 1)^4 = 16k^4 + 32k^3 + 24k^2 + 8k + 1\). وطريق أسرع للحالة 2: لو n فردي، كل القوى فردية، وفردي + فردي + فردي + فردي = زوجي.']),
@@ -55,12 +55,12 @@ P.append(page('p-ex15', U[5], 'low', 'مثال: نفي الوجود بالحال
 
 # ---------- solutions ----------
 P.append(page('p-s5', 'حلول الوحدة 5', '', 'الحلول' + tag('sol', 'شيّك'),
-    '  <h3>تمرين 5.55</h3>\n' +
+    sh('تمرين 5.55', 's-555', SM('555')['back']) +
     W([('1', 'اقلب', r'We show that if \(a\) and \(b\) are odd integers, then \(4 \nmid (3a^2 + 7b^2)\).', 'نقلب «يوجد… 4 يقسم» إلى «لكل… 4 ما يقسم».'),
        ('2', 'خذ أي a و b', r'Let \(a\) and \(b\) be odd integers. Then \(a = 2x + 1\) and \(b = 2y + 1\) for some integers \(x\) and \(y\).', 'أي عددين فرديين.'),
        ('3', 'اثبت', r'Thus, \[\begin{aligned} 3a^2 + 7b^2 &= 3(4x^2 + 4x + 1) + 7(4y^2 + 4y + 1) = 12x^2 + 12x + 28y^2 + 28y + 10 \\ &= 4(3x^2 + 3x + 7y^2 + 7y + 2) + 2 = 4m + 2, \end{aligned}\] where \(m = 3x^2 + 3x + 7y^2 + 7y + 2 \in \mathbb{Z}\). If \(4 \mid (3a^2 + 7b^2)\), then \(4m + 2 = 4t\) for some integer \(t\), and so \(2 = 4(t - m)\), that is, \(4 \mid 2\), which is impossible. Hence \(4 \nmid (3a^2 + 7b^2)\).',
         r'العبارة = \(4m + 2\)، يعني باقيها 2 لما تنقسم على 4. ولو 4 يقسمها يطلع 4 يقسم 2: مستحيل (نفس مثال 7).')], title='') +
-    '  <h3>تمرين 5.57</h3>\n' +
+    sh('تمرين 5.57', 's-557', SM('557')['back']) +
     W([('1', 'حالة 1', r'Let \(n \in \mathbb{Z}\). We show that \(n^4 + n^3 + n^2 + n\) is even. <i>Case 1.</i> \(n\) is even. Then \(n = 2k\) for some \(k \in \mathbb{Z}\). So \(n^4 + n^3 + n^2 + n = 16k^4 + 8k^3 + 4k^2 + 2k = 2(8k^4 + 4k^3 + 2k^2 + k)\), which is even.',
         'n زوجي: كل حد زوجي، ونطلّع 2.'),
        ('2', 'حالة 2', r'<i>Case 2.</i> \(n\) is odd. Then \(n = 2k + 1\) for some \(k \in \mathbb{Z}\). So \[\begin{aligned} n^4 + n^3 + n^2 + n &= (16k^4 + 32k^3 + 24k^2 + 8k + 1) + (8k^3 + 12k^2 + 6k + 1) \\ &\quad + (4k^2 + 4k + 1) + (2k + 1) \\ &= 16k^4 + 40k^3 + 40k^2 + 20k + 4 = 2(8k^4 + 20k^3 + 20k^2 + 10k + 2), \end{aligned}\] which is even. Hence there is no integer \(n\) such that \(n^4 + n^3 + n^2 + n\) is odd.',
