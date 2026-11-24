@@ -83,8 +83,29 @@
     <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">By the inductive hypothesis, there are \(\hyp{2^k}\) subsets of the set \(\{c_1, c_2, \ldots, c_k\}\), that is, there are \(2^k\) subsets of \(C\) not containing \(c_{k+1}\). Any subset of \(C\) containing \(c_{k+1}\) can be expressed as \(D \cup \{c_{k+1}\}\), where \(D \subseteq \{c_1, c_2, \ldots, c_k\}\). Again, by the inductive hypothesis, there are \(\hyp{2^k}\) such subsets \(D\). Therefore, there are \(2^k + 2^k = 2 \cdot 2^k = 2^{k+1}\) subsets of \(C\).</div></div>
     <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, it follows for every nonnegative integer \(n\) that if \(|A| = n\), then \(|\mathcal{P}(A)| = 2^n\).</div></div>
   </div>
-  <div class="qbox ex"><div class="lab"><span>تمرين توأم: حله على ورقتك، وبعدها اضغط «الحل»</span></div>
+  <div class="note trap"><span class="k">انتبه:</span>البداية من 0: \(\mathcal{P}(\emptyset) = \{\emptyset\}\) فيها عنصر واحد (مو صفر)، فـ \(|\mathcal{P}(\emptyset)| = 1 = 2^0\).</div>
+
+</section>
+
+<section class="page" id="p-615">
+  <div class="hdr"><span class="u">الوحدة 4 · المتباينات والبداية من m</span><span class="lv low">احتمال أقل</span><span class="pn"></span></div>
+  <h2 class="t">دي مورغان لـ n مجموعة: مثال الكتاب 6.15<span class="tag sol">مثال الكتاب 6.15</span></h2>
+  <div class="qbox"><div class="lab"><span>مثال من الكتاب في 6.2 (ما انسأل للحين)</span></div>
+    <p class="en"><span class="lb">Theorem 6.15.</span> If \(A_1, A_2, \ldots, A_n\) are \(n \ge 2\) sets, then \(\overline{A_1 \cup A_2 \cup \cdots \cup A_n} = \overline{A_1} \cap \overline{A_2} \cap \cdots \cap \overline{A_n}\).</p>
+    <p class="ar">بالعربي: مكمّل الاتحاد يساوي تقاطع المكمّلات، لأي عدد من المجموعات. البداية n = 2، وهي قانون دي مورغان.</p>
+  </div>
+  <div class="idea"><b>التريك:</b> سمّ اتحاد أول k مجموعات \(T\)، فيصير عندك مجموعتين بس: \(T\) و \(S_{k+1}\). ونفس التريك في تمرين 6.19 تحت.</div>
+  <h3>نكتب (حل الكتاب)</h3>
+  <div class="tpl">
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">We proceed by induction. For \(n = 2\), the result is De Morgan's Law and is therefore true.</div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that the result is true for any \(k\) sets, where \(k \ge 2\); that is, if \(B_1, \ldots, B_k\) are any \(k\) sets, then \(\overline{B_1 \cup B_2 \cup \cdots \cup B_k} = \overline{B_1} \cap \overline{B_2} \cap \cdots \cap \overline{B_k}\).</div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">Let \(S_1, S_2, \ldots, S_{k+1}\) be \(k + 1\) sets. We show that \(\overline{S_1 \cup S_2 \cup \cdots \cup S_{k+1}} = \overline{S_1} \cap \overline{S_2} \cap \cdots \cap \overline{S_{k+1}}\).<span class="g">انتبه: حروف جديدة (S)، مو B. الكتاب ينبه إن مجموعات المطلوب مو لازم تكون مجموعات الفرض.</span></div></div>
+    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">Let \(T = S_1 \cup S_2 \cup \cdots \cup S_k\). By the definition of \(T\) and by the inductive hypothesis, \(\hyp{\overline{T} = \overline{S_1} \cap \cdots \cap \overline{S_k}}\). Therefore, by De Morgan's Law, \[\overline{S_1 \cup \cdots \cup S_{k+1}} = \overline{T \cup S_{k+1}} = \hyp{\overline{T}} \cap \overline{S_{k+1}} = \overline{S_1} \cap \cdots \cap \overline{S_k} \cap \overline{S_{k+1}}.\]<span class="g">\(\overline{T}\) مكمّل اتحاد k مجموعات، فالفرض يحوّله لتقاطع.</span></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, the result is true for every \(n \ge 2\) sets.</div></div>
+  </div>
+  <div class="qbox ex"><div class="lab"><span>تمرين الخطة وتوأم: حلهم على ورقتك، وبعدها اضغط «الحل»</span></div>
     <div class="tw" id="q-619"><span class="qt"><b>6.19.</b> Prove the following implication for every integer \(n \ge 2\): If \(x_1, x_2, \ldots, x_n\) are any \(n\) real numbers such that \(x_1 \cdot x_2 \cdots x_n = 0\), then at least one of the numbers \(x_1, x_2, \ldots, x_n\) is \(0\). (Use the fact that if the product of two real numbers is \(0\), then at least one of the numbers is \(0\).)</span><a class="go" href="#s-619">الحل <span class="ref" data-to="s-619"></span></a></div>
+    <div class="tw" id="q-dm"><span class="qt"><b>توأم.</b> Prove that if \(A_1, A_2, \ldots, A_n\) are \(n \ge 2\) sets, then \(\overline{A_1 \cap A_2 \cap \cdots \cap A_n} = \overline{A_1} \cup \overline{A_2} \cup \cdots \cup \overline{A_n}\).</span><a class="go" href="#s-dm">الحل <span class="ref" data-to="s-dm"></span></a></div>
   </div>
 
 </section>
@@ -134,7 +155,7 @@
 
 <section class="page sol" id="p-s4b">
   <div class="hdr"><span class="u">حلول الوحدة 4</span><span class="pn"></span></div>
-  <h2 class="t">حل تمرين 6.19<span class="tag sol">شيّك</span></h2>
+  <h2 class="t">حل تمرين 6.19 والتوأم<span class="tag sol">شيّك</span></h2>
   <h3 class="sh" id="s-619"><span>تمرين 6.19</span><a class="back" href="#q-619">↩ السؤال</a><a class="back" href="#p-bank">↩ البنك</a></h3>
   <div class="tpl">
     <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">For \(n = 2\): if \(x_1 x_2 = 0\), then \(x_1 = 0\) or \(x_2 = 0\) by the given fact.<span class="g">البداية من 2، والحقيقة المعطاة تكفي.</span></div></div>
@@ -142,6 +163,14 @@
     <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">Let \(x_1, \ldots, x_{k+1}\) be real numbers with \(x_1 x_2 \cdots x_{k+1} = 0\). We show that some \(x_i = 0\).</div></div>
     <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">Since \((x_1 x_2 \cdots x_k) \cdot x_{k+1} = 0\), the given fact gives \(x_1 \cdots x_k = 0\) or \(x_{k+1} = 0\). If \(x_{k+1} = 0\), we are done. Otherwise \(\hyp{x_1 \cdots x_k = 0}\), and by the inductive hypothesis \(x_i = 0\) for some \(i\) with \(1 \le i \le k\).<span class="g">نعامل أول k أعداد كعدد واحد، ونطبق الحقيقة على عددين.</span></div></div>
     <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, the implication holds for every integer \(n \ge 2\).</div></div>
+  </div>
+  <h3 class="sh" id="s-dm"><span>توأم دي مورغان</span><a class="back" href="#q-dm">↩ السؤال</a></h3>
+  <div class="tpl">
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">We proceed by induction. For \(n = 2\), \(\overline{A_1 \cap A_2} = \overline{A_1} \cup \overline{A_2}\) is De Morgan's Law.</div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that if \(B_1, B_2, \ldots, B_k\) are any \(k\) sets, where \(k \ge 2\), then \(\overline{B_1 \cap \cdots \cap B_k} = \overline{B_1} \cup \cdots \cup \overline{B_k}\).</div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">Let \(S_1, S_2, \ldots, S_{k+1}\) be \(k + 1\) sets. We show that \(\overline{S_1 \cap \cdots \cap S_{k+1}} = \overline{S_1} \cup \cdots \cup \overline{S_{k+1}}\).</div></div>
+    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">Let \(T = S_1 \cap \cdots \cap S_k\). By De Morgan's Law and the inductive hypothesis, \[\overline{S_1 \cap \cdots \cap S_{k+1}} = \overline{T \cap S_{k+1}} = \hyp{\overline{T}} \cup \overline{S_{k+1}} = \hyp{\overline{S_1} \cup \cdots \cup \overline{S_k}} \cup \overline{S_{k+1}}.\]<span class="g">نفس تريك T، بس ∩ و ∪ متبادلين.</span></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, the result holds for every \(n \ge 2\) sets.</div></div>
   </div>
 
 </section>

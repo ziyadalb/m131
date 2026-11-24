@@ -53,7 +53,22 @@ P.append(page('p-pa', U[4], 'low', 'استقراء على عدد العناصر'
        ('3', 'المطلوب', r'We show that if \(C\) is a set with \(|C| = k + 1\), then \(|\mathcal{P}(C)| = 2^{k+1}\). Let \(C = \{c_1, c_2, \ldots, c_{k+1}\}\).', ''),
        ('4', 'الخطوة', r'By the inductive hypothesis, there are \(\hyp{2^k}\) subsets of the set \(\{c_1, c_2, \ldots, c_k\}\), that is, there are \(2^k\) subsets of \(C\) not containing \(c_{k+1}\). Any subset of \(C\) containing \(c_{k+1}\) can be expressed as \(D \cup \{c_{k+1}\}\), where \(D \subseteq \{c_1, c_2, \ldots, c_k\}\). Again, by the inductive hypothesis, there are \(\hyp{2^k}\) such subsets \(D\). Therefore, there are \(2^k + 2^k = 2 \cdot 2^k = 2^{k+1}\) subsets of \(C\).', '', HL),
        ('5', 'الختام', r'By the Principle of Mathematical Induction, it follows for every nonnegative integer \(n\) that if \(|A| = n\), then \(|\mathcal{P}(A)| = 2^n\).', '')], title='نكتب (برهان السلايدات)') +
-    twins([('q-619', '6.19.', EX['6.19'], 's-619')])))
+    note('trap', 'انتبه:', r'البداية من 0: \(\mathcal{P}(\emptyset) = \{\emptyset\}\) فيها عنصر واحد (مو صفر)، فـ \(|\mathcal{P}(\emptyset)| = 1 = 2^0\).')))
+
+# ---------- p-615: the book's theorem 6.15 (De Morgan for n sets), then 6.19 (the same trick) ----------
+P.append(page('p-615', U[4], 'low', 'دي مورغان لـ n مجموعة: مثال الكتاب 6.15' + tag('sol', 'مثال الكتاب 6.15'),
+    qbox(r'<span class="lb">Theorem 6.15.</span> If \(A_1, A_2, \ldots, A_n\) are \(n \ge 2\) sets, then \(\overline{A_1 \cup A_2 \cup \cdots \cup A_n} = \overline{A_1} \cap \overline{A_2} \cap \cdots \cap \overline{A_n}\).',
+         'مكمّل الاتحاد يساوي تقاطع المكمّلات، لأي عدد من المجموعات. البداية n = 2، وهي قانون دي مورغان.', lab='مثال من الكتاب في 6.2 (ما انسأل للحين)') +
+    idea(r'<b>التريك:</b> سمّ اتحاد أول k مجموعات \(T\)، فيصير عندك مجموعتين بس: \(T\) و \(S_{k+1}\). ونفس التريك في تمرين 6.19 تحت.') +
+    W([('1', 'الأساس', r"We proceed by induction. For \(n = 2\), the result is De Morgan's Law and is therefore true.", ''),
+       ('2', 'الفرض', r'Assume that the result is true for any \(k\) sets, where \(k \ge 2\); that is, if \(B_1, \ldots, B_k\) are any \(k\) sets, then \(\overline{B_1 \cup B_2 \cup \cdots \cup B_k} = \overline{B_1} \cap \overline{B_2} \cap \cdots \cap \overline{B_k}\).', ''),
+       ('3', 'المطلوب', r'Let \(S_1, S_2, \ldots, S_{k+1}\) be \(k + 1\) sets. We show that \(\overline{S_1 \cup S_2 \cup \cdots \cup S_{k+1}} = \overline{S_1} \cap \overline{S_2} \cap \cdots \cap \overline{S_{k+1}}\).', 'انتبه: حروف جديدة (S)، مو B. الكتاب ينبه إن مجموعات المطلوب مو لازم تكون مجموعات الفرض.'),
+       ('4', 'الخطوة', r"Let \(T = S_1 \cup S_2 \cup \cdots \cup S_k\). By the definition of \(T\) and by the inductive hypothesis, \(\hyp{\overline{T} = \overline{S_1} \cap \cdots \cap \overline{S_k}}\). Therefore, by De Morgan's Law, \[\overline{S_1 \cup \cdots \cup S_{k+1}} = \overline{T \cup S_{k+1}} = \hyp{\overline{T}} \cap \overline{S_{k+1}} = \overline{S_1} \cap \cdots \cap \overline{S_k} \cap \overline{S_{k+1}}.\]",
+        r'\(\overline{T}\) مكمّل اتحاد k مجموعات، فالفرض يحوّله لتقاطع.', HL),
+       ('5', 'الختام', r'By the Principle of Mathematical Induction, the result is true for every \(n \ge 2\) sets.', '')], title='نكتب (حل الكتاب)') +
+    twins([('q-619', '6.19.', EX['6.19'], 's-619'),
+           ('q-dm', 'توأم.', r'Prove that if \(A_1, A_2, \ldots, A_n\) are \(n \ge 2\) sets, then \(\overline{A_1 \cap A_2 \cap \cdots \cap A_n} = \overline{A_1} \cup \overline{A_2} \cup \cdots \cup \overline{A_n}\).', 's-dm')],
+          lab='تمرين الخطة وتوأم: حلهم على ورقتك، وبعدها اضغط «الحل»')))
 
 # ---------- p-614: the book's result 6.14 ----------
 P.append(page('p-614', U[4], 'cand', 'مثال الكتاب 6.14: ' + r'\(x^n\) زوجي' + tag('sol', 'مثال الكتاب 6.14'),
@@ -84,12 +99,18 @@ P.append(page('p-s4', 'حلول الوحدة 4', '', 'الحلول' + tag('sol',
        ('5', 'الختام', r'By the Principle of Mathematical Induction, the inequality holds for every positive integer \(n\).', '')], title='') +
     '', sol=True))
 
-P.append(page('p-s4b', 'حلول الوحدة 4', '', 'حل تمرين 6.19' + tag('sol', 'شيّك'),
+P.append(page('p-s4b', 'حلول الوحدة 4', '', 'حل تمرين 6.19 والتوأم' + tag('sol', 'شيّك'),
     sh('تمرين 6.19', 's-619', SM('619')['back']) +
     W([('1', 'الأساس', r'For \(n = 2\): if \(x_1 x_2 = 0\), then \(x_1 = 0\) or \(x_2 = 0\) by the given fact.', 'البداية من 2، والحقيقة المعطاة تكفي.'),
        ('2', 'الفرض', r'Assume for some integer \(k \ge 2\) that whenever \(y_1, \ldots, y_k\) are real numbers with \(y_1 y_2 \cdots y_k = 0\), at least one \(y_i\) is \(0\).', ''),
        ('3', 'المطلوب', r'Let \(x_1, \ldots, x_{k+1}\) be real numbers with \(x_1 x_2 \cdots x_{k+1} = 0\). We show that some \(x_i = 0\).', ''),
        ('4', 'الخطوة', r'Since \((x_1 x_2 \cdots x_k) \cdot x_{k+1} = 0\), the given fact gives \(x_1 \cdots x_k = 0\) or \(x_{k+1} = 0\). If \(x_{k+1} = 0\), we are done. Otherwise \(\hyp{x_1 \cdots x_k = 0}\), and by the inductive hypothesis \(x_i = 0\) for some \(i\) with \(1 \le i \le k\).', 'نعامل أول k أعداد كعدد واحد، ونطبق الحقيقة على عددين.', HL),
-       ('5', 'الختام', r'By the Principle of Mathematical Induction, the implication holds for every integer \(n \ge 2\).', '')], title=''), sol=True))
+       ('5', 'الختام', r'By the Principle of Mathematical Induction, the implication holds for every integer \(n \ge 2\).', '')], title='') +
+    sh('توأم دي مورغان', 's-dm', [('q-dm', 'السؤال')]) +
+    W([('1', 'الأساس', r"We proceed by induction. For \(n = 2\), \(\overline{A_1 \cap A_2} = \overline{A_1} \cup \overline{A_2}\) is De Morgan's Law.", ''),
+       ('2', 'الفرض', r'Assume that if \(B_1, B_2, \ldots, B_k\) are any \(k\) sets, where \(k \ge 2\), then \(\overline{B_1 \cap \cdots \cap B_k} = \overline{B_1} \cup \cdots \cup \overline{B_k}\).', ''),
+       ('3', 'المطلوب', r'Let \(S_1, S_2, \ldots, S_{k+1}\) be \(k + 1\) sets. We show that \(\overline{S_1 \cap \cdots \cap S_{k+1}} = \overline{S_1} \cup \cdots \cup \overline{S_{k+1}}\).', ''),
+       ('4', 'الخطوة', r"Let \(T = S_1 \cap \cdots \cap S_k\). By De Morgan's Law and the inductive hypothesis, \[\overline{S_1 \cap \cdots \cap S_{k+1}} = \overline{T \cap S_{k+1}} = \hyp{\overline{T}} \cup \overline{S_{k+1}} = \hyp{\overline{S_1} \cup \cdots \cup \overline{S_k}} \cup \overline{S_{k+1}}.\]", 'نفس تريك T، بس ∩ و ∪ متبادلين.', HL),
+       ('5', 'الختام', r'By the Principle of Mathematical Induction, the result holds for every \(n \ge 2\) sets.', '')], title=''), sol=True))
 
 save('e_u4.html', P)
