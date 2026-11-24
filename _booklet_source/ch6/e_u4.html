@@ -1,0 +1,147 @@
+<section class="page" id="p-gen">
+  <div class="hdr"><span class="u">الوحدة 4 · المتباينات والبداية من m · 6.2</span><span class="lv top">★ مرشّح للبديل</span><span class="pn"></span></div>
+  <h2 class="t">لما البداية مو 1: مثال 3<span class="tag sol">مثال 3 في السلايدات</span></h2>
+  <div class="stmt">
+    <p class="en"><span class="lb">The more general principle.</span> For a fixed integer \(m\), let \(S = \{i \in \mathbb{Z} : i \ge m\}\). For each integer \(n \in S\), let \(P(n)\) be a statement. If (1) \(P(m)\) is true and (2) the implication “If \(P(k)\), then \(P(k+1)\).” is true for every integer \(k \in S\), then \(P(n)\) is true for every integer \(n \in S\).</p>
+    <p class="ar">بالعربي: نفس المبدأ، بس البداية m بدل 1: الأساس عند m، والفرض لـ k ≥ m.</p>
+  </div>
+  <div class="qbox"><div class="lab"><span>مثال 3 في السلايدات</span></div>
+    <p class="en"><span class="lb">Result.</span> For every nonnegative integer \(n\), \(2^n \gt n\).</p>
+    <p class="ar">بالعربي: البداية من 0.</p>
+  </div>
+  <div class="idea"><b>حركة الخطوة في المتباينات:</b> ابدأ من الطرف حق k + 1 (\(2^{k+1} = 2 \cdot 2^k\))، واستخدم الفرض، وبعدها خطوة صغيرة توصلك. هنا الخطوة الصغيرة \(k + k \ge k + 1\) تحتاج \(k \ge 1\)، فـ k = 0 نسويها لحالها (سطر ★).</div>
+  <h3>نكتب (برهان السلايدات)</h3>
+  <div class="tpl">
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">We proceed by induction. The inequality holds for \(n = 0\) since \(2^0 \gt 0\).<span class="g">\(2^0 = 1\)، و 1 > 0.</span></div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(2^k \gt k\), where \(k\) is a nonnegative integer.</div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(2^{k+1} \gt k + 1\).</div></div>
+    <div class="r st"><div class="l">★<i>k = 0</i></div><div class="v">When \(k = 0\), we have \(2^{k+1} = 2 \gt 1 = k + 1\). We therefore assume that \(k \ge 1\).<span class="g">سطر ★: نخلص من k = 0 لحالها.</span></div></div>
+    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">Then \(2^{k+1} = 2 \cdot \hyp{2^k} \gt 2\hyp{k} = k + k \ge k + 1\).<span class="g">بدّلنا \(2^k\) بالفرض (أكبر من k)، و \(k \ge 1\) تعطي \(k + k \ge k + 1\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, \(2^n \gt n\) for every nonnegative integer \(n\).<span class="g">اسم المبدأ كامل، ومعه البداية الصح.</span></div></div>
+  </div>
+  <div class="note trap"><span class="k">انتبه:</span>اقرأ البداية من السؤال: positive من 1، و nonnegative من 0، و n ≥ 5 من 5.</div>
+
+</section>
+
+<section class="page" id="p-ex4">
+  <div class="hdr"><span class="u">الوحدة 4 · المتباينات والبداية من m</span><span class="lv top">★ مرشّح للبديل</span><span class="pn"></span></div>
+  <h2 class="t">متباينة من n ≥ 5: مثال 4<span class="tag sol">مثال 4 في السلايدات</span></h2>
+  <div class="qbox"><div class="lab"><span>مثال 4 في السلايدات (ما انسأل للحين)</span></div>
+    <p class="en"><span class="lb">Result.</span> For every integer \(n \ge 5\), \(2^n \gt n^2\).</p>
+    <p class="ar">بالعربي: البداية 5، لأن \(2^4 = 16\) مو أكبر من \(4^2 = 16\).</p>
+  </div>
+  <div class="idea">بالأرقام: n = 4: 16 > 16 <span class="no">✗</span>، و n = 5: 32 > 25 <span class="ok">✓</span>. الخطوة: \(2^{k+1} = 2 \cdot 2^k \gt 2k^2\)، وبعدها نستخدم \(k \ge 5\) مرتين: \(k^2 \ge 5k\) و \(3k \ge 15\).</div>
+  <h3>نكتب (برهان السلايدات)</h3>
+  <div class="tpl">
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">We proceed by induction. Since \(2^5 \gt 5^2\), the inequality holds for \(n = 5\).<span class="g">32 > 25.</span></div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(2^k \gt k^2\) where \(k \ge 5\).<span class="g">ولا تنسَ «where k ≥ 5».</span></div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(2^{k+1} \gt (k+1)^2\).</div></div>
+    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">Observe that \[\begin{aligned} 2^{k+1} = 2 \cdot \hyp{2^k} \gt 2\hyp{k^2} = k^2 + k^2 &\ge k^2 + 5k = k^2 + 2k + 3k \\ &\ge k^2 + 2k + 15 \gt k^2 + 2k + 1 = (k+1)^2. \end{aligned}\] Therefore, \(2^{k+1} \gt (k+1)^2\).<span class="g">الفرض (الأزرق)، وبعدها \(k \ge 5\): \(k^2 \ge 5k\) و \(3k \ge 15\). والهدف \(k^2 + 2k + 1\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, \(2^n \gt n^2\) for every integer \(n \ge 5\).<span class="g">اسم المبدأ كامل، ومعه البداية الصح.</span></div></div>
+  </div>
+  <div class="qbox ex"><div class="lab"><span>تمرين توأم: حله على ورقتك، وبعدها اضغط «الحل»</span></div>
+    <div class="tw" id="q-622"><span class="qt"><b>6.22.</b> Prove that \(3^n \gt n^2\) for every positive integer \(n\).</span><a class="go" href="#s-622">الحل <span class="ref" data-to="s-622"></span></a></div>
+  </div>
+
+</section>
+
+<section class="page" id="p-627">
+  <div class="hdr"><span class="u">الوحدة 4 · المتباينات والبداية من m</span><span class="lv low">احتمال أقل</span><span class="pn"></span></div>
+  <h2 class="t">متباينة فيها مجموع<span class="tag sol">مثال إضافي</span></h2>
+  <div class="qbox"><div class="lab"><span>مثال</span></div>
+    <p class="en"><span class="lb">Result.</span> For every positive integer \(n\), \(1 + \frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{n} \le \frac{n+1}{2}\).</p>
+    <p class="ar">بالعربي: مثال إضافي مو من الكتاب، عشان تشوف نوع تمرين 6.27 محلول.</p>
+  </div>
+  <div class="idea">حركة المجاميع والمتباينات مع بعض: افصل آخر حد، وبدّل الباقي بالفرض، وبعدها كبّر آخر حد: \(\frac{1}{k+1} \le \frac{1}{2}\) لأن \(k + 1 \ge 2\).</div>
+  <h3>نكتب</h3>
+  <div class="tpl">
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">Since \(1 \le \frac{1+1}{2} = 1\), the inequality holds for \(n = 1\).</div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(1 + \frac{1}{2} + \cdots + \frac{1}{k} \le \frac{k+1}{2}\) for a positive integer \(k\).</div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(1 + \frac{1}{2} + \cdots + \frac{1}{k+1} \le \frac{k+2}{2}\).</div></div>
+    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">Since \(k + 1 \ge 2\), \(\frac{1}{k+1} \le \frac{1}{2}\). By the inductive hypothesis, \(\hyp{1 + \cdots + \frac{1}{k}} + \frac{1}{k+1} \le \hyp{\frac{k+1}{2}} + \frac{1}{k+1} \le \frac{k+1}{2} + \frac{1}{2} = \frac{k+2}{2}.\)</div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, the inequality holds for every positive integer \(n\).</div></div>
+  </div>
+  <div class="qbox ex"><div class="lab"><span>تمرين توأم: حله على ورقتك، وبعدها اضغط «الحل»</span></div>
+    <div class="tw" id="q-627"><span class="qt"><b>6.27.</b> Prove that \(1 + \frac{1}{4} + \frac{1}{9} + \cdots + \frac{1}{n^2} \le 2 - \frac{1}{n}\) for every positive integer \(n\).</span><a class="go" href="#s-627">الحل <span class="ref" data-to="s-627"></span></a></div>
+  </div>
+
+</section>
+
+<section class="page" id="p-pa">
+  <div class="hdr"><span class="u">الوحدة 4 · المتباينات والبداية من m</span><span class="lv low">احتمال أقل</span><span class="pn"></span></div>
+  <h2 class="t">استقراء على عدد العناصر<span class="tag sol">نظرية من السلايدات</span></h2>
+  <div class="qbox"><div class="lab"><span>نظرية في السلايدات</span></div>
+    <p class="en"><span class="lb">Theorem.</span> If \(A\) is a finite set of cardinality \(n \ge 0\), then the cardinality of its power set \(\mathcal{P}(A)\) is \(2^n\).</p>
+    <p class="ar">بالعربي: لو A فيها n عنصر، فعدد المجموعات الجزئية منها \(2^n\). البداية من 0 (المجموعة الفاضية).</p>
+  </div>
+  <div class="idea">الخطوة: المجموعات الجزئية من C (فيها k + 1 عنصر) نوعين: اللي ما فيها العنصر الأخير (\(2^k\) بالفرض)، واللي فيها (\(2^k\) بعد). المجموع \(2^{k+1}\).</div>
+  <h3>نكتب (برهان السلايدات)</h3>
+  <div class="tpl">
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">We proceed by induction. If \(A\) is a set with \(|A| = 0\), then \(A = \emptyset\). Thus, \(\mathcal{P}(A) = \{\emptyset\}\) and so \(|\mathcal{P}(A)| = 1 = 2^0\). Therefore, the theorem is true for \(n = 0\).</div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that if \(B\) is any set with \(|B| = k\) for some nonnegative integer \(k\), then \(|\mathcal{P}(B)| = 2^k\).</div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that if \(C\) is a set with \(|C| = k + 1\), then \(|\mathcal{P}(C)| = 2^{k+1}\). Let \(C = \{c_1, c_2, \ldots, c_{k+1}\}\).</div></div>
+    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">By the inductive hypothesis, there are \(\hyp{2^k}\) subsets of the set \(\{c_1, c_2, \ldots, c_k\}\), that is, there are \(2^k\) subsets of \(C\) not containing \(c_{k+1}\). Any subset of \(C\) containing \(c_{k+1}\) can be expressed as \(D \cup \{c_{k+1}\}\), where \(D \subseteq \{c_1, c_2, \ldots, c_k\}\). Again, by the inductive hypothesis, there are \(\hyp{2^k}\) such subsets \(D\). Therefore, there are \(2^k + 2^k = 2 \cdot 2^k = 2^{k+1}\) subsets of \(C\).</div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, it follows for every nonnegative integer \(n\) that if \(|A| = n\), then \(|\mathcal{P}(A)| = 2^n\).</div></div>
+  </div>
+  <div class="qbox ex"><div class="lab"><span>تمرين توأم: حله على ورقتك، وبعدها اضغط «الحل»</span></div>
+    <div class="tw" id="q-619"><span class="qt"><b>6.19.</b> Prove the following implication for every integer \(n \ge 2\): If \(x_1, x_2, \ldots, x_n\) are any \(n\) real numbers such that \(x_1 \cdot x_2 \cdots x_n = 0\), then at least one of the numbers \(x_1, x_2, \ldots, x_n\) is \(0\). (Use the fact that if the product of two real numbers is \(0\), then at least one of the numbers is \(0\).)</span><a class="go" href="#s-619">الحل <span class="ref" data-to="s-619"></span></a></div>
+  </div>
+
+</section>
+
+<section class="page" id="p-614">
+  <div class="hdr"><span class="u">الوحدة 4 · المتباينات والبداية من m</span><span class="lv top">★ مرشّح للبديل</span><span class="pn"></span></div>
+  <h2 class="t">مثال الكتاب 6.14: \(x^n\) زوجي<span class="tag sol">مثال الكتاب 6.14</span></h2>
+  <div class="qbox"><div class="lab"><span>مثال من الكتاب في 6.2 (ما انسأل للحين)</span></div>
+    <p class="en"><span class="lb">Result 6.14.</span> Let \(x \in \mathbb{Z}\). For every integer \(n \ge 2\), \(x^n\) is even if and only if \(x\) is even.</p>
+    <p class="ar">بالعربي: إذا وفقط إذا: اتجاه بالمباشر، والاتجاه الثاني بالاستقراء من n = 2. وتنفعك في «\(\sqrt[3]{2}\) غير نسبي» في الفصل 5.</p>
+  </div>
+  <div class="idea">الاتجاه الصعب: لو \(x^{k+1} = x \cdot x^k\) زوجي، فواحد من الاثنين زوجي (نظرية 3.17). لو x زوجي خلصنا، ولو \(x^k\) زوجي فالفرض يقول x زوجي.</div>
+  <h3>نكتب (حل الكتاب)</h3>
+  <div class="tpl">
+    <div class="r"><div class="l">⇐<i>مباشر</i></div><div class="v">Assume, first, that \(x\) is even. Then \(x = 2y\) for some integer \(y\). Hence, \(x^n = x \cdot x^{n-1} = (2y)x^{n-1} = 2\left(yx^{n-1}\right)\). Since \(yx^{n-1}\) is an integer, \(x^n\) is even.<span class="g">x زوجي، فـ \(x^n\) زوجي.</span></div></div>
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">We now verify the converse, namely if \(x^n\) is even, where \(n \ge 2\), then \(x\) is even. We proceed by induction. If \(x^2\) is even, then we have already seen that \(x\) is even. Hence, the statement is true for \(n = 2\).<span class="g">البداية من 2، والحالة n = 2 نعرفها من الفصل 3.</span></div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that if \(x^k\) is even for some integer \(k \ge 2\), then \(x\) is even.</div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that if \(x^{k+1}\) is even, then \(x\) is even.</div></div>
+    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">Let \(x^{k+1}\) be an even integer. Then \(x \cdot x^k\) is even. By Theorem 3.17, \(x\) or \(x^k\) is even. If \(x\) is even, then the result is proved. On the other hand, if \(\hyp{x^k}\) is even, then, by the induction hypothesis, \(x\) is even as well.</div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, it follows, for every integer \(n \ge 2\), that if \(x^n\) is even, then \(x\) is even.</div></div>
+  </div>
+
+</section>
+
+<section class="page sol" id="p-s4">
+  <div class="hdr"><span class="u">حلول الوحدة 4</span><span class="pn"></span></div>
+  <h2 class="t">الحلول<span class="tag sol">شيّك</span></h2>
+  <h3 class="sh" id="s-622"><span>تمرين 6.22</span><a class="back" href="#q-622">↩ السؤال</a><a class="back" href="#p-bank">↩ البنك</a></h3>
+  <div class="tpl">
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">Since \(3^1 = 3 \gt 1 = 1^2\), the statement is true for \(n = 1\).</div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(3^k \gt k^2\) for a positive integer \(k\).</div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(3^{k+1} \gt (k+1)^2\).</div></div>
+    <div class="r st"><div class="l">★<i>k = 1</i></div><div class="v">If \(k = 1\), then \(3^{k+1} = 9 \gt 4 = (k+1)^2\). So we may assume that \(k \ge 2\).<span class="g">نحتاج \(k \ge 2\) تحت، فـ k = 1 لحالها.</span></div></div>
+    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">By the inductive hypothesis and since \(k \ge 2\), \(3^{k+1} = 3 \cdot \hyp{3^k} \gt 3\hyp{k^2} = k^2 + 2k^2 \ge k^2 + 4k = k^2 + 2k + 2k \ge k^2 + 2k + 4 \gt (k+1)^2.\)<span class="g">\(2k^2 \ge 4k\) و \(2k \ge 4\) لأن \(k \ge 2\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, \(3^n \gt n^2\) for every positive integer \(n\).</div></div>
+  </div>
+  <h3 class="sh" id="s-627"><span>تمرين 6.27</span><a class="back" href="#q-627">↩ السؤال</a><a class="back" href="#p-bank">↩ البنك</a></h3>
+  <div class="tpl">
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">Since \(1 \le 2 - \frac{1}{1} = 1\), the statement is true for \(n = 1\).</div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(1 + \frac{1}{4} + \cdots + \frac{1}{k^2} \le 2 - \frac{1}{k}\) for a positive integer \(k\).</div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(1 + \frac{1}{4} + \cdots + \frac{1}{(k+1)^2} \le 2 - \frac{1}{k+1}\).</div></div>
+    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">Since \(k(k+1) \lt (k+1)^2\), we have \(\frac{1}{(k+1)^2} \lt \frac{1}{k(k+1)} = \frac{1}{k} - \frac{1}{k+1}\). Hence, by the inductive hypothesis, \[\hyp{1 + \cdots + \frac{1}{k^2}} + \frac{1}{(k+1)^2} \le \hyp{2 - \frac{1}{k}} + \frac{1}{(k+1)^2} \lt 2 - \frac{1}{k} + \frac{1}{k} - \frac{1}{k+1} = 2 - \frac{1}{k+1}.\]<span class="g">التريك: \(\frac{1}{(k+1)^2} \lt \frac{1}{k} - \frac{1}{k+1}\)، فينحذف \(\frac{1}{k}\).</span></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, the inequality holds for every positive integer \(n\).</div></div>
+  </div>
+
+</section>
+
+<section class="page sol" id="p-s4b">
+  <div class="hdr"><span class="u">حلول الوحدة 4</span><span class="pn"></span></div>
+  <h2 class="t">حل تمرين 6.19<span class="tag sol">شيّك</span></h2>
+  <h3 class="sh" id="s-619"><span>تمرين 6.19</span><a class="back" href="#q-619">↩ السؤال</a><a class="back" href="#p-bank">↩ البنك</a></h3>
+  <div class="tpl">
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">For \(n = 2\): if \(x_1 x_2 = 0\), then \(x_1 = 0\) or \(x_2 = 0\) by the given fact.<span class="g">البداية من 2، والحقيقة المعطاة تكفي.</span></div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume for some integer \(k \ge 2\) that whenever \(y_1, \ldots, y_k\) are real numbers with \(y_1 y_2 \cdots y_k = 0\), at least one \(y_i\) is \(0\).</div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">Let \(x_1, \ldots, x_{k+1}\) be real numbers with \(x_1 x_2 \cdots x_{k+1} = 0\). We show that some \(x_i = 0\).</div></div>
+    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">Since \((x_1 x_2 \cdots x_k) \cdot x_{k+1} = 0\), the given fact gives \(x_1 \cdots x_k = 0\) or \(x_{k+1} = 0\). If \(x_{k+1} = 0\), we are done. Otherwise \(\hyp{x_1 \cdots x_k = 0}\), and by the inductive hypothesis \(x_i = 0\) for some \(i\) with \(1 \le i \le k\).<span class="g">نعامل أول k أعداد كعدد واحد، ونطبق الحقيقة على عددين.</span></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, the implication holds for every integer \(n \ge 2\).</div></div>
+  </div>
+
+</section>

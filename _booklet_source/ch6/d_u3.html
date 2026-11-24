@@ -1,0 +1,45 @@
+<section class="page" id="p-ex5">
+  <div class="hdr"><span class="u">الوحدة 3 · القسمة · 6.2</span><span class="lv top">★ مرشّح للبديل</span><span class="pn"></span></div>
+  <h2 class="t">القسمة: مثال 5<span class="tag sol">مثال 5 في السلايدات</span></h2>
+  <div class="qbox"><div class="lab"><span>مثال 5 في السلايدات (ما انسأل للحين)</span></div>
+    <p class="en"><span class="lb">Result.</span> For every nonnegative integer \(n\), \(9 \mid (4^{3n} - 1)\).</p>
+    <p class="ar">بالعربي: 9 يقسم \(4^{3n} - 1\) لكل n من 0 وفوق. كلمة nonnegative تعني إن البداية من 0.</p>
+  </div>
+  <div class="idea">بالأرقام: n = 1: 63 = 9 × 7 <span class="ok">✓</span>. <b>حركة القسمة:</b> الفرض معادلة (\(4^{3k} = 9x + 1\))، وحد k + 1 من حد k (\(4^{3k+3} = 4^3 \cdot 4^{3k}\))، وعوّض، وطلّع 9 عامل مشترك.</div>
+  <h3>نكتب (برهان السلايدات)</h3>
+  <div class="tpl">
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">We proceed by induction. When \(n = 0\), \(4^{3n} - 1 = 0\). Since \(9 \mid 0\), the statement is true when \(n = 0\).<span class="g">البداية من 0، و 0 = 9 × 0.</span></div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(9 \mid (4^{3k} - 1)\), where \(k\) is a nonnegative integer.</div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We now show that \(9 \mid (4^{3k+3} - 1)\).<span class="g">عوّضنا n = k + 1: \(4^{3(k+1)} = 4^{3k+3}\).</span></div></div>
+    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">Since \(9 \mid (4^{3k} - 1)\), it follows that \(4^{3k} - 1 = 9x\) for some integer \(x\). Hence, \(4^{3k} = 9x + 1\). Now, observe that \[\begin{aligned} 4^{3k+3} - 1 &= 4^3 \cdot \hyp{4^{3k}} - 1 = 64\hyp{(9x + 1)} - 1 \\ &= 64 \cdot 9x + 64 - 1 = 64 \cdot 9x + 63 = 9(64x + 7). \end{aligned}\] Since \(64x + 7\) is an integer, \(9 \mid (4^{3k+3} - 1)\).<span class="g">عوّضنا \(4^{3k}\) نفسه (الأزرق)، مو العبارة كلها. و 63 = 9 × 7، فطلع 9 عامل مشترك.</span></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, \(9 \mid (4^{3n} - 1)\) for every nonnegative integer \(n\).<span class="g">اسم المبدأ كامل.</span></div></div>
+  </div>
+  <div class="qbox ex"><div class="lab"><span>تمارين توأم: حلها على ورقتك (الأول مثال من الكتاب)</span></div>
+    <div class="tw" id="q-611b"><span class="qt"><b>Result 6.11.</b> For every nonnegative integer \(n\), \(3 \mid (2^{2n} - 1)\).</span><a class="go" href="#s-611b">الحل <span class="ref" data-to="s-611b"></span></a></div>
+    <div class="tw" id="q-616"><span class="qt"><b>6.16.</b> Prove that \(7 \mid \left[3^{4n+1} - 5^{2n-1}\right]\) for every positive integer \(n\).</span><a class="go" href="#s-616">الحل <span class="ref" data-to="s-616"></span></a></div>
+    <div class="tw" id="q-t4"><span class="qt"><b>توأم.</b> For every positive integer \(n\), \(5 \mid (6^n - 1)\).</span><a class="go" href="#s-t4">الحل <span class="ref" data-to="s-t4"></span></a></div>
+  </div>
+
+</section>
+
+<section class="page sol" id="p-s3">
+  <div class="hdr"><span class="u">حلول الوحدة 3</span><span class="pn"></span></div>
+  <h2 class="t">الحلول<span class="tag sol">شيّك</span></h2>
+  <h3 class="sh" id="s-611b"><span>مثال الكتاب 6.11</span><a class="back" href="#q-611b">↩ السؤال</a></h3>
+  <div class="tpl">
+    <div class="r"><div class="l"><i>حل الكتاب</i></div><div class="v">We proceed by induction. The result is true when \(n = 0\) since in this case \(2^{2n} - 1 = 0\) and \(3 \mid 0\). Assume that \(3 \mid (2^{2k} - 1)\), where \(k\) is a nonnegative integer. We show that \(3 \mid (2^{2k+2} - 1)\). Since \(3 \mid (2^{2k} - 1)\), there exists an integer \(x\) such that \(2^{2k} - 1 = 3x\) and so \(2^{2k} = 3x + 1\). Now, \[2^{2k+2} - 1 = 4 \cdot \hyp{2^{2k}} - 1 = 4\hyp{(3x + 1)} - 1 = 12x + 3 = 3(4x + 1).\] Since \(4x + 1\) is an integer, \(3 \mid (2^{2k+2} - 1)\). By the Principle of Mathematical Induction, \(3 \mid (2^{2n} - 1)\) for every nonnegative integer \(n\).<span class="g">نفس حركة مثال 5 بالضبط: \(2^{2k+2} = 4 \cdot 2^{2k}\).</span></div></div>
+  </div>
+  <h3 class="sh" id="s-616"><span>تمرين 6.16</span><a class="back" href="#q-616">↩ السؤال</a><a class="back" href="#p-bank">↩ البنك</a></h3>
+  <div class="tpl">
+    <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">When \(n = 1\), \(3^{4n+1} - 5^{2n-1} = 3^5 - 5 = 238 = 7 \cdot 34\), so \(7 \mid 238\).</div></div>
+    <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(7 \mid (3^{4k+1} - 5^{2k-1})\) for a positive integer \(k\). Then \(3^{4k+1} - 5^{2k-1} = 7x\) for some integer \(x\), so \(3^{4k+1} = 7x + 5^{2k-1}\).<span class="g">نكتب الفرض معادلة، ونعزل الحد اللي فيه 3.</span></div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(7 \mid (3^{4k+5} - 5^{2k+1})\).</div></div>
+    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">\[\begin{aligned} 3^{4k+5} - 5^{2k+1} &= 81 \cdot \hyp{3^{4k+1}} - 25 \cdot 5^{2k-1} = 81\hyp{\left(7x + 5^{2k-1}\right)} - 25 \cdot 5^{2k-1} \\ &= 567x + 56 \cdot 5^{2k-1} = 7\left(81x + 8 \cdot 5^{2k-1}\right). \end{aligned}\] Since \(81x + 8 \cdot 5^{2k-1}\) is an integer, \(7 \mid (3^{4k+5} - 5^{2k+1})\).<span class="g">\(3^{4k+5} = 3^4 \cdot 3^{4k+1}\) و \(5^{2k+1} = 5^2 \cdot 5^{2k-1}\). و 567 = 7 × 81، و 56 = 7 × 8.</span></div></div>
+    <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, \(7 \mid (3^{4n+1} - 5^{2n-1})\) for every positive integer \(n\).</div></div>
+  </div>
+  <h3 class="sh" id="s-t4"><span>توأم: 5 يقسم \(6^n - 1\)</span><a class="back" href="#q-t4">↩ السؤال</a></h3>
+  <div class="tpl">
+    <div class="r"><div class="l"><i>الحل</i></div><div class="v">When \(n = 1\), \(6^1 - 1 = 5\) and \(5 \mid 5\). Assume that \(5 \mid (6^k - 1)\) for a positive integer \(k\). Then \(6^k - 1 = 5x\) for some integer \(x\), so \(6^k = 5x + 1\). We show that \(5 \mid (6^{k+1} - 1)\). Now, \(6^{k+1} - 1 = 6 \cdot \hyp{6^k} - 1 = 6\hyp{(5x + 1)} - 1 = 30x + 5 = 5(6x + 1)\). Since \(6x + 1\) is an integer, \(5 \mid (6^{k+1} - 1)\). By the Principle of Mathematical Induction, \(5 \mid (6^n - 1)\) for every positive integer \(n\).</div></div>
+  </div>
+
+</section>

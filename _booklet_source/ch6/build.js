@@ -5,7 +5,7 @@ const katex = require('katex');
 const { chromium } = require('playwright');
 
 const dir = __dirname;
-const TOTAL_UNITS = 7;
+const TOTAL_UNITS = 6;
 const parts = ['a_head.html'].concat(fs.readdirSync(dir).filter(f => /^[b-z]_.*\.html$/.test(f)).sort());
 let src = parts.map(p => fs.readFileSync(path.join(dir, p), 'utf8')).join('\n');
 src = src.replace('KATEX_CSS', 'file://' + path.join(dir, 'node_modules/katex/dist/katex.min.css'));
@@ -31,7 +31,7 @@ src = src.replace(/<section class="page([^"]*)" id="([^"]+)"([^>]*)>([\s\S]*?)<\
 let errors = 0;
 function render(tex, display) {
   try {
-    return katex.renderToString(tex, { displayMode: display, throwOnError: true, strict: 'ignore', output: 'html' });
+    return katex.renderToString(tex, { displayMode: display, throwOnError: true, strict: 'ignore', output: 'html', macros: { '\\hyp': '\\textcolor{##1d5bbf}{#1}' } });
   } catch (e) {
     errors++;
     console.error('KaTeX error:', e.message, '\n  in:', tex.slice(0, 120));
