@@ -75,6 +75,9 @@ def think(title, steps=None, extra='', before=''):
 
 def W(rows, title='نكتب', cls='tpl'):
     """rows: (num, name, english_html, arabic_gloss[, size]); english None -> blank writing box."""
+    rows = [r for r in rows if r[2] is not None]   # no empty writing boxes
+    if not rows:
+        return ''
     out = ('  <h3>' + title + '</h3>\n') if title else ''
     out += '  <div class="' + cls + '">\n'
     for r in rows:
@@ -121,6 +124,7 @@ def box(title, inner):
     return '  <div class="box">\n    <h3>' + title + '</h3>\n' + inner + '  </div>\n'
 
 def hints(lines):
+    return ''
     return '  <div class="hints">' + ''.join('<p>' + l + '</p>' for l in lines) + '</div>\n'
 
 def ref(pid):
@@ -137,6 +141,7 @@ def card(title, steps):
     return out + '  </div>\n'
 
 def recall(t):
+    return ''
     return '  <p class="recall">' + t + '</p>\n'
 
 def tbl(head, rows, ltr=False, style='', cls='t'):

@@ -30,12 +30,11 @@ cover = r'''<section class="page cover" id="p-cover">
     prow('الوجود ونفي الوجود', lt('There exists …'), 'ما جا ولا مرة', '—', S1, 'p-u4'),
 ], cls='t toc').replace('    <table', '  <table').replace('    </table>', '  </table>') + r'''  </div>
   <div class="box">
-    <h3>كيف تتدرب: كل نوع بأربع مستويات</h3>
+    <h3>كيف تتدرب: ثلاث خطوات، وبدون مربعات تعبيها</h3>
     <div class="levels">
       <div class="lvx"><b><span class="num">1</span>شوف</b>مثال محلول سطر بسطر، وتحت كل سطر معناه.</div>
-      <div class="lvx"><b><span class="num">2</span>أكمل</b>نفس الحل وفيه فراغات. تعبيها من ذاكرتك.</div>
-      <div class="lvx"><b><span class="num">3</span>اكتب لحالك</b>«دورك»: تحل من الصفر، وبعدها تشيّك من الحلول.</div>
-      <div class="lvx"><b><span class="num">4</span>اختبر نفسك</b>«قاعة الاختبار»: أوراق بصيغة الاختبار ودرجاته.</div>
+      <div class="lvx"><b><span class="num">2</span>حل لحالك</b>«دورك»: تحله على ورقتك، وتضغط «الحل» وتقارن.</div>
+      <div class="lvx"><b><span class="num">3</span>اختبر نفسك</b>«قاعة الاختبار»: أوراق بصيغة الاختبار ودرجاته.</div>
     </div>
   </div>
   <div class="grid2">
@@ -93,9 +92,7 @@ P.append(page('p-mid5', U[1], 'top', 'فخ أول قيمة: سؤال ميد 1447
        ('2', 'الحل الرسمي', r'Since \(3 \nmid 8\), so \(3 \nmid (3^2 - 1)\). It follows that \(n = 3\) is a counterexample.', r'3 ما يقسم 8، يعني ما يقسم \(3^2 - 1\). فـ \(n = 3\) مثال مضاد.')], title='نكتب (الحل الرسمي)') +
     note('trap', 'انتبه:', r'أول قيمة مشت! لو وقفت عند \(n = 1\) كان حكمت «صح» وراحت الدرجتين. جرّب 4 قيم على الأقل. والمثال لازم يكون من مجموعة السؤال: هنا فردي وموجب.') +
     duork('5.3', '<span class="lb">5.3.</span> ' + EX['5.3'],
-          r'انفِ الجملة: لكل n من 1 إلى 5، العدد 3 يقسم \(2n^2 + 1\). كمّل الجدول، ووقّف عند أول قيمة تفشل.') +
-    tbl([r'\(n\)', '1', '2', '3', '4', '5'],
-        [[r'\(2n^2 + 1\)', '3', '9', ('', 'style="height:9mm"'), '', ''], ['3 يقسمه؟', OK, OK, ('', 'style="height:9mm"'), '', '']], ltr=True, style='table-layout:fixed').replace('    <table', '  <table').replace('    </table>', '  </table>') +
+          r'انفِ الجملة: لكل n من 1 إلى 5، العدد 3 يقسم \(2n^2 + 1\). جرّب القيم بالترتيب على ورقتك، ووقّف عند أول قيمة تفشل.') +
     W([('', 'الجواب', None, None, 'b2')], title=''), style='gap:3.2mm'))
 
 # ---------- p-trap: the same trap in the girls' exam and the November exam ----------
@@ -112,11 +109,10 @@ P.append(page('p-trap', U[1], 'top', 'نفس الفخ في ميد البنات �
          r'إذا n فردي، فإن \(n^2 - n\) فردي. <b>نفكر:</b> المثال لازم يكون فردي (الشرط صح). \(n = 1\) يعطي 0، و \(n = 3\) يعطي 6، والاثنين زوجي ' + NO + r' كل القيم تفشل، لأن \(n^2 - n = n(n - 1)\) عددين ورا بعض، وواحد منهم زوجي. فالفخ هنا عكسي: شكلها «برهن»، وهي خاطئة.', lab='سؤال ميد نوفمبر · 3 درجات') +
     W([('', 'الجواب', r'False. For the odd integer \(n = 1\), the integer \(n^2 - n = 1^2 - 1 = 0\) is even. Thus, \(n = 1\) is a counterexample.', r'هذا حل الكتاب (مثال 5.6). و \(n = 3\) يمشي بعد: \(9 - 3 = 6\) زوجي.', dict(BKP, id='m-nov'))], title='') +
     hq('تدريب سرعة: لقِ أول قيمة تفشل (نفس الفخ بأرقام ثانية)', 'q-drill', 's-drill') +
-    tbl([('', 'width:6%'), 'الجملة', ('أول قيمة تفشل', 'width:17%'), ('الحساب', 'width:24%')], [
-        drow('1', r'For every odd positive integer \(n\), \(5 \mid (n^2 - 1)\).'),
-        drow('2', r'For every even positive integer \(n\), \(8 \mid (n^2 + 4)\).'),
-        drow('3', r'For every positive integer \(n\), \(2^n + 1\) is a prime number.'),
-        drow('4', r'If \(n\) is an even integer, then \(n^2 + n\) is odd.')], cls='t drill').replace('    <table', '  <table').replace('    </table>', '  </table>') +
+    stmt([(r'1. For every odd positive integer \(n\), \(5 \mid (n^2 - 1)\).', ''),
+          (r'2. For every even positive integer \(n\), \(8 \mid (n^2 + 4)\).', ''),
+          (r'3. For every positive integer \(n\), \(2^n + 1\) is a prime number.', ''),
+          (r'4. If \(n\) is an even integer, then \(n^2 + n\) is odd.', '')]) +
     note('trick', 'القاعدة:', 'جرّب 4 قيم على الأقل. ولو كل القيم فشلت (مثل نوفمبر)، اختر أسهل قيمة واكتب حسابها.'), style='gap:2.5mm'))
 
 # ---------- p-ex2 ----------
@@ -128,9 +124,7 @@ P.append(page('p-ex2', U[1], 'must', 'مثال: قيمة تخلي الجملة �
     W([('1', 'القيمة', r'If \(x = 0\), then \(x^2 - x = 0\) and so \(\frac{x^2 + x}{x^2 - x}\) is not defined.', r'عند \(x = 0\) المقام صفر، فالكسر الأيسر غير معرّف.'),
        ('2', 'احكم', r'On the other hand, if \(x = 0\), then \(\frac{x + 1}{x - 1} = -1\); so the expressions \(\frac{x^2 + x}{x^2 - x}\) and \(\frac{x + 1}{x - 1}\) are certainly not equal when \(x = 0\). Thus, \(x = 0\) is a counterexample to the statement.', r'والكسر الأيمن يساوي \(-1\)، فالطرفين مو متساويين. إذن \(x = 0\) مثال مضاد.')], title='نكتب (حل السلايدات)') +
     duork('5.2', '<span class="lb">5.2.</span> ' + EX['5.2'],
-          r'انفِ الجملة: لكل n من 0 إلى 4، هذا العدد أولي (يعني ما يقبل القسمة إلا على 1 ونفسه). كمّل الجدول.') +
-    tbl([r'\(n\)', '0', '1', '2', '3', '4'],
-        [['القيمة', r'\(1 + 1 + 0 = 2\)', r'\(2 + 3 + 0 = 5\)', ('', 'style="height:9mm"'), '', ''], ['أولي؟', OK, OK, ('', 'style="height:9mm"'), '', '']], ltr=True, style='table-layout:fixed').replace('    <table', '  <table').replace('    </table>', '  </table>') +
+          r'انفِ الجملة: لكل n من 0 إلى 4، هذا العدد أولي (يعني ما يقبل القسمة إلا على 1 ونفسه). جرّب القيم من 0 إلى 4 كلها.') +
     W([('', 'الجواب', None, None, 'b2')], title='') +
     hints(['<b>تلميح:</b> لا توقف عند أول ثلاث قيم. وجرّب تقسم آخر عدد يطلع لك على 11.']), style='gap:3.2mm'))
 
@@ -148,8 +142,6 @@ P.append(page('p-ex3', U[1], 'must', 'مثال: جملة «إذا… فإن…»
     note('trap', 'انتبه:', r'القيمة اللي الشرط عندها خطأ (مثل \(n = 2\)) ما تنفع مثال مضاد أبداً، لأن الجملة ما تتكلم عنها.') +
     duork('5.4', '<span class="lb">5.4.</span> ' + EX['5.4'],
           r'انفِ الجملة: إذا \(n(n+1)/2\) فردي، فإن \((n+1)(n+2)/2\) فردي. (n عدد طبيعي: 1، 2، 3، …)') +
-    tbl([(r'\(n\)', 'width:10%'), r'الشرط: \(\frac{n(n+1)}{2}\)', 'فردي؟', r'النتيجة: \(\frac{(n+1)(n+2)}{2}\)', 'فردي؟'],
-        [['1', '1', OK, '3', OK + ' ما ينفع'], ['2', ('', 'style="height:9mm"'), '', '', ''], ['3', ('', 'style="height:9mm"'), '', '', '']]).replace('    <table', '  <table').replace('    </table>', '  </table>') +
     W([('', 'الجواب', None, None, 'b2')], title='')))
 
 # ---------- p-ex4 ----------
@@ -163,8 +155,6 @@ P.append(page('p-ex4', U[1], 'must', 'مثال: أكثر من متغير' + tag(
        ('2', 'احكم', r'Since \(256 \ne 64\), the positive integers \(a = 2\), \(b = 2\) and \(c = 3\) constitute a counterexample.', 'الطرفين مختلفين، فهذي القيم مثال مضاد.')], title='نكتب (حل السلايدات)') +
     duork('5.5', '<span class="lb">5.5.</span> ' + EX['5.5'],
           'انفِ الجملة: لكل عددين صحيحين موجبين a و b، المساواة صحيحة.') +
-    tbl([(r'\((a, b)\)', 'width:14%'), r'الأيسر: \((a+b)^3\)', r'الأيمن: \(a^3 + 2a^2b + 2ab + 2ab^2 + b^3\)', ('متساويين؟', 'width:20%')],
-        [[r'\((1, 1)\)', r'\(2^3 = 8\)', r'\(1 + 2 + 2 + 2 + 1 = 8\)', 'نعم، ما نفعت'], [r'\((1, 2)\)', ('', 'style="height:9mm"'), '', '']]).replace('    <table', '  <table').replace('    </table>', '  </table>') +
     W([('', 'الجواب', None, None, 'b2')], title='') +
     hints(['<b>تريك:</b> لو فيه أكثر من متغير، لا تخليهم كلهم 1 ولا كلهم متساويين. القيم «الخاصة» تخبي الخطأ.']), style='gap:3.2mm'))
 

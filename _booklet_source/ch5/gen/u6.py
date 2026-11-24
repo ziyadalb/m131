@@ -6,7 +6,7 @@ P = []
 # ---------- p-which ----------
 def wrow(n, en):
     return ('    <div class="tf"><span>' + str(n) + '.</span><span>' + en +
-            '</span><span class="o">النوع: <span class="blank s"></span></span></div>\n')
+            '</span><span class="o"></span></div>\n')
 
 P.append(page('p-which', U[6], 'must', 'أي طريقة؟ درّب عينك',
     idea('أهم خطوة: تعرف نوع السؤال من كلماته، وبعدها تطلع البطاقة حقته.') +
@@ -95,10 +95,10 @@ AFTER = box('بعد ما تخلص', '''    <ul class="chk">
 ''')
 
 def score(rows, total):
-    out = '  <h3>صحّح نفسك</h3>\n  <table class="t">\n    <tr><th>الفقرة</th><th>النوع</th><th>الدرجة</th><th>درجتي</th><th>لو نقصت، ارجع لـ</th></tr>\n'
+    out = '  <h3>صحّح نفسك</h3>\n  <table class="t">\n    <tr><th>الفقرة</th><th>النوع</th><th>الدرجة</th><th>لو نقصت، ارجع لـ</th></tr>\n'
     for r in rows:
-        out += '    <tr><td>' + r[0] + '</td><td>' + r[1] + '</td><td>' + r[2] + '</td><td></td><td>' + ref(r[3]) + '</td></tr>\n'
-    return out + '    <tr><th colspan="2">المجموع</th><th>' + total + '</th><th></th><th></th></tr>\n  </table>\n'
+        out += '    <tr><td>' + r[0] + '</td><td>' + r[1] + '</td><td>' + r[2] + '</td><td>' + ref(r[3]) + '</td></tr>\n'
+    return out + '    <tr><th colspan="2">المجموع</th><th>' + total + '</th><th></th></tr>\n  </table>\n'
 
 # ---------- p-bank: the 16 plan exercises as an exam paper ----------
 BANK = [('مثال مضاد', 'p-u1', [('5.2', 2), ('5.3', 2), ('5.4', 2), ('5.5', 2)]),
@@ -122,11 +122,11 @@ def bank_box(i, name, unit, items):
 
 P.append(page('p-bank', U[6], 'must', 'بنك تمارين الخطة (1 من 2): كأنك في الاختبار' + tag('ex', '8 أسئلة'),
     idea('تمارين الخطة الـ16 بدون أمثلة ولا تلميحات، زي ورقة الاختبار. حل كل سؤال على ورقة، وبعدها اضغط «الحل»، ومن الحل ارجع بزر «↩ البنك». الدرجات تقريبية على قد الميدات.') +
-    ''.join(bank_box(i, n, u, it) for i, (n, u, it) in list(enumerate(BANK, 1))[:2]) + bank_score(BANK[:2]), style='gap:3mm'))
+    ''.join(bank_box(i, n, u, it) for i, (n, u, it) in list(enumerate(BANK, 1))[:2]), style='gap:3mm'))
 
 P.append(page('p-bank2', U[6], 'must', 'بنك تمارين الخطة (2 من 2): كأنك في الاختبار' + tag('ex', '8 أسئلة'),
     idea('نفس الطريقة: حل على ورقة، وبعدها اضغط «الحل». الوجود ونفي الوجود من الخطة، بس ما جت في الميدات.') +
-    ''.join(bank_box(i, n, u, it) for i, (n, u, it) in list(enumerate(BANK, 1))[2:]) + bank_score(BANK[2:]), style='gap:3mm'))
+    ''.join(bank_box(i, n, u, it) for i, (n, u, it) in list(enumerate(BANK, 1))[2:]), style='gap:3mm'))
 
 # ---------- p-papers: the chapter 5 questions of past midterms, word for word ----------
 P.append(page('p-papers', U[6], 'top', 'أوراق الميدات السابقة: حلها كأنك في الاختبار' + tag('past', 'بالحرف'),
@@ -146,8 +146,6 @@ P.append(page('p-papers', U[6], 'top', 'أوراق الميدات السابقة
     q(r'3. Use a proof by contradiction to prove that \(\sqrt[3]{7}\) is irrational. <span class="mk">(3 marks)</span>', 's-cbrt7', 'نهائي 1446') +
     q(r'4. Prove that if \(n\) is an odd integer, then \(7n - 5\) is even by (a) a direct proof, (b) a proof by contrapositive and (c) a proof by contradiction. <span class="mk">(7 marks)</span>', 's-536', 'ميد 1446') +
     '  </div>\n' +
-    '  <table class="t">\n    <tr><th>الورقة</th><th>الدرجة</th><th>درجتي</th><th>الوقت اللي أخذته</th></tr>\n' +
-    '    <tr><td>ورقة 1 (نوفمبر)</td><td>16</td><td></td><td></td></tr>\n    <tr><td>ورقة 2 (الباقي)</td><td>14</td><td></td><td></td></tr>\n  </table>\n' +
     note('star', 'بعدها:', 'الاختبارين التجريبيين الجايين فيهم توأم كل هذي الأسئلة بأرقام ثانية، يعني أقرب شي للبديل.'), style='gap:3mm'))
 
 
@@ -163,7 +161,7 @@ P.append(page('p-mockA', U[6], 'top', 'اختبار تجريبي 1: بصيغة �
     qrow(r'<b>Question 2: (2+2+2)</b> Prove that if \(n\) is an even integer, then \(7n + 3\) is odd by', '6 marks') +
     q('1. a direct proof. &nbsp; 2. a proof by contrapositive. &nbsp; 3. a proof by contradiction.', 's-mA2') +
     '  </div>\n' + AFTER +
-    '  <div class="space" data-label="ملاحظات: وش الفقرة اللي أخذت منك وقت أكثر؟"></div>\n'))
+    ''))
 
 # ---------- p-mockAs ----------
 P.append(page('p-mockAs', 'حلول الوحدة 6', '', 'حلول الاختبار التجريبي 1' + tag('sol', 'شيّك'),
@@ -193,7 +191,7 @@ P.append(page('p-mockB', U[6], 'top', 'اختبار تجريبي 2: بعد ما 
     qrow(r'<b>Question 2: (2+2+2)</b> Prove that if \(n\) is an odd integer, then \(5n - 3\) is even by', '6 marks') +
     q('1. a direct proof. &nbsp; 2. a proof by contrapositive. &nbsp; 3. a proof by contradiction.', 's-mB2') +
     '  </div>\n' + AFTER +
-    '  <div class="space" data-label="قارن: كم جبت في الأول، وكم جبت هنا؟"></div>\n'))
+    ''))
 
 # ---------- p-mockBs ----------
 P.append(page('p-mockBs', 'حلول الوحدة 6', '', 'حلول الاختبار التجريبي 2' + tag('sol', 'شيّك'),
@@ -208,7 +206,7 @@ P.append(page('p-mockBs', 'حلول الوحدة 6', '', 'حلول الاختب�
        ('2 (2)', 'عكس النقيض', r'Assume that \(5n - 3\) is odd. Then \(5n - 3 = 2k + 1\) for some integer \(k\). So \(n = (5n - 3) - 4n + 3 = 2k - 4n + 4 = 2(k - 2n + 2)\). Since \(k - 2n + 2\) is an integer, \(n\) is even.', ''),
        ('2 (3)', 'تناقض', r'Assume, to the contrary, that there exists an odd integer \(n\) such that \(5n - 3\) is odd. Then \(n = 2x + 1\) and \(5n - 3 = 2y + 1\) for some integers \(x\) and \(y\). Hence \(10x + 2 = 2y + 1\), and so \(1 = 2y - 10x = 2(y - 5x)\). Since \(y - 5x\) is an integer, 1 is even, which is a contradiction.', '')], ['s-mB11', 's-mB12', 's-mB13', 's-mB14', 's-mB2', None, None], 'p-mockB'), title='') +
     score([('1.1', 'مثال مضاد فيه فخ', '2', 'p-trap'), ('1.2', 'ما فيه أصغر', '3', 'p-fam'), ('1.3', 'غير نسبي', '4', 'p-rt2b'),
-           ('1.4', 'وجود', '3', 'p-ivt'), ('2', 'ثلاث طرق', '6', 'p-536')], '18'), sol=True))
+           ('1.4', 'وجود', '3', 'p-ivt'), ('2', 'ثلاث طرق', '6', 'p-fill3')], '18'), sol=True))
 
 # ---------- p-night ----------
 def nb(title, inner):

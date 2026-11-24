@@ -39,9 +39,9 @@ P.append(page('p-neg', U[2], 'must', 'أهم سطر: كيف تكتب العكس�
 ''') +
     note('star', 'من السلايدات:', 'البرهان بالتناقض يبدأ بـ «' + lt('Suppose that …') + '» أو «' + lt('Assume, to the contrary, that …') + '». والثانية هي اللي في الحلول الرسمية، فاستخدمها.') +
     hq('دورك: اكتب أول سطر بس', 'q-neg', 's-neg') +
-    W([('1', '', 'Prove that there is no largest negative rational number.' + wl(1.2), None),
-       ('2', '', r'Prove that \(\sqrt{3}\) is irrational.' + wl(1.2), None),
-       ('3', '', r'Prove that if \(n\) is an odd integer, then \(7n - 5\) is even.' + wl(1.2), None)], title='') +
+    stmt([('1. Prove that there is no largest negative rational number.', ''),
+          (r'2. Prove that \(\sqrt{3}\) is irrational.', ''),
+          (r'3. Prove that if \(n\) is an odd integer, then \(7n - 5\) is even.', '')]) +
     '  <p class="small">اضغط «الأجوبة» فوق عشان تتأكد. وكمّل البرهان كامل لما توصل لتمرينه.</p>\n'))
 
 # ---------- p-ex5 ----------
@@ -69,8 +69,7 @@ P.append(page('p-ex5', U[2], 'top', 'أكثر سؤال تكرر: ما فيه أ�
 # ---------- p-fam ----------
 P.append(page('p-fam', U[2], 'top', 'دورك: نفس العائلة' + tag('ex', 'دورك'),
     qbox('There is no smallest positive rational number.',
-         'ما فيه أصغر عدد نسبي موجب. توأم سؤال الميد: «حقيقي» صارت «نسبي». أكمل الفراغات بدون ما تطالع الصفحة اللي قبل.', lab='أكمل الفراغ · توأم سؤال الميد', cls='ex', qid='q-fam', sol='s-fam') +
-    fillp([('', r'Assume, to the contrary, that there is a ' + B('w') + r' positive rational number, say \(r\). Then \(r = a/b\) for some integers \(a\) and \(b\) with \(b \ne 0\), and so \(r/2 =\) ' + B() + r' is a rational number. Since \(0 \lt r/2 \lt\) ' + B('s') + r', it follows that \(r/2\) is a positive rational number that is ' + B() + r' than \(r\). This is a ' + B('w') + '.')]) +
+         'ما فيه أصغر عدد نسبي موجب. توأم سؤال الميد: «حقيقي» صارت «نسبي». حله على ورقتك بدون ما تطالع الصفحة اللي قبل.', lab='دورك · توأم سؤال الميد', cls='ex', qid='q-fam', sol='s-fam') +
     duork('5.12', '<span class="lb">5.12.</span> ' + EX['5.12'],
           r'اثبت أنه ما فيه أكبر عدد نسبي سالب. (النسبي: ينكتب \(a/b\) حيث a و b أعداد صحيحة و \(b \ne 0\).) هنا من الصفر.') +
     W([('1', 'نعكس', None, None, 'b2'), ('2', 'نمشي', None, None, 'b3'), ('3', 'تناقض', None, None, 'b1')], title='', cls='tpl grow') +
@@ -103,7 +102,7 @@ P.append(page('p-rt2a', U[2], 'top', r'\(\sqrt{2}\) غير نسبي: نفكر' +
           before=chain([r'نفترض \(\sqrt{2} = a/b\) في أبسط صورة', r'نربّع: \(a^2 = 2b^2\)', 'a زوجي', r'نكتب \(a = 2c\) ونعوّض: \(b^2 = 2c^2\)', 'b زوجي', '2 يقسم a و b', 'تناقض مع «أبسط صورة»']),
           extra='    <p class="small">اقرأ السلسلة من اليمين. كل محطة تطلع من اللي قبلها. في الصفحة الجاية نكتبها بالإنجليزي.</p>\n') +
     note('star', 'ليش مهمة؟', r'جت بالحرف في ميد نوفمبر (4 درجات)، وتوأمها \(\sqrt[3]{7}\) جا في نهائي 1446 (3 درجات). والسلايدات تقول إنها من أشهر البراهين بالتناقض.') +
-    '  <div class="space" data-label="دورك: غطِّ السلسلة، واكتب المحطات السبع من ذاكرتك" style="min-height:34mm"></div>\n'))
+    ''))
 
 # ---------- p-rt2b ----------
 P.append(page('p-rt2b', U[2], 'top', r'\(\sqrt{2}\) غير نسبي: نكتب' + tag('sol', 'نظرية من السلايدات'),
@@ -124,11 +123,7 @@ P.append(page('p-rt2b', U[2], 'top', r'\(\sqrt{2}\) غير نسبي: نكتب' +
 # ---------- p-rt3 ----------
 P.append(page('p-rt3', U[2], 'top', 'دورك: توأم النظرية، ثم سؤال النهائي' + tag('past', 'نهائي 1446 · 3 درجات'),
     duork('5.21', '<span class="lb">5.21.</span> ' + EX['5.21'],
-          r'اثبت أن \(\sqrt{3}\) غير نسبي. (تلميح الكتاب: 3 يقسم \(a^2\) إذا وفقط إذا 3 يقسم a.) كمّل الفراغات من ذاكرتك.') +
-    r'''  <div class="stmt" style="line-height:2.15">
-    <p class="en" style="line-height:2.15">Assume, to the contrary, that \(\sqrt{3}\) is <span class="blank"></span>. Then \(\sqrt{3} = a/b\), where \(a, b \in \mathbb{Z}\) and \(b \ne 0\). We may further assume that \(a/b\) has been reduced to <span class="blank w"></span>. Then \(3 = a^2/b^2\); so \(a^2 =\) <span class="blank s"></span>. Thus \(3 \mid a^2\), and so \(3 \mid\) <span class="blank s"></span>. So, \(a = 3c\), where \(c \in \mathbb{Z}\). Thus, \((3c)^2 = 3b^2\) and so \(9c^2 = 3b^2\). Therefore, \(b^2 =\) <span class="blank s"></span>. Thus \(3 \mid b^2\), which implies that \(3 \mid\) <span class="blank s"></span>. Since \(3 \mid a\) and \(3 \mid b\), this is a <span class="blank w"></span> since \(a/b\) has been reduced to lowest terms.</p>
-  </div>
-''' +
+          r'اثبت أن \(\sqrt{3}\) غير نسبي. (تلميح الكتاب: 3 يقسم \(a^2\) إذا وفقط إذا 3 يقسم a.) اكتب البرهان كامل على ورقتك.') +
     qbox(r'Use a proof by contradiction to prove that \(\sqrt[3]{7}\) is irrational.',
          'النص الأصلي (الاختبار كان بالعربي): «مستخدماً طريقة الوقوع في تناقض، أثبت أن الجذر التكعيبي للعدد سبعة هو عدد غير نسبي.» اكتبه كامل بدون ما تطالع.',
          lab='دورك · سؤال نهائي 1446 (3 درجات)', cls='ex', qid='q-cbrt7', sol='s-cbrt7') +
@@ -149,11 +144,8 @@ P.append(page('p-518', U[2], 'low', 'مثال: نسبي + غير نسبي' + tag
 
 # ---------- p-s2a ----------
 P.append(page('p-s2a', 'حلول الوحدة 2', '', 'الحلول' + tag('sol', 'شيّك'),
-    sh('أكمل الفراغ: بالترتيب', 's-fam', [('q-fam', 'السؤال')]) +
-    r'''  <ol class="notes" style="direction:ltr; text-align:left; font-family:var(--en); columns:5; column-gap:6mm">
-    <li>smallest</li><li>\(a/(2b)\)</li><li>\(r\)</li><li>smaller</li><li>contradiction</li>
-  </ol>
-''' +
+    sh('توأم سؤال الميد: ما فيه أصغر عدد نسبي موجب', 's-fam', [('q-fam', 'السؤال')]) +
+    W([('', 'الحل', r'Assume, to the contrary, that there is a smallest positive rational number, say \(r\). Then \(r = a/b\) for some integers \(a\) and \(b\) with \(b \ne 0\), and so \(r/2 = a/(2b)\) is a rational number. Since \(0 \lt r/2 \lt r\), it follows that \(r/2\) is a positive rational number that is smaller than \(r\). This is a contradiction.', 'نفس الجمل الثلاث، وزيادة سطر «ليش r/2 نسبي».')], title='') +
     sh('تمرين 5.12', 's-512', SM('512')['back']) +
     W([('1', 'نعكس', r'Assume, to the contrary, that there is a largest negative rational number, say \(r\).', 'نفترض فيه أكبر عدد نسبي سالب r.'),
        ('2', 'نمشي', r'Then \(r = a/b\) for some integers \(a\) and \(b\) with \(b \ne 0\), and so \(r/2 = a/(2b)\) is a rational number. Since \(r \lt 0\), it follows that \(r \lt r/2 \lt 0\).', r'نص r نسبي بعد، وهو سالب وأكبر من r. (مثل: نص \(-1\) هو \(-0.5\)، وهو أكبر من \(-1\).)'),
@@ -162,11 +154,11 @@ P.append(page('p-s2a', 'حلول الوحدة 2', '', 'الحلول' + tag('sol'
     W([('1', 'نعكس', r'Assume, to the contrary, that there exist integers \(x\) and \(y\) such that \(5 \nmid xy\) and either \(5 \mid x\) or \(5 \mid y\).', 'الشرط صح (5 ما يقسم xy)، والنتيجة خطأ («و» انقلبت «أو»).'),
        ('2', 'نمشي', r'Without loss of generality, assume that \(5 \mid x\). Then \(x = 5k\) for some integer \(k\). So \(xy = (5k)y = 5(ky)\).', 'x و y لهم نفس الدور، فنكتب حالة وحدة (' + lt('Without loss of generality') + '). وتقدر تكتب الحالتين.'),
        ('3', 'تناقض', r'Since \(ky\) is an integer, \(5 \mid xy\), which is a contradiction.', '5 يقسم xy، وافتراضنا أنه ما يقسمه.')], title='') +
-    sh('تمرين 5.21: الفراغات بالترتيب', 's-521', SM('521')['back']) +
-    r'''  <ol class="notes" style="direction:ltr; text-align:left; font-family:var(--en); columns:4; column-gap:6mm">
-    <li>rational</li><li>lowest terms</li><li>\(3b^2\)</li><li>\(a\)</li><li>\(3c^2\)</li><li>\(b\)</li><li>contradiction</li>
-  </ol>
-''' +
+    '', sol=True))
+
+P.append(page('p-s2a2', 'حلول الوحدة 2', '', 'الحلول (تكملة)' + tag('sol', 'شيّك'),
+    sh('تمرين 5.21', 's-521', SM('521')['back']) +
+    W([('', 'الحل', r'Assume, to the contrary, that \(\sqrt{3}\) is rational. Then \(\sqrt{3} = a/b\), where \(a, b \in \mathbb{Z}\) and \(b \ne 0\). We may further assume that \(a/b\) has been reduced to lowest terms. Then \(3 = a^2/b^2\); so \(a^2 = 3b^2\). Thus \(3 \mid a^2\), and so \(3 \mid a\). So, \(a = 3c\), where \(c \in \mathbb{Z}\). Thus, \((3c)^2 = 3b^2\) and so \(9c^2 = 3b^2\). Therefore, \(b^2 = 3c^2\). Thus \(3 \mid b^2\), which implies that \(3 \mid b\). Since \(3 \mid a\) and \(3 \mid b\), this is a contradiction since \(a/b\) has been reduced to lowest terms.', r'قالب \(\sqrt{2}\) نفسه، و«زوجي» صارت «يقبل القسمة على 3».')], title='') +
     sh('أول سطر بس: الأجوبة', 's-neg', [('q-neg', 'السؤال')]) +
     r'''  <div class="stmt" style="padding:2mm 4mm">
     <p class="en">1. Assume, to the contrary, that there is a largest negative rational number, say \(r\).</p>
