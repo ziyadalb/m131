@@ -3,15 +3,15 @@
   <h2 class="t">أول مجموع: مثال 1<span class="tag past">البنات · 3 درجات</span></h2>
   <div class="qbox"><div class="lab"><span>سؤال ميد البنات · ومثال 1 في السلايدات</span></div>
     <p class="en"><span class="lb">4-</span> For each positive integer \(n\), \(1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}\). (3 marks)</p>
-    <p class="ar">بالعربي: مجموع الأعداد من 1 إلى n يساوي n(n + 1)/2.</p>
+    <p class="ar">بالعربي: مجموع الأعداد من 1 إلى n يساوي \(\frac{n(n+1)}{2}\).</p>
   </div>
-  <div class="idea">بالأرقام: n = 3: 1 + 2 + 3 = 6، و \(\frac{3 \cdot 4}{2} = 6\) <span class="ok">✓</span>. <b>حركة الخطوة في المجاميع:</b> مجموع k + 1 = (مجموع k) + آخر حد. مجموع k تبدّله بالفرض، وبعدها تبسّط لين يطلع المطلوب.</div>
+  <div class="idea">بالأرقام: لما \(n = 3\): \(1 + 2 + 3 = 6\)، و \(\frac{3 \cdot 4}{2} = 6\) <span class="ok">✓</span>. <b>حركة الخطوة في المجاميع:</b> مجموع أول k + 1 حد هو مجموع أول k حد، وبعده آخر حد. مجموع k تبدّله بالفرض، وبعدها تبسّط لين يطلع المطلوب.</div>
   <h3>نكتب (برهان السلايدات)</h3>
   <div class="tpl">
-    <div class="r" id="m-ex1"><div class="l"><b class="n">1</b><i>الأساس</i><span class="bks"><a class="back" href="#p-papers">↩ ورقة الميدات</a></span></div><div class="v">We employ induction. Let \(P(n): 1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}\). Since \(1 = \frac{1 \cdot 2}{2}\), the statement \(P(1)\) is true.<span class="g">سمّينا الجملة P(n) زي السلايدات، وعوّضنا n = 1: الطرفين 1.</span></div></div>
+    <div class="r" id="m-ex1"><div class="l"><b class="n">1</b><i>الأساس</i><span class="bks"><a class="back" href="#p-papers">↩ ورقة الميدات</a></span></div><div class="v">We employ induction. Let \(P(n): 1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}\). Since \(1 = \frac{1 \cdot 2}{2}\), the statement \(P(1)\) is true.<span class="g">سمّينا الجملة \(P(n)\) زي السلايدات، وعوّضنا \(n = 1\): الطرفين 1.</span></div></div>
     <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(P(k)\) is true for an arbitrary positive integer \(k\), that is, assume that \(1 + 2 + 3 + \cdots + k = \frac{k(k+1)}{2}\).<span class="g">نفس الجملة، بس k بدل n.</span></div></div>
     <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(P(k+1)\) is true, that is, we show that \(1 + 2 + 3 + \cdots + (k+1) = \frac{(k+1)(k+2)}{2}\).<span class="g">نفس الجملة بـ k + 1. هذا الهدف.</span></div></div>
-    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">Thus, \[\begin{aligned} 1 + 2 + 3 + \cdots + (k+1) &= \hyp{(1 + 2 + 3 + \cdots + k)} + (k+1) = \hyp{\frac{k(k+1)}{2}} + (k+1) \\ &= \frac{k(k+1) + 2(k+1)}{2} = \frac{(k+1)(k+2)}{2}, \end{aligned}\] as desired.<span class="g">فصلنا آخر حد (k + 1). الباقي بالأزرق هو مجموع k، فبدّلناه بالفرض. بعدها مقام مشترك، و (k + 1) عامل مشترك.</span></div></div>
+    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">Thus, \[\begin{aligned} 1 + 2 + 3 + \cdots + (k+1) &= \hyp{(1 + 2 + 3 + \cdots + k)} + (k+1) = \hyp{\frac{k(k+1)}{2}} + (k+1) \\ &= \frac{k(k+1) + 2(k+1)}{2} = \frac{(k+1)(k+2)}{2}, \end{aligned}\] as desired.<span class="g">فصلنا آخر حد \((k + 1)\). الباقي بالأزرق هو مجموع k، فبدّلناه بالفرض. بعدها وحّدنا المقام، وطلّعنا \((k + 1)\) عامل مشترك.</span></div></div>
     <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, \(P(n)\) is true for every positive integer \(n\).<span class="g">اسم المبدأ كامل.</span></div></div>
   </div>
   <div class="note trap"><span class="k">انتبه:</span>لا تكتب المطلوب كأنه صحيح وتشتغل على طرفيه. ابدأ من طرف واحد (المجموع)، وامشِ لين توصل للطرف الثاني.</div>
@@ -23,18 +23,18 @@
   <h2 class="t">مجموع الفرديات: سؤال نوفمبر<span class="tag past">نوفمبر · 4 درجات</span></h2>
   <div class="qbox"><div class="lab"><span>سؤال ميد نوفمبر</span></div>
     <p class="en"><span class="lb">4.</span> For every positive integer \(n\), \(1 + 3 + 5 + \cdots + (2n - 1) = n^2\).</p>
-    <p class="ar">بالعربي: مجموع أول n أعداد فردية يساوي n². وهو تمرين 6.4 في الخطة، وجا بعد في نهائي 1446.</p>
+    <p class="ar">بالعربي: مجموع أول n أعداد فردية يساوي \(n^2\). وهو تمرين 6.4 في الخطة، وجا بعد في نهائي 1446.</p>
   </div>
-  <div class="idea">بالأرقام: 1 + 3 + 5 = 9 = 3² <span class="ok">✓</span>. نفس حركة مثال 1. الفرق الوحيد: آخر حد عند k + 1 هو \(2(k+1) - 1 = 2k + 1\).</div>
+  <div class="idea">بالأرقام: \(1 + 3 + 5 = 9 = 3^2\) <span class="ok">✓</span>. نفس حركة مثال 1. الفرق الوحيد: آخر حد عند k + 1 هو \(2(k+1) - 1 = 2k + 1\).</div>
   <h3>نكتب</h3>
   <div class="tpl">
-    <div class="r" id="m-nov4"><div class="l"><b class="n">1</b><i>الأساس</i><span class="bks"><a class="back" href="#p-papers">↩ ورقة الميدات</a></span></div><div class="v">Since \(1 = 1^2\), the statement is true for \(n = 1\).<span class="g">عوّضنا n = 1.</span></div></div>
+    <div class="r" id="m-nov4"><div class="l"><b class="n">1</b><i>الأساس</i><span class="bks"><a class="back" href="#p-papers">↩ ورقة الميدات</a></span></div><div class="v">Since \(1 = 1^2\), the statement is true for \(n = 1\).<span class="g">عوّضنا \(n = 1\).</span></div></div>
     <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(1 + 3 + 5 + \cdots + (2k-1) = k^2\) for an arbitrary positive integer \(k\).<span class="g">نفس الجملة بـ k.</span></div></div>
-    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(1 + 3 + 5 + \cdots + (2k+1) = (k+1)^2\).<span class="g">آخر حد صار 2k + 1، والأيمن (k + 1)².</span></div></div>
-    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">Thus, \(1 + 3 + \cdots + (2k+1) = \hyp{[1 + 3 + \cdots + (2k-1)]} + (2k+1) = \hyp{k^2} + 2k + 1 = (k+1)^2\), as desired.<span class="g">فصلنا آخر حد، وبدّلنا الأزرق بـ k² من الفرض. و k² + 2k + 1 مربع كامل.</span></div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(1 + 3 + 5 + \cdots + (2k+1) = (k+1)^2\).<span class="g">آخر حد صار \(2k + 1\)، والطرف الأيمن \((k + 1)^2\).</span></div></div>
+    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">Thus, \(1 + 3 + \cdots + (2k+1) = \hyp{[1 + 3 + \cdots + (2k-1)]} + (2k+1) = \hyp{k^2} + 2k + 1 = (k+1)^2\), as desired.<span class="g">فصلنا آخر حد، وبدّلنا الأزرق بـ \(k^2\) من الفرض. و \(k^2 + 2k + 1\) مربع كامل.</span></div></div>
     <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, \(1 + 3 + 5 + \cdots + (2n-1) = n^2\) for every positive integer \(n\).<span class="g">اسم المبدأ كامل.</span></div></div>
   </div>
-  <div class="note trap"><span class="k">انتبه:</span>آخر حد في المطلوب: عوّض n = k + 1 في (2n − 1)، يطلع 2k + 1. لا تكتبه (2k − 1) + 1.</div>
+  <div class="note trap"><span class="k">انتبه:</span>آخر حد في المطلوب: عوّض \(n = k + 1\) في \(2n - 1\)، يطلع \(2k + 1\). لا تكتبه \((2k - 1) + 1\).</div>
   <div class="qbox ex"><div class="lab"><span>تمرين توأم: حله على ورقتك، وبعدها اضغط «الحل»</span></div>
     <div class="tw" id="q-65"><span class="qt"><b>6.5.</b> Use mathematical induction to prove that \(1 + 5 + 9 + \cdots + (4n-3) = 2n^2 - n\) for every positive integer \(n\).</span><a class="go" href="#s-65">الحل <span class="ref" data-to="s-65"></span></a></div>
   </div>
@@ -48,7 +48,7 @@
     <p class="en"><span class="lb">Result.</span> For every positive integer \(n\), \(\frac{1}{2\cdot 3} + \frac{1}{3\cdot 4} + \cdots + \frac{1}{(n+1)(n+2)} = \frac{n}{2n+4}\).</p>
     <p class="ar">بالعربي: مجموع كسور. نفس القالب، بس الخطوة فيها مقام مشترك.</p>
   </div>
-  <div class="idea">بالأرقام: n = 2: \(\frac{1}{6} + \frac{1}{12} = \frac{1}{4}\)، و \(\frac{2}{8} = \frac{1}{4}\) <span class="ok">✓</span>. <b>تريك:</b> لا تفك المقامات. المطلوب \(\frac{k+1}{2(k+3)}\) يقول لك إن \((k + 2)\) لازم ينحذف، فخلّه عامل مشترك.</div>
+  <div class="idea">بالأرقام: لما \(n = 2\): \(\frac{1}{6} + \frac{1}{12} = \frac{1}{4}\)، و \(\frac{2}{8} = \frac{1}{4}\) <span class="ok">✓</span>. <b>تريك:</b> لا تفك المقامات. المطلوب \(\frac{k+1}{2(k+3)}\) يقول لك إن \((k + 2)\) لازم ينحذف، فخلّه عامل مشترك.</div>
   <h3>نكتب (برهان السلايدات)</h3>
   <div class="tpl">
     <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">We use induction. Since \(\frac{1}{2\cdot 3} = \frac{1}{2\cdot 1 + 4} = \frac{1}{6}\), the formula holds for \(n = 1\).</div></div>
@@ -76,7 +76,7 @@
   <div class="qbox ex"><div class="lab"><span>مثال الكتاب 6.13: ضرب بدل جمع (احتمال أقل)</span></div>
     <div class="tw" id="q-613"><span class="qt"><b>Result 6.13.</b> For every positive integer \(n\), \(1 \cdot 3 \cdot 5 \cdots (2n-1) = \frac{(2n)!}{2^n \cdot n!}\).</span><a class="go" href="#s-613">الحل <span class="ref" data-to="s-613"></span></a></div>
   </div>
-  <div class="note trick"><span class="k">تريك قبل ما تبدأ:</span>عوّض n = 1 و n = 2 في الصيغة. لو طلعت صح، تأكدت إنك نسخت السؤال صح، وعرفت شكل آخر حد.</div>
+  <div class="note trick"><span class="k">تريك قبل ما تبدأ:</span>عوّض \(n = 1\) و \(n = 2\) في الصيغة. لو طلعت صح، تأكدت إنك نسخت السؤال صح، وعرفت شكل آخر حد.</div>
 
 </section>
 
@@ -87,8 +87,8 @@
   <div class="tpl">
     <div class="r"><div class="l"><b class="n">1</b><i>الأساس</i></div><div class="v">Since \(1 = 2 \cdot 1^2 - 1\), the statement is true for \(n = 1\).</div></div>
     <div class="r"><div class="l"><b class="n">2</b><i>الفرض</i></div><div class="v">Assume that \(1 + 5 + 9 + \cdots + (4k-3) = 2k^2 - k\) for a positive integer \(k\).</div></div>
-    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(1 + 5 + 9 + \cdots + (4k+1) = 2(k+1)^2 - (k+1)\).<span class="g">آخر حد: 4(k + 1) − 3 = 4k + 1.</span></div></div>
-    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">By the inductive hypothesis, \(1 + 5 + \cdots + (4k+1) = \hyp{(2k^2 - k)} + (4k + 1) = 2k^2 + 3k + 1 = 2(k+1)^2 - (k+1)\).<span class="g">فك المطلوب في المسودة: 2k² + 4k + 2 − k − 1 = 2k² + 3k + 1.</span></div></div>
+    <div class="r"><div class="l"><b class="n">3</b><i>المطلوب</i></div><div class="v">We show that \(1 + 5 + 9 + \cdots + (4k+1) = 2(k+1)^2 - (k+1)\).<span class="g">آخر حد: \(4(k + 1) - 3 = 4k + 1\).</span></div></div>
+    <div class="r hl"><div class="l"><b class="n">4</b><i>الخطوة</i></div><div class="v">By the inductive hypothesis, \(1 + 5 + \cdots + (4k+1) = \hyp{(2k^2 - k)} + (4k + 1) = 2k^2 + 3k + 1 = 2(k+1)^2 - (k+1)\).<span class="g">فك المطلوب في المسودة: \(2k^2 + 4k + 2 - k - 1 = 2k^2 + 3k + 1\).</span></div></div>
     <div class="r"><div class="l"><b class="n">5</b><i>الختام</i></div><div class="v">By the Principle of Mathematical Induction, \(1 + 5 + 9 + \cdots + (4n-3) = 2n^2 - n\) for every positive integer \(n\).</div></div>
   </div>
   <h3 class="sh" id="s-611"><span>تمرين 6.11</span><a class="back" href="#q-611">↩ السؤال</a><a class="back" href="#p-bank">↩ البنك</a></h3>
@@ -116,7 +116,7 @@
   </div>
   <h3 class="sh" id="s-t2"><span>توأم 2</span><a class="back" href="#q-t2">↩ السؤال</a></h3>
   <div class="tpl">
-    <div class="r"><div class="l"><i>الحل</i></div><div class="v">Since \(1^2 = \frac{1 \cdot 2 \cdot 3}{6}\), the statement is true for \(n = 1\). Assume that \(1^2 + \cdots + k^2 = \frac{k(k+1)(2k+1)}{6}\) for a positive integer \(k\). We show that \(1^2 + \cdots + (k+1)^2 = \frac{(k+1)(k+2)(2k+3)}{6}\). By the inductive hypothesis, \[\begin{aligned} 1^2 + \cdots + (k+1)^2 &= \hyp{\frac{k(k+1)(2k+1)}{6}} + (k+1)^2 = \frac{(k+1)\left[k(2k+1) + 6(k+1)\right]}{6} \\ &= \frac{(k+1)(2k^2 + 7k + 6)}{6} = \frac{(k+1)(k+2)(2k+3)}{6}. \end{aligned}\] By the Principle of Mathematical Induction, the formula holds for every positive integer \(n\).<span class="g">التريك: طلّع (k + 1) عامل مشترك قبل ما تفك، وبعدها \(2k^2 + 7k + 6 = (k+2)(2k+3)\).</span></div></div>
+    <div class="r"><div class="l"><i>الحل</i></div><div class="v">Since \(1^2 = \frac{1 \cdot 2 \cdot 3}{6}\), the statement is true for \(n = 1\). Assume that \(1^2 + \cdots + k^2 = \frac{k(k+1)(2k+1)}{6}\) for a positive integer \(k\). We show that \(1^2 + \cdots + (k+1)^2 = \frac{(k+1)(k+2)(2k+3)}{6}\). By the inductive hypothesis, \[\begin{aligned} 1^2 + \cdots + (k+1)^2 &= \hyp{\frac{k(k+1)(2k+1)}{6}} + (k+1)^2 = \frac{(k+1)\left[k(2k+1) + 6(k+1)\right]}{6} \\ &= \frac{(k+1)(2k^2 + 7k + 6)}{6} = \frac{(k+1)(k+2)(2k+3)}{6}. \end{aligned}\] By the Principle of Mathematical Induction, the formula holds for every positive integer \(n\).<span class="g">التريك: طلّع \((k + 1)\) عامل مشترك قبل ما تفك، وبعدها \(2k^2 + 7k + 6 = (k+2)(2k+3)\).</span></div></div>
   </div>
 
 </section>

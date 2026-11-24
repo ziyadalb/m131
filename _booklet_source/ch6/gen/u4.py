@@ -8,10 +8,10 @@ CONC = 'اسم المبدأ كامل، ومعه البداية الصح.'
 # ---------- p-gen: starting at m, example 3 ----------
 P.append(page('p-gen', U4, 'cand', 'لما البداية مو 1: مثال 3' + tag('sol', 'مثال 3 في السلايدات'),
     stmt([(r'<span class="lb">The more general principle.</span> For a fixed integer \(m\), let \(S = \{i \in \mathbb{Z} : i \ge m\}\). For each integer \(n \in S\), let \(P(n)\) be a statement. If (1) \(P(m)\) is true and (2) the implication “If \(P(k)\), then \(P(k+1)\).” is true for every integer \(k \in S\), then \(P(n)\) is true for every integer \(n \in S\).',
-           'نفس المبدأ، بس البداية m بدل 1: الأساس عند m، والفرض لـ k ≥ m.')]) +
+           'نفس المبدأ، بس البداية m بدل 1: الأساس عند m، والفرض لـ \\(k \\ge m\\).')]) +
     qbox(r'<span class="lb">Result.</span> For every nonnegative integer \(n\), \(2^n \gt n\).', 'البداية من 0.', lab='مثال 3 في السلايدات') +
     idea(r'<b>حركة الخطوة في المتباينات:</b> ابدأ من الطرف حق k + 1 (\(2^{k+1} = 2 \cdot 2^k\))، واستخدم الفرض، وبعدها خطوة صغيرة توصلك. هنا الخطوة الصغيرة \(k + k \ge k + 1\) تحتاج \(k \ge 1\)، فـ k = 0 نسويها لحالها (سطر ★).') +
-    W([('1', 'الأساس', r'We proceed by induction. The inequality holds for \(n = 0\) since \(2^0 \gt 0\).', '\\(2^0 = 1\\)، و 1 > 0.'),
+    W([('1', 'الأساس', r'We proceed by induction. The inequality holds for \(n = 0\) since \(2^0 \gt 0\).', '\\(2^0 = 1 \\gt 0\\).'),
        ('2', 'الفرض', r'Assume that \(2^k \gt k\), where \(k\) is a nonnegative integer.', ''),
        ('3', 'المطلوب', r'We show that \(2^{k+1} \gt k + 1\).', ''),
        ('★', 'k = 0', r'When \(k = 0\), we have \(2^{k+1} = 2 \gt 1 = k + 1\). We therefore assume that \(k \ge 1\).', 'سطر ★: نخلص من k = 0 لحالها.', ST),
@@ -22,7 +22,7 @@ P.append(page('p-gen', U4, 'cand', 'لما البداية مو 1: مثال 3' + 
 # ---------- p-ex4: example 4 ----------
 P.append(page('p-ex4', U[4], 'cand', 'متباينة من n ≥ 5: مثال 4' + tag('sol', 'مثال 4 في السلايدات'),
     qbox(r'<span class="lb">Result.</span> For every integer \(n \ge 5\), \(2^n \gt n^2\).', r'البداية 5، لأن \(2^4 = 16\) مو أكبر من \(4^2 = 16\).', lab='مثال 4 في السلايدات (ما انسأل للحين)') +
-    idea(r'بالأرقام: n = 4: 16 > 16 ' + NO + r'، و n = 5: 32 > 25 ' + OK + r'. الخطوة: \(2^{k+1} = 2 \cdot 2^k \gt 2k^2\)، وبعدها نستخدم \(k \ge 5\) مرتين: \(k^2 \ge 5k\) و \(3k \ge 15\).') +
+    idea(r'بالأرقام: لما \(n = 4\): \(16 \gt 16\) ' + NO + r'، ولما \(n = 5\): \(32 \gt 25\) ' + OK + r'. الخطوة: \(2^{k+1} = 2 \cdot 2^k \gt 2k^2\)، وبعدها نستخدم \(k \ge 5\) مرتين: \(k^2 \ge 5k\) و \(3k \ge 15\).') +
     W([('1', 'الأساس', r'We proceed by induction. Since \(2^5 \gt 5^2\), the inequality holds for \(n = 5\).', '32 > 25.'),
        ('2', 'الفرض', r'Assume that \(2^k \gt k^2\) where \(k \ge 5\).', 'ولا تنسَ «where k ≥ 5».'),
        ('3', 'المطلوب', r'We show that \(2^{k+1} \gt (k+1)^2\).', ''),
@@ -88,7 +88,7 @@ P.append(page('p-s4', 'حلول الوحدة 4', '', 'الحلول' + tag('sol',
     W([('1', 'الأساس', r'Since \(3^1 = 3 \gt 1 = 1^2\), the statement is true for \(n = 1\).', ''),
        ('2', 'الفرض', r'Assume that \(3^k \gt k^2\) for a positive integer \(k\).', ''),
        ('3', 'المطلوب', r'We show that \(3^{k+1} \gt (k+1)^2\).', ''),
-       ('★', 'k = 1', r'If \(k = 1\), then \(3^{k+1} = 9 \gt 4 = (k+1)^2\). So we may assume that \(k \ge 2\).', r'نحتاج \(k \ge 2\) تحت، فـ k = 1 لحالها.', ST),
+       ('★', 'k = 1', r'If \(k = 1\), then \(3^{k+1} = 9 \gt 4 = (k+1)^2\). So we may assume that \(k \ge 2\).', r'نحتاج \(k \ge 2\) في الخطوة، فـ k = 1 نسويها لحالها.', ST),
        ('4', 'الخطوة', r'By the inductive hypothesis and since \(k \ge 2\), \(3^{k+1} = 3 \cdot \hyp{3^k} \gt 3\hyp{k^2} = k^2 + 2k^2 \ge k^2 + 4k = k^2 + 2k + 2k \ge k^2 + 2k + 4 \gt (k+1)^2.\)', r'\(2k^2 \ge 4k\) و \(2k \ge 4\) لأن \(k \ge 2\).', HL),
        ('5', 'الختام', r'By the Principle of Mathematical Induction, \(3^n \gt n^2\) for every positive integer \(n\).', '')], title='') +
     sh('تمرين 6.27', 's-627', SM('627')['back']) +

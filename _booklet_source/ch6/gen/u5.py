@@ -16,15 +16,15 @@ P.append(page('p-strong', U5, 'top', 'الاستقراء القوي: نبدأ ب
     tbl([r'\(n\)', '1', '2', '3', '4', '5', '6'],
         [[r'\(a_n\)', '1', '3', r'\(2 \cdot 3 - 1 = 5\)', r'\(2 \cdot 5 - 3 = 7\)', '9', '11'],
          [r'\(2n - 1\)', '1', '3', '5', '7', '9', '11']], ltr=True).replace('    <table', '  <table').replace('    </table>', '  </table>') +
-    note('star', '«Find a₃ and a₄»:', 'جا في نوفمبر بدرجة. عوّض n = 3 ثم n = 4 في قانون التكرار بالترتيب، واكتب الحساب. ومن الجدول تخمّن الصيغة \\(a_n = 2n - 1\\)، وبعدها تبرهنها.')))
+    note('star', '«Find a₃ and a₄»:', 'جا في نوفمبر بدرجة. عوّض n = 3 وبعدها n = 4 في قانون التكرار، واكتب الحساب. ومن الجدول تخمّن الصيغة \\(a_n = 2n - 1\\)، وبعدها تبرهنها.')))
 
 # ---------- p-nov3: the November question (= Mid 1447 = example 6) ----------
 P.append(page('p-nov3', U[5], 'top', 'المتتابعة: سؤال نوفمبر' + tag('past', 'نوفمبر · 1+4'),
     qbox(r'<span class="lb">Question 3: (1+4)</span> A sequence \(\{a_n\}\) is defined recursively by \(a_1 = 1\), \(a_2 = 3\), and \(a_n = 2a_{n-1} - a_{n-2}\) for \(n \ge 3\). 1. Find \(a_3\) and \(a_4\). 2. Use the Strong Principle of Mathematical Induction to prove that \(a_n = 2n - 1\) for every positive integer \(n\).',
-         'نفس سؤال ميد 1447 (بدون الفقرة 1)، ومثال 6 في السلايدات بالحرف.', lab='سؤال ميد نوفمبر · وميد 1447') +
-    idea(r'<b>حركة القوي:</b> \(a_{k+1}\) من قانون التكرار، والحدّين \(a_k\) و \(a_{k-1}\) من الفرض (الأزرق). والقانون يشتغل لما \(k + 1 \ge 3\) بس، فـ k = 1 لحالها (سطر ★). وبدون سطر ★ وكلمة Strong البرهان ناقص.') +
+         'جا نفسه في ميد 1447 بس بدون الفقرة 1، وهو مثال 6 في السلايدات بالحرف.', lab='سؤال ميد نوفمبر · وميد 1447') +
+    idea(r'<b>حركة القوي:</b> \(a_{k+1}\) من قانون التكرار، والحدّين \(a_k\) و \(a_{k-1}\) من الفرض (الأزرق). والقانون يشتغل لما \(k + 1 \ge 3\) بس، فـ k = 1 نسويها لحالها (سطر ★). وبدون سطر ★ وكلمة Strong البرهان ناقص.') +
     W([('1)', r'\(a_3, a_4\)', r'Letting \(n = 3\), we find that \(a_3 = 2a_2 - a_1 = 2(3) - 1 = 5\); while letting \(n = 4\), we have \(a_4 = 2a_3 - a_2 = 2(5) - 3 = 7\).', 'عوّضنا في القانون بالترتيب. هذي الدرجة الأولى.', dict(BKP, id='m-nov3')),
-       ('1', 'الأساس', r'We proceed by induction. Since \(a_1 = 2 \cdot 1 - 1 = 1\), the formula holds for \(n = 1\).', 'حل ميد 1447 كتب n = 1 و n = 2 مع بعض. الاثنين صح.'),
+       ('1', 'الأساس', r'We proceed by induction. Since \(a_1 = 2 \cdot 1 - 1 = 1\), the formula holds for \(n = 1\).', 'في حل ميد 1447 كتبوا الأساس لـ \\(n = 1\\) و \\(n = 2\\) مع بعض، والطريقتين صح.'),
        ('2', 'الفرض', r'Assume for an arbitrary positive integer \(k\) that \(a_i = 2i - 1\) for all integers \(i\) with \(1 \le i \le k\).', 'الفرض القوي: لكل i من 1 إلى k.'),
        ('3', 'المطلوب', r'We show that \(a_{k+1} = 2(k+1) - 1 = 2k + 1\).', ''),
        ('★', 'k = 1', r'If \(k = 1\), then \(a_{k+1} = a_2 = 2 \cdot 1 + 1 = 3\). Since \(a_2 = 3\), it follows that \(a_{k+1} = 2k + 1\) when \(k = 1\). Hence, we may assume that \(k \ge 2\).', r'لما k = 1 ما فيه \(a_{k-1} = a_0\)، فنتأكد من \(a_2\) لحاله.', ST),
@@ -35,7 +35,7 @@ P.append(page('p-nov3', U[5], 'top', 'المتتابعة: سؤال نوفمبر'
 # ---------- p-ex7: example 7 (the twin of the exam sequence) ----------
 P.append(page('p-ex7', U[5], 'cand', 'توأم المتتابعة: مثال 7' + tag('sol', 'مثال 7 في السلايدات'),
     qbox(r'<span class="lb">Result.</span> A sequence \(\{a_n\}\) is defined recursively by \(a_1 = 1\), \(a_2 = 4\) and \(a_n = 2a_{n-1} - a_{n-2} + 2\) for \(n \ge 3\). Then \(a_n = n^2\) for all \(n \in \mathbb{N}\).',
-         'نفس سؤال الاختبار، بس القانون فيه + 2 والصيغة n². أقرب شي ممكن يجي في البديل.', lab='مثال 7 في السلايدات (ما انسأل للحين)') +
+         'نفس سؤال الاختبار، بس القانون يزيد 2 في آخره، والصيغة \\(n^2\\). أقرب شي ممكن يجي في البديل.', lab='مثال 7 في السلايدات (ما انسأل للحين)') +
     idea(r'بالأرقام: \(a_3 = 2 \cdot 4 - 1 + 2 = 9 = 3^2\) ' + OK + r'. نفس خطوات سؤال نوفمبر حرف بحرف، وتتغير الصيغة بس.') +
     W([('1', 'الأساس', r'We proceed by induction. Since \(a_1 = 1 = 1^2\), the formula holds for \(n = 1\).', ''),
        ('2', 'الفرض', r'Assume for an arbitrary positive integer \(k\) that \(a_i = i^2\) for every integer \(i\) with \(1 \le i \le k\).', ''),
@@ -55,13 +55,13 @@ P.append(page('p-633', U[5], 'low', 'خمّن الصيغة وبرهنها' + tag
        ('3', 'المطلوب', r'We show that \(a_{k+1} = 3(k+1) - 1 = 3k + 2\).', ''),
        ('4', 'الخطوة', r'Since \(k + 1 \ge 2\), \(a_{k+1} = \hyp{a_k} + 3 = \hyp{(3k - 1)} + 3 = 3k + 2\).', '', HL),
        ('5', 'الختام', r'By the Principle of Mathematical Induction, \(a_n = 3n - 1\) for every \(n \in \mathbb{N}\).', '')], title='نكتب') +
-    twins([('q-633', '6.33.', EX['6.33'], 's-633'), ('q-636', '6.36.', EX['6.36'], 's-636')], lab='تمارين الخطة: حلها على ورقتك')))
+    twins([('q-633', '6.33.', EX['6.33'], 's-633'), ('q-636', '6.36.', EX['6.36'], 's-636')], lab='تمارين الخطة: حلها على ورقتك، وبعدها اضغط «الحل»')))
 
 # ---------- p-ex8: example 8 ----------
 P.append(page('p-ex8', U[5], 'low', 'قوي بدون متتابعة: مثال 8' + tag('sol', 'مثال 8 في السلايدات'),
     qbox(r'<span class="lb">Result.</span> For each integer \(n \ge 8\), there are nonnegative integers \(a\) and \(b\) such that \(n = 3a + 5b\).',
-         'كل عدد من 8 وفوق ينكتب 3a + 5b. (تمرين 5.51 في الفصل 5 نفسه، بس هنا بالاستقراء القوي.)', lab='مثال 8 في السلايدات') +
-    idea(r'الفكرة: \(k + 1 = (k + 1 - 3) + 3\). العدد \(k - 2\) أصغر، فالفرض القوي يعطيه بشكل \(3a + 5b\)، ونزيد 3. بس لازم \(k - 2 \ge 8\)، فـ 9 و 10 نسويهم لحالهم.') +
+         'كل عدد من 8 وفوق ينكتب \\(3a + 5b\\). (هو نفسه تمرين 5.51 في الفصل 5، بس هنا بالاستقراء القوي.)', lab='مثال 8 في السلايدات') +
+    idea(r'\(k + 1 = (k - 2) + 3\). العدد \(k - 2\) أصغر من \(k + 1\)، فالفرض القوي يقول إنه ينكتب \(3a + 5b\)، ونزيد عليه 3. بس لازم \(k - 2 \ge 8\)، فـ 9 و 10 نسويهم لحالهم.') +
     W([('1', 'الأساس', r'We proceed by induction. Since \(8 = 3 \cdot 1 + 5 \cdot 1\), the statement is true for \(n = 8\).', ''),
        ('2', 'الفرض', r'Assume for each integer \(i\) with \(8 \le i \le k\), where \(k \ge 8\) is an arbitrary integer, that there are nonnegative integers \(s\) and \(t\) such that \(i = 3s + 5t\).', 'الفرض القوي يبدأ من 8.'),
        ('3', 'المطلوب', r'Consider the integer \(k + 1\). We show that there are nonnegative integers \(x\) and \(y\) such that \(k + 1 = 3x + 5y\).', ''),

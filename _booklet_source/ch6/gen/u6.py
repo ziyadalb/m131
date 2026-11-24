@@ -35,7 +35,7 @@ P.append(page('p-phr', U[6], 'must', 'الجمل اللي تكتبها',
     prow(r'Assume … for all integers \(i\) with \(1 \le i \le k\).', 'الفرض القوي.') +
     prow(r'We show that …', 'المطلوب، قبل الحساب.') +
     prow(r'By the inductive hypothesis, …', 'في السطر اللي تستخدم فيه الفرض (الأزرق في الملزمة).') +
-    prow(r'Then … \(= dx\) for some integer \(x\). … Since … is an integer, \(d \mid\) …', 'القسمة: الفرض معادلة، وآخر سطر.') +
+    prow(r'Then … \(= dx\) for some integer \(x\). … Since … is an integer, \(d \mid\) …', 'القسمة: لما تكتب الفرض معادلة، وفي آخر سطر.') +
     prow(r'If \(k = 1\), then …. Hence, we may assume that \(k \ge 2\).', 'سطر ★ (k الصغيرة لحالها).') +
     prow(r'Since \(k + 1 \ge 3\), …', 'قبل ما تستخدم قانون التكرار.') +
     prow(r'By the (Strong) Principle of Mathematical Induction, …', 'الختام. الاسم كامل، ومعه Strong لو قوي.') +
@@ -44,7 +44,7 @@ P.append(page('p-phr', U[6], 'must', 'الجمل اللي تكتبها',
       <li>«''' + lt('for every k') + '''» في الفرض. الصح: ''' + lt('for a positive integer k') + '''.</li>
       <li>تكتب المطلوب كأنه صحيح وتشتغل على طرفيه.</li>
       <li>تنسى الأساس، أو سطر ★ في القوي.</li>
-      <li>تكتب «>» بدون سبب (اكتب: since k ≥ 5).</li>
+      <li>تكتب \\(\\gt\\) بدون سبب. اكتب السبب، زي: <span class="lt">since \\(k \\ge 5\\)</span>.</li>
       <li>ختام بدون اسم المبدأ.</li>
     </ul>
 ''')))
@@ -79,7 +79,7 @@ P.append(page('p-papers', U[6], 'top', 'أوراق الميدات السابقة
     q(r'8- For each positive integer \(n\), let \(P(n)\) be a statement. If (1) \(P(1)\) is true and (2) the implication: \(P(k) \Rightarrow P(k+1)\), is true for every positive integer \(k\), then \(P(n)\) is true for every positive integer \(n\). <span class="mk">(3 marks)</span>', 'm-pmi', 'ميد 1447') +
     q(r'4- For each positive integer \(n\), \(1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}\). <span class="mk">(3 marks)</span>', 'm-ex1', 'البنات') +
     '  </div>\n' +
-    note('star', 'لاحظ:', 'المتتابعة جت مرتين (1447 ونوفمبر)، ومجموع الفرديات جا مرتين (نهائي 1446 ونوفمبر). والاختبارين الجايين فيهم توأم كل هالأسئلة.'), style='gap:3mm'))
+    note('star', 'لاحظ:', 'المتتابعة جت مرتين (1447 ونوفمبر)، ومجموع الفرديات جا مرتين (نهائي 1446 ونوفمبر). والاختبارين التجريبيين الجايين فيهم توأم كل هالأسئلة.'), style='gap:3mm'))
 
 # ---------- mocks in the November format ----------
 AFTER = box('بعد ما تخلص', '''    <ul>
@@ -91,7 +91,7 @@ AFTER = box('بعد ما تخلص', '''    <ul>
 ''')
 
 P.append(page('p-mockA', U[6], 'top', 'اختبار تجريبي 1: بصيغة ميد نوفمبر' + tag('ex', '25 دقيقة'),
-    idea('جزء الفصل 6 من ميد نوفمبر، بأسئلة توأم، ومعه فقرة قسمة احتياط. شغّل مؤقت 25 دقيقة، وحل على ورقة. لا تفتح الحلول قبل ما يخلص الوقت.') +
+    idea('نفس شكل جزء الفصل 6 في ميد نوفمبر، بس بأسئلة توأم، ومعه فقرة قسمة زيادة احتياط. شغّل مؤقت 25 دقيقة، وحل على ورقة. لا تفتح الحلول قبل ما يخلص الوقت.') +
     '  <div class="box paper">\n' +
     qrow('<b>Question 1: (4+3)</b> Prove or disprove the following:', '7 marks') +
     q(r'1. For every positive integer \(n\), \(1 + 4 + 7 + \cdots + (3n-2) = \frac{n(3n-1)}{2}\).', 's-mA11') +
@@ -114,7 +114,7 @@ P.append(page('p-mockAs', 'حلول الوحدة 6', '', 'حلول الاختب�
     note('star', 'كل فقرة توأم:', '1.1 توأم مجموع الفرديات، و1.2 توأم مثال 5، وسؤال 2 توأم متتابعة نوفمبر بأرقام ثانية.'), sol=True))
 
 P.append(page('p-mockB', U[6], 'top', 'اختبار تجريبي 2: بعد ما تصحح الأول' + tag('ex', '30 دقيقة'),
-    idea('سوّه بعد ما تصحح الأول وترجع للي نقصت فيه. فيه فقرة خطأ لازم تكتشفها، وفقرة متباينة من n ≥ 4. شغّل مؤقت 30 دقيقة.') +
+    idea('سوّه بعد ما تصحح الأول وترجع للي نقصت فيه. فيه فقرة غلط (False) لازم تكتشفها، وفقرة متباينة من \\(n \\ge 4\\). شغّل مؤقت 30 دقيقة.') +
     '  <div class="box paper">\n' +
     qrow('<b>Question 1: (4+3+2)</b> Prove or disprove the following:', '9 marks') +
     q(r'1. For every positive integer \(n\), \(1 \cdot 1! + 2 \cdot 2! + \cdots + n \cdot n! = (n+1)! - 1\).', 's-mB11') +
@@ -130,9 +130,9 @@ P.append(page('p-mockBs', 'حلول الوحدة 6', '', 'حلول الاختب�
         ('1.1 True', '', r'Since \(1 \cdot 1! = 1 = 2! - 1\), the statement is true for \(n = 1\). Assume that \(1 \cdot 1! + \cdots + k \cdot k! = (k+1)! - 1\) for a positive integer \(k\). We show that \(1 \cdot 1! + \cdots + (k+1)(k+1)! = (k+2)! - 1\). By the inductive hypothesis, \(1 \cdot 1! + \cdots + (k+1)(k+1)! = \hyp{(k+1)! - 1} + (k+1)(k+1)! = (k+1)!\,(1 + k + 1) - 1 = (k+2)! - 1\). By the Principle of Mathematical Induction, the formula holds for every positive integer \(n\).',
          r'التريك: \((k+1)!\) عامل مشترك، و \((k+2)(k+1)! = (k+2)!\).'),
         ('1.2 True', '', r'Since \(4! = 24 \gt 16 = 2^4\), the inequality holds for \(n = 4\). Assume that \(k! \gt 2^k\) where \(k \ge 4\). We show that \((k+1)! \gt 2^{k+1}\). Observe that \((k+1)! = (k+1) \cdot \hyp{k!} \gt (k+1)\hyp{2^k} \ge 2 \cdot 2^k = 2^{k+1}\), since \(k + 1 \ge 2\). By the Principle of Mathematical Induction, \(n! \gt 2^n\) for every integer \(n \ge 4\).',
-         'البداية 4: لما n = 3، 6 > 8 خطأ.'),
+         'البداية 4، لأن لما \\(n = 3\\): \\(3! = 6\\) مو أكبر من \\(2^3 = 8\\).'),
         ('1.3 False', '', r'Let \(n = 1\). Then \(2^1 - 1 = 1\) and \(3 \nmid 1\). Thus, \(n = 1\) is a counterexample.',
-         r'جرّب قبل ما تبرهن: \(2^2 - 1 = 3\) يمشي، بس \(n = 1\) يفشل.'),
+         r'جرّب قبل ما تبرهن: \(n = 2\) يمشي (\(2^2 - 1 = 3\))، بس \(n = 1\) يفشل (\(2^1 - 1 = 1\)، و 3 ما تقسم 1).'),
         ('2 (1)', '', r'\(a_3 = 3a_2 - 2a_1 = 15 - 6 = 9\) and \(a_4 = 3a_3 - 2a_2 = 27 - 10 = 17\).', ''),
         ('2 (2)', '', r'We proceed by induction. Since \(a_1 = 2^1 + 1 = 3\), the formula holds for \(n = 1\). Assume for an arbitrary positive integer \(k\) that \(a_i = 2^i + 1\) for all integers \(i\) with \(1 \le i \le k\). We show that \(a_{k+1} = 2^{k+1} + 1\). If \(k = 1\), then \(a_{k+1} = a_2 = 5 = 2^2 + 1\). Hence, we may assume that \(k \ge 2\). Since \(k + 1 \ge 3\), \(a_{k+1} = 3\hyp{a_k} - 2\hyp{a_{k-1}} = 3\hyp{(2^k + 1)} - 2\hyp{(2^{k-1} + 1)} = 3 \cdot 2^k - 2^k + 1 = 2^{k+1} + 1\). By the Strong Principle of Mathematical Induction, \(a_n = 2^n + 1\) for all \(n \in \mathbb{N}\).',
          r'\(2 \cdot 2^{k-1} = 2^k\)، و \(3 \cdot 2^k - 2^k = 2 \cdot 2^k\).')], ['s-mB11', 's-mB12', 's-mB13', 's-mB2', None], 'p-mockB'), title='') +
@@ -152,9 +152,9 @@ P.append(page('p-night', 'ورقة ليلة الاختبار', 'top', 'الفص�
     '  <div class="grid2">\n' +
     nb('حركة الخطوة لكل نوع', '''    <ul>
       <li><b>مجموع:</b> افصل آخر حد، وبدّل الباقي بالفرض.</li>
-      <li><b>قسمة:</b> الفرض معادلة، وطلّع حد k + 1 من حد k، وعوّض.</li>
-      <li><b>متباينة:</b> ابدأ من طرف k + 1، والفرض، وخطوة «أكبر من» بسبب.</li>
-      <li><b>قوي:</b> قانون التكرار، والحدّين من الفرض، وسطر&nbsp;★.</li>
+      <li><b>قسمة:</b> اكتب الفرض معادلة، واكتب حد k + 1 بدلالة حد k، وعوّض.</li>
+      <li><b>متباينة:</b> ابدأ من طرف k + 1، واستخدم الفرض، واكتب سبب كل «أكبر من».</li>
+      <li><b>قوي:</b> قانون التكرار، والحدّين من الفرض، ولا تنسَ سطر&nbsp;★.</li>
       <li><b>n أعداد أو مجموعات (6.19):</b> أول k منها اعتبرها شي واحد، وطبّق حقيقة الاثنين.</li>
     </ul>
 ''') +
@@ -177,6 +177,6 @@ P.append(page('p-night', 'ورقة ليلة الاختبار', 'top', 'الفص�
     </ul>
 ''') +
     '  </div>\n' +
-    '  <p class="small"><b>توقّع البديل:</b> مجموع ثاني، ومتتابعة ثانية (مثل مثال 7)، ويمكن قسمة أو متباينة.</p>\n'))
+    '  <p class="small"><b>توقّعي للبديل:</b> مجموع ثاني، ومتتابعة ثانية (زي مثال 7)، ويمكن قسمة أو متباينة.</p>\n'))
 
 save('g_u6.html', P)
